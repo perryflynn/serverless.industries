@@ -1,0 +1,27 @@
+markdown_ext: "md,markdown"
+show_drafts: false
+future: false
+unpublished: false
+timezone: Europe/Berlin
+
+url: "http://serverless.industries"
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+plugins:
+  - jekyll-target-blank
+
+collections:
+  authors:
+    title: Authors
+    output: true

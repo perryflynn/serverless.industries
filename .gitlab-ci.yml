@@ -1,0 +1,127 @@
+stages:
+  - build
+  - deploy
+  - cleanup
+
+variables:
+  serversshuser: 'ssh-w019308c'
+  servername: 'serverless.industries'
+  stagedir: '/www/htdocs/w019308c/vhosts/stage.serverless.industries'
+  livedir: '/www/htdocs/w019308c/vhosts/serverless.industries'
+
+
+#
+# -> Templates
+#
+
+.tpl:default:
+  image: reg.git.brickburg.de/bbcontainers/hyde:current
+  tags: 
+    - docker
+
+.tpl:build:
+  extends: .tpl:default
+  stage: build
+  script:
+    - 'export LANG=en_US.UTF-8'
+    - 'export LANGUAGE=en_US.UTF-8'
+    - 'export LC_ALL=en_US.UTF-8'
+    - 'bundle install'
+    - 'mkdir dist-${distname}'
+    - 'jekyll build -s ./src -d ./dist-${distname} ${buildopts}'
+  artifacts:
+    name: '$CI_JOB_NAME-$CI_COMMIT_REF_SLUG'
+    paths:
+      - 'dist-${distname}'
+
+.tpl:sshtask:
+  extends: .tpl:default
+  before_script:
+    - 'mkdir ssh'
+    - 'touch ssh/key ssh/hosts'
+    - 'chmod u=rwx,go=- ssh'
+    - 'chmod u=rw,go=- ssh/key ssh/hosts'
+    - 'echo "${SSH_DEPLOY_KEY}" > ssh/key'
+    - 'ssh-keyscan -H ${servername} > ssh/hosts'
+  after_script:
+    - 'rm -rf ssh'
+  variables:
+    sshopts: '-o UserKnownHostsFile=ssh/hosts -i ssh/key'
+    sshremote: '${serversshuser}@${servername}'
+
+.tpl:deploy:
+  extends: .tpl:sshtask
+  stage: deploy
+  script:
+    - 'ssh ${sshopts} ${sshremote} mkdir -p "${remotedir}"'
+    - 'ssh ${sshopts} ${sshremote} rm -rf "${remotedir}"/*'
+    - 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
+
+.tpl:cleanup:
+  extends: .tpl:sshtask
+  stage: cleanup
+  script:
+    - 'ssh ${sshopts} ${sshremote} rm -rf "${remotedir}"'
+
+
+#
+# -> Jobs
+#
+
+# -> Build
+
+build:stage:
+  extends: .tpl:build
+  variables:
+    buildopts: '--config ./src/_config.yml,./src/_config_staging.yml --baseurl /${CI_COMMIT_REF_SLUG}'
+    distname: "stage"
+
+build:prod:
+  extends: .tpl:build
+  variables:
+    buildopts: "--config ./src/_config.yml"
+    distname: "prod"
+
+#-> Build
+
+deploy:staging:
+  extends: .tpl:deploy
+  environment:
+    name: stage/${CI_COMMIT_REF_SLUG}
+    url: "https://stage.serverless.industries/${CI_COMMIT_REF_SLUG}"
+    on_stop: cleanup:staging
+  only:
+    - branches
+  except:
+    refs:
+      - master
+  variables:
+    distname: "stage"
+    remotedir: '${stagedir}/${CI_COMMIT_REF_SLUG}'
+
+deploy:live:
+  extends: .tpl:deploy
+  environment:
+    name: Live
+    url: "https://serverless.industries/"
+  only:
+    refs:
+      - master
+  variables:
+    distname: "prod"
+    remotedir: '${livedir}'
+
+#-> Cleanup
+
+cleanup:staging:
+  extends: .tpl:cleanup
+  when: manual
+  environment:
+    name: stage/${CI_COMMIT_REF_SLUG}
+    action: stop
+  only:
+    - branches
+  except:
+    - master
+  variables:
+    remotedir: '${stagedir}/${CI_COMMIT_REF_SLUG}'

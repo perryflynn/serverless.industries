@@ -1,0 +1,49 @@
+---
+layout: content
+title: Tags
+---
+<h1>Tags used in the articles</h1>
+
+<p>
+    {%- for tag in site.tags %}
+    <a href="#{{tag[0]|slugify}}">{{tag[0]}}</a>{% if forloop.last==false %}, {% endif %}
+    {% endfor -%}
+</p>
+
+{% for tag in site.tags %}
+    <div class="tagcontainer tag-{{tag[0]|slugify}}">
+        <h2>{{tag[0]}}</h2>
+        <ul>
+            {% for post in tag[1] %}
+                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+
+<script type="text/javascript">
+    (function() {
+
+        var showTag = function(hash)
+        {
+            Array.from(document.querySelectorAll('.tagcontainer')).forEach(function(item)
+            {
+                item.classList.add("hidden");
+            });
+
+            var el = document.querySelector(".tagcontainer.tag-"+hash.substring(1));
+            if(el)
+            {
+                el.classList.remove("hidden");
+            }
+        };
+
+        showTag(window.location.hash);
+
+        window.onhashchange = function()
+        {
+            showTag(window.location.hash);
+        };
+
+    })();
+</script>

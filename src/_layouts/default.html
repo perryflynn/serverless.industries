@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous">
+    <title>{{page.title}} - Serverl3ss Industr1es</title>
+  </head>
+  <body class="nojs">
+
+    <div class="container">
+        {{content}}
+    </div>
+
+    <script src="{{'/js/jquery-3.3.1.slim.min.js' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous" defer></script>
+    <script src="{{'/js/bootstrap.bundle.min.js' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous" defer></script>
+
+    <script type="text/javascript">
+      (function() {
+        var d = document;
+        var bdy = d.querySelector("body");
+        var timestart = performance.now();
+
+        // indicate that js is enabled
+        bdy.classList.remove("nojs");
+        bdy.classList.add("yesjs");
+
+        // load the background image
+        var el = d.createElement("img");
+        el.style.display = "none";
+
+        el.onload = function() 
+        {
+          var loadtime = performance.now() - timestart;
+          console.log('bg image load time', loadtime);
+          //bdy.classList.add(loadtime > 300 ? "bgimgloaded" : "bgimgcached"); 
+          //bdy.classList.add("bgimgloaded"); 
+        };
+        
+        el.src = "{{'css/Datacenter_Empty_Floor-snip.jpg' | relative_url}}?{{site.time | date: '%s%N'}}";
+      })();
+    </script>
+
+  </body>
+</html>

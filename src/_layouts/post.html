@@ -1,0 +1,23 @@
+---
+layout: content
+---
+{% assign nowts = 'now' | date: '%s' %}
+{% assign postts = page.date | date: '%s' %}
+<h1>{{page.title}}</h1>
+<p>
+    {{page.date|date: '%Y-%m-%d'}} - 
+    {{page.author}} - 
+    {% if nowts < postts %}future - {% endif %}
+    {% if page.draft %}draft - {% endif %}
+    {% if page.published == false %}unpublished - {% endif %}
+    {%-for tag in page.tags %}
+        <a href="{{'/tags.html'|relative_url}}#{{tag|slugify}}">{{tag}}</a>{% if forloop.last==false %}, {% endif %}
+    {% endfor %}
+</p>
+
+<div class="markdown-content">
+    {{content}}
+</div>
+
+<hr>
+<a href="{{'/' | relative_url}}">go back</a>
