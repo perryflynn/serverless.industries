@@ -1,0 +1,15 @@
+/* site vars */
+$lay-color-darker: #333;
+$lay-color-dark: #666;
+$lay-color-middle: #a0a0a0;
+$lay-color-bright: #e0e0e0;
+$lay-color-brighter: #fafafa;
+$lay-color-highlight: #9a0808;
+
+/* bootstrap overrides */
+$light: $lay-color-brighter;
+$table-border-color: $lay-color-middle;
+$code-color: $lay-color-highlight;
+
+/* font awesome overrides */
+$fa-font-path: "webfonts";

@@ -1,0 +1,28 @@
+---
+layout: content
+title: Latest Posts
+---
+
+<h1>Latest Posts</h1>
+
+<ul class="postlist">
+  {% for post in site.posts %}
+    {% assign nowts = 'now' | date: '%s' %}
+    {% assign postts = post.date | date: '%s' %}
+    <li class="postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>
+        {{ post.excerpt|strip_html }} [...]
+        <em>
+            -
+            written by 
+            {{post.author}} on
+            {{post.date|date: '%d. %B %Y'}}
+            {% if nowts < postts %}(future){% endif %}
+            {% if post.draft %}(draft){% endif %}
+            {% if post.published == false %}(unpublished){% endif %}
+        </em>
+      </p>
+    </li>
+  {% endfor %}
+</ul>

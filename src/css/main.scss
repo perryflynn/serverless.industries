@@ -1,0 +1,132 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+@import "fontawesome/scss/fontawesome";
+@import "fontawesome/scss/regular";
+@import "fontawesome/scss/solid";
+@import "fontawesome/scss/brands";
+
+.hidden {
+    display: none;
+}
+
+/* background */
+
+@keyframes bgOpacity {
+    from { opacity: 0; }
+    to { opacity: .5; }
+}
+
+@keyframes bgBackgrounf {
+    from { background-color: #b0906c; }
+    to { background-color: #dec8b3; }
+}
+
+body {
+    font-family: Arial;
+    font-size: 12px;
+    background-color: #dec8b3;
+    animation: bgBackground 5s linear 0s 1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;   
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .5;
+    background: url(Datacenter_Empty_Floor-snip.jpg?{{site.time | date: '%s%N'}});
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    animation: bgOpacity 3s linear 0s 1;
+}
+
+/* main page */
+
+$content-opacity: .9;
+
+.row.mainpage {
+    background-color: rgba($lay-color-brighter, $content-opacity);
+}
+
+@include media-breakpoint-up(lg) {
+    .row.mainpage {
+        margin-top:40px;
+        margin-bottom:5px;
+        border-radius: 20px;
+        border: 2px solid $lay-color-darker;
+        overflow: hidden;
+    }
+}
+
+/* top menu */
+
+.row.topmenu {
+    background-color: transparent; // rgba($lay-color-brighter, $content-opacity);
+    border-bottom: 2px solid $lay-color-darker;
+
+    .col {
+        padding-bottom: 2px;
+    }
+
+    .navbar {
+        background-color: transparent;
+    }
+}
+
+/* content */
+
+.row.defaultcontent > .col {
+    padding: 20px;
+}
+
+@include media-breakpoint-up(lg) {
+    .row.defaultcontent > .col {
+        padding: 40px 20px;
+    }    
+}
+
+.markdown-content {
+    pre {
+        background-color: rgba($lay-color-bright, .6);
+        border-left: 2px solid darken($lay-color-bright, 50%);
+        border-right: 2px solid darken($lay-color-bright, 50%);
+        padding: 10px 20px;
+    }
+}
+
+ul.postlist {
+    padding: 0px;
+}
+
+ul.postlist li.postlistitem {
+    list-style: none;
+}
+
+ul.postlist li.postlistitem.unpublished,
+ul.postlist li.postlistitem.draft,
+ul.postlist li.postlistitem.future {
+    opacity: .5;
+}
+
+/* footer */
+
+@include media-breakpoint-up(lg) {
+    .row.mainfooter {
+        margin-bottom: 40px;
+    }
+}
+
+.row.mainfooter .col {
+    text-align: center;
+    color: $lay-color-darker;
+}
