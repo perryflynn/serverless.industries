@@ -53,8 +53,46 @@ variables:
   extends: .tpl:sshtask
   stage: deploy
   script:
-    - 'ssh ${sshopts} ${sshremote} mkdir -p "${remotedir}"'
-    - 'ssh ${sshopts} ${sshremote} rm -rf "${remotedir}"/*'
+    - |
+      if [ "$secure" == "1" ]; then
+        STAGEUSER="stage"
+        STAGEPASS="$(pwgen -s 12 1)"
+
+        ssh ${sshopts} ${sshremote} /bin/bash <<EOF
+          if [ -f "${remotedir}/.htpasswd" ]; then
+              pwdhash=\$(cat "${remotedir}/.htpasswd")
+          fi
+
+          rm -rf "${remotedir}"
+          mkdir -p "${remotedir}"
+
+          cat >${remotedir}/.htaccess <<HTEOL
+      AuthType Basic
+      AuthName "Stage ${CI_COMMIT_REF_SLUG}"
+      AuthUserFile ${remotedir}/.htpasswd
+      Require valid-user
+      HTEOL
+
+          if [ ! -z "\$pwdhash" ]; then
+            echo "\$pwdhash" > "${remotedir}/.htpasswd"
+            
+            echo
+            echo
+            echo "User/Password already set. Do nothing."
+            echo
+            echo
+          else
+            htpasswd -b -c "${remotedir}/.htpasswd" "$STAGEUSER" "$STAGEPASS"
+            
+            echo
+            echo
+            echo "Username: $STAGEUSER"
+            echo "Password: $STAGEPASS"
+            echo
+            echo
+          fi
+      EOF
+      fi
     - 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
 
 .tpl:cleanup:
@@ -72,30 +110,37 @@ variables:
 
 build:stage:
   extends: .tpl:build
+  except:
+    refs:
+      - master
   variables:
     buildopts: '--config ./src/_config.yml,./src/_config_staging.yml --baseurl /${CI_COMMIT_REF_SLUG}'
     distname: "stage"
 
 build:prod:
   extends: .tpl:build
+  only:
+    refs:
+      - master
   variables:
     buildopts: "--config ./src/_config.yml"
     distname: "prod"
 
-#-> Build
+#-> Deploy
 
-deploy:staging:
+deploy:stage:
   extends: .tpl:deploy
   environment:
     name: stage/${CI_COMMIT_REF_SLUG}
     url: "https://stage.serverless.industries/${CI_COMMIT_REF_SLUG}"
-    on_stop: cleanup:staging
+    on_stop: cleanup:stage
   only:
     - branches
   except:
     refs:
       - master
   variables:
+    secure: '1'
     distname: "stage"
     remotedir: '${stagedir}/${CI_COMMIT_REF_SLUG}'
 
@@ -108,12 +153,13 @@ deploy:live:
     refs:
       - master
   variables:
+    secure: '0'
     distname: "prod"
     remotedir: '${livedir}'
 
 #-> Cleanup
 
-cleanup:staging:
+cleanup:stage:
   extends: .tpl:cleanup
   when: manual
   environment:

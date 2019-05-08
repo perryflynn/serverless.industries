@@ -3,6 +3,7 @@ short_name: christian
 name: Christian
 job: Software Engineer
 twitter: perryf1ynn
+github: perryflynn
 email: christian@serverless.industries
 ---
 

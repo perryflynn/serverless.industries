@@ -32,5 +32,13 @@ title: Authors
                 </a>
             </li>
         {% endif %}
+        {% if author.github %}
+            <li class="list-inline-item">
+                <a href="https://github.com/{{author.github}}">
+                    <i class="fab fa-github"></i>
+                    {{author.github}}
+                </a>
+            </li>
+        {% endif %}
         </ul>
 {% endfor %}
