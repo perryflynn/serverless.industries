@@ -16,9 +16,17 @@ title: Authors
     {{ author.content | markdownify }}
 
     <ul class="list-inline">
+        {% if author.github %}
+            <li class="list-inline-item">
+                <a href="https://github.com/{{author.github}}" rel="external nofollow noreferrer noopener" target="_blank">
+                    <i class="fab fa-github"></i>
+                    {{author.github}}
+                </a>
+            </li>
+        {% endif %}
         {% if author.twitter %}
             <li class="list-inline-item">
-                <a href="https://twitter.com/{{author.twitter}}" target="_blank">
+                <a href="https://twitter.com/{{author.twitter}}" rel="external nofollow noreferrer noopener" target="_blank">
                     <i class="fab fa-twitter"></i>
                     @{{author.twitter}}
                 </a>
@@ -29,14 +37,6 @@ title: Authors
                 <a href="mailto:{{author.email}}">
                     <i class="far fa-envelope"></i>
                     {{author.email}}
-                </a>
-            </li>
-        {% endif %}
-        {% if author.github %}
-            <li class="list-inline-item">
-                <a href="https://github.com/{{author.github}}">
-                    <i class="fab fa-github"></i>
-                    {{author.github}}
                 </a>
             </li>
         {% endif %}

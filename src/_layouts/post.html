@@ -11,7 +11,7 @@ layout: content
     {% if page.draft %}draft - {% endif %}
     {% if page.published == false %}unpublished - {% endif %}
     {%-for tag in page.tags %}
-        <a href="{{link 'tags.html'}}#{{tag|slugify}}">{{tag}}</a>{% if forloop.last==false %}, {% endif %}
+        <a href="{{'/tags.html' | relative_url}}#{{tag|slugify}}">{{tag}}</a>{% if forloop.last==false %}, {% endif %}
     {% endfor %}
 </p>
 
@@ -21,3 +21,6 @@ layout: content
 
 <hr>
 <a href="{{'/' | relative_url}}">go back</a>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank" class="float-right">
+    <img alt="Creative Commons License" style="border-width: 0px;" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png">
+</a>
