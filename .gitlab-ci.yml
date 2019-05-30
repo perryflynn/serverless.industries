@@ -53,7 +53,7 @@ variables:
   extends: .tpl:sshtask
   stage: deploy
   script:
-    - '/bin/bash ci/deploy.sh'
+    - '/bin/bash ci/secure-stage.sh'
     - 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
 
 .tpl:cleanup:
