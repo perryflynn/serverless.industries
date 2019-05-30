@@ -54,45 +54,40 @@ variables:
   stage: deploy
   script:
     - |
-      if [ "$secure" == "1" ]; then
-        STAGEUSER="stage"
-        STAGEPASS="$(pwgen -s 12 1)"
+      ssh ${sshopts} ${sshremote} stat ${remotedir}/.htaccess \> /dev/null 2\>\&1
+      issecured=$?
+      stageuser="stage"
+      stagepass="$(pwgen -s 12 1)"
 
-        ssh ${sshopts} ${sshremote} /bin/bash <<EOF
-          if [ -f "${remotedir}/.htpasswd" ]; then
-              pwdhash=\$(cat "${remotedir}/.htpasswd")
-          fi
+      if [ "$secure" == "1" ] && ( [ ! "$issecured" == "0" ] || [ -f enforce-new-password ] ); then
+        htpasswd -b -c newhtpasswd "$stageuser" "$stagepass"
+        scp -r ${sshopts} newhtpasswd ${sshremote}:${remotedir}/.htpasswd
+        rm newhtpasswd
 
-          rm -rf "${remotedir}"
-          mkdir -p "${remotedir}"
-
-          cat >${remotedir}/.htaccess <<HTEOL
+        cat >newhtaccess <<HTEOL
       AuthType Basic
       AuthName "Stage ${CI_COMMIT_REF_SLUG}"
       AuthUserFile ${remotedir}/.htpasswd
       Require valid-user
       HTEOL
 
-          if [ ! -z "\$pwdhash" ]; then
-            echo "\$pwdhash" > "${remotedir}/.htpasswd"
-            
-            echo
-            echo
-            echo "User/Password already set. Do nothing."
-            echo
-            echo
-          else
-            htpasswd -b -c "${remotedir}/.htpasswd" "$STAGEUSER" "$STAGEPASS"
-            
-            echo
-            echo
-            echo "Username: $STAGEUSER"
-            echo "Password: $STAGEPASS"
-            echo
-            echo
-          fi
-      EOF
+        scp -r ${sshopts} newhtaccess ${sshremote}:${remotedir}/.htaccess
+        rm newhtaccess
+
+        echo
+        echo
+        echo "New Username: $stageuser"
+        echo "New Password: $stagepass"
+        echo
+        echo
+      else
+        echo
+        echo
+        echo "Credencials already set. Create a 'enforce-new-password' to override."
+        echo
+        echo
       fi
+    
     - 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
 
 .tpl:cleanup:
