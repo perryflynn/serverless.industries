@@ -35,11 +35,11 @@ elif [ "$secure" == "1" ]
 then
 
     echo
-    echo
     echo "Credencials already set. Create a 'enforce-new-password' to override."
     echo
-    echo
 
+else
+    echo "No authentication required."
 fi
 
 # EOF
