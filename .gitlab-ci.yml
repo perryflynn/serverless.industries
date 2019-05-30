@@ -61,7 +61,7 @@ variables:
 
       if [ "$secure" == "1" ] && ( [ ! "$issecured" == "0" ] || [ -f enforce-new-password ] ); then
         htpasswd -b -c newhtpasswd "$stageuser" "$stagepass"
-        scp -r ${sshopts} newhtpasswd ${sshremote}:${remotedir}/.htpasswd
+        scp ${sshopts} newhtpasswd ${sshremote}:${remotedir}/.htpasswd
         rm newhtpasswd
 
         cat >newhtaccess <<HTEOL
@@ -71,7 +71,7 @@ variables:
       Require valid-user
       HTEOL
 
-        scp -r ${sshopts} newhtaccess ${sshremote}:${remotedir}/.htaccess
+        scp ${sshopts} newhtaccess ${sshremote}:${remotedir}/.htaccess
         rm newhtaccess
 
         echo
@@ -80,7 +80,7 @@ variables:
         echo "New Password: $stagepass"
         echo
         echo
-      else
+      elif [ "$secure" == "1" ]; then
         echo
         echo
         echo "Credencials already set. Create a 'enforce-new-password' to override."
