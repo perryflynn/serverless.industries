@@ -1,0 +1,10 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+User-Agent: *
+{% if site.my.env == "live" %}
+Allow: /
+{% else %}
+Disallow: /
+{% endif %}

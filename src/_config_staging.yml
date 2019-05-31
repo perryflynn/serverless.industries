@@ -1,5 +1,8 @@
 show_drafts: true
 future: true
-unpublished: true
+unpublished: 
+
+my:
+  env: stage
 
 url: "http://stage.serverless.industries"

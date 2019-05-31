@@ -1,0 +1,13 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="{{'/favicon/mstile-150x150.png' | relative_url}}"/>
+            <TileColor>#404040</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

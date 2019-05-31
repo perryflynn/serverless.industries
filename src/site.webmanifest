@@ -1,0 +1,23 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+{
+    "name": "serverless.industries",
+    "short_name": "serverless.industries",
+    "icons": [
+        {
+            "src": "{{'/favicon/android-chrome-192x192.png' | relative_url}}",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "{{'/favicon/android-chrome-384x384.png' | relative_url}}",
+            "sizes": "384x384",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

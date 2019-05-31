@@ -4,11 +4,25 @@
 ---
 
 @import "variables";
-@import "bootstrap/scss/bootstrap";
 @import "fontawesome/scss/fontawesome";
 @import "fontawesome/scss/regular";
 @import "fontawesome/scss/solid";
 @import "fontawesome/scss/brands";
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/utilities";
+
 
 .hidden {
     display: none;
@@ -30,6 +44,9 @@ body {
     font-family: Arial;
     font-size: 14px;
     background-color: #dec8b3;
+}
+
+body.bgloaded {
     animation: bgBackground 5s linear 0s 1;
 }
 
@@ -42,11 +59,14 @@ body::after {
     bottom: 0;
     right: 0;
     opacity: .5;
-    background: url(Datacenter_Empty_Floor-snip.jpg?{{site.time | date: '%s%N'}});
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+}
+
+body.bgloaded::after {
+    background: url(Datacenter_Empty_Floor-snip.jpg?{{site.time | date: '%s%N'}});
     animation: bgOpacity 3s linear 0s 1;
 }
 
