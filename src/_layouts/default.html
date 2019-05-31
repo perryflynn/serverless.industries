@@ -4,7 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous">
-    <title>{{page.title}} - Serverl3ss Industr1es</title>
+    <title>{{page.title}} - {{site.my.sitetitle}}</title>
+
+    <meta property="og:title" content="{{ page.title }} - {{site.my.sitetitle}}">
+    <meta property="og:site_name" content="{{site.my.sitetitle}}">
+    <meta name="twitter:title" content="{{ page.title }} - {{site.my.sitetitle}}">
+
+    {% if page.description or page.excerpt %}
+    <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines }}">
+    <meta property="og:description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines }}">
+    <meta name="twitter:description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines }}" />
+    {% endif %}
+
+    {% if page and page.tags.size > 0 %}
+    <meta name="keywords" content="{{page.tags | join: ", " }}">
+    {% endif %}
+
+    <link rel="alternate" type="application/rss+xml" title="{{site.my.rsstitle}}" href="{{'/feed.xml' | relative_url}}">
+    <link href="{{'/opensearch.xml' | relative_url}}" rel="search" title="{{site.my.domain}}" type="application/opensearchdescription+xml">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{'/favicon/apple-touch-icon.png' | relative_url}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{'/favicon/favicon-32x32.png' | relative_url}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{'/favicon/favicon-16x16.png' | relative_url}}">
+    <link rel="manifest" href="{{'/site.webmanifest' | relative_url}}">
+    <link rel="mask-icon" href="{{'/favicon/safari-pinned-tab.svg' | relative_url}}" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="serverless.industries">
+    <meta name="application-name" content="serverless.industries">
+    <meta name="msapplication-TileColor" content="#404040">
+
+    <meta name="theme-color" content="#dec8b3">
+  
   </head>
   <body class="nojs">
 
@@ -19,7 +48,7 @@
       (function() {
         var d = document;
         var bdy = d.querySelector("body");
-        var timestart = performance.now();
+        //var timestart = performance.now();
 
         // indicate that js is enabled
         bdy.classList.remove("nojs");
@@ -31,10 +60,9 @@
 
         el.onload = function() 
         {
-          var loadtime = performance.now() - timestart;
-          console.log('bg image load time', loadtime);
-          //bdy.classList.add(loadtime > 300 ? "bgimgloaded" : "bgimgcached"); 
-          //bdy.classList.add("bgimgloaded"); 
+          //var loadtime = performance.now() - timestart;
+          //console.log('bg image load time', loadtime);
+          bdy.classList.add("bgloaded");
         };
         
         el.src = "{{'css/Datacenter_Empty_Floor-snip.jpg' | relative_url}}?{{site.time | date: '%s%N'}}";

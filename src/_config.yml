@@ -4,6 +4,12 @@ future: false
 unpublished: false
 timezone: Europe/Berlin
 
+my:
+  domain: serverless.industries
+  sitetitle: Serverless Industries
+  rsstitle: Serverless Industries Posts RSS
+  env: live
+
 url: "http://serverless.industries"
 
 sass:
