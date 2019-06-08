@@ -1,7 +1,7 @@
 ---
 author: christian
 language: german
-title: Raspberry Pi Zero W Kamera zu Twitch streamen
+title: Raspberry Pi Zero W Kamera via Twitch streamen
 tags: [ "raspberry pi", streaming ]
 ---
 
