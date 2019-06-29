@@ -109,8 +109,7 @@ Mein Raspberry Pi ist mit einem [ClusterHAT](https://clusterhat.com/) ausgestatt
 Raspberry Pi Zero tragen kann. Der HAT verbindet die 5 Raspberrys via USB miteinander. Über
 [Ethernet USB Gadget][usbgadget] können die Raspberrys via Netzwerk miteinander kommunizieren.
 
-{:.img-fluid}
-![Clusterberry]({{'/assets/clusterberry.jpg' | relative_url}})
+![Clusterberry]({{'/assets/clusterberry.jpg' | relative_url}}){:.img-fluid}
 
 [usbgadget]: https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/ethernet-gadget
 
