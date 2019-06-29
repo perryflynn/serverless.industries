@@ -9,7 +9,7 @@ stageuser="stage"
 stagepass="$(pwgen -s 12 1)"
 
 # create htpasswd
-if [ "$secure" == "1" ] && ( [ ! "$issecured" == "0" ] || [ -f enforce-new-password ] )
+if [ "$secure" == "1" ] && [ ! -f enforce-insecure ] && ( [ ! "$issecured" == "0" ] || [ -f enforce-new-password ] )
 then
 
     htpasswd -b -c newhtpasswd "$stageuser" "$stagepass"
@@ -21,6 +21,17 @@ then
     echo "New Username: $stageuser"
     echo "New Password: $stagepass"
     echo
+    echo "If you dont want a password protection, create a 'enforce-insecure' file"
+    echo
+    echo
+
+elif [ -f enforce-insecure ]
+then 
+
+    ssh ${sshopts} ${sshremote} rm -f ${remotedir}/.htpasswd
+
+    echo
+    echo "'enforce-insecure' file exists, so no password protection created."
     echo
 
 elif [ "$secure" == "1" ]
@@ -35,7 +46,7 @@ else
 fi
 
 # extend htaccess
-if [ "$secure" == "1" ]
+if [ "$secure" == "1" ] && [ ! -f enforce-insecure ]
 then
 
     cat <<HTEOL >> dist-${distname}/.htaccess
@@ -45,11 +56,6 @@ AuthName "Stage ${CI_COMMIT_REF_SLUG}"
 AuthUserFile ${remotedir}/.htpasswd
 Require valid-user
 HTEOL
-
-echo
-echo
-
-cat dist-${distname}/.htaccess
 
 fi
 

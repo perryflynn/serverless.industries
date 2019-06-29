@@ -6,18 +6,40 @@
     <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous">
     <title>{{page.title}} - {{site.my.sitetitle}}</title>
 
-    <meta property="og:title" content="{{ page.title }} - {{site.my.sitetitle}}">
+    {% assign authorinfo = site.authors | where: 'short_name', page.author | first %}
+
+    {% if authorinfo.short_name %}
+    <meta property="og:type" content="article" />
+    <meta property="og:article:author" content="{{authorinfo.name}}">
+    <meta name="author" content="{{authorinfo.name}}">
+    {% else %}
+    <meta property="og:type" content="website" />
+    {% endif %}
+    <meta property="og:url" content="{{site.url}}{{page.url}}">
+    <meta property="og:title" content="{{ page.title }}">
     <meta property="og:site_name" content="{{site.my.sitetitle}}">
-    <meta name="twitter:title" content="{{ page.title }} - {{site.my.sitetitle}}">
+    <meta property="og:image" content="{{site.url}}{{'/favicon/apple-touch-icon.png' | relative_url}}" />
+
+    {% if page.date %}
+    <meta property="og:article:published_time" content="{{page.date | date_to_xmlschema}}">
+    {% endif %}
+
+    <meta name="twitter:card" content="summary" />
+
+    {% if authorinfo.twitter %}
+    <meta name="twitter:creator" content="@{{authorinfo.twitter}}" />
+    {% endif %}
 
     {% if page.description or page.excerpt %}
     <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines }}">
     <meta property="og:description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines }}">
-    <meta name="twitter:description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines }}" />
     {% endif %}
 
     {% if page and page.tags.size > 0 %}
     <meta name="keywords" content="{{page.tags | join: ', '}}">
+      {% for tag in page.tags %}
+      <meta property="og:article:tag" content="{{tag}}">
+      {% endfor %}
     {% endif %}
 
     <link rel="alternate" type="application/rss+xml" title="{{site.my.rsstitle}}" href="{{'/feed.xml' | relative_url}}">
@@ -38,13 +60,15 @@
   <body class="nojs bgcached">
 
     <div class="container">
+
         {{content}}
+    
     </div>
 
     <script src="{{'/js/jquery-3.3.1.slim.min.js' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous" defer></script>
     <script src="{{'/js/bootstrap.bundle.min.js' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous" defer></script>
 
-    <script type="text/javascript">
+    <script>
       (function() {
         var d = document;
         var bdy = d.querySelector("body");

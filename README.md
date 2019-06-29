@@ -39,6 +39,13 @@ The source code is licensed unter the [MIT License](https://en.wikipedia.org/wik
 - Uses Bootstrap 4 and JQuery for the theme
 - Uses Font Awesome
 
+## Magic files
+
+- Create a file named `enforce-insecure` in the main directory to 
+  enforce no password protection for branch stages
+- Create a file named `enforce-new-password` in the main directory to
+  enforce the creation of a new stage password
+
 ## Run website on local machine
 
 - Install ruby

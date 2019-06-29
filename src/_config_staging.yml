@@ -5,4 +5,4 @@ unpublished:
 my:
   env: stage
 
-url: "http://stage.serverless.industries"
+url: "https://stage.serverless.industries"
