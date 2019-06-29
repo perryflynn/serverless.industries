@@ -141,11 +141,15 @@ $content-opacity: .9;
 }
 
 .markdown-content {
-    pre {
+    pre, .blockquote {
         background-color: rgba($lay-color-bright, .6);
         border-left: 2px solid darken($lay-color-bright, 50%);
         border-right: 2px solid darken($lay-color-bright, 50%);
         padding: 10px 20px;
+    }
+
+    .blockquote p:last-child {
+        margin-bottom:0px;
     }
 }
 
