@@ -16,11 +16,9 @@ lasse ich einen Raspberry Pi Zero W mit einer Raspberry Pi Kamera via Twitch str
 - Raspberry Pi Zero W + Raspberry Pi Kamera
 - Irgendwas zum befestigen und ausrichten
 
-{:.img-fluid}
-![Camera]({{'/assets/rpi-3dprinter-steamcam01.jpg' | relative_url}})
+![Camera]({{'/assets/rpi-3dprinter-steamcam01.jpg' | relative_url}}){:.img-fluid}
 
-{:.img-fluid}
-![Camera]({{'/assets/rpi-3dprinter-steamcam02.jpg' | relative_url}})
+![Camera]({{'/assets/rpi-3dprinter-steamcam02.jpg' | relative_url}}){:.img-fluid}
 
 ## Installation
 

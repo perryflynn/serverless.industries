@@ -17,7 +17,7 @@
     {% endif %}
 
     {% if page and page.tags.size > 0 %}
-    <meta name="keywords" content="{{page.tags | join: ", " }}">
+    <meta name="keywords" content="{{page.tags | join: ', '}}">
     {% endif %}
 
     <link rel="alternate" type="application/rss+xml" title="{{site.my.rsstitle}}" href="{{'/feed.xml' | relative_url}}">
@@ -33,9 +33,9 @@
     <meta name="msapplication-TileColor" content="#404040">
 
     <meta name="theme-color" content="#dec8b3">
-  
+
   </head>
-  <body class="nojs">
+  <body class="nojs bgcached">
 
     <div class="container">
         {{content}}
@@ -48,7 +48,6 @@
       (function() {
         var d = document;
         var bdy = d.querySelector("body");
-        //var timestart = performance.now();
 
         // indicate that js is enabled
         bdy.classList.remove("nojs");
@@ -58,14 +57,20 @@
         var el = d.createElement("img");
         el.style.display = "none";
 
-        el.onload = function() 
+        el.onload = function()
         {
-          //var loadtime = performance.now() - timestart;
-          //console.log('bg image load time', loadtime);
-          bdy.classList.add("bgloaded");
+          if(!bdy.classList.contains("bgcached"))
+          {
+            bdy.classList.add("bgloaded");
+          }
         };
-        
+
         el.src = "{{'css/Datacenter_Empty_Floor-snip.jpg' | relative_url}}?{{site.time | date: '%s%N'}}";
+
+        if(!el.complete)
+        {
+          bdy.classList.remove("bgcached");
+        }
       })();
     </script>
 
