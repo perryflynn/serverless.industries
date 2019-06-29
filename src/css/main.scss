@@ -3,7 +3,19 @@
 # only Main files contain this front matter, not partials.
 ---
 
+/* variables */
+
 @import "variables";
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 780px,
+  xl: 800px
+);
+
+/* bootstrap resources */
+
 @import "fontawesome/scss/fontawesome";
 @import "fontawesome/scss/regular";
 @import "fontawesome/scss/solid";
@@ -16,6 +28,8 @@
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/transitions";
 @import "bootstrap/scss/code";
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/tables";
@@ -23,6 +37,7 @@
 @import "bootstrap/scss/navbar";
 @import "bootstrap/scss/utilities";
 
+/* utils */
 
 .hidden {
     display: none;
@@ -42,7 +57,7 @@
 
 body {
     font-family: Arial;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #dec8b3;
 }
 
@@ -53,7 +68,7 @@ body.bgloaded {
 body::after {
     content: "";
     position: fixed;
-    z-index: -1;   
+    z-index: -1;
     top: 0;
     left: 0;
     bottom: 0;
@@ -65,8 +80,11 @@ body::after {
     background-attachment: fixed;
 }
 
-body.bgloaded::after {
+body.bgloaded::after, body.bgcached::after {
     background: url(Datacenter_Empty_Floor-snip.jpg?{{site.time | date: '%s%N'}});
+}
+
+body.bgloaded::after {
     animation: bgOpacity 3s linear 0s 1;
 }
 
@@ -76,6 +94,13 @@ $content-opacity: .9;
 
 .row.mainpage {
     background-color: rgba($lay-color-brighter, $content-opacity);
+}
+
+@include media-breakpoint-up(sm) {
+    .row.mainpage {
+        border-left: 2px solid $lay-color-darker;
+        border-right: 2px solid $lay-color-darker;
+    }
 }
 
 @include media-breakpoint-up(lg) {
@@ -112,7 +137,7 @@ $content-opacity: .9;
 @include media-breakpoint-up(lg) {
     .row.defaultcontent > .col {
         padding: 40px 20px;
-    }    
+    }
 }
 
 .markdown-content {
@@ -124,17 +149,11 @@ $content-opacity: .9;
     }
 }
 
-ul.postlist {
-    padding: 0px;
-}
+/* startpage */
 
-ul.postlist li.postlistitem {
-    list-style: none;
-}
-
-ul.postlist li.postlistitem.unpublished,
-ul.postlist li.postlistitem.draft,
-ul.postlist li.postlistitem.future {
+.postlist .postlistitem.unpublished,
+.postlist .postlistitem.draft,
+.postlist .postlistitem.future {
     opacity: .5;
 }
 
