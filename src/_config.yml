@@ -10,7 +10,7 @@ my:
   rsstitle: Serverless Industries Posts RSS
   env: live
 
-url: "http://serverless.industries"
+url: "https://serverless.industries"
 
 sass:
   sass_dir: _sass
