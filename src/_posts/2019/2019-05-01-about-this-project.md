@@ -2,7 +2,7 @@
 author: christian
 language: german
 title: Über dieses Projekt
-tags: [ docker, git, continuous integration ]
+tags: [ docker, git, continuous integration, projects ]
 ---
 
 serverless.industries ist ein weiterer, von einem Nerd betriebener, Blog
@@ -11,8 +11,8 @@ welcher zum Dokumentieren und Teilen von technischen Dingen genutzt wird.
 Dieser Blog ist jederzeit offen für Beiträge. Falls Du den einen oder
 anderen Beitrag schreiben möchtest, schau in dem
 [gitlab Repository des Blogs](https://git.brickburg.de/serverless.industries/blog)
-vorbei und stelle ein Merge Request. (Die Registrierung von neuen Accounts 
-ist zur Zeit wegen Spam deaktiviert. Bitte sende mir eine Email und ich 
+vorbei und stelle ein Merge Request. (Die Registrierung von neuen Accounts
+ist zur Zeit wegen Spam deaktiviert. Bitte sende mir eine Email und ich
 erstelle den Account manuell.)
 
 ## Workflow
