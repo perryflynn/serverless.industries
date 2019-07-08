@@ -4,6 +4,9 @@ future: false
 unpublished: false
 timezone: Europe/Berlin
 
+# permalink: /:categories/:year/:month/:day/:title:output_ext
+permalink: /:year/:month/:day/:title:output_ext
+
 my:
   domain: serverless.industries
   sitetitle: Serverless Industries
