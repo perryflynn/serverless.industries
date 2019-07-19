@@ -2,7 +2,7 @@
 author: christian
 title: Cluster im Hotel
 language: german
-tags: [linux, netzwerk, gpn19]
+tags: [linux, netzwerk, gpn19, "raspberry pi"]
 ---
 
 Es fing an mit einer bekloppten Idee. Kann man in einem Hotel WLAN einen
