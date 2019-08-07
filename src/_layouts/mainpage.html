@@ -31,7 +31,7 @@ layout: default
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{site.baseurl}}{% post_url 2019-05-01-about-this-project %}">
+                                <a class="nav-link" href="{{site.baseurl}}{% post_url 2019/2019-05-01-about-this-project %}">
                                     About
                                 </a>
                             </li>
@@ -43,6 +43,24 @@ layout: default
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown d-none d-lg-inline">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" style="padding: 0px; width: 300px;" aria-labelledby="searchMenu">
+                                    <form class="p-2" method="GET" action="https://www.google.com/search" target="_blank">
+                                        <input type="hidden" name="sitesearch" value="{{site.my.domain}}">
+                                        <div class="input-group">
+                                            <input type="text" name="q" class="form-control" placeholder="Google Search">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="submit">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
                             <li class="navbar-item">
                                 <a class="nav-link" href="{{'/feed.xml' | relative_url}}" target="_blank">
                                     <i class="fas fa-rss-square d-none d-lg-inline"></i>
@@ -50,6 +68,18 @@ layout: default
                                 </a>
                             </li>
                         </ul>
+
+                        <form class="form-inline my-2 my-lg-0 d-xs-inline d-lg-none" method="GET" action="https://www.google.com/search" target="_blank">
+                            <input type="hidden" name="sitesearch" value="{{site.my.domain}}">
+                            <div class="input-group">
+                                <input type="text" name="q" class="form-control" placeholder="Google Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
 
                     </div>
                 </nav>
