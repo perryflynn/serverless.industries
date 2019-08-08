@@ -80,14 +80,16 @@ precheck:masterchecks:
     - '[[ ! -f enforce-insecure ]] || (echo "File enforce-insecure is not supported in master branch"; exit 99)'
     - '[[ ! -f enforce-new-password ]] || (echo "File enforce-new-password is not supported in master branch"; exit 99)'
   only:
-    refs:
-      - master
+    - master
+    - web
+    - schedules
 
 build:stage:
   extends: .tpl:build
   except:
-    refs:
-      - master
+    - master
+    - web
+    - schedules
   variables:
     buildopts: '--config ./src/_config.yml,./src/_config_staging.yml --baseurl /${CI_COMMIT_REF_SLUG}'
     distname: "stage"
@@ -95,8 +97,9 @@ build:stage:
 build:prod:
   extends: .tpl:build
   only:
-    refs:
-      - master
+    - master
+    - web
+    - schedules
   variables:
     buildopts: "--config ./src/_config.yml"
     distname: "prod"
@@ -112,8 +115,9 @@ deploy:stage:
   only:
     - branches
   except:
-    refs:
-      - master
+    - master
+    - web
+    - schedules
   variables:
     secure: '1'
     distname: "stage"
@@ -125,8 +129,9 @@ deploy:live:
     name: Live
     url: "https://serverless.industries/"
   only:
-    refs:
-      - master
+    - master
+    - web
+    - schedules
   variables:
     secure: '0'
     distname: "prod"
@@ -144,5 +149,7 @@ cleanup:stage:
     - branches
   except:
     - master
+    - web
+    - schedules
   variables:
     remotedir: '${stagedir}/${CI_COMMIT_REF_SLUG}'
