@@ -43,7 +43,7 @@ IPv6 Adresse.
 # linux
 ping6 ff02::1%br0
 # windows
-ping ping6 ff02::1%3
+ping ff02::1%3
 ```
 
 Handelt es sich bei beiden Systemen (Sender und Empfänger) um Linux, findet man
