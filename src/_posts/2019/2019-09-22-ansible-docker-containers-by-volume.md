@@ -13,6 +13,7 @@ werden, welche die Zertifikate via Volume eingebunden haben.
 [acmesh]: https://github.com/Neilpang/acme.sh
 [ansible]: https://www.ansible.com/overview/how-ansible-works
 
+{% raw %}
 ```yml
 # install jq as a dependency on the remote system
 -
@@ -45,6 +46,7 @@ werden, welche die Zertifikate via Volume eingebunden haben.
         restart: yes
     loop: "{{certcontainers|default([])}}"
 ```
+{% endraw %}
 
 Der `docker inspect` Befehl liefert JSON, welches mit dem sehr praktischen Tool `jq` durchsucht
 werden kann. Als Ergebnis dieses Befehls erhält man ein einfaches JSON Array mit
