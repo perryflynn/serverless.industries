@@ -2,7 +2,7 @@
 author: christian
 title: PerrysNetConsole aktualisiert
 language: german
-tags: [projects, .net, software development]
+tags: [projects, .NET, software development]
 ---
 
 Meine [Sammlung von Controls für .NET Console Applications][netcon] und
