@@ -15,6 +15,13 @@ vereinfachen.
 [dingetun]: https://dingetun.net/
 [yaynay]: https://yaynay.dingetun.net/
 
+## Verwendung von Cookies genehmigen
+
+Das Tool verwendet Cookies um die Auswahl zu speichern. So wird ermöglicht,
+dass man die Auswahl noch nachträglich ändern oder zurückziehen kann.
+
+Man muss der Nutzung von Cookies zustimmen, bevor das Tool verwendet werden kann.
+
 ## Wie funktionierts
 
 Wenn Du [https://yaynay.dingetun.net/][yaynay] aufrufst, wirst Du automatisch

@@ -7,7 +7,7 @@ tags: ['windows', 'powershell']
 
 Die [Invoke-WebRequest][invoke] Funktion in PowerShell extrahiert im Standardverhalten
 Bilder, Formularfelder, Links aus dem Response und stellt diese als separate Properties
-breit.
+bereit.
 
 Dafür benutzt die Funktion den Internet Explorer, welcher für den System Account von Windows
 natürlich nicht zur Verfügung steht. Der Aufruf von `Invoke-WebRequest` führt zu folgender
