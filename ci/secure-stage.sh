@@ -5,6 +5,14 @@
 ssh ${sshopts} ${sshremote} stat ${remotedir}/.htpasswd \> /dev/null 2\>\&1
 issecured=$?
 
+echo
+echo "DEBUG BEGIN"
+echo "sshopts = $sshopts"
+echo "remotedir = $remotedir"
+echo "issecured = $issecured"
+echo "DEBUG END"
+echo
+
 stageuser="stage"
 stagepass="$(pwgen -s 12 1)"
 
@@ -26,7 +34,7 @@ then
     echo
 
 elif [ -f enforce-insecure ]
-then 
+then
 
     ssh ${sshopts} ${sshremote} rm -f ${remotedir}/.htpasswd
 

@@ -5,12 +5,13 @@ title: Tags
 <h1>Tags used in the articles</h1>
 
 <p>
-    {%- for tag in site.tags %}
+    {% assign sorted_tags = site.tags | sort %}
+    {%- for tag in sorted_tags %}
     <a href="#{{tag[0]|slugify}}">{{tag[0]}}</a>{% if forloop.last==false %}, {% endif %}
     {% endfor -%}
 </p>
 
-{% for tag in site.tags %}
+{% for tag in sorted_tags %}
     <div class="tagcontainer tag-{{tag[0]|slugify}}">
         <h2>{{tag[0]}}</h2>
         <ul>
