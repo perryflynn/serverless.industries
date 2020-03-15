@@ -44,6 +44,10 @@ ohne selbst abzustimmen. Das könnte gegebenenfalls das Ergebnis verfälschen.
 
 ## Datenspeicherung
 
-Es werden keinerlei Daten außer dem Zählerstand und das Datum des letzten Clicks gespeichert.
-Die Zählerstände werden aktuell noch nicht gelöscht, das wird sich je nach den Datenmengen aber
-noch ändern.
+Das "Cookies sind erlaubt"-Cookie hat eine Laufzeit von **einem Jahr** und enthält keine
+personenbezogenen Daten. Lediglich eine `1`.
+
+Das Session Cookies hat eine Laufzeit von **14 Tagen** und enthält alle getätigen votings,
+sodass vortings korrigiert oder zurückgezogen werden können.
+
+Ein Yay/Nay wird nach **30 Tagen inaktivität** gelöscht.
