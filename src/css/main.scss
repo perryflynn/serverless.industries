@@ -41,6 +41,8 @@ $container-max-widths: (
 @import "bootstrap/scss/dropdown";
 @import "bootstrap/scss/utilities";
 
+@import "tango";
+
 /* utils */
 
 .hidden {
@@ -145,15 +147,23 @@ $content-opacity: .9;
 }
 
 .markdown-content {
-    pre, blockquote {
+    blockquote {
         background-color: rgba($lay-color-bright, .6);
         border-left: 2px solid darken($lay-color-bright, 50%);
         border-right: 2px solid darken($lay-color-bright, 50%);
         padding: 10px 20px;
+
+        p:last-child {
+            margin-bottom:0px;
+        }
     }
 
-    blockquote p:last-child {
-        margin-bottom:0px;
+    pre {
+        background-color: rgba($lay-color-bright, .6);
+        border-left: 2px solid darken($lay-color-bright, 50%);
+        border-right: 2px solid darken($lay-color-bright, 50%);
+        font-size: 70%;
+        padding: 10px 20px;
     }
 }
 
