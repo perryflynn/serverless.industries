@@ -28,6 +28,10 @@ defaults:
     values:
       layout: "post"
 
+langmap:
+  en: English
+  de: Deutsch
+
 plugins:
   - jekyll-target-blank
   - jekyll-feed

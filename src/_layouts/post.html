@@ -1,6 +1,7 @@
 ---
 layout: content
 ---
+
 {% assign nowts = 'now' | date: '%s' %}
 {% assign postts = page.date | date: '%s' %}
 <h1>{{page.title}}</h1>
@@ -17,16 +18,10 @@ layout: content
 </p>
 
 <div class="markdown-content">
-    {{content}}
+    <article>
+        {{content}}
+    </article>
 </div>
-
-{% assign otherlang = site.posts | where_exp: 'item', "item.lang != 'de' and item.ref == 'de'" %}
-
-<ul>
-    {% for langpost in otherlang %}
-        <li><a href="{{langpost.url | relative_url}}">{{langpost.title}}</a> ({{langpost.lang}})</li>
-    {% endfor %}
-</ul>
 
 <hr>
 <a href="{{'/' | relative_url}}">go back</a>

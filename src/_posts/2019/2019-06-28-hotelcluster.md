@@ -35,7 +35,7 @@ network={
 
 Spätestens nach einem Neustart des Raspberrys sollte das Wifi Interface eine IP besitzen.
 
-[ipv6linklocal]: {{ site.baseurl }}{% post_url 2019/2019-05-30-find-device-ipv6-link-local %}
+[ipv6linklocal]: {% post_url 2019/2019-05-30-find-device-ipv6-link-local %}
 
 ## Erstes Hindernis: Captive Portal
 

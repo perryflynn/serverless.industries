@@ -134,6 +134,16 @@ $content-opacity: .9;
     }
 }
 
+.row.langmenu {
+    background-color: transparent; // rgba($lay-color-brighter, $content-opacity);
+    border-bottom: 2px solid $lay-color-darker;
+
+    .col {
+        padding: 10px 20px;
+        background-color: rgba($lay-color-bright, .6);
+    }
+}
+
 /* content */
 
 .row.defaultcontent > .col {

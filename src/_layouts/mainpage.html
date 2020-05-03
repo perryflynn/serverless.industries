@@ -17,7 +17,7 @@ layout: default
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{'/' | relative_url}}">
-                                    Neuste Beiträge
+                                    Latest posts
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -31,7 +31,7 @@ layout: default
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{site.baseurl}}{% post_url 2019/2019-05-01-about-this-project %}">
+                                <a class="nav-link" href="{% post_url 2019/2019-05-01-about-this-project %}">
                                     About
                                 </a>
                             </li>
@@ -86,6 +86,23 @@ layout: default
 
             </div>
         </div>
+
+        {% assign otherlang = site.posts | where_exp: 'item', "item.lang!=page.lang and item.ref==page.ref" %}
+        {% if page and otherlang and otherlang.size > 0 %}
+        <div class="row langmenu">
+            <div class="col">
+
+                {% if otherlang.size > 0 %}
+                    This post is also available in the following other languages /
+                    Dieser Beitrag ist auch in folgenden anderen Sprachen verfügbar:
+                    {%-for langpost in otherlang %}
+                        <a href="{{langpost.url | relative_url}}">{{site.langmap[langpost.lang]}}</a>{% if forloop.last==false %}, {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+        {% endif %}
 
         {{content}}
 

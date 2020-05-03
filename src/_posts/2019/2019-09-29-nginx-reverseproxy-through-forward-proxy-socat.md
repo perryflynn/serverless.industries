@@ -12,7 +12,7 @@ Forward Proxy leiten, in dem man als Proxy URL einfach den
 Forward Proxy verwendet und via `proxy_set_header` den `HOST` header
 auf das eigentliche Ziel einstellt.
 
-[nginx-forwardproxy]: {{ site.baseurl }}{% post_url 2019/2019-08-12-nginx-reverseproxy-through-forward-proxy %}
+[nginx-forwardproxy]: {% post_url 2019/2019-08-12-nginx-reverseproxy-through-forward-proxy %}
 
 Im Testbetrieb hat sich nun aber heraus gestellt, dass dies nur mit HTTP
 Traffic funktioniert. Soll eine TLS Verbindung aufgebaut werden, schlägt
