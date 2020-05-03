@@ -93,7 +93,7 @@ layout: default
             <div class="col">
 
                 {% if otherlang.size > 0 %}
-                    This post is also available in the following other languages /
+                    This article is also available in the following other languages /
                     Dieser Beitrag ist auch in folgenden anderen Sprachen verfügbar:
                     {%-for langpost in otherlang %}
                         <a href="{{langpost.url | relative_url}}">{{site.langmap[langpost.lang]}}</a>{% if forloop.last==false %}, {% endif %}
