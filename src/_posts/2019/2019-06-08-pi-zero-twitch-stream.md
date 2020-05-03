@@ -1,7 +1,8 @@
 ---
 author: christian
-language: german
 title: Raspberry Pi Zero W Kamera via Twitch streamen
+lang: de
+ref: rpicam-stream-twitch
 tags: [ "raspberry pi", streaming ]
 ---
 
@@ -81,7 +82,7 @@ done
 ## Funktionsweise
 
 Twitch stellt [auf einer Seite](https://stream.twitch.tv/ingests/) verschiedene Endpunkte
-für das Einspeisen von Videosignalen via [rtmp](https://de.wikipedia.org/wiki/Real_Time_Messaging_Protocol) 
+für das Einspeisen von Videosignalen via [rtmp](https://de.wikipedia.org/wiki/Real_Time_Messaging_Protocol)
 zur Verfügung. Das Script verbindet sich mit einem der
 drei Endpunkte und beginnt das Kamerabild zu streamen.
 

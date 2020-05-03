@@ -1,7 +1,8 @@
 ---
 author: christian
 title: NGINX und Certificate Chains Theorie
-language: german
+lang: de
+ref: nginx-cert-chain
 tags: [linux, http, nginx, tls]
 ---
 
@@ -71,7 +72,7 @@ Viele andere Server Dienste machen das übrigens genauso.
 
 -----
 
-[^1]: **Root Certificate:** Selbstsigniertes Zertifikat welches 
+[^1]: **Root Certificate:** Selbstsigniertes Zertifikat welches
       in den Browser importiert werden muss. Kann Zwischenzertifikate
       und Server-/Clientzertifikate ausstellen.
 

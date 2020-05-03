@@ -1,7 +1,8 @@
 ---
 author: christian
 title: ZFS Tunables
-language: german
+lang: de
+ref: zfs-tunables
 tags: [linux, zfs, server, hardware]
 ---
 
@@ -72,7 +73,7 @@ anstatt der üblichen 512 Byte für einen Sektor. Allerdings
 emuliert die Firmware der Festplatte standardmäßig weiterhin
 512 Byte pro Sektor.
 
-Das kann zusammen mit der automatischen Erkennung der Sektorengröße 
+Das kann zusammen mit der automatischen Erkennung der Sektorengröße
 in ZFS zu massiven Performanceverlusten führen.
 
 Eine explizite Sektorgröße kann bei der Erstellung eines
@@ -122,7 +123,7 @@ Quellen: [nerdblog.com](http://www.nerdblog.com/2013/10/zfs-xattr-tuning-on-linu
 ## Access Time Update (atime)
 
 Gerade bei vielen kleinen Dateien, auf welche sehr oft
-zugegriffen wird, bietet sich das Deaktivieren der 
+zugegriffen wird, bietet sich das Deaktivieren der
 Access Time Updates an.
 
 ```
@@ -153,7 +154,7 @@ zfs set aclinherit=passthrough tankname
 ```
 
 Man beachte auch die Änderungen am Samba Setup, welche Jascha
-[in seinem Blog](https://www.ja-ki.eu/2016/09/19/gedaechtnisstuetze-acls-mit-zfs-on-linux-und-samba-4-5/) 
-beschreibt. 
+[in seinem Blog](https://www.ja-ki.eu/2016/09/19/gedaechtnisstuetze-acls-mit-zfs-on-linux-und-samba-4-5/)
+beschreibt.
 
 Quelle: [ja-ki.eu](https://www.ja-ki.eu/2016/09/19/gedaechtnisstuetze-acls-mit-zfs-on-linux-und-samba-4-5/)

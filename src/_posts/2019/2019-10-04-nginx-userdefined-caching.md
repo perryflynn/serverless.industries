@@ -1,7 +1,8 @@
 ---
 author: christian
 title: NGINX Benutzerdefiniertes Caching
-language: german
+lang: de
+ref: nginx-dyn-cache
 tags: [http, nginx]
 ---
 

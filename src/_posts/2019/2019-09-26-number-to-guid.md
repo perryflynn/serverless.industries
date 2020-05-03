@@ -1,7 +1,8 @@
 ---
 author: christian
 title: Zahlen und .NET GUIDs kodieren
-language: german
+lang: de
+ref: numbers-encode-guid
 tags: ['CSharp', '.NET']
 ---
 

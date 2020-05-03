@@ -1,7 +1,8 @@
 ---
 author: christian
 title: Powershell + Invoke-Webrequest in Systemdiensten
-language: german
+lang: de
+ref: powershell-webrequests-systemservices
 tags: ['windows', 'powershell']
 ---
 

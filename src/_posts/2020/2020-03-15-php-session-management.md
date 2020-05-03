@@ -1,7 +1,8 @@
 ---
 author: christian
 title: PHP Sessions verwalten
-language: german
+lang: de
+ref: php-sessions
 tags: ['php', 'software development']
 ---
 

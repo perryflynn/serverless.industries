@@ -1,7 +1,8 @@
 ---
 author: christian
-language: german
 title: Über dieses Projekt
+lang: de
+ref: about-this-project
 tags: [ docker, git, continuous integration, projects ]
 ---
 

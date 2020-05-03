@@ -1,12 +1,13 @@
 ---
 author: christian
-language: german
 title: Geräte über IPv6 finden
+lang: de
+ref: ipv6-device-lookup
 tags: [ network, ipv6, gpn19 ]
 ---
 
 Möchte man sich auf ein Gerät verbinden welches auf DHCP
-konfiguriert ist, jedoch steht kein DHCP Server zur Verfügung, 
+konfiguriert ist, jedoch steht kein DHCP Server zur Verfügung,
 bietet sich Link-Local an.
 
 Schließt man zum Beispiel einen Raspberry Pi an ein
@@ -26,7 +27,7 @@ Geräte auflisten.
 Vorher sollte man einen IPv6 Multicast `ping` ausführen.
 Dabei sendet man einfach einen ping an die Adresse `ff02::1%interfacename`.
 Dies sorgt dafür, dass die Link-Local IPv6 Adresse garantiert in der Neighbor
-Liste auftaucht. 
+Liste auftaucht.
 
 Unter Linux ist der Interfacename die übliche Bezeichnung (`eth0`, `wlan0`, `usb0`, ...),
 unter Windows ist es eine ID welche man über `ipconfig` herausfinden kann:

@@ -1,7 +1,8 @@
 ---
 author: christian
 title: Apple iOS Email und Usability
-language: german
+lang: de
+ref: ios-email-usability
 tags: [apple, ios, usability, email]
 ---
 

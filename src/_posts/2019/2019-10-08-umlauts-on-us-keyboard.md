@@ -1,7 +1,8 @@
 ---
 author: christian
 title: Deutsche Sonderzeichen auf US Tastaturen
-language: german
+lang: de
+ref: unlauts-us-keyboard
 tags: ['windows', 'keyboard']
 ---
 

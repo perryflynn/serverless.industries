@@ -1,7 +1,8 @@
 ---
 author: christian
 title: PerrysNetConsole aktualisiert
-language: german
+lang: de
+ref: perrysnetconsole-update1
 tags: [projects, .NET, software development]
 ---
 

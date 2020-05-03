@@ -1,7 +1,8 @@
 ---
 author: christian
 title: Terraria Server in Docker
-language: german
+lang: de
+ref: terraria-docker
 tags: ['linux', 'docker', 'games']
 ---
 
@@ -11,7 +12,7 @@ spielen zu können, gleich auf einem dedicated Server.
 
 Folgendes Schnipsel kapselt den Server
 in einen Docker Container, ohne ein eigenes
-Docker Image dafür bauen zu müssen. 
+Docker Image dafür bauen zu müssen.
 
 Die Server Binaries und die Welt-Daten werden
 einfach in einen Ordner entpackt und danach in
@@ -23,7 +24,7 @@ mkdir -p \
     /containerdata/terraria/server \
     /containerdata/terraria/world
 
-# - Download Dedicated Server von 
+# - Download Dedicated Server von
 #   http://terraria.org/
 #   (Link ganz unten im Footer)
 # - Entpacken der Linux Binaries nach
@@ -47,7 +48,7 @@ docker run -it -d \
 
 Die Admin Konsole des Servers kann mit
 `docker attach terraria` erreicht werden.
-Geschlossen wird die Konsole mit der 
+Geschlossen wird die Konsole mit der
 Tastenkombination `CTRL-p`, `CTRL-q`.
 
 Falls noch mehr auf der Docker Instanz läuft,

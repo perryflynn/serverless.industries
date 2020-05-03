@@ -1,12 +1,13 @@
 ---
 author: christian
-language: german
 title: Wie man HTTP APIs mit NGINX härtet
+lang: de
+ref: hardening-nginx-api
 tags: [ linux, nginx, http, api, mimimi ]
 ---
 
 Wenn ich in den letzten Monaten eins gelernt habe, dann dass einige User
-undankbare Arschlöcher sind. Ich betreibe seit einigen Jahren eine 
+undankbare Arschlöcher sind. Ich betreibe seit einigen Jahren eine
 ["Wie ist meine IP" API](https://ip.anysrc.net), welche super einfach die aktuelle
 IP Adresse und einige andere Informationen in verschiedenen Formaten bereit stellt.
 
@@ -58,7 +59,7 @@ den Einstellungen oberhalb des `server {}` Blocks experimentieren. In meinem
 Fall hat allerdings eine höhere Einstellung als 60 Sekunden keinen Sinn gemacht.
 Schließlich soll die API ja weitestgehend korrekte Daten liefern.
 
-[NGINX Dokumentation zu Caching](http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache)  
+[NGINX Dokumentation zu Caching](http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache)
 [Anleitung zur Einrichtung von NGINX Caching](https://www.digitalocean.com/community/tutorials/how-to-setup-fastcgi-caching-with-nginx-on-your-vps)
 
 ## Stage 2: Rate Limiting
@@ -80,7 +81,7 @@ server {
 }
 ```
 
-Die Konfiguration beschränkt die Anfragen auf 12 Requests pro 
+Die Konfiguration beschränkt die Anfragen auf 12 Requests pro
 Minute und Client IP. Probleme kann es hier noch geben, wenn sich
 viele Clients eine IP teilen. Hier gilt dann "Pech gehabt".
 
@@ -133,7 +134,7 @@ Da half tatsächlich nur eine manuelle Blockade via iptables.
 Es ist scheiß egal was man auf die Website von wegen "Fair use" oder
 "Bitte nicht übertreiben" schreibt. Viele halten sich eh nicht dran.
 Man muss wirklich harte Begrenzungen in Dienste einbauen, wenn man nicht
-die Stabilität des Servers riskieren oder 200 Euro für einen fetten 
+die Stabilität des Servers riskieren oder 200 Euro für einen fetten
 Server ausgeben will.
 
 Als Beispiel die Zahlen der letzten 7 Tage:
@@ -145,7 +146,7 @@ Zugriffe | Zugriffe % | Status
 3.798.257 | 9.14% | 400 - Kein User Agent / ungültige Anfrage
 1.781.350 | 4.29% | 200 - Erfolgreiche Anfrage
 
-Ganze **5%** der Anfragen erreichen also die API. 
+Ganze **5%** der Anfragen erreichen also die API.
 Das PHP Backend verarbeitet also im Schnitt **nur 25** der 500 Anfragen pro Sekunde.
 Alles andere wird verworfen.
 

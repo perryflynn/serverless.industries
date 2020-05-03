@@ -1,7 +1,8 @@
 ---
 author: christian
 title: Mit einem Dockerfile mehrere Images bauen
-language: german
+lang: de
+ref: docker-multiple-images
 tags: [linux, docker, gitlab]
 ---
 
