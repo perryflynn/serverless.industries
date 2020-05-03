@@ -20,6 +20,14 @@ layout: content
     {{content}}
 </div>
 
+{% assign otherlang = site.posts | where_exp: 'item', "item.lang != 'de' and item.ref == 'de'" %}
+
+<ul>
+    {% for langpost in otherlang %}
+        <li><a href="{{langpost.url | relative_url}}">{{langpost.title}}</a> ({{langpost.lang}})</li>
+    {% endfor %}
+</ul>
+
 <hr>
 <a href="{{'/' | relative_url}}">go back</a>
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank" class="float-right">

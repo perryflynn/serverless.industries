@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Raspberry Pi 4 Benchmark
-ref: de
+lang: de
 ref: rpi4-benchmark
 tags: [linux, hardware, "raspberry pi"]
 ---

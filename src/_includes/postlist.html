@@ -1,0 +1,22 @@
+<div class="row postlist">
+
+  {% for post in include.posts %}
+    {% assign nowts = 'now' | date: '%s' %}
+    {% assign postts = post.date | date: '%s' %}
+    <div class="col-xs-12 col-md-6 postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>
+        {{ post.excerpt|strip_html }} [...]
+        <em>
+            -
+            written by
+            {{post.author}} on
+            {{post.date|date: '%d. %B %Y'}}
+            {% if nowts < postts %}(future){% endif %}
+            {% if post.draft %}(draft){% endif %}
+            {% if post.published == false %}(unpublished){% endif %}
+        </em>
+      </p>
+    </div>
+  {% endfor %}
+  </div>

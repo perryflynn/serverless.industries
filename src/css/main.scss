@@ -169,6 +169,11 @@ $content-opacity: .9;
 
 /* startpage */
 
+.list-lang-switch-info {
+    display: block;
+    margin-bottom: 20px;
+}
+
 .postlist .postlistitem.unpublished,
 .postlist .postlistitem.draft,
 .postlist .postlistitem.future {

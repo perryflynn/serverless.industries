@@ -1,26 +1,12 @@
 ---
 layout: content
-title: Latest Posts
+title: Neuste Beiträge
+lang: de
 ---
 
-<div class="row postlist">
-  {% for post in site.posts %}
-    {% assign nowts = 'now' | date: '%s' %}
-    {% assign postts = post.date | date: '%s' %}
-    <div class="col-xs-12 col-md-6 postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p>
-        {{ post.excerpt|strip_html }} [...]
-        <em>
-            -
-            written by 
-            {{post.author}} on
-            {{post.date|date: '%d. %B %Y'}}
-            {% if nowts < postts %}(future){% endif %}
-            {% if post.draft %}(draft){% endif %}
-            {% if post.published == false %}(unpublished){% endif %}
-        </em>
-      </p>
-    </div>
-  {% endfor %}
-  </div>
+<div class="list-lang-switch-info">
+  Switch to the List of <a href="{{'/index.en.html' | relative_url}}">english posts</a>.
+</div>
+
+{% assign germanposts = site.posts | where: 'lang', 'de' %}
+{% include postlist.html posts=germanposts %}
