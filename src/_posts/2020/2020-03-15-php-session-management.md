@@ -4,6 +4,7 @@ title: PHP Sessions verwalten
 lang: de
 ref: php-sessions
 tags: ['php', 'software development']
+toc: true
 ---
 
 PHP Sessions haben besonders auf einem shared Hosting ein Problem:

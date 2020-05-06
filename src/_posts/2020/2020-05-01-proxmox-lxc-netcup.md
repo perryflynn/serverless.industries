@@ -4,6 +4,7 @@ title: "Netcup KVM Server und Proxmox LXC Container"
 lang: de
 ref: netcup-lxc-proxmox
 tags: ['linux', 'proxmox', 'server']
+toc: true
 ---
 
 Letztens habe ich versucht, auf einem [KVM Server bei Netcup][netcup] Linux Container (LXC) zu nutzen.
