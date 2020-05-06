@@ -156,7 +156,23 @@ $content-opacity: .9;
     }
 }
 
+.table-of-contents {
+    background-color: rgba($lay-color-bright, .6);
+    border: 1px solid darken($lay-color-bright, 50%);
+    padding: 20px 40px 20px 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+    clear: both;
+
+    ul {
+        padding: 0px 0px 0px 15px;
+        margin: 0px;
+    }
+}
+
 .markdown-content {
+    clear: both;
+
     blockquote {
         background-color: rgba($lay-color-bright, .6);
         border-left: 2px solid darken($lay-color-bright, 50%);

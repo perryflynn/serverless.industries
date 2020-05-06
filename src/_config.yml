@@ -35,6 +35,7 @@ langmap:
 plugins:
   - jekyll-target-blank
   - jekyll-feed
+  - jekyll-toc
 
 collections:
   authors:
