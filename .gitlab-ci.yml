@@ -23,12 +23,19 @@ variables:
 .tpl:build:
   extends: .tpl:default
   stage: build
+  cache:
+    key:
+      files:
+        - Gemfile.lock
+    paths:
+      - vendor
   script:
     - 'export LANG=en_US.UTF-8'
     - 'export LANGUAGE=en_US.UTF-8'
     - 'export LC_ALL=en_US.UTF-8'
     - 'mkdir dist-${distname}'
-    - 'bundle install'
+    - 'mkdir -p vendor/ruby'
+    - 'bundle install --path vendor/ruby'
     - 'bundle exec jekyll build -s ./src -d ./dist-${distname} ${buildopts}'
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_SLUG'
@@ -56,8 +63,9 @@ variables:
   script:
     - 'ssh ${sshopts} ${sshremote} "mkdir -p ${remotedir}"'
     - '/bin/bash ci/secure-stage.sh'
-    - 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
-    - 'scp -r ${sshopts} dist-${distname}/.htaccess ${sshremote}:${remotedir}'
+    #- 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
+    #- 'scp -r ${sshopts} dist-${distname}/.htaccess ${sshremote}:${remotedir}'
+    - 'rsync -rltzv --delete -e "ssh ${sshopts}" dist-${distname}/ ${sshremote}:${remotedir}'
 
 .tpl:cleanup:
   extends: .tpl:sshtask
