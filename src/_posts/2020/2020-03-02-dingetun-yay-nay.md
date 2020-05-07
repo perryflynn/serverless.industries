@@ -4,6 +4,7 @@ title: "dingetun.net Lite: Yay or Nay?"
 lang: de
 ref: dingetun-yay-nay
 tags: ['projects']
+toc: true
 ---
 
 Als Ergänzung zu [dingetun.net][dingetun] gibt es seit gestern

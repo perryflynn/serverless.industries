@@ -17,6 +17,12 @@ layout: content
     {% endfor %}
 </p>
 
+{% if page.toc %}
+<div class="table-of-contents">
+    {% toc %}
+</div>
+{% endif %}
+
 <div class="markdown-content">
     <article>
         {{content}}
