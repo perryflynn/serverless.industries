@@ -35,7 +35,8 @@ variables:
     - 'export LC_ALL=en_US.UTF-8'
     - 'mkdir dist-${distname}'
     - 'mkdir -p vendor/ruby'
-    - 'bundle install --path vendor/ruby'
+    - 'bundle config set path vendor/ruby'
+    - 'bundle install'
     - 'bundle exec jekyll build -s ./src -d ./dist-${distname} ${buildopts}'
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_SLUG'
