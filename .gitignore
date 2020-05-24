@@ -1,3 +1,6 @@
+dist-*/
+dist/
+
 _site/
 .sass-cache/
 _site/

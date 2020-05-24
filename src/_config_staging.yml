@@ -1,8 +1,11 @@
 show_drafts: true
 future: true
-unpublished: 
+unpublished:
 
 my:
+  domain: stage.serverless.industries
+  sitetitle: "[Stage] Serverless Industries"
+  rsstitle: "[Stage] Serverless Industries Posts RSS"
   env: stage
 
 url: "https://stage.serverless.industries"

@@ -1,3 +1,20 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+# cache assets
 <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|svg|eot|ttf|woff|woff2)$">
     Header set Cache-Control "max-age=43200, public"
 </FilesMatch>
+
+# rewrite rules
+RewriteEngine On
+
+# redirect to real domain
+RewriteCond %{HTTP_HOST} !^{{site.my.domain | replace: ".", "\\."}}$ [NC]
+RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301]
+
+# redirect to https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301]
