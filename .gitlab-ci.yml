@@ -67,6 +67,7 @@ variables:
     #- 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
     #- 'scp -r ${sshopts} dist-${distname}/.htaccess ${sshremote}:${remotedir}'
     - 'rsync -rltzv --delete -e "ssh ${sshopts}" dist-${distname}/ ${sshremote}:${remotedir}'
+    - 'rm -f dist-${distname}/newhtpasswd'
 
 .tpl:cleanup:
   extends: .tpl:sshtask
