@@ -6,11 +6,14 @@ ssh ${sshopts} ${sshremote} stat ${remotedir}/.htpasswd \> /dev/null 2\>\&1
 issecured=$?
 
 echo
-echo "DEBUG BEGIN"
+echo "<DEBUG BEGIN>"
+echo
 echo "sshopts = $sshopts"
 echo "remotedir = $remotedir"
 echo "issecured = $issecured"
-echo "DEBUG END"
+echo "distname = $distname"
+echo
+echo "</DEBUG>"
 echo
 
 stageuser="stage"
@@ -20,9 +23,9 @@ stagepass="$(pwgen -s 12 1)"
 if [ "$secure" == "1" ] && [ ! -f enforce-insecure ] && ( [ ! "$issecured" == "0" ] || [ -f enforce-new-password ] )
 then
 
-    htpasswd -b -c newhtpasswd "$stageuser" "$stagepass"
-    scp ${sshopts} newhtpasswd ${sshremote}:${remotedir}/.htpasswd
-    rm newhtpasswd
+    htpasswd -b -c dist-${distname}/newhtpasswd "$stageuser" "$stagepass"
+    #scp ${sshopts} newhtpasswd ${sshremote}:${remotedir}/.htpasswd
+    #rm dist-${distname}/newhtpasswd
 
     echo
     echo
