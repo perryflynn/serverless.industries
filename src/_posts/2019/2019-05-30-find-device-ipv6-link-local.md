@@ -40,7 +40,7 @@ Ethernet-Adapter Ethernet:
 In dem Beispiel hat das Interface die ID `3`, zu erkennen an dem `%3` hinter der
 IPv6 Adresse.
 
-```
+```sh
 # linux
 ping6 ff02::1%br0
 # windows
