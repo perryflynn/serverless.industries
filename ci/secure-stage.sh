@@ -23,7 +23,7 @@ stagepass="$(pwgen -s 12 1)"
 if [ "$secure" == "1" ] && [ ! -f enforce-insecure ] && ( [ ! "$issecured" == "0" ] || [ -f enforce-new-password ] )
 then
 
-    htpasswd -b -c dist-${distname}/newhtpasswd "$stageuser" "$stagepass"
+    htpasswd -b -c dist-${distname}/.htpasswd "$stageuser" "$stagepass"
     #scp ${sshopts} newhtpasswd ${sshremote}:${remotedir}/.htpasswd
     #rm dist-${distname}/newhtpasswd
 
