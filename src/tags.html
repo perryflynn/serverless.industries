@@ -29,7 +29,8 @@ title: Tags
     <div class="tagcontainer tag-{{tag[0]|slugify}}">
         <h2>{{tag[0]}}</h2>
         <ul>
-            {% for post in tag[1] %}
+            {% assign sortedposts = tag[1] | sort_natural: "title" %}
+            {% for post in sortedposts %}
                 <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{post.lang}})</li>
             {% endfor %}
         </ul>
