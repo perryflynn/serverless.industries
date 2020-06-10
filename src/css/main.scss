@@ -218,3 +218,28 @@ $content-opacity: .9;
     text-align: center;
     color: $lay-color-darker;
 }
+
+/* Tags */
+
+div.tagindex {
+    line-height: (1.5 * 100 / 150);
+    margin-bottom: 40px;
+
+    span.taggroup {
+        margin-right: 10px;
+
+        span.taggroupbegin {
+            white-space: nowrap;
+        }
+    }
+
+    span.tagletter {
+        font-size: 160%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        a {
+            white-space: nowrap;
+        }
+    }
+}

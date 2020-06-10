@@ -4,19 +4,33 @@ title: Tags
 ---
 <h1>Tags used in the articles</h1>
 
-<p>
-    {% assign sorted_tags = site.tags | sort %}
-    {%- for tag in sorted_tags %}
-    <a href="#{{tag[0]|slugify}}">{{tag[0]}}</a>{% if forloop.last==false %}, {% endif %}
-    {% endfor -%}
-</p>
+<noscript>
+    <p><strong>This site requires Javascript to work properly.</strong></p>
+</noscript>
 
-{% for tag in sorted_tags %}
+<div class="tagindex">
+    {% assign taggroups = site.tags | group_by_exp: "item", "item[0] | truncate: 1, '' | downcase" | sort: "name" %}
+    {% for taggroup in taggroups %}
+        <span class="taggroup">
+            <span class="taggroupbegin"><span class="tagletter">{{taggroup.name | upcase}}</span>
+
+            {% assign sortedtaggroup = taggroup.items | sort %}
+            {% for tag in sortedtaggroup %}
+                <a href="#{{tag[0]|slugify}}">{{tag[0]}}</a>
+                {%- if forloop.first -%}</span>{%- endif -%}
+                {%- if forloop.last==false %}, {% endif %}
+            {% endfor %}
+        </span>
+    {% endfor %}
+</div>
+
+{% assign sortedtags = site.tags | sort %}
+{% for tag in sortedtags %}
     <div class="tagcontainer tag-{{tag[0]|slugify}}">
         <h2>{{tag[0]}}</h2>
         <ul>
             {% for post in tag[1] %}
-                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{post.lang}})</li>
             {% endfor %}
         </ul>
     </div>
@@ -36,6 +50,7 @@ title: Tags
             if(el)
             {
                 el.classList.remove("hidden");
+                el.scrollIntoView(true);
             }
         };
 
