@@ -1,6 +1,6 @@
 ---
 author: christian
-title: Grafana Guest Access with multiple Organizations
+title: Grafana Guest Access and multiple Organizations
 lang: en
 ref: grafana-multi-org-anon
 tags: ['nginx', 'grafana', 'linux', 'server']
