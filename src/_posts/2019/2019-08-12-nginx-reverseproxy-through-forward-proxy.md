@@ -13,7 +13,7 @@ haben normalerweise keine direkte Verbindung zum Internet.
 Möchte man nun einen Reverse Proxy erstellen, welcher Requests
 auf externe APIs/Webservices cached, hilft folgender Hack:
 
-```
+```nginx
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;

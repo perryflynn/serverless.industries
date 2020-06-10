@@ -3,7 +3,7 @@ author: christian
 title: Cluster im Hotel
 lang: de
 ref: hotel-cluster
-tags: [linux, netzwerk, gpn19, "raspberry pi"]
+tags: [linux, network, gpn19, "raspberry pi"]
 ---
 
 Es fing an mit einer bekloppten Idee. Kann man in einem Hotel WLAN einen
@@ -23,7 +23,7 @@ funktioniert. Egal ob Windows oder Linux.
 Ist man erst mal via SSH auf dem Raspberry, muss das WLAN Netzwerk zur wpa_supplicant
 konfiguration hinzugefügt werden.
 
-```
+```txt
 # /etc/wpa_supplicant/wpa_supplicant.conf
 # WLAN Netz definition mit der entsprechenden SSID
 # und keiner Passphrase
@@ -68,7 +68,7 @@ dementsprechend stört weder NAT noch sperrt die Firewall den Verbindungsversuch
 
 Ein kleines Bild des Aufbaus:
 
-```
+```txt
    +----------+
    | Internet |
    +----+-----+
@@ -119,7 +119,7 @@ Raspberry Pi Zero tragen kann. Der HAT verbindet die 5 Raspberrys via USB mitein
 Der große Raspberry spannt eine Bridge um die vier Pi Zero USB Ethernet Interfaces und gibt sich selbst
 die IP `10.178.193.1`. Die Pi Zeros haben die IPs `10.178.193.11` bis `10.178.193.14` zugewiesen.
 
-```
+```txt
 # ethernet interface
 auto eth0
 allow-hotplug eth0
@@ -165,7 +165,7 @@ und lässt diesen zu.
 Außerdem wird nach erfolgreichem Verbindungsaufbau jeglicher Traffic durch
 den Tunnel geleitet.
 
-```
+```txt
 dev tun
 proto tcp-client
 
@@ -206,7 +206,7 @@ welche auf Port 8080/tcp horchen.
 
 **Achtung: Vorher sollte SSH entsprechend abgesichert werden!**
 
-```
+```txt
 *filter
 :INPUT DROP [19:4262]
 :FORWARD DROP [2:152]
@@ -244,7 +244,7 @@ und setzt bei erfolgreichem Verbindungsaufbau eine route auf das Raspberry Netzw
 Der OpenVPN Server muss mit root Rechten laufen, da ein Port **kleiner gleich 1024**
 benutzt wird.
 
-```
+```txt
 dev tun
 proto tcp-server
 
@@ -291,7 +291,7 @@ auf der eigentlichen Server IP stört.
 
 **Achtung: Dienste wie SSH müssen auch auf dem VPN Gateway abgesichert werden!**
 
-```
+```txt
 *nat
 :PREROUTING ACCEPT [36687:1720083]
 :INPUT ACCEPT [30794:1277447]

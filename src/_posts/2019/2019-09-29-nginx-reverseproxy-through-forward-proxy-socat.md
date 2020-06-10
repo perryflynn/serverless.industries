@@ -46,7 +46,7 @@ Alias=socat-api-proxy.service
 
 In der NGINX Konfiguration wird dann der socat Port verwendet:
 
-```
+```nginx
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;

@@ -11,7 +11,7 @@ und diese mit einer gitlab-ci Pipeline nacheinander zu bauen. Möglich wird dies
 die Angabe eines Namens für ein Image, welcher als Filter für den `docker build`
 Befehl genutzt werden kann.
 
-```
+```docker
 # image with basic tools
 FROM debian/stable-slim AS base
 

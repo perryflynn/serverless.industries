@@ -28,7 +28,7 @@ Mittlerweile erreichen die API, auch wegen [bösen Jungs](https://www.symantec.c
 
 Ein erster Versuch Last von der API zu nehmen, war die Cache Funktion von NGINX zu aktivieren.
 
-```
+```nginx
 fastcgi_cache_path /var/www/cache levels=1:2 keys_zone=myipc:100m inactive=10m max_size=1000m;
 fastcgi_cache_key $scheme$request_method$host$request_uri$remote_addr$http_user_agent;
 fastcgi_cache_lock on;
@@ -37,15 +37,15 @@ fastcgi_cache_valid 5m;
 fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
 
 server {
-    [...]
+    # [...]
     location ~ ^(/.*[^/]\.php)(/|$) {
-        [...]
+        # [...]
         fastcgi_pass unix:/var/run/php5-fpm-myip.sock;
         fastcgi_index index.php;
         fastcgi_cache myipc;
         fastcgi_cache_valid 200 1m;
         fastcgi_cache_valid any 1m;
-        [...]
+        # [...]
     }
 }
 ```
@@ -69,14 +69,14 @@ mit einem HTTP Error 500 aus, da nicht genug PHP-Threads im FPM Pool zur Verfüg
 NGINX bietet als letzte Möglichkeit noch ein Modul an, um die Anfragen
 pro Zeitraum zu beschränken (so genanntes Rate Limiting).
 
-```
+```nginx
 limit_req_zone $binary_remote_addr zone=myip:50m rate=12r/m;
 server {
-    [...]
+    # [...]
     location ~ ^(/.*[^/]\.php)(/|$) {
-        [...]
+        # [...]
         limit_req zone=myip burst=2 nodelay;
-        [...]
+        # [...]
     }
 }
 ```
@@ -103,9 +103,9 @@ der Requests welche mutmaßlich von der Malware kamen keinen User Agent mit.
 Folgende Abfrage in NGINX weist alle Anfragen mit einem HTTP Error 400 ab,
 welche keinen User Agent im HTTP Header enthalten.
 
-```
+```nginx
 server {
-    [...]
+    # [...]
     error_page 480 = @noagent;
     if ($http_user_agent = "") {
         return 480;
@@ -113,7 +113,7 @@ server {
     location @noagent {
         return 400 "Bad Request: Useragent header is required";
     }
-    [...]
+    # [...]
 }
 ```
 

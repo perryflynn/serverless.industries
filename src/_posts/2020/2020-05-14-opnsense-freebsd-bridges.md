@@ -3,7 +3,7 @@ author: christian
 title: "OPNSense/FreeBSD und Bridges"
 lang: de
 ref: freebsd-bridges
-tags: ['opnsense', 'freebsd', 'netzwerk']
+tags: ['opnsense', 'freebsd', 'network']
 ---
 
 Kommt man als langjähriger Linux User das erste Mal mit Bridges unter FreeBSD
@@ -30,7 +30,7 @@ Ein Kumpel meinte dazu folgendes:
 Unter pfSense und OPNSense kann das Standardverhalten, wie man es von Linux kennt, mit der Änderung von
 zwei System Tunables (`sysctl` Variablen) herbei geführt werden:
 
-```
+```txt
 net.link.bridge.pfil_member = 0
 net.link.bridge.pfil_bridge = 0
 ```

@@ -3,7 +3,7 @@ author: christian
 title: Zahlen und .NET GUIDs kodieren
 lang: de
 ref: numbers-encode-guid
-tags: ['CSharp', '.NET']
+tags: ['csharp', dotnet]
 ---
 
 Diverse Webservices erwarten bei der Anlage eines Jobs als

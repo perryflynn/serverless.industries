@@ -30,7 +30,7 @@ wird dieser Traffic verworfen, da Netcup diese MAC Adresse nicht erlaubt.
 
 Folgende Kernel Flags sind notwendig:
 
-```
+```txt
 # /etc/sysctl.conf auf dem Netcup KVM Guest
 
 # IPv4 Traffic forwarden/routen
@@ -45,7 +45,7 @@ net.ipv6.conf.all.proxy_ndp=1
 
 Damit diese ohne Systemneustart wirksam werden:
 
-```
+```sh
 # In der Netcup KVM Server Shell als root ausführen
 sysctl -w net.ipv4.ip_forward=1
 sysctl -w net.ipv6.conf.all.forwarding=1
@@ -64,7 +64,7 @@ Beispiel Konfigurationen nutzen, die man bei Google findet.
 
 ### VServer Konfiguration
 
-```
+```txt
 # /etc/network/interfaces auf dem Netcup VServer
 allow-hotplug eth0
 iface eth0 inet manual
@@ -102,7 +102,7 @@ Hier ist nichts besonderes zu beachten.
 Einfach die zusätzliche IPv4 Adresse und die
 IP des KVM VServers als Gateway.
 
-```
+```txt
 # /etc/network/interfaces im Container
 # Netzwerkinterface für IPv4
 # Nutzt die vmbr1 Bridge
@@ -154,7 +154,7 @@ Subnetz `:1::/80`. So ist der KVM VServer inklusive
 der Proxmox Verwaltung auch via IPv6 erreichbar. Diese IP dient
 später auch als Gateway.
 
-```
+```txt
 # /etc/network/interfaces auf dem Netcup KVM VServer
 iface vmbr1 inet6 static
         address  2a03:4000:XXX:XXX:1::1
@@ -175,7 +175,7 @@ Netzwerk Konfiguration dient.
 **Wichtig:** Dem Container muss später ein zweites Netzwerk
 Interface zugewiesen werden, welches `vmbr2` nutzt. Exklusiv für IPv6.
 
-```
+```txt
 # /etc/network/interfaces auf dem Netcup KVM VServer
 auto vmbr2
 iface vmbr2 inet6 static
@@ -199,7 +199,7 @@ habe ich bisher leider nicht 100%ig verstanden.
 Auch hier Standard. Das einzig besondere ist die
 **separate Netzwerkschnittstelle für IPv6**.
 
-```
+```txt
 # /etc/network/interfaces im Container
 # Separates Netzwerk Interface extra für IPv6
 # Nutzt die vmbr2 Bridge
@@ -224,7 +224,7 @@ geschickt. Ich zitiere einfach mal:
 > Ich habe das Debian Paket "ndppd" installiert und mittels "update-rc.d ndppd defaults" aktiviert.
 > Die Konfiguration unter /etc/ndppd.conf sieht dann bei mir wie folgt aus:
 
-```
+```txt
 route-ttl 30000
 proxy vmbr0 {
     router no

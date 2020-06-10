@@ -17,7 +17,7 @@ Zertifikaten geprüft werden kann.
 
 Beispiel einer Zertifikatskette:
 
-```
+```txt
 DigiCert Baltimore Root     // <-- Root Cert (lokaler Store)
  '- Microsoft IT TLS CA 4   // <-- Intermediate Cert (vom Server gesendet)
      '- *.visualstudio.com  // <-- Server Zertifikat (vom Server gesendet)
@@ -32,7 +32,7 @@ openssl s_client -showcerts -connect sample.visualstudio.com:443
 
 Für jedes Zertifikat gibt es in der Ausgabe folgende Passage:
 
-```
+```txt
 # s = server certificate; i = intermediate certificate
 Certificate chain
  0 s:CN = visualstudio.com
@@ -55,7 +55,7 @@ manuell im Texteditor zusammenkopiert werden.
 
 Die Bundle Datei wird dann wie folgt in NGINX eingebunden:
 
-```
+```nginx
 server {
     server_name sample.visualstudio.com;
     listen 443 ssl http2;
@@ -64,7 +64,7 @@ server {
     ssl_certificate /etc/ssl/sample.visualstudio.com-bundle.pem;
     ssl_certificate_key /etc/ssl/sample.visualstudio.com-key.pem;
 
-    [...]
+    # [...]
 }
 ```
 

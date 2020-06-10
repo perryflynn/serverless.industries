@@ -18,7 +18,7 @@ Man kann durch diesen Header im Code des Upstream Server steuern, wie lange geca
 In dem man zwei NGINX Reverse Proxy `server {}` Blöcke hintereinander schaltet, kann man
 auch dem User erlauben eine Cache Zeit festzulegen:
 
-```
+```nginx
 proxy_cache_path /tmp/cache levels=1:2 keys_zone=examplecache:10m max_size=50g inactive=86400 use_temp_path=on;
 
 server {

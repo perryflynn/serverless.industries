@@ -32,7 +32,7 @@ We need the interface name for this. In Linux it is just the normal
 interface name (`eth0`, `wlan0`, `usb0`, ...), in Windows it is
 a number, which can be found in `ipconfig`:
 
-```
+```txt
 Ethernet-Adapter Ethernet:
    Verbindungslokale IPv6-Adresse  . : fe80::9059:69ff:fed5:8dc9%3
 ```
@@ -52,7 +52,7 @@ ping ff02::1%3
 If both devices running Linux, the IPv6 Address can be found in the
 `ping` output:
 
-```
+```txt
 64 bytes from fe80::9059:69ff:fed5:8dc9%br0: icmp_seq=1 ttl=64 time=0.153 ms
 64 bytes from fe80::84cd:88ff:fe97:b181%br0: icmp_seq=1 ttl=64 time=1.11 ms (DUP!)
 ```
@@ -61,14 +61,14 @@ See the line with the `(DUP!)` at the end.
 
 ## List Neighbors
 
-```
+```sh
 # windows
 netsh interface ipv6 show neighbors
 # linux
 ip -6 neigh show
 ```
 
-```
+```txt
 # windows
 Interface 3: Ethernet 2
 

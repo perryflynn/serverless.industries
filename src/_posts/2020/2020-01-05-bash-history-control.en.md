@@ -12,7 +12,7 @@ without adding them to `~/.bash_history`. In the man page I found
 
 Default settings on a fresh Debian Buster installation:
 
-```
+```txt
 borg@borg:~$ set | grep HIST
 HISTCONTROL=ignoreboth
 HISTFILE=/mnt/backup/borg/.bash_history

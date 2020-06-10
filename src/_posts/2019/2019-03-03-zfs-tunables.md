@@ -52,7 +52,7 @@ Je zwei sind zu einem Mirror vDev zusammen gefasst. Zusätzlich sind
 zwei Samsung 960 EVO NVME SSDs mit je 250GB Kapazität als Cache
 verbaut.
 
-```
+```text
 NAME                                              STATE     READ WRITE CKSUM
 zpoolprime                                        ONLINE       0     0     0
   mirror-0                                        ONLINE       0     0     0
@@ -80,7 +80,7 @@ Eine explizite Sektorgröße kann bei der Erstellung eines
 neuen Pools oder beim Hinzufügen von neuen Geräten über die
 Option `ashift` angegeben werden:
 
-```
+```sh
 zpool create -o ashift=12 tankname mirror sda sdb
 zpool add -o ashift=12 tankname mirror sdc sdd
 ```
@@ -92,7 +92,7 @@ pro Sektor ergibt sich die Rechnung `2^12 = 4096`.
 Wie groß die Sektoren der Festplatten sind, lässt sich mit
 `smartctl` herausfinden:
 
-```
+```txt
 root@eisenbart:~# smartctl -i /dev/sdb
 Device Model:     WDC WD6002FFWX-68TXXXX
 [...]
@@ -112,7 +112,7 @@ einigen Fällen negative Auswirkungen auf die Performance haben kann.
 
 Mit folgender Einstellung kann dies geändert werden:
 
-```
+```sh
 zfs set xattr=sa tankname
 ```
 
@@ -126,7 +126,7 @@ Gerade bei vielen kleinen Dateien, auf welche sehr oft
 zugegriffen wird, bietet sich das Deaktivieren der
 Access Time Updates an.
 
-```
+```sh
 zfs set atime=off tankname
 ```
 
@@ -136,7 +136,7 @@ Quelle: [prefetch.net](https://prefetch.net/blog/index.php/2006/07/25/disabling-
 
 Bringt minimale (nicht merkbare) Geschwindigkeitseinbußen, dafür wird Speicher gespart.
 
-```
+```sh
 zfs set compression=lz4 tankname
 ```
 
@@ -148,7 +148,7 @@ Eher weniger ein Performance- als ein Usability Problem.
 Folgende Befehle sorgen dafür, dass Dateiberechtigungen über
 Samba von einem Windows PC aus änderbar sind.
 
-```
+```sh
 zfs set acltype=posixacl tankname
 zfs set aclinherit=passthrough tankname
 ```

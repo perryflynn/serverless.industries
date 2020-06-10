@@ -12,7 +12,7 @@ In der man page stieß ich dann auf `HISTCONTROL`.
 
 Standards auf einer Debian Buster Installation:
 
-```
+```txt
 borg@borg:~$ set | grep HIST
 HISTCONTROL=ignoreboth
 HISTFILE=/mnt/backup/borg/.bash_history

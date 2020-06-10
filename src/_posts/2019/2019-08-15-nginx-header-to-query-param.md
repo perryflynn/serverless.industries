@@ -17,7 +17,7 @@ gecached.
 Der API Key wird vor der Ausführung des `proxy_pass`
 an den Query String gehängt.
 
-```
+```nginx
 location / {
     # Add the APP ID and the APP key to the query string
     set $originalargs $args;
