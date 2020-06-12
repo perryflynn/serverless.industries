@@ -236,6 +236,10 @@ span.tagicon {
     color: $lay-color-dark;
 }
 
+span.tagitem {
+    white-space: nowrap;
+}
+
 div.tagindex {
     line-height: (1.5 * 100 / 150);
     margin-bottom: 40px;
@@ -243,7 +247,7 @@ div.tagindex {
     span.taggroup {
         margin-right: 10px;
 
-        span.taggroupbegin, span.tagitem {
+        span.taggroupbegin {
             white-space: nowrap;
         }
     }
