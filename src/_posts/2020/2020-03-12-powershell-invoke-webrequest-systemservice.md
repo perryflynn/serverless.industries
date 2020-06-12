@@ -3,7 +3,7 @@ author: christian
 title: Powershell + Invoke-Webrequest in Systemdiensten
 lang: de
 ref: powershell-webrequests-systemservices
-tags: ['windows', 'powershell']
+tags: ['windows', 'powershell', shell]
 ---
 
 Die [Invoke-WebRequest][invoke] Funktion in PowerShell extrahiert im Standardverhalten

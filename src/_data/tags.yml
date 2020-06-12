@@ -1,0 +1,70 @@
+- name: linux
+  glyph: <i class="fab fa-linux"></i>
+- name: debian
+  glyph: <i class="fab fa-linux"></i>
+- name: network
+  glyph: <i class="fas fa-network-wired"></i>
+- name: ipv6
+  glyph: <i class="fas fa-network-wired"></i>
+- name: opnsense
+  glyph: <i class="fas fa-network-wired"></i>
+- name: raspberry pi
+  glyph: <i class="fab fa-raspberry-pi"></i>
+- name: bash
+  glyph: <i class="fas fa-terminal"></i>
+- name: shell
+  glyph: <i class="fas fa-terminal"></i>
+- name: powershell
+  glyph: <i class="fas fa-terminal"></i>
+- name: server
+  glyph: <i class="fas fa-server"></i>
+- name: webspace
+  glyph: <i class="fas fa-server"></i>
+- name: nginx
+  glyph: <i class="fas fa-server"></i>
+- name: hardware
+  glyph: <i class="fas fa-server"></i>
+- name: proxmox
+  glyph: <i class="fas fa-server"></i>
+- name: git
+  glyph: <i class="fas fa-code-branch"></i>
+- name: gitlab
+  glyph: <i class="fab fa-gitlab"></i>
+- name: windows
+  glyph: <i class="fab fa-windows"></i>
+- name: streaming
+  glyph: <i class="fas fa-tv"></i>
+- name: software development
+  glyph: <i class="fas fa-code"></i>
+- name: html
+  glyph: <i class="fas fa-code"></i>
+- name: csharp
+  glyph: <i class="fas fa-code"></i>
+- name: dotnet
+  glyph: <i class="fas fa-code"></i>
+- name: php
+  glyph: <i class="fas fa-code"></i>
+- name: javascript
+  glyph: <i class="fas fa-code"></i>
+- name: docker
+  glyph: <i class="fab fa-docker"></i>
+- name: email
+  glyph: <i class="fas fa-envelope-square"></i>
+- name: freebsd
+  glyph: <i class="fab fa-freebsd"></i>
+- name: games
+  glyph: <i class="fas fa-gamepad"></i>
+- name: projects
+  glyph: <i class="fas fa-book"></i>
+- name: apple
+  glyph: <i class="fab fa-apple"></i>
+- name: ios
+  glyph: <i class="fab fa-apple"></i>
+- name: http
+  glyph: <i class="fas fa-globe"></i>
+- name: tls
+  glyph: <i class="fas fa-lock"></i>
+- name: grafana
+  glyph: <i class="fas fa-chart-line"></i>
+- name: zfs
+  glyph: <i class="far fa-save"></i>

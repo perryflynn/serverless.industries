@@ -16,7 +16,12 @@ title: Tags
 
             {% assign sortedtaggroup = taggroup.items | sort %}
             {% for tag in sortedtaggroup %}
-                <a href="#{{tag[0]|slugify}}">{{tag[0]}}</a>
+                {%- assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag[0]" -%}
+                <span class="tagitem">
+                    {% if tagicon[0] %}
+                        <span class="tagicon">{{tagicon[0].glyph}}</span>
+                    {% endif %}
+                    <a href="#{{tag[0]|slugify}}">{{tag[0]}}</a></span>
                 {%- if forloop.first -%}</span>{%- endif -%}
                 {%- if forloop.last==false %}, {% endif %}
             {% endfor %}
@@ -27,7 +32,13 @@ title: Tags
 {% assign sortedtags = site.tags | sort %}
 {% for tag in sortedtags %}
     <div class="tagcontainer tag-{{tag[0]|slugify}}">
-        <h2>{{tag[0]}}</h2>
+        {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag[0]" %}
+        <h2>
+            {% if tagicon[0] %}
+                <span class="tagicon">{{tagicon[0].glyph}}</span>
+            {% endif %}
+            {{tag[0]}}
+        </h2>
         <ul>
             {% assign sortedposts = tag[1] | sort_natural: "title" %}
             {% for post in sortedposts %}
