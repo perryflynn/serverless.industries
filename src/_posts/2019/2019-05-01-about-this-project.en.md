@@ -23,7 +23,7 @@ is disabled because of SPAM. Write me a email.)
 - Push changes
 - Create merge request
 
-## Technik
+## How its work
 
 The blog is generated with [Jekyll](https://jekyllrb.com/).
 The software, which is also used for GitHub Pages.
