@@ -57,28 +57,31 @@ layout: content
 <script>
     window.addEventListener('appload', event =>
     {
-        const makeEl = document.querySelector('.make-offline');
-        const unmakeEl = document.querySelector('.unmake-offline');
-
-        const switchOffline = res =>
+        if (event.detail.serviceWorker)
         {
-            (res ? makeEl : unmakeEl).classList.add('hidden');
-            (res ? unmakeEl : makeEl).classList.remove('hidden');
-        };
+            const makeEl = document.querySelector('.make-offline');
+            const unmakeEl = document.querySelector('.unmake-offline');
 
-        makeEl.addEventListener('click', () =>
-        {
-            cacheUrl(location.href).then(res => switchOffline(res.result));
-        });
+            const switchOffline = res =>
+            {
+                (res ? makeEl : unmakeEl).classList.add('hidden');
+                (res ? unmakeEl : makeEl).classList.remove('hidden');
+            };
 
-        unmakeEl.addEventListener('click', () =>
-        {
-            unCacheUrl(location.href).then(res => switchOffline(!res.result));
-        });
+            makeEl.addEventListener('click', () =>
+            {
+                cacheUrl(location.href).then(res => switchOffline(res.result));
+            });
 
-        isUrlCached(location.href).then(res =>
-        {
-            switchOffline(res.result);
-        });
+            unmakeEl.addEventListener('click', () =>
+            {
+                unCacheUrl(location.href).then(res => switchOffline(!res.result));
+            });
+
+            isUrlCached(location.href).then(res =>
+            {
+                switchOffline(res.result);
+            });
+        }
     });
 </script>

@@ -51,24 +51,10 @@ $container-max-widths: (
 
 /* background */
 
-@keyframes bgOpacity {
-    from { opacity: 0; }
-    to { opacity: .5; }
-}
-
-@keyframes bgBackgrounf {
-    from { background-color: #b0906c; }
-    to { background-color: #dec8b3; }
-}
-
 body {
     font-family: Arial;
     font-size: 18px;
     background-color: #dec8b3;
-}
-
-body.bgloaded {
-    animation: bgBackground 5s linear 0s 1;
 }
 
 body::after {
@@ -80,18 +66,14 @@ body::after {
     bottom: 0;
     right: 0;
     opacity: .5;
+
+    background: url(Datacenter_Empty_Floor-snip.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-}
 
-body.bgloaded::after, body.bgcached::after {
-    background: url(Datacenter_Empty_Floor-snip.jpg);
-}
-
-body.bgloaded::after {
-    animation: bgOpacity 3s linear 0s 1;
+    transition: background-image 1s ease-in-out;
 }
 
 /* main page */
@@ -131,6 +113,10 @@ $content-opacity: .9;
 
     .navbar {
         background-color: transparent;
+
+        .nav-link {
+            color: $lay-color-darker;
+        }
     }
 }
 

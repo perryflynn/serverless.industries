@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{page.lang}}">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}" crossorigin="anonymous">
@@ -37,9 +38,9 @@
 
     {% if page and page.tags.size > 0 %}
     <meta name="keywords" content="{{page.tags | join: ', '}}">
-      {% for tag in page.tags %}
-      <meta property="og:article:tag" content="{{tag}}">
-      {% endfor %}
+    {% for tag in page.tags %}
+    <meta property="og:article:tag" content="{{tag}}">
+    {% endfor %}
     {% endif %}
 
     <link rel="canonical" href="{{site.url}}{{page.url | relative_url}}">
@@ -48,9 +49,9 @@
 
     {% assign otherlang = site.posts | where_exp: 'item', "item.lang!=page.lang and item.ref==page.ref" %}
     {% if page and otherlang.size > 0 %}
-      {% for langpost in otherlang %}
-        <link rel="alternate" hreflang="{{langpost.lang}}" href="{{site.url}}{{langpost.url}}">
-      {% endfor %}
+    {% for langpost in otherlang %}
+    <link rel="alternate" hreflang="{{langpost.lang}}" href="{{site.url}}{{langpost.url}}">
+    {% endfor %}
     {% endif %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{'/favicon/apple-touch-icon.png' | relative_url}}">
@@ -64,8 +65,9 @@
 
     <meta name="theme-color" content="#dec8b3">
 
-  </head>
-  <body class="nojs bgcached">
+</head>
+
+<body>
 
     <div class="container">
 
@@ -77,82 +79,148 @@
     <script src="{{'/js/bootstrap.bundle.min.js' | relative_url}}" crossorigin="anonymous" defer></script>
 
     <script>
-      // check cache state of a url
-      const genericEvent = (eventName, eventData) =>
-      {
-        return new Promise(resolve =>
+        // check cache state of a url
+        const genericEvent = (eventName, eventData) =>
         {
-          // subscribe to response
-          const eventCallback = event =>
-          {
-              if (event.data.type === eventName + '_RESULT' &&
-                  event.data.uid === eventData.uid)
-              {
-                  resolve(event.data);
-              }
-          };
-
-          navigator.serviceWorker.addEventListener('message', eventCallback, { once: true });
-
-          // send request
-          navigator.serviceWorker.ready
-            .then(worker =>
+            return new Promise(resolve =>
             {
-              worker.active.postMessage({
-                type: eventName,
-                ... eventData
-              });
+                // subscribe to response
+                const eventCallback = event =>
+                {
+                    if (event.data.type === eventName + '_RESULT' &&
+                        event.data.uid === eventData.uid)
+                    {
+                        navigator.serviceWorker.removeEventListener('message', eventCallback);
+                        resolve(event.data);
+                    }
+                };
+
+                navigator.serviceWorker.addEventListener('message', eventCallback);
+
+                // send request
+                navigator.serviceWorker.ready.then(worker =>
+                {
+                    worker.active.postMessage({
+                        type: eventName,
+                        ...eventData
+                    });
+                });
             });
-        });
-      };
+        };
 
-      // check cache state of a url
-      const isUrlCached = url =>
-      {
-        return genericEvent('CHECK_OFFLINE_STATE', { uid: url });
-      };
-
-      // add URL to cache
-      const cacheUrl = url =>
-      {
-        return genericEvent('ADD_CACHE_URL', { uid: url });
-      };
-
-      // remove url from cache
-      const unCacheUrl = url =>
-      {
-        return genericEvent('REMOVE_CACHE_URL', { uid: url });
-      }
-
-      // Initialize application
-      const appLoad = () =>
-      {
-        if ('serviceWorker' in navigator)
+        const waitUntilCached = (url, skipLocal=false) =>
         {
-          navigator.serviceWorker
-            .register("{{'/service-worker.js' | relative_url}}?{{site.time | date: '%s%N'}}")
-            .then(reg => console.log('Service Worker registered with scope:', reg.scope))
-            .catch(err => console.log('Service Worker registration failed', err));
+            return new Promise(resolve =>
+            {
+                if (!skipLocal)
+                {
+                    isUrlCached(url).then(res =>
+                    {
+                        if (res) { resolve(url); }
+                    });
+                }
+
+                const eventCallback = event =>
+                {
+                    if (event.data.type === 'URL_CACHED' &&
+                        event.data.uid === url)
+                    {
+                        navigator.serviceWorker.removeEventListener('message', eventCallback);
+                        resolve(url);
+                    }
+                };
+
+                navigator.serviceWorker.addEventListener('message', eventCallback);
+            });
+        };
+
+        // check cache state of a url
+        const isUrlCached = url =>
+        {
+            return genericEvent('CHECK_OFFLINE_STATE', { uid: url });
+        };
+
+        // add URL to cache
+        const cacheUrl = url =>
+        {
+            return genericEvent('ADD_CACHE_URL', { uid: url });
+        };
+
+        // remove url from cache
+        const unCacheUrl = url =>
+        {
+            return genericEvent('REMOVE_CACHE_URL', { uid: url });
         }
 
-        // check for cache updates
-        console.log('Check for updates...');
-        genericEvent('CHECK_UPDATES', { uid: 'checkupdate-' + Date.now() })
-          .then(res => res.result ? navigator.serviceWorker.ready : Promise.reject('No update available'))
-          .then(worker => worker.update())
-          .then(() => genericEvent('UPDATE_CACHE', { uid: 'update-' + Date.now() }))
-          .then(() => console.log('Cache update finished'))
-          .catch(err => console.log(err))
-          .finally(() =>
-          {
-            // inform other scripts that the
-            // app initialization was finished
-            window.dispatchEvent(new CustomEvent('appload'));
-          });
-      };
+        // Initialize application
+        const appLoad = () =>
+        {
+            // browser supports service workers
+            if ('serviceWorker' in navigator)
+            {
+                navigator.serviceWorker
+                    .register("{{'/service-worker.js' | relative_url}}?{{site.time | date: '%s%N'}}")
+                    .then(reg => console.log('Service Worker registered with scope:', reg.scope))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
 
-      window.addEventListener('load', () => appLoad());
+                // check for cache updates
+                console.log('Check for updates...');
+                genericEvent('CHECK_UPDATES', { uid: 'checkupdate-' + Date.now() }).then(res =>
+                {
+                    // local cache expired
+                    // wait for new document and reload
+                    if (res.result > 1)
+                    {
+                        waitUntilCached(location.href, true).then(res =>
+                        {
+                            location.reload();
+                        });
+                    }
+
+                    // when updates available continue
+                    // if not abort promise chain
+                    if (res.result > 0)
+                    {
+                        return navigator.serviceWorker.ready;
+                    }
+                    else
+                    {
+                        return Promise.reject('No update available');
+                    }
+                })
+
+                // update service worker
+                .then(worker => worker.update())
+
+                // request cache update
+                .then(() => genericEvent('UPDATE_CACHE', { uid: 'update-' + Date.now() }))
+
+                // cache update finished
+                .then(() => console.log('Cache update finished'))
+
+                // called when the promise chain is aborted
+                .catch(err => console.log(err))
+
+                // service worker initialization finished
+                .finally(() =>
+                {
+                    // inform other scripts that the
+                    // app initialization was finished
+                    window.dispatchEvent(new CustomEvent('appload', { detail: { serviceWorker: true } }));
+                });
+            }
+            // browser doesn't support service workers
+            else
+            {
+                // inform other scripts that the
+                // app initialization was finished
+                window.dispatchEvent(new CustomEvent('appload', { detail: { serviceWorker: false } }));
+            }
+        };
+
+        //document.body.classList.remove('bgcached');
+        window.addEventListener('load', () => appLoad());
     </script>
 
-  </body>
+</body>
 </html>
