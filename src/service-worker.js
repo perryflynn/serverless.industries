@@ -57,7 +57,8 @@ const failedRequestHandler = err =>
 
 self.addEventListener('fetch', event =>
 {
-    if (event.request.url.startsWith(basePath))
+    if (event.request.method === 'GET' &&
+        event.request.url.startsWith(basePath))
     {
         const cacheHandler = caches.match(event.request).then(cacheItem =>
         {
@@ -91,6 +92,10 @@ self.addEventListener('fetch', event =>
         });
 
         event.respondWith(cacheHandler);
+    }
+    else
+    {
+        console.log('not processed:', event.request, basePath);
     }
 });
 
