@@ -11,9 +11,8 @@ IT stuff.
 
 The blog is open for constributions. If you interested in
 write a article, visit the
-[gitlab repository](https://git.brickburg.de/serverless.industries/blog)
-and file a merge request. (The registration form for new accounts
-is disabled because of SPAM. Write me a email.)
+[git repository](https://github.com/perryflynn/serverless.industries)
+and send me a Email.
 
 ## Workflow
 
