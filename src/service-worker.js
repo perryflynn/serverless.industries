@@ -4,7 +4,6 @@
 ---
 
 const cacheKey = 'site-cache-v1';
-const cacheUrlExtension = 'dev'; // '{{site.time | date: "%s%N"}}';
 const basePath = '{{site.url}}{{"/" | relative_url}}';
 
 const forceCacheList = [
@@ -60,7 +59,7 @@ self.addEventListener('fetch', event =>
     if (event.request.method === 'GET' &&
         event.request.url.startsWith(basePath))
     {
-        const cacheHandler = caches.match(event.request).then(cacheItem =>
+        const cacheHandler = caches.match(event.request.url).then(cacheItem =>
         {
             if (forceCacheList.includes(event.request.url))
             {
@@ -92,10 +91,6 @@ self.addEventListener('fetch', event =>
         });
 
         event.respondWith(cacheHandler);
-    }
-    else
-    {
-        console.log('not processed:', event.request, basePath);
     }
 });
 
@@ -130,6 +125,7 @@ const checkUpdates = async () =>
     }
 };
 
+// perform a cache update
 const performUpdate = async () =>
 {
     const ts = Date.now();
@@ -158,6 +154,7 @@ const messageRespond = async (event, result) =>
     });
 };
 
+// listen for event from frontend
 self.addEventListener('message', async event =>
 {
     if (event.data.type === 'CHECK_OFFLINE_STATE' && event.data.uid)
