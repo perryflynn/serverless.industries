@@ -35,7 +35,50 @@ layout: content
 </div>
 
 <hr>
-<a href="{{'/' | relative_url}}">go back</a>
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank" class="float-right">
-    <img alt="Creative Commons License" style="border-width: 0px;" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png">
-</a>
+
+<div class="post-bottom-bar">
+    <div class="bar-left">
+
+        <a href="{{'/' | relative_url}}">go back</a>
+
+    </div>
+    <div class="bar-right">
+
+        <a href="javascript:void(0)" class="make-offline hidden">make offline copy</a>
+        <a href="javascript:void(0)" class="unmake-offline hidden">delete offline copy</a>
+
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank">
+            <img alt="Creative Commons License" style="border-width: 0px;" src="{{'/css/cc-80x15.png' | relative_url}}">
+        </a>
+
+    </div>
+</div>
+
+<script>
+    window.addEventListener('appload', event =>
+    {
+        const makeEl = document.querySelector('.make-offline');
+        const unmakeEl = document.querySelector('.unmake-offline');
+
+        const switchOffline = res =>
+        {
+            (res ? makeEl : unmakeEl).classList.add('hidden');
+            (res ? unmakeEl : makeEl).classList.remove('hidden');
+        };
+
+        makeEl.addEventListener('click', () =>
+        {
+            cacheUrl(location.href).then(res => switchOffline(res.result));
+        });
+
+        unmakeEl.addEventListener('click', () =>
+        {
+            unCacheUrl(location.href).then(res => switchOffline(!res.result));
+        });
+
+        isUrlCached(location.href).then(res =>
+        {
+            switchOffline(res.result);
+        });
+    });
+</script>
