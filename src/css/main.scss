@@ -87,7 +87,7 @@ body::after {
 }
 
 body.bgloaded::after, body.bgcached::after {
-    background: url(Datacenter_Empty_Floor-snip.jpg?{{site.time | date: '%s%N'}});
+    background: url(Datacenter_Empty_Floor-snip.jpg);
 }
 
 body.bgloaded::after {
@@ -260,5 +260,16 @@ div.tagindex {
         a {
             white-space: nowrap;
         }
+    }
+}
+
+/* post bottom bar */
+
+.post-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+
+    .make-offline {
+        margin-right: 10px;
     }
 }

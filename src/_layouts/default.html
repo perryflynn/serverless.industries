@@ -3,31 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}" crossorigin="anonymous">
     <title>{{page.title}} - {{site.my.sitetitle}}</title>
 
     {% assign authorinfo = site.authors | where: 'short_name', page.author | first %}
 
     {% if authorinfo.short_name %}
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="article">
     <meta property="og:article:author" content="{{authorinfo.name}}">
     <meta name="author" content="{{authorinfo.name}}">
     {% else %}
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="website">
     {% endif %}
-    <meta property="og:url" content="{{site.url}}{{page.url}}">
+    <meta property="og:url" content="{{site.url}}{{page.url | relative_url}}">
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:site_name" content="{{site.my.sitetitle}}">
-    <meta property="og:image" content="{{site.url}}{{'/favicon/apple-touch-icon.png' | relative_url}}" />
+    <meta property="og:image" content="{{site.url}}{{'/favicon/apple-touch-icon.png' | relative_url}}">
 
     {% if page.date %}
     <meta property="og:article:published_time" content="{{page.date | date_to_xmlschema}}">
     {% endif %}
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary">
 
     {% if authorinfo.twitter %}
-    <meta name="twitter:creator" content="@{{authorinfo.twitter}}" />
+    <meta name="twitter:creator" content="@{{authorinfo.twitter}}">
     {% endif %}
 
     {% if page.description or page.excerpt %}
@@ -42,7 +42,7 @@
       {% endfor %}
     {% endif %}
 
-    <link rel="canonical" href="{{site.url}}{{page.url}}">
+    <link rel="canonical" href="{{site.url}}{{page.url | relative_url}}">
     <link rel="alternate" type="application/rss+xml" title="{{site.my.rsstitle}}" href="{{site.url}}{{'/feed.xml' | relative_url}}">
     <link href="{{site.url}}{{'/opensearch.xml' | relative_url}}" rel="search" title="{{site.my.domain}}" type="application/opensearchdescription+xml">
 
@@ -73,37 +73,85 @@
 
     </div>
 
-    <script src="{{'/js/jquery-3.3.1.slim.min.js' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous" defer></script>
-    <script src="{{'/js/bootstrap.bundle.min.js' | relative_url}}?{{site.time | date: '%s%N'}}" crossorigin="anonymous" defer></script>
+    <script src="{{'/js/jquery-3.5.1.slim.min.js' | relative_url}}" crossorigin="anonymous" defer></script>
+    <script src="{{'/js/bootstrap.bundle.min.js' | relative_url}}" crossorigin="anonymous" defer></script>
 
     <script>
-      (function() {
-        var d = document;
-        var bdy = d.querySelector("body");
-
-        // indicate that js is enabled
-        bdy.classList.remove("nojs");
-        bdy.classList.add("yesjs");
-
-        // load the background image
-        var el = d.createElement("img");
-        el.style.display = "none";
-
-        el.onload = function()
+      // check cache state of a url
+      const genericEvent = (eventName, eventData) =>
+      {
+        return new Promise(resolve =>
         {
-          if(!bdy.classList.contains("bgcached"))
+          // subscribe to response
+          const eventCallback = event =>
           {
-            bdy.classList.add("bgloaded");
-          }
-        };
+              if (event.data.type === eventName + '_RESULT' &&
+                  event.data.uid === eventData.uid)
+              {
+                  resolve(event.data);
+              }
+          };
 
-        el.src = "{{'css/Datacenter_Empty_Floor-snip.jpg' | relative_url}}?{{site.time | date: '%s%N'}}";
+          navigator.serviceWorker.addEventListener('message', eventCallback, { once: true });
 
-        if(!el.complete)
+          // send request
+          navigator.serviceWorker.ready
+            .then(worker =>
+            {
+              worker.active.postMessage({
+                type: eventName,
+                ... eventData
+              });
+            });
+        });
+      };
+
+      // check cache state of a url
+      const isUrlCached = url =>
+      {
+        return genericEvent('CHECK_OFFLINE_STATE', { uid: url });
+      };
+
+      // add URL to cache
+      const cacheUrl = url =>
+      {
+        return genericEvent('ADD_CACHE_URL', { uid: url });
+      };
+
+      // remove url from cache
+      const unCacheUrl = url =>
+      {
+        return genericEvent('REMOVE_CACHE_URL', { uid: url });
+      }
+
+      // Initialize application
+      const appLoad = () =>
+      {
+        if ('serviceWorker' in navigator)
         {
-          bdy.classList.remove("bgcached");
+          navigator.serviceWorker
+            .register("{{'/service-worker.js' | relative_url}}?{{site.time | date: '%s%N'}}")
+            .then(reg => console.log('Service Worker registered with scope:', reg.scope))
+            .catch(err => console.log('Service Worker registration failed', err));
         }
-      })();
+
+        // check for cache updates
+        console.log('Check for updates...');
+        genericEvent('CHECK_UPDATES', { uid: 'checkupdate-' + Date.now() })
+          .then(res => res.result ? navigator.serviceWorker.ready : Promise.reject('No update available'))
+          .then(worker => worker.update())
+          .then(() => genericEvent('UPDATE_CACHE', { uid: 'update-' + Date.now() }))
+          .then(() => console.log('Cache update finished'))
+          .catch(err => console.log(err))
+          .finally(() =>
+          {
+            // inform other scripts that the
+            // app initialization was finished
+            window.dispatchEvent(new CustomEvent('appload'));
+          });
+      };
+
+      window.addEventListener('load', () => appLoad());
     </script>
 
   </body>

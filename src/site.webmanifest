@@ -5,6 +5,7 @@
 {
     "name": "serverless.industries",
     "short_name": "serverless.industries",
+    "start_url": "{{site.url}}{{'/index.html' | relative_url}}",
     "icons": [
         {
             "src": "{{'/favicon/android-chrome-192x192.png' | relative_url}}",
