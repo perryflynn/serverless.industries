@@ -19,7 +19,7 @@
     <meta property="og:url" content="{{site.url}}{{page.url | relative_url}}">
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:site_name" content="{{site.my.sitetitle}}">
-    <meta property="og:image" content="{{site.url}}{{'/favicon/apple-touch-icon.png' | relative_url}}">
+    <meta property="og:image" content="{{site.url}}{{page.image | default: '/favicon/apple-touch-icon.png' | relative_url}}">
 
     {% if page.date %}
     <meta property="og:article:published_time" content="{{page.date | date_to_xmlschema}}">
