@@ -4,6 +4,7 @@ title: "Progressive Web Apps und Service Workers"
 lang: de
 ref: pwa-service-workers
 tags: ['javascript', 'html', 'projects']
+image: /assets/serverless-pwa.png
 ---
 
 Eine Progressive Web App (PWA) ist eine Website, welche sich wie
