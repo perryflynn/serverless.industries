@@ -50,6 +50,7 @@ const cacheList = forceCacheList;
 // listen for requests for page assets and serve from cache
 const failedRequestHandler = err =>
 {
+    console.log(err);
     return caches.match(basePath + 'offline.html');
 }
 
@@ -81,7 +82,7 @@ self.addEventListener('fetch', event =>
             if (forceCacheList.includes(event.request.url))
             {
                 // cache first
-                return cacheItem || fetch(event.request.url)
+                return cacheItem || fetch(event.request.url, { mode: 'no-cors', redirect: 'manual' })
                     .then(response =>
                     {
                         // add fetched ressource to cache
@@ -95,7 +96,7 @@ self.addEventListener('fetch', event =>
             else
             {
                 // request first
-                return fetch(event.request.url)
+                return fetch(event.request.url, { mode: 'no-cors', redirect: 'manual' })
                     .then(response =>
                     {
                         // update cache if in extended cache list
