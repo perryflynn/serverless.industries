@@ -57,6 +57,7 @@ layout: content
 <script>
     window.addEventListener('appload', event =>
     {
+        // offline feature for posts
         if (event.detail.serviceWorker)
         {
             const makeEl = document.querySelector('.make-offline');
@@ -81,6 +82,15 @@ layout: content
             isUrlCached(location.href).then(res =>
             {
                 switchOffline(res.result);
+            });
+        }
+
+        // show share button on post pages
+        if (event.detail.shareApi)
+        {
+            document.querySelectorAll('.share-api-link').forEach(el =>
+            {
+                el.classList.remove('hidden');
             });
         }
     });

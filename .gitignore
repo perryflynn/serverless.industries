@@ -1,5 +1,6 @@
 dist-*/
 dist/
+*.pem
 
 _site/
 .sass-cache/

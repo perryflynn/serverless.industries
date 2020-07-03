@@ -206,7 +206,11 @@
                 {
                     // inform other scripts that the
                     // app initialization was finished
-                    window.dispatchEvent(new CustomEvent('appload', { detail: { serviceWorker: true } }));
+                    window.dispatchEvent(new CustomEvent('appload', { detail:
+                    {
+                        serviceWorker: true,
+                        shareApi: !!navigator.share,
+                    }}));
                 });
             }
             // browser doesn't support service workers
@@ -214,8 +218,21 @@
             {
                 // inform other scripts that the
                 // app initialization was finished
-                window.dispatchEvent(new CustomEvent('appload', { detail: { serviceWorker: false } }));
+                window.dispatchEvent(new CustomEvent('appload', { detail:
+                {
+                    serviceWorker: false,
+                    shareApi: !!navigator.share,
+                }}));
             }
+
+            // share link
+            document.querySelectorAll('.share-api-link').forEach(el => el.addEventListener('click', () =>
+            {
+                navigator.share({
+                    text: "{{page.title}} - {{site.my.sitetitle}}",
+                    url: "{{site.url}}{{page.url | relative_url}}"
+                });
+            }));
         };
 
         //document.body.classList.remove('bgcached');
