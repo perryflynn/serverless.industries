@@ -30,12 +30,21 @@ variables:
     paths:
       - vendor
   script:
+    # variables
     - 'export LANG=en_US.UTF-8'
     - 'export LANGUAGE=en_US.UTF-8'
     - 'export LC_ALL=en_US.UTF-8'
+    - 'export COMMIT_TIME=$(git show -s --format=%ci $CI_COMMIT_SHA)'
+    # folders
     - 'mkdir dist-${distname}'
     - 'mkdir -p vendor/ruby'
+    # prepare config
     - 'bundle config set path vendor/ruby'
+    - 'sed -i "s/false/true/g" ./src/_config_ci.yml'
+    - 'sed -i "s/__commit_short__/$CI_COMMIT_SHORT_SHA/g" ./src/_config_ci.yml'
+    - 'sed -i "s/__commit_long__/$CI_COMMIT_SHA/g" ./src/_config_ci.yml'
+    - 'sed -i "s/__commit_timestamp__/$COMMIT_TIME/g" ./src/_config_ci.yml'
+    # build
     - 'bundle install'
     - 'bundle exec jekyll build -s ./src -d ./dist-${distname} ${buildopts}'
   artifacts:
@@ -100,7 +109,7 @@ build:stage:
     - web
     - schedules
   variables:
-    buildopts: '--config ./src/_config.yml,./src/_config_staging.yml --baseurl /${CI_COMMIT_REF_SLUG}'
+    buildopts: '--config ./src/_config.yml,./src/_config_staging.yml,./src/_config_ci.yml --baseurl /${CI_COMMIT_REF_SLUG}'
     distname: "stage"
 
 build:prod:
@@ -110,7 +119,7 @@ build:prod:
     - web
     - schedules
   variables:
-    buildopts: "--config ./src/_config.yml"
+    buildopts: "--config ./src/_config.yml,./src/_config_ci.yml"
     distname: "prod"
 
 #-> Deploy

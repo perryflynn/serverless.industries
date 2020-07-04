@@ -13,6 +13,6 @@ if [ "$1" == "insecure" ]; then
     insecure="--host 0.0.0.0"
 fi
 
-bundle exec jekyll serve $insecure --ssl-cert serve-cert.pem --ssl-key serve-key.pem -s ./src -d ./_site --config ./src/_config.yml,./src/_config_staging.yml
+bundle exec jekyll serve $insecure --ssl-cert serve-cert.pem --ssl-key serve-key.pem -s ./src -d ./_site --config ./src/_config.yml,./src/_config_staging.yml,./src/_config_ci.yml
 
 exit 0

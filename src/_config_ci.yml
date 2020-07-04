@@ -1,0 +1,6 @@
+git:
+    isci: false
+    commiturl: "https://github.com/perryflynn/serverless.industries/commit/__commit_long__"
+    commitshort: "__commit_short__"
+    commitlong: "__commit_long__"
+    committs: "__commit_timestamp__"
