@@ -7,42 +7,50 @@ console.log('Welcome to a service worker powered website');
 
 const cacheKey = 'site-cache-v1';
 const basePath = '{{site.url}}{{"/" | relative_url}}';
+const commit = '{{site.git.commitlong}}';
 
 // list of ressources to cache
 const forceCacheList = [
-    // pages
-    '', // index.html
-    'index.html',
-    'index.en.html',
-    'offline.html',
-    'authors.html',
-    'tags.html',
-    'site.webmanifest',
+    // no cache killer parameter
+    ... [
+        '', // index.html
+        'index.html',
+        'index.en.html',
+        'offline.html',
+        'authors.html',
+        'tags.html',
+    ]
+    .map(url => basePath + url),
 
-    // assets
-    'css/Datacenter_Empty_Floor-snip.jpg',
-    'css/cc-80x15.png',
-    'js/jquery-3.5.1.slim.min.js',
-    'js/bootstrap.bundle.min.js',
-    'css/main.css',
-    'css/webfonts/fa-solid-900.woff2',
-    'css/webfonts/fa-brands-400.woff2',
-    'css/webfonts/fa-regular-400.woff2',
-    'css/webfonts/fa-solid-900.woff',
-    'css/webfonts/fa-brands-400.woff',
-    'css/webfonts/fa-regular-400.woff',
-    'css/webfonts/fa-solid-900.ttf',
-    'css/webfonts/fa-brands-400.ttf',
-    'css/webfonts/fa-regular-400.ttf',
+    // with cache killer parameter
+    ... [
+        'site.webmanifest',
 
-    // favicons
-    'favicon/apple-touch-icon.png',
-    'favicon/favicon-32x32.png',
-    'favicon/favicon-16x16.png',
-    'favicon/safari-pinned-tab.svg',
-    'favicon/android-chrome-192x192.png',
-]
-.map(url => basePath + url);
+        // assets
+        'css/Datacenter_Empty_Floor-snip.jpg',
+        'css/cc-80x15.png',
+        'js/jquery-3.5.1.slim.min.js',
+        'js/bootstrap.bundle.min.js',
+        'css/main.css',
+        'css/webfonts/fa-solid-900.woff2',
+        'css/webfonts/fa-brands-400.woff2',
+        'css/webfonts/fa-regular-400.woff2',
+        'css/webfonts/fa-solid-900.woff',
+        'css/webfonts/fa-brands-400.woff',
+        'css/webfonts/fa-regular-400.woff',
+        'css/webfonts/fa-solid-900.ttf',
+        'css/webfonts/fa-brands-400.ttf',
+        'css/webfonts/fa-regular-400.ttf',
+
+        // favicons
+        'favicon/apple-touch-icon.png',
+        'favicon/favicon-32x32.png',
+        'favicon/favicon-16x16.png',
+        'favicon/safari-pinned-tab.svg',
+        'favicon/android-chrome-192x192.png',
+    ]
+    .map(url => basePath + url + '?commit=' + commit),
+];
 
 const cacheList = forceCacheList;
 
@@ -175,7 +183,7 @@ const performUpdate = async (event) =>
     // update assets
     await Promise.all(cacheList.map(async url =>
     {
-        const cacheResponse = await fetch(url + '?' + ts)
+        const cacheResponse = await fetch(url + (url.includes('?') ? '&' : '?') + 'anticache=' + ts)
         await cacheOne(url, cacheResponse, event);
     }));
 };

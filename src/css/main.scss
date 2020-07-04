@@ -5,6 +5,8 @@
 
 /* variables */
 
+$commit: "?commit={{site.git.commitlong}}";
+
 @import "variables";
 
 $container-max-widths: (
@@ -67,7 +69,7 @@ body::after {
     right: 0;
     opacity: .5;
 
-    background: url(Datacenter_Empty_Floor-snip.jpg);
+    background: url('Datacenter_Empty_Floor-snip.jpg#{$commit}');
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -104,7 +106,7 @@ $content-opacity: .9;
 /* top menu */
 
 .row.topmenu {
-    background-color: transparent; // rgba($lay-color-brighter, $content-opacity);
+    background-color: transparent;
     border-bottom: 2px solid $lay-color-darker;
 
     .col {
@@ -121,7 +123,7 @@ $content-opacity: .9;
 }
 
 .row.langmenu {
-    background-color: transparent; // rgba($lay-color-brighter, $content-opacity);
+    background-color: transparent;
     border-bottom: 2px solid $lay-color-darker;
 
     .col {
@@ -203,6 +205,7 @@ $content-opacity: .9;
 .row.mainfooter .col-12 {
     text-align: center;
     color: $lay-color-darker;
+    font-size: 80%;
 }
 
 /* Tags */

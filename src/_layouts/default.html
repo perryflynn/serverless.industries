@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}?commit={{site.git.commitlong}}" crossorigin="anonymous">
     <title>{{page.title}} - {{site.my.sitetitle}}</title>
 
     {% assign authorinfo = site.authors | where: 'short_name', page.author | first %}
@@ -54,11 +54,11 @@
     {% endfor %}
     {% endif %}
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{'/favicon/apple-touch-icon.png' | relative_url}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{'/favicon/favicon-32x32.png' | relative_url}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{'/favicon/favicon-16x16.png' | relative_url}}">
-    <link rel="manifest" href="{{'/site.webmanifest' | relative_url}}">
-    <link rel="mask-icon" href="{{'/favicon/safari-pinned-tab.svg' | relative_url}}" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{'/favicon/apple-touch-icon.png' | relative_url}}?commit={{site.git.commitlong}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{'/favicon/favicon-32x32.png' | relative_url}}?commit={{site.git.commitlong}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{'/favicon/favicon-16x16.png' | relative_url}}?commit={{site.git.commitlong}}">
+    <link rel="manifest" href="{{'/site.webmanifest' | relative_url}}?commit={{site.git.commitlong}}">
+    <link rel="mask-icon" href="{{'/favicon/safari-pinned-tab.svg' | relative_url}}?commit={{site.git.commitlong}}" color="#5bbad5">
     <meta name="apple-mobile-web-app-title" content="serverless.industries">
     <meta name="application-name" content="serverless.industries">
     <meta name="msapplication-TileColor" content="#404040">
@@ -75,8 +75,8 @@
 
     </div>
 
-    <script src="{{'/js/jquery-3.5.1.slim.min.js' | relative_url}}" crossorigin="anonymous" defer></script>
-    <script src="{{'/js/bootstrap.bundle.min.js' | relative_url}}" crossorigin="anonymous" defer></script>
+    <script src="{{'/js/jquery-3.5.1.slim.min.js' | relative_url}}?commit={{site.git.commitlong}}" crossorigin="anonymous" defer></script>
+    <script src="{{'/js/bootstrap.bundle.min.js' | relative_url}}?commit={{site.git.commitlong}}" crossorigin="anonymous" defer></script>
 
     <script>
         // check cache state of a url
