@@ -40,7 +40,8 @@ variables:
     - 'mkdir -p vendor/ruby'
     # prepare config
     - 'bundle config set path vendor/ruby'
-    - 'sed -i "s/false/true/g" ./src/_config_ci.yml'
+    - 'sed -i "s/__is_ci__/true/g" ./src/_config_ci.yml'
+    - 'sed -i "s/__serviceworker_enabled__/$enableserviceworker/g" ./src/_config_ci.yml'
     - 'sed -i "s/__commit_short__/$CI_COMMIT_SHORT_SHA/g" ./src/_config_ci.yml'
     - 'sed -i "s/__commit_long__/$CI_COMMIT_SHA/g" ./src/_config_ci.yml'
     - 'sed -i "s/__commit_timestamp__/$COMMIT_TIME/g" ./src/_config_ci.yml'
@@ -73,8 +74,6 @@ variables:
   script:
     - 'ssh ${sshopts} ${sshremote} "mkdir -p ${remotedir}"'
     - '/bin/bash ci/secure-stage.sh'
-    #- 'scp -r ${sshopts} dist-${distname}/* ${sshremote}:${remotedir}'
-    #- 'scp -r ${sshopts} dist-${distname}/.htaccess ${sshremote}:${remotedir}'
     - 'rsync -rltzv --delete -e "ssh ${sshopts}" dist-${distname}/ ${sshremote}:${remotedir}'
     - 'rm -f dist-${distname}/newhtpasswd'
 
@@ -111,6 +110,7 @@ build:stage:
   variables:
     buildopts: '--config ./src/_config.yml,./src/_config_staging.yml,./src/_config_ci.yml --baseurl /${CI_COMMIT_REF_SLUG}'
     distname: "stage"
+    enableserviceworker: 'false'
 
 build:prod:
   extends: .tpl:build
@@ -121,6 +121,7 @@ build:prod:
   variables:
     buildopts: "--config ./src/_config.yml,./src/_config_ci.yml"
     distname: "prod"
+    enableserviceworker: 'true'
 
 #-> Deploy
 
