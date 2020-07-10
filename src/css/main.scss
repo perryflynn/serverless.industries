@@ -170,6 +170,14 @@ $content-opacity: .9;
         p:last-child {
             margin-bottom:0px;
         }
+
+        cite {
+            font-size: 80%;
+        }
+
+        cite::before {
+            content: "— ";
+        }
     }
 
     pre {

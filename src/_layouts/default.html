@@ -155,8 +155,33 @@
         // Initialize application
         const appLoad = () =>
         {
+            const serviceWorkerEnabled = '{{site.git.enableserviceworker}}' === 'true';
+
             // browser supports service workers
-            if ('serviceWorker' in navigator)
+            // service worker disabled
+            if ('serviceWorker' in navigator && serviceWorkerEnabled === 'false')
+            {
+                // unregister existing workers
+                navigator.serviceWorker.getRegistrations().then(registrations =>
+                {
+                    for(let registration of registrations)
+                    {
+                        registration.unregister();
+                    }
+                });
+
+                // inform other scripts that the
+                // app initialization was finished
+                window.dispatchEvent(new CustomEvent('appload', { detail:
+                {
+                    serviceWorker: false,
+                    shareApi: !!navigator.share,
+                }}));
+            }
+
+            // browser supports service workers
+            // service worker enabled
+            else if ('serviceWorker' in navigator && serviceWorkerEnabled === 'true')
             {
                 navigator.serviceWorker
                     .register("{{'/service-worker.js' | relative_url}}?{{site.time | date: '%s%N'}}")

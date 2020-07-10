@@ -39,14 +39,14 @@ then
 elif [ -f enforce-insecure ]
 then
 
-    ssh ${sshopts} ${sshremote} rm -f ${remotedir}/.htpasswd
-
     echo
     echo "'enforce-insecure' file exists, so no password protection created."
     echo
 
 elif [ "$secure" == "1" ]
 then
+
+    scp ${sshopts} ${sshremote}:${remotedir}/.htpasswd dist-${distname}/.htpasswd
 
     echo
     echo "Credencials already set. Create a 'enforce-new-password' file to override."
