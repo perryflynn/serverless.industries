@@ -36,7 +36,7 @@ man mit einer Aufgabe verbracht hat. Dazu verwendet man die [Quick Actions][quic
 ```
 
 Sendet man diesen Kommentar ab, werden fünf Stunden erfasst und die Issue
-geschlossen. Weißt man der Issue einen Milestone zu, wird in diesem Milestone
+geschlossen. Weist man der Issue einen Milestone zu, wird in diesem Milestone
 automatisch **eine Summe aller erfassten Zeiten** angezeigt.
 
 ![Timetracking]({{'/assets/taskomat-timetracking.png' | relative_url}}){:.img-fluid}
