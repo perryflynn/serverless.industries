@@ -10,7 +10,7 @@ toc: true
 Seit einiger Zeit nutze ich den GitLab Issue Tracker als persönliche
 ToDo für Haushalt und Dinge, die man mal gerne vergisst.
 
-Neben **einem kleinen Bot** welcher automatisiert regelmäßig wiedergehrende
+Neben **einem kleinen Bot** welcher automatisiert regelmäßig wiederkehrende
 Tasks anlegt und verschiendene Einstellungen sicherstellt,
 können auch diverse Standard&shy;funktionen zweckentfremdet werden.
 
