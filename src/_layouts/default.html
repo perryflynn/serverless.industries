@@ -184,24 +184,21 @@
             else if ('serviceWorker' in navigator && serviceWorkerEnabled === 'true')
             {
                 navigator.serviceWorker
-                    .register("{{'/service-worker.js' | relative_url}}?{{site.time | date: '%s%N'}}")
+                    .register("{{'/service-worker.js' | relative_url}}") // {{site.time | date: '%s%N'}}")
                     .then(reg => console.log('Service Worker registered with scope:', reg.scope))
                     .catch(err => console.log('Service Worker registration failed: ', err));
 
-                // check for cache updates
-                console.log('Check for updates...');
-                genericEvent('CHECK_UPDATES', { uid: 'checkupdate-' + Date.now() }).then(res =>
-                {
-                    // local cache expired
-                    // wait for new document and reload
-                    if (res.result > 1)
-                    {
-                        waitUntilCached(location.href, true).then(res =>
-                        {
-                            location.reload();
-                        });
-                    }
+                // wait for service worker become ready
+                navigator.serviceWorker.ready
 
+                // check for updates
+                .then(() =>
+                {
+                    console.log('Service worker loaded, check for updates...');
+                    return genericEvent('CHECK_UPDATES', { uid: 'checkupdate-' + Date.now() });
+                })
+                .then(res =>
+                {
                     // when updates available continue
                     // if not abort promise chain
                     if (res.result > 0)
@@ -215,13 +212,17 @@
                 })
 
                 // update service worker
-                .then(worker => worker.update())
+                .then(worker =>
+                {
+                    console.log('Update service worker...');
+                    return worker.update()
+                })
 
-                // request cache update
-                .then(() => genericEvent('UPDATE_CACHE', { uid: 'update-' + Date.now() }))
-
-                // cache update finished
-                .then(() => console.log('Cache update finished'))
+                // reload after update
+                .then(() =>
+                {
+                    location.reload();
+                })
 
                 // called when the promise chain is aborted
                 .catch(err => console.log(err))

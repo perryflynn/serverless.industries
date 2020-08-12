@@ -48,7 +48,7 @@ layout: content
         <a href="javascript:void(0)" class="unmake-offline hidden">delete offline copy</a>
 
         <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank">
-            <img alt="Creative Commons License" style="border-width: 0px;" src="{{'/css/cc-80x15.png' | relative_url}}">
+            <img alt="Creative Commons License" style="border-width: 0px;" src="{{'/css/cc-80x15.png' | relative_url}}?commit={{site.git.commitlong}}">
         </a>
 
     </div>
@@ -69,19 +69,29 @@ layout: content
                 (res ? unmakeEl : makeEl).classList.remove('hidden');
             };
 
+            // find html document and all images
+            const cacheUrls = [
+                location.href,
+                ... Array.from(document.querySelector('.markdown-content').querySelectorAll('img')).map(el => el.src),
+            ];
+
+            // make everything offline available
             makeEl.addEventListener('click', () =>
             {
-                cacheUrl(location.href).then(res => switchOffline(res.result));
+                Promise.all(cacheUrls.map(url => cacheUrl(url))).then(res => switchOffline(res.every(r => r.result === true)));
             });
 
+            // delete cache
             unmakeEl.addEventListener('click', () =>
             {
-                unCacheUrl(location.href).then(res => switchOffline(!res.result));
+                Promise.all(cacheUrls.map(url => unCacheUrl(url))).then(res => switchOffline(res.every(r => r.result === false)));
             });
 
-            isUrlCached(location.href).then(res =>
+            // check state for all elements
+            Promise.all(cacheUrls.map(url => isUrlCached(url))).then(results =>
             {
-                switchOffline(res.result);
+                const result = results.every(result => result.result === true);
+                switchOffline(result);
             });
         }
 

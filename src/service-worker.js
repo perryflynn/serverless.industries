@@ -3,11 +3,11 @@
 # only Main files contain this front matter, not partials.
 ---
 
-console.log('Welcome to a service worker powered website');
-
 const cacheKey = 'site-cache-v1';
 const basePath = '{{site.url}}{{"/" | relative_url}}';
 const commit = '{{site.git.commitlong}}';
+
+console.log('Service worker (re)started. Welcome to a service worker powered website (' + commit + ')');
 
 // list of ressources to cache
 const forceCacheList = [
@@ -58,23 +58,30 @@ const cacheList = forceCacheList;
 // listen for requests for page assets and serve from cache
 const failedRequestHandler = err =>
 {
-    console.log(err);
     return caches.match(basePath + 'offline.html');
 }
+
+const clearCache = async () =>
+{
+    await caches.delete(cacheKey);
+};
 
 const cacheOne = async (url, response, event) =>
 {
     var cache = await caches.open(cacheKey);
     await cache.put(url, response.clone());
 
-    const client = await clients.get(event.source.id);
-    if (client)
+    if (event.source && event.source.id)
     {
-        await client.postMessage({
-            type: 'URL_CACHED',
-            uid: url,
-            result: true
-        });
+        const client = await clients.get(event.source.id);
+        if (client)
+        {
+            await client.postMessage({
+                type: 'URL_CACHED',
+                uid: url,
+                result: true
+            });
+        }
     }
 };
 
@@ -135,24 +142,24 @@ const checkUpdates = async () =>
         const ts = Date.now();
         const checkUrl = basePath + 'lastUpdate.txt';
         const response = await fetch(basePath + 'lastUpdate.txt?' + ts);
-        const remoteTimestamp = parseInt(await response.text());
+        const remoteSha = await response.text();
 
         // get local state
         const cache = await caches.open(cacheKey);
         const cacheItem = await cache.match(checkUrl);
 
-        let localTimestamp = -1;
+        let localSha = null;
         if (cacheItem)
         {
-            localTimestamp = parseInt(await cacheItem.clone().text());
+            localSha = await cacheItem.clone().text();
         }
 
-        if (localTimestamp < 0)
+        if (localSha === null)
         {
             // no local cache available
             return 1;
         }
-        else if (localTimestamp < remoteTimestamp)
+        else if (localSha !== remoteSha)
         {
             // local cache expired
             return 2;
@@ -165,7 +172,8 @@ const checkUpdates = async () =>
     }
     catch
     {
-        return false;
+        // error
+        return -1;
     }
 };
 
@@ -175,6 +183,9 @@ const performUpdate = async (event) =>
 {
     const ts = Date.now();
     const checkUrl = basePath + 'lastUpdate.txt';
+
+    // clear
+    await clearCache();
 
     // update state file
     const checkResponse = await fetch(checkUrl + '?' + ts);
@@ -203,6 +214,14 @@ const messageRespond = async (event, result) =>
         });
     }
 };
+
+
+// initialize application
+self.addEventListener('install', async event =>
+{
+    console.log('Create asset cache...');
+    event.waitUntil(performUpdate(event));
+});
 
 
 // listen for event from frontend
@@ -246,11 +265,5 @@ self.addEventListener('message', async event =>
     {
         const result = await checkUpdates();
         await messageRespond(event, result);
-    }
-    // perform cache refresh
-    else if(event.data.type === 'UPDATE_CACHE')
-    {
-        await performUpdate(event);
-        await messageRespond(event, true);
     }
 });
