@@ -48,6 +48,11 @@ Liste auf. Die Liste kann auch nach diesem Datum sortiert werden.
 
 ![Fälligkeitsdatum]({{'/assets/taskomat-duedate.png' | relative_url}}){:.img-fluid}
 
+Ist eine Issue nicht zur Deadline abgearbeitet, kann TaskOMat (siehe weiter unten)
+mit einer kleinen Errinnerung unterstützen.
+
+![Deadline abgelaufen]({{'/assets/taskomat-pastdue.png' | relative_url}}){:.img-fluid}
+
 ## Prioritäten
 
 Klickt man den Stern in der Label Liste an, wird das Label zu einem priorisiertem

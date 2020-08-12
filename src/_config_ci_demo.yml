@@ -1,5 +1,6 @@
 git:
     isci: true
+    enableserviceworker: 'false'
     commiturl: "https://github.com/perryflynn/serverless.industries/commit/2c612651965c48f4cf0fdec474849f17f6f653a7"
     commitshort: "2b99bf8"
     commitlong: "2c612651965c48f4cf0fdec474849f17f6f653a7"
