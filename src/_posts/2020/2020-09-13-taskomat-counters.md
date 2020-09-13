@@ -14,10 +14,10 @@ Ich zähle damit zum Beispiel meine Fahrradkilometer.
 
 ![TaskOMat Counter Command]({{'/assets/taskomat-countercommand.png' | relative_url}}){:.img-fluid}
 
-Der Bot erzeugt dann in einem Note eine tabellarische Auswertung. Es wird monatlich zusammengezählt
-und eine Gesamtsumme gebildet.
+Der Bot erzeugt dann in einem Note eine tabellarische Auswertung.
+Es wird monatlich zusammengezähltund eine Gesamtsumme gebildet.
 
-![TaskOMat Counter Summary]({{'/assets/taskomat-countersummary.png' | relative_url}}){:.img-fluid}
+![TaskOMat Counter Summary]({{'/assets/taskomat-countersummary2.png' | relative_url}}){:.img-fluid}
 
 Den Code dazu gibt es [in meinem GitHub Account][taskomat], eine detailiertere Beschreibung
 in [einem älteren Beitrag][about].

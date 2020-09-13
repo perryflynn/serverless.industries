@@ -24,6 +24,7 @@ Hyperlinks direkt zu den Issue Listen einfügem.
 
 [quick]: https://docs.gitlab.com/ee/user/project/quick_actions.html
 [taskomat]: https://github.com/perryflynn/taskomat
+[prog]: https://progress-bar.dev/
 
 ## Zeiterfassung & Milestones
 
@@ -129,10 +130,13 @@ Ich nutze dieses Feature zum Beispiel um meine Fahrradkilometer zu erfassen.
 Der Bot erzeugt dann in einem Note eine tabellarische Auswertung. Es wird monatlich zusammengezählt
 und eine Gesamtsumme gebildet.
 
-![TaskOMat Counter Summary]({{'/assets/taskomat-countersummary.png' | relative_url}}){:.img-fluid}
+![TaskOMat Counter Summary]({{'/assets/taskomat-countersummary2.png' | relative_url}}){:.img-fluid}
 
 Ob man eine Zahleneinheit angibt (mit `!countunit km`) oder nicht ist einem selbst überlassen.
 Generell kann alles gezählt werden. Kilometer, Euro, whatever.
+
+Definiert man ein Ziel mit `!countgoal 1000` wird ein Fortschrittsbalken
+mit Hilfe von [https://progress-bar.dev][prog] angezeigt.
 
 Auch hier legt das Script wieder ein Note in der Issue an, wo die Metadaten als YAML
 Code Block gespeichert werden.
