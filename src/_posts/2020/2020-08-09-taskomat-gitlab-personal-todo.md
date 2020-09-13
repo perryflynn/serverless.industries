@@ -117,6 +117,26 @@ diverse Regeln sicher:
 
 ![TaskOMat Milestone]({{'/assets/taskomat-milestone.png' | relative_url}}){:.img-fluid}
 
+## TaskOMat: Counters
+
+Mit dem einem einfachen Chatbot Befehl `!count 42` kann in Issues, welche das Label `Counter`
+zugewiesen haben (das ist leider aus Performancegründen notwendig), Dinge gezählt werden.
+
+![TaskOMat Counter Command]({{'/assets/taskomat-countercommand.png' | relative_url}}){:.img-fluid}
+
+Ich nutze dieses Feature zum Beispiel um meine Fahrradkilometer zu erfassen.
+
+Der Bot erzeugt dann in einem Note eine tabellarische Auswertung. Es wird monatlich zusammengezählt
+und eine Gesamtsumme gebildet.
+
+![TaskOMat Counter Summary]({{'/assets/taskomat-countersummary.png' | relative_url}}){:.img-fluid}
+
+Ob man eine Zahleneinheit angibt (mit `!countunit km`) oder nicht ist einem selbst überlassen.
+Generell kann alles gezählt werden. Kilometer, Euro, whatever.
+
+Auch hier legt das Script wieder ein Note in der Issue an, wo die Metadaten als YAML
+Code Block gespeichert werden.
+
 ## GitLab Pipelines + TaskOMat
 
 Will man keine Cronjobs "irgendwo" anlegen, kann man dies auch direkt mit GitLab Pipelines
