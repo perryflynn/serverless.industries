@@ -1,23 +1,23 @@
 ---
 author: christian
 title: "ClusterHAT: Solving power issues with Pi Zeros when rebooting Pi 4"
-lang: en
+lang: de
 ref: clusterhat-power
 tags: ['raspberry pi', linux]
 toc: true
 ---
 
-[The ClusterHAT][hat] allows to connect up to four Rasperry Pi Zero
-to a Raspberr Pi with a integrated USB Hub. The Pi Zeros are capable to
-communicate via [USB Ethernet Gadget][gadget]. So it is possible
-to connect the devices via Ethernet.
+[Der ClusterHAT][hat] erlaubt das Verbinden von bis zu vier Raspberry
+Pi Zeros über einen integrierten USB Hub mit einem normalen Raspberry Pi.
+Mit dem [USB Ethernet Gadget][gadget] Feature können die Pi Zeros via Ethernet
+mit dem Raspberry Pi kommunizieren.
 
-With a Raspberry Pi 3, it was possible to reboot the Pi 3, without loosing
-power on the Pi Zeros. After switching to a Raspberry Pi 4, this didn't worked
-anymore. The Zeros lost power and crash.
+Einen Raspberry Pi 3 konnte man neustarten, ohne dass die Pi Zeros davon
+etwas mitbekommen haben. Nach Wechsel auf einen Raspberry Pi 4 verloren
+die Pi Zeros allerdings ihre Strom&shy;versorgung und stürzten ab.
 
-This article describes a workaround for the ClusterHAT v2.3 with a Raspberry Pi 4
-and the latest Raspbian (Debian Buster).
+Dieser Artikel beschreibt einen Workaround für den ClusterHAT v2.3 mit
+einem Raspberry Pi 4 und dem neusten Raspbian (Debian Buster).
 
 ![Clusterberry]({{'/assets/clusterberry-alt.jpg' | relative_url}}){:.img-fluid}
 
@@ -30,28 +30,28 @@ and the latest Raspbian (Debian Buster).
 [3v3c]: https://community.blokas.io/t/pisound-with-raspberry-pi-4/1238/12
 [newver]: https://groups.google.com/g/clusterhat/c/HYZ5KvayFco/m/i-VY7zJuAQAJ
 
-## Part 1: Power management settings in firmware
+## Teil 1: Energieeinstellungen in der Firmware
 
-Fist issue is the changed behaviour of the power management in the Raspberry Pi firmware.
-To save power, some features will now powered off. Depending on the firmware version,
-two options need to be changed.
+Erstes Problem war das geänderte Verhalten in der Firmware. Um Strom zu sparen
+schaltet der Raspberry Pi nach dem Herunter&shy;fahren diverse Funktionen ab.
+Abhängig von der Firmware Version müssen diese Stromspar&shy;funktionen wieder
+deaktiviert werden.
 
 ```txt
-# show it should look like
+# so it should look like
 root@clusterberry:~# vcgencmd bootloader_config | grep -P "(WAKE_ON_GPIO|POWER_OFF_ON_HALT)"
 WAKE_ON_GPIO=1
 POWER_OFF_ON_HALT=0
 ```
 
-[See the configuration documentation][fconf]
+[Siehe die Dokumentation der Firmware Einstellungen][fconf]
 
-If the settings are not correct, this causes a power interruption on
-[the 3.3V pin which is powering the I2C expander on the ClusterHAT][3v3].
-This will reset the I2C expander and power off the Pi Zeros. The 5V can be
-affected as well.
+Wenn die Einstellungen nicht korrekt gesetzt sind, verursacht dies eine Unterbrechung
+der Strom&shy;versorgung am 3.3V GPIO Pin, [welcher den I2C Expander des ClusterHAT versorgt][3v3].
+Ebenso kann der 5V Pin betroffen sein.
 
-To change the configuration, it must be extracted from the current firmware
-and flashed again afterwards.
+Um die Einstellungen zu ändern, muss die Konfiguration aus der Firmware extrahiert
+werden und nach der Anpassung neu geflasht werden.
 
 ```sh
 # extract the configuration from the
@@ -70,15 +70,16 @@ sudo reboot
 vcgencmd bootloader_config
 ```
 
-[More infos about firmware updates][fflash]
+[Mehr Details zum flashen von Firmwares][fflash]
 
-## Part 1.5: 3.3V power still interrupted
+## Teil 1.5: 3.3V Strom weiterhin instabil
 
-Because of a [another issue][3v3b], the 3.3V pin still resets when a HAT is connected to the
-Raspberry Pi 4. The workaround described in the linked GitHub issue is a kernel flag.
+Wegen eines [anderen Problems][3v3b] wird die 3.3V Strom&shy;versorgung weiterhin unterbrochen,
+sofern ein HAT mit dem Raspberry Pi verbunden ist. Der Workaround ist das Setzen eines
+Kernel Flags.
 
-The option `sdhci.debug_quirks2=4` must be appended to the end of the line in
-`/boot/cmdline.txt`:
+Das Flag `sdhci.debug_quirks2=4` muss an das Ende der Zeile in `/boot/cmdline.txt`
+ergänzt werden:
 
 ```txt
 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=9dc0f4ed-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait sdhci.debug_quirks2=4
@@ -88,37 +89,42 @@ dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=9dc0f4ed-
 > cards to be used at lower speeds, but this config also prevents power being
 > cut off on the GPIO’s 3.3V supply, avoiding the reboot issue.
 
-See [here][3v3b] and [here][3v3c].
+Siehe [hier][3v3b] und [hier][3v3c].
 
-## Part 2: Unstable 5V power supply
+## Teil 2: Instabile 5V Versorgung
 
-Next issue is a unstable 5V power. In some cases it interrups, in other cases
-not. So it would be a good idea to build a own power supply for the HAT.
+Nächster Punkt ist die instabile 5V Strom&shy;versorgung. Manchmal wird diese
+unterbrochen, manchmal nicht. Es ist also eine gute Idee, den ClusterHAT
+mit einer eigenen Strom&shy;versorgung zu versehen.
 
-Per default the HAT is powered via 5V GPIO. This can be changed to USB with the `PWR` jumper.
-The connection between `RPi` and `PWR` must be cutted, the connection between `USB`
-and `PWR` must be established with a soldering iron.
+Standard&shy;mäßig wird der HAT über 5V GPIO mit Strom versorgt. Mit dem `PWR`
+Jumper kann dies geändert werden. Die Verbindung zwischen `RPi` und `PWR`
+muss mit einem Skalpell unterbrochen werden, anschließend muss die Verbindung
+zwischen `USB` und `PWR` mit einem Lötkolben hergestellt werden.
 
 ![Clusterberry Power]({{'/assets/clusterberry-usbpower.jpg' | relative_url}}){:.img-fluid}
 
-Now it is possible to power the HAT through USB. With a custom USB cable, this is still
-possible with one single official Raspberry Pi USB power supply.
+Nun kann der HAT über den MicroUSB Port mit Strom versorgt werden. Mit einem
+selbst hergestellten USB Kabel ist es nun möglich, den HAT mit Strom vom Netzteil
+zu versorgen und trotzdem die Daten&shy;leitungen mit dem USB Port des Raspberry Pi zu verbinden.
 
 ![Clusterberry Power Cable]({{'/assets/clusterberry-powercable.jpg' | relative_url}}){:.img-fluid}
 
-The cable serves power to the HAT and to the Pi 4 through the normal USB ports and also
-connects the HAT via USB to the Pi 4 (data lines only), so that the integrated
-USB Hub still works.
+Das Kabel versorgt Raspberry Pi und ClusterHAT von einem gemeinsamen Netzteil mit Strom,
+die beiden Daten&shy;leitungen `Data+` und `Data-` werden trotzdem mit einem der USB Ports des
+Raspberry Pi 4 verbunden, sodass der USB Hub des HAT weiterhin funktioniert.
 
 ![Clusterberry Power Supply]({{'/assets/clusterberry-powersupply.jpg' | relative_url}}){:.img-fluid}
 
-Now any component of the cluster can be rebooted without affection the other ones.
+Nun kann jede Komponente des Clusters neugestartet werden, ohne das eine
+andere davon beeinträchtigt wird.
 
-**But attention:** You **must** use a "dumb" power supply as in this setup only the power
-lines are connected. So no smart negotiation or something like that possible! It works quite
-good with the official power supply from the Raspberry Pi Foundation.
+**Vorsicht:** Es **muss** ein "dummes" Netzteil verwendet werden, da das Kabel ausschließlich
+die Strom&shy;leitungen mit HAT und Raspberry Pi verbindet. Es ist also keine "smart negotiation"
+möglich. Zum Beispiel funktioniert es mit dem offiziellen Netzteil der Raspberry Pi Foundation
+ohne Probleme.
 
-## ClusterHAT v2.4 fixes this issue
+## ClusterHAT v2.4 löst das Problem
 
-[This post][newver] says, that the newer Version 2.4 fixes this issue.
-So no workarounds required if this version is used.
+[Dieser Beitrag][newver] sagt, dass die neuere Version 2.4 des HATs das Problem löst,
+und somit keine Hacks mehr nötig sind.
