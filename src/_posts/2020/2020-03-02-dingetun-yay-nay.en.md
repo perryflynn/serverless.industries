@@ -43,7 +43,7 @@ But the user can no longer see the votes without voting himself.
 
 ## Data privacy
 
-The "allow cookies"-Cookiw is stored in your browser for one year and contains no
+The "allow cookies"-Cookie is stored in your browser for one year and contains no
 user data. Just a `1`.
 
 The session cookie is stored 14 days in your browser and contains all votes
