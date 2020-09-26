@@ -70,3 +70,11 @@
   glyph: <i class="far fa-save"></i>
 - name: css
   glyph: <i class="fas fa-palette"></i>
+- name: dns
+  glyph: <i class="fas fa-globe-europe"></i>
+- name: keyboard
+  glyph: <i class="fas fa-keyboard"></i>
+- name: mimimi
+  glyph: <i class="fas fa-guitar"></i>
+- name: usability
+  glyph: <i class="far fa-hand-point-up"></i>
