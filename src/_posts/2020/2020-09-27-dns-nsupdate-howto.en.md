@@ -1,23 +1,22 @@
 ---
 author: christian
-title: "DNS Updates mit nsupdate"
-lang: de
+title: "DNS Updates with nsupdate"
+lang: en
 ref: nsupdate-howto
 tags: [linux, dns, projects]
 ---
 
-Seit einiger Zeit betreue ich ein paar DNS Zones, wo der Besitzer
-mir kein Web Interface zur Verfügung stellt, sondern einen
-HMAC Key für [RFC2136][rfc2136] nsupdate.
+A few DNS zone which I maintain don't have a web interface to edit
+the records. I am required to use [RFC2136][rfc2136] nsupdate.
 
 [rfc2136]: https://tools.ietf.org/html/rfc2136
 [axfr]: https://en.wikipedia.org/wiki/DNS_zone_transfer
 
-## Vorbereitungen im Nameserver
+## Preparations in Nameserver
 
-Der Besitzer der Domain hat dabei den Key in seinem Nameserver
-(bind9) hinterlegt und für `update` (Records verändern)
-und `transfer` (gesamte Zone via dig anzeigen) berechtigt.
+The domain owner assigned me a HMAC key in his nameserver (bind9)
+configuration which has the permission to perform updates and
+Zone Transfers (show all records in dig).
 
 ```txt
 key "my-awesome-keyname" {
@@ -40,14 +39,14 @@ zone "example.com" {
 };
 ```
 
-Der Name des Keys und der Key selbst müssen dann bei `dig` Abfragen
-oder beim Aufruf von `nsupdate` angegeben werden. Sie dienen sozusagen
-als Benutzername und Passwort.
+The name of the key and the key itself must be specified in `dig` and
+`nsupdate` to perform queries and update. They are the username and
+password.
 
-## Den authoritative Name Server finden
+## Find the authoritative name server
 
-Updates können nur an authoritative DNS Server gesendet werden.
-Welcher Server dies ist, ist im `SOA` record der Zone hinterlegt.
+To make updates, we need to know the authoritative dns server of the Zone.
+Their address can be found in the zones `SOA` record.
 
 ```sh
 dig -t SOA example.com
@@ -74,13 +73,13 @@ example.com.        3599    IN    SOA    ns1.exampleprovider.com. webmaster.exam
 ;; MSG SIZE  rcvd: 107
 ```
 
-Der authoritative DNS Server ist also `ns1.exampleprovider.com`.
+In this case, the authoritative name server is `ns1.exampleprovider.com`.
 
-## Zone Einträge anzeigen
+## Show all zone entries
 
-Sofern der HMAC Key `allow-transfer` Rechte besitzt, kann man
-mit `dig` die komplette Zone anzeigen lassen.
-Dafür wird der DNS Query Type `AXFR` ([siehe hier][axfr]) verwendet.
+If the key has `allow-transfer` permissions, it is possible to
+perform a `AXFR` query ([see here][axfr]) with dig. This will
+return all records from the given Zone.
 
 ```sh
 HMAC=hmac-sha256:my-awesome-keyname:THEKEYINBASE64FORMAT
@@ -108,18 +107,18 @@ meet.example.com.     900  IN  AAAA  ::3
 meet.example.com.     900  IN  A     127.0.0.3
 ```
 
-## DNS Updates senden
+## Send DNS Updates
 
-Mit `nsupdate` können Änderungen an der DNS Zone an den DNS Server
-gesendet werden. Auch hier wieder mit Angabe des DNS Servers und des
-HMAC Keys.
+`nsupdate` makes it possible to perform changes on a DNS zone without
+restarting the DNS Server. Like with dig, it requires a HMAC key
+and dns server address.
 
 ```sh
 HMAC=hmac-sha256:my-awesome-keyname:THEKEYINBASE64FORMAT
 nsupdate -y $HMAC
 ```
 
-Dann geht es interaktiv weiter:
+Now a interactive shell appears:
 
 ```txt
 server ns1.exampleprovider.com
@@ -128,10 +127,9 @@ update add example.com.   900  IN  TXT   "Hello Nerds, how are you going? :-)"
 send
 ```
 
-Der `send` Befehl beendet den interaktiven Modus von `nsupdate` und sendet
-das Update an den DNS Server. Erscheinen keine Fehlermeldungen sollte
-das Update erfolgreich gewesen sein und man kann sich das Ergebnis in `dig`
-anschauen.
+The `send` command ends the interactive mode and sends all commands to the
+name server. If there are no error messages, everything was successful.
+This can be checked with `dig`.
 
 ```sh
 dig @ns1.exampleprovider.com example.com TXT
@@ -161,13 +159,13 @@ Success. :-)
 
 ## nsupdate-interactive.py
 
-Mit [nsupdate-interactive.py](https://github.com/perryflynn/nsupdate-interactive)
-habe ich dazu ein kleines Python Script geschrieben, welches automatisch eine
-Update Datei für `nsupdate` erzeugt, welche mit einem Editor bearbeitet werden kann.
+[nsupdate-interactive.py](https://github.com/perryflynn/nsupdate-interactive)
+is a Python Script which I have developed to make editing zones by `nsupdate`
+much more easier.
 
-Danach wird `named-checkzone` verwendet, um das Zonefile auf Syntaxfehler zu überprüfen.
-Sofern keine Fehler gefunden wurde, erzeugt das Script anschließend aus einem Diff ein
-nsupdate Batch File.
+It creates a Zone file and opens this file in you perferred editor. Afterwards
+it checks the syntax of the zone file with `named-checkzone` and creates a
+`nsupdate` batch file by diff your changes.
 
 ```diff
 --- nsupdate_ns1.example.com_example.com_20200926T222019Z.org    2020-09-26 22:20:19.369097326 +0200
@@ -183,5 +181,5 @@ nsupdate Batch File.
  update add example.com.  3600  IN  A     127.0.0.1
 ```
 
-Wird der Diff mit `ENTER` bestätigt, führt das Script automatisch `nsupdate` aus, welches die
-Änderungen an den Nameserver sendet.
+If the changes are confirmed by pressing `ENTER`, the script sends the changes
+to the dns server.
