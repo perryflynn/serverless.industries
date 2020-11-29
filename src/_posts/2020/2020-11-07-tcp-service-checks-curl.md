@@ -3,7 +3,7 @@ author: christian
 title: "Verbindungstests mit curl"
 lang: de
 ref: minimon
-tags: [network, projects, http, bash]
+tags: [network, projects, http, bash, monitoring]
 ---
 
 Das großartige Programm `curl` beherrscht neben HTTP auch
