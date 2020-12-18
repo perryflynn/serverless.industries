@@ -3,7 +3,6 @@ author: christian
 title: "Docker Deployments mit Ansible und YAML Anchors"
 lang: de
 tags: [ ansible, yaml, docker ]
-image: /assets/minimon.png
 ---
 
 Gerade im semi&shy;professionellen oder im privaten Bereich macht es durchaus noch Sinn,
