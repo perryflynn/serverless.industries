@@ -23,6 +23,12 @@ $container-max-widths: (
 @import "fontawesome/scss/solid";
 @import "fontawesome/scss/brands";
 
+@import "mdi/scss/variables";
+@import "mdi/scss/functions";
+@import "mdi/scss/path";
+@import "mdi/scss/core";
+@import "mdi/scss/icons";
+
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
@@ -231,6 +237,10 @@ span.tagsummary {
 span.tagicon {
     font-size: 70%;
     color: $lay-color-dark;
+}
+
+span.tagicon .mdi::before {
+    font-size: 130%!important;
 }
 
 span.tagitem {

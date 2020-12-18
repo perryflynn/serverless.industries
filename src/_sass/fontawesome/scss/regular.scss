@@ -5,9 +5,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: $fa-font-display;
-  src: url('#{$fa-font-path}/fa-regular-400.eot');
-  src: url('#{$fa-font-path}/fa-regular-400.eot?#iefix') format('embedded-opentype'),
-  url('#{$fa-font-path}/fa-regular-400.woff2#{$commit}') format('woff2'),
+  src: url('#{$fa-font-path}/fa-regular-400.woff2#{$commit}') format('woff2'),
   url('#{$fa-font-path}/fa-regular-400.woff#{$commit}') format('woff'),
   url('#{$fa-font-path}/fa-regular-400.ttf#{$commit}') format('truetype'),
   url('#{$fa-font-path}/fa-regular-400.svg#fontawesome') format('svg');

@@ -41,6 +41,9 @@ const forceCacheList = [
         'css/webfonts/fa-solid-900.ttf',
         'css/webfonts/fa-brands-400.ttf',
         'css/webfonts/fa-regular-400.ttf',
+        'css/webfonts/materialdesignicons-webfont.woff',
+        'css/webfonts/materialdesignicons-webfont.woff2',
+        'css/webfonts/materialdesignicons-webfont.ttf',
 
         // favicons
         'favicon/apple-touch-icon.png',
