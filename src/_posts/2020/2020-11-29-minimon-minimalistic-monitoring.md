@@ -13,7 +13,7 @@ einiges an dem Script getan.
 
 ![minimon]({{'/assets/minimon.png' | relative_url}}){:.img-fluid}
 
-[prev]: {% post_url 2020-11-07-tcp-service-checks-curl %}
+[prev]: {% post_url 2020/2020-11-07-tcp-service-checks-curl %}
 [protos]: https://ec.haxx.se/protocols/protocols-curl
 [exit]: https://ec.haxx.se/usingcurl/usingcurl-returns
 [writeout]: https://ec.haxx.se/usingcurl/usingcurl-verbose/usingcurl-writeout

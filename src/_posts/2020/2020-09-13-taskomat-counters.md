@@ -23,4 +23,4 @@ Den Code dazu gibt es [in meinem GitHub Account][taskomat], eine detailiertere B
 in [einem älteren Beitrag][about].
 
 [taskomat]: https://github.com/perryflynn/taskomat
-[about]: {% post_url 2020-08-09-taskomat-gitlab-personal-todo %}
+[about]: {% post_url 2020/2020-08-09-taskomat-gitlab-personal-todo %}
