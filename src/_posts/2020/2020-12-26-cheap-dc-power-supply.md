@@ -3,6 +3,7 @@ author: christian
 title: "Märklin Trafo als regelbare Wechselstromquelle"
 lang: de
 tags: [ electronics ]
+image: /assets/maerklin-trafo-indicators.jpg
 ---
 
 Für ein Projekt habe ich eine günstiges, regelbares Wechselstrom Netzteil gesucht.
