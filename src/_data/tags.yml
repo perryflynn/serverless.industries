@@ -1,15 +1,15 @@
 - name: linux
-  glyph: <i class="fab fa-linux"></i>
+  glyph: <i class="mdi mdi-linux"></i>
 - name: debian
   glyph: <i class="mdi mdi-debian"></i>
 - name: network
-  glyph: <i class="fas fa-network-wired"></i>
+  glyph: <i class="mdi mdi-lan-connect"></i>
 - name: ipv6
-  glyph: <i class="fas fa-network-wired"></i>
+  glyph: <i class="mdi mdi-ip-network"></i>
 - name: opnsense
-  glyph: <i class="fas fa-network-wired"></i>
+  glyph: <i class="mdi mdi-router-network"></i>
 - name: raspberry pi
-  glyph: <i class="fab fa-raspberry-pi"></i>
+  glyph: <i class="mdi mdi-raspberry-pi"></i>
 - name: bash
   glyph: <i class="mdi mdi-bash"></i>
 - name: shell
@@ -17,23 +17,23 @@
 - name: powershell
   glyph: <i class="mdi mdi-powershell"></i>
 - name: server
-  glyph: <i class="fas fa-server"></i>
+  glyph: <i class="mdi mdi-server"></i>
 - name: webspace
-  glyph: <i class="fas fa-server"></i>
+  glyph: <i class="mdi mdi-web-box"></i>
 - name: nginx
-  glyph: <i class="fas fa-server"></i>
+  glyph: <i class="mdi mdi-server"></i>
 - name: hardware
-  glyph: <i class="fas fa-server"></i>
+  glyph: <i class="mdi mdi-desktop-classic"></i>
 - name: proxmox
-  glyph: <i class="fas fa-server"></i>
+  glyph: <i class="mdi mdi-server"></i>
 - name: git
-  glyph: <i class="fas fa-code-branch"></i>
+  glyph: <i class="mdi mdi-git"></i>
 - name: gitlab
-  glyph: <i class="fab fa-gitlab"></i>
+  glyph: <i class="mdi mdi-gitlab"></i>
 - name: windows
-  glyph: <i class="fab fa-windows"></i>
+  glyph: <i class="mdi mdi-microsoft-windows"></i>
 - name: streaming
-  glyph: <i class="fas fa-tv"></i>
+  glyph: <i class="mdi mdi-video-input-antenna"></i>
 - name: software development
   glyph: <i class="mdi mdi-dev-to"></i>
 - name: html
@@ -47,37 +47,37 @@
 - name: javascript
   glyph: <i class="mdi mdi-language-javascript"></i>
 - name: docker
-  glyph: <i class="fab fa-docker"></i>
+  glyph: <i class="mdi mdi-docker"></i>
 - name: email
-  glyph: <i class="fas fa-envelope-square"></i>
+  glyph: <i class="mdi mdi-email-outline"></i>
 - name: freebsd
-  glyph: <i class="fab fa-freebsd"></i>
+  glyph: <i class="mdi mdi-freebsd"></i>
 - name: games
-  glyph: <i class="fas fa-gamepad"></i>
+  glyph: <i class="mdi mdi-gamepad-variant-outline"></i>
 - name: projects
-  glyph: <i class="fas fa-book"></i>
+  glyph: <i class="mdi mdi-notebook"></i>
 - name: apple
-  glyph: <i class="fab fa-apple"></i>
+  glyph: <i class="mdi mdi-apple"></i>
 - name: ios
-  glyph: <i class="fab fa-apple"></i>
+  glyph: <i class="mdi mdi-apple-ios"></i>
 - name: http
-  glyph: <i class="fas fa-globe"></i>
+  glyph: <i class="mdi mdi-web"></i>
 - name: tls
-  glyph: <i class="fas fa-lock"></i>
+  glyph: <i class="mdi mdi-lock-outline"></i>
 - name: grafana
-  glyph: <i class="fas fa-chart-line"></i>
+  glyph: <i class="mdi mdi-chart-bell-curve"></i>
 - name: zfs
-  glyph: <i class="far fa-save"></i>
+  glyph: <i class="mdi mdi-harddisk"></i>
 - name: css
   glyph: <i class="mdi mdi-language-css3"></i>
 - name: dns
-  glyph: <i class="fas fa-globe-europe"></i>
+  glyph: <i class="mdi mdi-dns"></i>
 - name: keyboard
-  glyph: <i class="fas fa-keyboard"></i>
+  glyph: <i class="mdi mdi-keyboard"></i>
 - name: mimimi
-  glyph: <i class="fas fa-guitar"></i>
+  glyph: <i class="mdi mdi-violin"></i>
 - name: usability
-  glyph: <i class="far fa-hand-point-up"></i>
+  glyph: <i class="mdi mdi-hand-heart"></i>
 - name: ansible
   glyph: <i class="mdi mdi-ansible"></i>
 - name: api

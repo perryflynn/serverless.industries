@@ -12,14 +12,14 @@ title: Authors
             <small class="text-muted">{{author.job}}</small>
         {% endif %}
     </h3>
-    
+
     {{ author.content | markdownify }}
 
     <ul class="list-inline">
         {% if author.github %}
             <li class="list-inline-item">
                 <a href="https://github.com/{{author.github}}" rel="external nofollow noreferrer noopener" target="_blank">
-                    <i class="fab fa-github"></i>
+                    <i class="mdi mdi-github"></i>
                     {{author.github}}
                 </a>
             </li>
@@ -27,7 +27,7 @@ title: Authors
         {% if author.twitter %}
             <li class="list-inline-item">
                 <a href="https://twitter.com/{{author.twitter}}" rel="external nofollow noreferrer noopener" target="_blank">
-                    <i class="fab fa-twitter"></i>
+                    <i class="mdi mdi-twitter"></i>
                     @{{author.twitter}}
                 </a>
             </li>
@@ -35,7 +35,7 @@ title: Authors
         {% if author.email %}
             <li class="list-inline-item">
                 <a href="mailto:{{author.email}}">
-                    <i class="far fa-envelope"></i>
+                    <i class="mdi mdi-email"></i>
                     {{author.email}}
                 </a>
             </li>

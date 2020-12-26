@@ -8,7 +8,7 @@ layout: default
             <div class="col">
 
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="{{'/' | relative_url}}"><i class="fas fa-server"></i></a>
+                    <a class="navbar-brand" href="{{'/' | relative_url}}"><i class="mdi mdi-server"></i></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -45,7 +45,7 @@ layout: default
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item dropdown d-none d-lg-inline">
                                 <a class="nav-link dropdown-toggle" href="#" id="searchMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-search"></i>
+                                    <i class="mdi mdi-magnify"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" style="padding: 0px; width: 300px;" aria-labelledby="searchMenu">
                                     <form class="p-2" method="GET" action="https://www.google.com/search" target="_blank">
@@ -54,7 +54,7 @@ layout: default
                                             <input type="text" name="q" class="form-control" placeholder="Google Search">
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-secondary" type="submit">
-                                                    <i class="fas fa-search"></i>
+                                                    <i class="mdi mdi-magnify"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -63,13 +63,13 @@ layout: default
                             </li>
                             <li class="navbar-item">
                                 <a class="nav-link" href="{{'/feed.xml' | relative_url}}" target="_blank">
-                                    <i class="fas fa-rss-square d-none d-lg-inline"></i>
+                                    <i class="mdi mdi-rss-box d-none d-lg-inline"></i>
                                     <span class="d-xs-inline d-lg-none">RSS Feed</span>
                                 </a>
                             </li>
                             <li class="navbar-item share-api-link hidden">
                                 <a class="nav-link" href="javascript:void(0)">
-                                    <i class="fas fa-share-alt d-none d-lg-inline"></i>
+                                    <i class="mdi mdi-share-variant d-none d-lg-inline"></i>
                                     <span class="d-xs-inline d-lg-none">Share</span>
                                 </a>
                             </li>
@@ -81,7 +81,7 @@ layout: default
                                 <input type="text" name="q" class="form-control" placeholder="Google Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="submit">
-                                        <i class="fas fa-search"></i>
+                                        <i class="mdi mdi-magnify"></i>
                                     </button>
                                 </div>
                             </div>
@@ -117,19 +117,19 @@ layout: default
 
 <div class="row mainfooter">
     <div class="col-12">
-        <i class="fas fa-server"></i>
+        <i class="mdi mdi-server"></i>
         {{site.my.domain}}
-        <i class="fas fa-industry"></i>
+        <i class="mdi mdi-factory"></i>
         BG by <a href="https://commons.wikimedia.org/wiki/File:Datacenter_Empty_Floor_(22166545884).jpg" target="_blank" rel="external nofollow noreferrer noopener">Carl Lender (CC BY 2.0)</a>
-        <i class="fas fa-server"></i>
+        <i class="mdi mdi-server"></i>
     </div>
     {% if site.git.isci == 'true' %}
         <div class="col-12">
-            <i class="fab fa-github"></i>
+            <i class="mdi mdi-github"></i>
             <a href="{{site.git.commiturl}}" target="_blank" rel="external nofollow">{{site.git.commitshort}}</a>
-            <i class="fas fa-code-branch"></i>
+            <i class="mdi mdi-git"></i>
             {{site.git.committs | date: '%Y-%m-%d %H:%M'}}
-            <i class="fab fa-gitlab"></i>
+            <i class="mdi mdi-gitlab"></i>
         </div>
     {% endif %}
 </div>
