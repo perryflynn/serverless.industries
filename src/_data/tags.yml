@@ -1,86 +1,88 @@
-- name: linux
-  glyph: <i class="mdi mdi-linux"></i>
-- name: debian
-  glyph: <i class="mdi mdi-debian"></i>
-- name: network
-  glyph: <i class="mdi mdi-lan-connect"></i>
-- name: ipv6
-  glyph: <i class="mdi mdi-ip-network"></i>
-- name: opnsense
-  glyph: <i class="mdi mdi-router-network"></i>
-- name: raspberry pi
-  glyph: <i class="mdi mdi-raspberry-pi"></i>
-- name: bash
-  glyph: <i class="mdi mdi-bash"></i>
-- name: shell
-  glyph: <i class="mdi mdi-bash"></i>
-- name: powershell
-  glyph: <i class="mdi mdi-powershell"></i>
-- name: server
-  glyph: <i class="mdi mdi-server"></i>
-- name: webspace
-  glyph: <i class="mdi mdi-web-box"></i>
-- name: nginx
-  glyph: <i class="mdi mdi-server"></i>
-- name: hardware
-  glyph: <i class="mdi mdi-desktop-classic"></i>
-- name: proxmox
-  glyph: <i class="mdi mdi-server"></i>
-- name: git
-  glyph: <i class="mdi mdi-git"></i>
-- name: gitlab
-  glyph: <i class="mdi mdi-gitlab"></i>
-- name: windows
-  glyph: <i class="mdi mdi-microsoft-windows"></i>
-- name: streaming
-  glyph: <i class="mdi mdi-video-input-antenna"></i>
-- name: software development
-  glyph: <i class="mdi mdi-dev-to"></i>
-- name: html
-  glyph: <i class="mdi mdi-language-html5"></i>
-- name: csharp
-  glyph: <i class="mdi mdi-language-csharp"></i>
-- name: dotnet
-  glyph: <i class="mdi mdi-dot-net"></i>
-- name: php
-  glyph: <i class="mdi mdi-language-php"></i>
-- name: javascript
-  glyph: <i class="mdi mdi-language-javascript"></i>
-- name: docker
-  glyph: <i class="mdi mdi-docker"></i>
-- name: email
-  glyph: <i class="mdi mdi-email-outline"></i>
-- name: freebsd
-  glyph: <i class="mdi mdi-freebsd"></i>
-- name: games
-  glyph: <i class="mdi mdi-gamepad-variant-outline"></i>
-- name: projects
-  glyph: <i class="mdi mdi-notebook"></i>
-- name: apple
-  glyph: <i class="mdi mdi-apple"></i>
-- name: ios
-  glyph: <i class="mdi mdi-apple-ios"></i>
-- name: http
-  glyph: <i class="mdi mdi-web"></i>
-- name: tls
-  glyph: <i class="mdi mdi-lock-outline"></i>
-- name: grafana
-  glyph: <i class="mdi mdi-chart-bell-curve"></i>
-- name: zfs
-  glyph: <i class="mdi mdi-harddisk"></i>
-- name: css
-  glyph: <i class="mdi mdi-language-css3"></i>
-- name: dns
-  glyph: <i class="mdi mdi-dns"></i>
-- name: keyboard
-  glyph: <i class="mdi mdi-keyboard"></i>
-- name: mimimi
-  glyph: <i class="mdi mdi-violin"></i>
-- name: usability
-  glyph: <i class="mdi mdi-hand-heart"></i>
-- name: ansible
-  glyph: <i class="mdi mdi-ansible"></i>
-- name: api
-  glyph: <i class="mdi mdi-api"></i>
-- name: monitoring
-  glyph: <i class="mdi mdi-message-alert"></i>
+- glyph: <i class="mdi mdi-ansible"></i>
+  name: ansible
+- glyph: <i class="mdi mdi-api"></i>
+  name: api
+- glyph: <i class="mdi mdi-apple"></i>
+  name: apple
+- glyph: <i class="mdi mdi-bash"></i>
+  name: bash
+- glyph: <i class="mdi mdi-language-csharp"></i>
+  name: csharp
+- glyph: <i class="mdi mdi-language-css3"></i>
+  name: css
+- glyph: <i class="mdi mdi-debian"></i>
+  name: debian
+- glyph: <i class="mdi mdi-dns"></i>
+  name: dns
+- glyph: <i class="mdi mdi-docker"></i>
+  name: docker
+- glyph: <i class="mdi mdi-dot-net"></i>
+  name: dotnet
+- glyph: <i class="mdi mdi-electric-switch"></i>
+  name: electronics
+- glyph: <i class="mdi mdi-email-outline"></i>
+  name: email
+- glyph: <i class="mdi mdi-freebsd"></i>
+  name: freebsd
+- glyph: <i class="mdi mdi-gamepad-variant-outline"></i>
+  name: games
+- glyph: <i class="mdi mdi-git"></i>
+  name: git
+- glyph: <i class="mdi mdi-gitlab"></i>
+  name: gitlab
+- glyph: <i class="mdi mdi-chart-bell-curve"></i>
+  name: grafana
+- glyph: <i class="mdi mdi-desktop-classic"></i>
+  name: hardware
+- glyph: <i class="mdi mdi-language-html5"></i>
+  name: html
+- glyph: <i class="mdi mdi-web"></i>
+  name: http
+- glyph: <i class="mdi mdi-apple-ios"></i>
+  name: ios
+- glyph: <i class="mdi mdi-ip-network"></i>
+  name: ipv6
+- glyph: <i class="mdi mdi-language-javascript"></i>
+  name: javascript
+- glyph: <i class="mdi mdi-keyboard"></i>
+  name: keyboard
+- glyph: <i class="mdi mdi-linux"></i>
+  name: linux
+- glyph: <i class="mdi mdi-violin"></i>
+  name: mimimi
+- glyph: <i class="mdi mdi-message-alert"></i>
+  name: monitoring
+- glyph: <i class="mdi mdi-lan-connect"></i>
+  name: network
+- glyph: <i class="mdi mdi-server"></i>
+  name: nginx
+- glyph: <i class="mdi mdi-router-network"></i>
+  name: opnsense
+- glyph: <i class="mdi mdi-language-php"></i>
+  name: php
+- glyph: <i class="mdi mdi-powershell"></i>
+  name: powershell
+- glyph: <i class="mdi mdi-notebook"></i>
+  name: projects
+- glyph: <i class="mdi mdi-server"></i>
+  name: proxmox
+- glyph: <i class="mdi mdi-raspberry-pi"></i>
+  name: raspberry pi
+- glyph: <i class="mdi mdi-server"></i>
+  name: server
+- glyph: <i class="mdi mdi-bash"></i>
+  name: shell
+- glyph: <i class="mdi mdi-dev-to"></i>
+  name: software development
+- glyph: <i class="mdi mdi-video-input-antenna"></i>
+  name: streaming
+- glyph: <i class="mdi mdi-lock-outline"></i>
+  name: tls
+- glyph: <i class="mdi mdi-hand-heart"></i>
+  name: usability
+- glyph: <i class="mdi mdi-web-box"></i>
+  name: webspace
+- glyph: <i class="mdi mdi-microsoft-windows"></i>
+  name: windows
+- glyph: <i class="mdi mdi-harddisk"></i>
+  name: zfs
