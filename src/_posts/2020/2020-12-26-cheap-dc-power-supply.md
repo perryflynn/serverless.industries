@@ -43,3 +43,5 @@ in Millimetern skalieren und anschließend Textboxen positionieren.
 Dann das Bild aus dem Office Dokument entfernen und die Beschriftungen ausdrucken.
 
 ![Märklin Trafo Beschriftung]({{'assets/maerklin-trafo-indicators.jpg' | relative_url}}){:.img-fluid}
+
+Danke an Andre für diese tolle Idee. :-)
