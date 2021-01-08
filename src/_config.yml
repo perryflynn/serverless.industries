@@ -29,8 +29,8 @@ defaults:
       layout: "post"
 
 langmap:
-  en: English
-  de: Deutsch
+  en: { name: English, postlist: "Articles in English" }
+  de: { name: Deutsch, postlist: "Beiträge in Deutsch" }
 
 plugins:
   - jekyll-target-blank
