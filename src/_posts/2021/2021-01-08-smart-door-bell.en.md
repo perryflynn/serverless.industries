@@ -78,6 +78,10 @@ simple switch.
 - 1x [12k Ohm Resistor](https://www.reichelt.de/widerstand-kohleschicht-12-kohm-0207-250-mw-5--1-4w-12k-p1348.html)  
   [Pull-Down][pulldown] resistor for the input signal on the ESP32.
 
+![Breadboard]({{'assets/smartbell-breadboard.jpg' | relative_url}}){:.img-fluid}
+
+[Original Picture]({{'assets/smartbell-breadboard-large.jpg' | relative_url}})
+
 ## ESPHome
 
 As I said earlier, [ESPHome][esphome] enables us to use sensors without writing any code.

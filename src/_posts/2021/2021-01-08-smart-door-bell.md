@@ -91,6 +91,10 @@ ist dies das gleiche, als wenn man einen einfachen Taster anschließt.
 - 1x [12k Ohm Widerstand](https://www.reichelt.de/widerstand-kohleschicht-12-kohm-0207-250-mw-5--1-4w-12k-p1348.html)  
   [Pull-Down][pulldown] Widerstand für das Eingangssignal am ESP32.
 
+![Schaltung auf dem Breadboard]({{'assets/smartbell-breadboard.jpg' | relative_url}}){:.img-fluid}
+
+[Bild in Groß]({{'assets/smartbell-breadboard-large.jpg' | relative_url}})
+
 ## ESPHome
 
 Wie bereits erwähnt erspart ESPHome jegliches schreiben von Code. Welche Komponenten
