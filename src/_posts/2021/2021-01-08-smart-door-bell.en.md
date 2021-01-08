@@ -13,7 +13,7 @@ since 2018. I've asked a colleague who is an electican how to do this.
 A few days later he gave me a schematic and tried to explain it to me,
 but I couldn't understand it's function.
 
-As you can see on the [last weeks posts]({{ '/tags.html#electronics' | relative_url }}),
+As you can see on [last weeks posts]({{ '/tags.html#electronics' | relative_url }}),
 I finally fought through it and got it working. :-)
 
 ![Door bell in Home Assistant]({{'assets/smartbell-hass-small.png' | relative_url}}){:.img-fluid}
@@ -29,7 +29,7 @@ I finally fought through it and got it working. :-)
 ## Door bell
 
 The door bell is a very simple 12V AC circuit. If you press the button,
-the electromagnet activates the doorbell chime.
+the electromagnet activates the doorbells chime.
 
 ## Smarthome
 
@@ -130,7 +130,7 @@ mqtt:
   topic_prefix: smarthome/floor
 ```
 
-The `binary_sensor` is the pin with the optocoupler connected. Wether the door bell is pressed
+The `binary_sensor` uses the pin connected to the optocoupler. Wether the door bell is pressed
 or not is published at the MQTT topic `smarthome/floor/door_bell`.
 
 ESPHome allows it to create automations without Home Assistant as well. If the bell button is pressed,
