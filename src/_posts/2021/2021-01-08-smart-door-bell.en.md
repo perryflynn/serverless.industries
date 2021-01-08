@@ -1,20 +1,20 @@
 ---
 author: christian
-title: Smart door bell build
+title: Building a smart door bell
 lang: en
 ref: smart-doorbell
 tags: [ electronics, 'smart home', 'home assistant', 'esphome' ]
 image: /assets/smartbell-hass.png
 ---
 
-The idea to include my door bell into [Home Assistant][hass] exists
-since 2018. I've asked a colleague which is electican how to do this.
+The idea to include my door bell into [Home Assistant][hass] has existed
+since 2018. I've asked a colleague who is an electican how to do this.
 
 A few days later he gave me a schematic and tried to explain it to me,
-but I didn't understand it.
+but I couldn't understand it's function.
 
-As you can see on the [posts of the last weeks]({{ '/tags.html#electronics' | relative_url }}),
-I finally fought through it and did it. :-)
+As you can see on the [last weeks posts]({{ '/tags.html#electronics' | relative_url }}),
+I finally fought through it and got it working. :-)
 
 ![Door bell in Home Assistant]({{'assets/smartbell-hass-small.png' | relative_url}}){:.img-fluid}
 
@@ -33,23 +33,23 @@ the electromagnet activates the doorbell chime.
 
 ## Smarthome
 
-I use Home Assistant for a long time now. New in my setup is [ESPHome][esphome],
-which allows it to confgure sensors on ESP32 boards whithout writing any code.
+I'm using Home Assistant for a long time now. New in my setup is [ESPHome][esphome],
+which allows it to confgure sensors on ESP32 boards whithout writing any additional code.
 
-The challenge is now to connect the 12V AC door bell to one of the 3.3V DC
+The challenge was now to connect the 12V AC door bell to one of the 3.3V DC
 GPIO Pins of the ESP32.
 
 ## Circuit
 
-The circuit consists of three components
+The circuit consists of three components.
 
 The AC signal is [rectified][rect] (sorry, german post) with a diode and a capacitor,
-afterwards a resistor reduces the current flow so that a LED can be connected.
+afterwards a resistor limits the current flow so that a LED can be connected.
 
 Instead of a simple LED we use a optocoupler. A optocoupler consists of a LED
 and a phototransistor. It allows to control one circuit from another one.
 
-Door bell and ESP32 are isolated from each ohther, the ESP32 requires it's own
+So door bell and ESP32 are isolated from each other. The ESP32 requires it's own
 5V power source.
 
 The output pins of the optocoupler are connected to the ESP32, it's just like a
@@ -64,8 +64,8 @@ simple switch.
   &nbsp;
 - 1x [Capacitor 220µF 25VDC](https://www.reichelt.de/index.html?ACTION=446&LA=446&nbc=1&q=elko%20radial%20220%20%C2%B5f%2025%20v)  
   Somehow it is possible to calculate the required capacitor (recommended), or you
-  [take a look to the oscilloscope][rect] (sorry, german post) at which capacitance
-  the reaction time is the best (lazy method).  
+  [take a look to the oscilloscope][rect] (sorry, german post) to measure which capacitance
+  is the most fitting (lazy method).  
   &nbsp;
 - 1x [CNY17-2 Optocoupler](https://www.reichelt.de/optokoppler-cny-17-ii-p6676.html)  
   The optocoupler model was choosen by my colleague. It should be possible to use any other
@@ -84,7 +84,7 @@ simple switch.
 
 ## ESPHome
 
-As I said earlier, [ESPHome][esphome] enables us to use sensors without writing any code.
+As I mentioned earlier, [ESPHome][esphome] enables us to use sensors without writing any additional code.
 Which component is used in which way is described with YAML.
 
 ESPHome communicates with the "outside world" via MQTT. I use the [Mosquitto Broker][mqtt] for this.
@@ -130,11 +130,11 @@ mqtt:
   topic_prefix: smarthome/floor
 ```
 
-The `binary_sensor` is the pin with the optocoupler connected. If the door bell is pressed
+The `binary_sensor` is the pin with the optocoupler connected. Wether the door bell is pressed
 or not is published at the MQTT topic `smarthome/floor/door_bell`.
 
-ESPHome allows it to create automations without Home Assistant as well. If the bell is pressed,
-the `on_press` and `on_release` control a LED at pin 18.
+ESPHome allows it to create automations without Home Assistant as well. If the bell button is pressed,
+the `on_press` or `on_release` is controling the LED at pin 18.
 
 ## Home Assistant
 
