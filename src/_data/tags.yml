@@ -22,6 +22,8 @@
   name: electronics
 - glyph: <i class="mdi mdi-email-outline"></i>
   name: email
+- glyph: <i class="mdi mdi-home-assistant"></i>
+  name: esphome
 - glyph: <i class="mdi mdi-freebsd"></i>
   name: freebsd
 - glyph: <i class="mdi mdi-gamepad-variant-outline"></i>
@@ -34,6 +36,8 @@
   name: grafana
 - glyph: <i class="mdi mdi-desktop-classic"></i>
   name: hardware
+- glyph: <i class="mdi mdi-home-assistant"></i>
+  name: home assistant
 - glyph: <i class="mdi mdi-language-html5"></i>
   name: html
 - glyph: <i class="mdi mdi-web"></i>
@@ -72,6 +76,8 @@
   name: server
 - glyph: <i class="mdi mdi-bash"></i>
   name: shell
+- glyph: <i class="mdi mdi-devices"></i>
+  name: smart home
 - glyph: <i class="mdi mdi-dev-to"></i>
   name: software development
 - glyph: <i class="mdi mdi-video-input-antenna"></i>
