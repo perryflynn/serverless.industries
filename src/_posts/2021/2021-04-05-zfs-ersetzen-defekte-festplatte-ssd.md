@@ -4,7 +4,6 @@ title: "ZFS: Defekte Festplatte ersetzen"
 lang: de
 ref: zfs-faulty-disk
 tags: [ server, zfs, linux, hardware ]
-image: /assets/smartbell-hass.png
 ---
 
 Gestern ist nach 4,7 Jahren die erste Festplatte meines ZFS Pools kaputt gegangen.
