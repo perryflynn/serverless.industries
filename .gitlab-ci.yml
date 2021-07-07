@@ -42,6 +42,7 @@ variables:
     # prepare bundler
     - 'sudo gem install bundler'
     - 'bundle config set path vendor/ruby'
+    - env
     # prepare config
     - 'sed -i "s/__is_ci__/true/g" ./src/_config_ci.yml'
     - 'sed -i "s/__serviceworker_enabled__/$enableserviceworker/g" ./src/_config_ci.yml'
