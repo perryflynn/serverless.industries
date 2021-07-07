@@ -39,8 +39,10 @@ variables:
     # folders
     - 'mkdir dist-${distname}'
     - 'mkdir -p vendor/ruby'
-    # prepare config
+    # prepare bundler
+    - 'gem install bundler'
     - 'bundle config set path vendor/ruby'
+    # prepare config
     - 'sed -i "s/__is_ci__/true/g" ./src/_config_ci.yml'
     - 'sed -i "s/__serviceworker_enabled__/$enableserviceworker/g" ./src/_config_ci.yml'
     - 'sed -i "s/__commit_short__/$CI_COMMIT_SHORT_SHA/g" ./src/_config_ci.yml'
