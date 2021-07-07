@@ -27,6 +27,7 @@ variables:
     key:
       files:
         - Gemfile.lock
+        - Gemfile
     paths:
       - vendor
   script:
