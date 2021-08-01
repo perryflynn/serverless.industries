@@ -100,8 +100,6 @@ Quelle: [aftvnews.com](https://www.aftvnews.com/how-to-set-custom-sleep-or-scree
 
 ## Neustart
 
-Normaler Neustart:
-
 ```sh
 ./adb reboot
 ```
