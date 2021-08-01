@@ -72,6 +72,26 @@ schreiben zu lassen.
 ./adb shell "input keyboard text 'my-awesome-long-password-which-is-annoying-to-type'"
 ```
 
+## Bildschirm abdunkeln verhindern
+
+Sobald der FireTV den Bildschirmschoner aktiviert, geht oft der aktuell pausierte Film
+verloren und man muss diesen neu aus dem "Weiterschauen" Menü starten. Über ADB kann man
+die Timeouts (Millisekunden; Sekunde x 1000) für Bildschirmschoner und Bildschirm abdunkeln verändern.
+
+Bildschirmschoner nach einer Stunde aktivieren:
+
+```sh
+./adb shell settings put system screen_off_timeout 3600000
+```
+
+Bildschirm nach drei Stunden ausschalten:
+
+```sh
+./adb shell settings put secure sleep_timeout 10800000
+```
+
+Quelle: [aftvnews.com](https://www.aftvnews.com/how-to-set-custom-sleep-or-screensaver-times-on-the-amazon-fire-tv-or-stick-without-root/)
+
 ## Screenshot erstellen
 
 ```sh
