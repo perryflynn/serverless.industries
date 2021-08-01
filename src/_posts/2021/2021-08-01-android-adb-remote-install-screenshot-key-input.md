@@ -77,3 +77,11 @@ schreiben zu lassen.
 ```sh
 ./adb exec-out screencap -p > screen.png
 ```
+
+## Neustart
+
+Normaler Neustart:
+
+```sh
+./adb reboot
+```
