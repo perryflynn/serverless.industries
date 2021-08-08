@@ -7,8 +7,8 @@ toc: true
 ---
 
 Oft sagen die Fehlermeldungen schon, was das Problem ist.
-Und wenn nicht, gibts Tools die bei jeder Linux Distribution dabei
-sind, die einem beim debuggen helfen.
+Und wenn nicht, gibt es Tools welche bei jeder Linux Distribution dabei
+sind und einem beim debuggen helfen können.
 
 ## Fehlermeldungen
 
