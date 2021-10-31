@@ -2,6 +2,10 @@
   name: android
 - glyph: <i class="mdi mdi-ansible"></i>
   name: ansible
+- glyph: <i class="mdi mdi-microsoft-azure-devops"></i>
+  name: azure pipelines
+- glyph: <i class="mdi mdi-pipe"></i>
+  name: continuous integration
 - glyph: <i class="mdi mdi-api"></i>
   name: api
 - glyph: <i class="mdi mdi-apple"></i>
