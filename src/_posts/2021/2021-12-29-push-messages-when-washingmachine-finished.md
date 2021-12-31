@@ -4,7 +4,7 @@ title: Push Nachricht wenn die Waschmaschine fertig ist
 lang: de
 #ref: washingmachine-push-mystrom-hass
 tags: [ smart home, home assistant, grafana ]
-image: /assets/mystrom-graph.jpg
+image: /assets/mystrom-finished.jpg
 ---
 
 Mein Waschtrockner ist zwar smart, allerdings nur via Hersteller Cloud und
@@ -12,6 +12,8 @@ einer unpraktischen App. Daher würde ich das nur sehr ungerne nutzen.
 
 Eigentlich möchte ich einfach nur eine Push Nachricht erhalten, wenn
 die Waschmaschine fertig ist. (Steht im Keller)
+
+![myStrom Finished]({{'assets/mystrom-finished.jpg' | relative_url}}){:.img-fluid}
 
 Der [WiFi Switch von myStrom](https://mystrom.com/de/wifi-switch/) ist eine
 WLAN Steckdose welche neben dem an- und ausschalten via HTTP Request auch
