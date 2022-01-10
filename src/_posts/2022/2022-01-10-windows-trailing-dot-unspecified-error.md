@@ -1,6 +1,6 @@
 ---
 author: christian
-title: Error 0x80004005: Unbekannter Fehler
+title: 'Error 0x80004005: Unbekannter Fehler'
 lang: de
 ref: windows-file-trailing-dot
 tags: [ windows, 'continuous integration', gitlab ]

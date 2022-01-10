@@ -1,6 +1,6 @@
 ---
 author: christian
-title: Error 0x80004005: Unspecified error
+title: 'Error 0x80004005: Unspecified error'
 lang: en
 ref: windows-file-trailing-dot
 tags: [ windows, 'continuous integration', gitlab ]
