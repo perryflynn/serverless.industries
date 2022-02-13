@@ -5,6 +5,7 @@
 Author: {{ author.name }}
 Job: {{author.job}}
 Site: mailto:{{author.email}}
+GnuPG: {{author.gnupg}}
 Twitter: @{{author.twitter}}
 GitHub: https://github.com/{{author.github}}
 

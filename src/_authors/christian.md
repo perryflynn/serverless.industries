@@ -5,6 +5,7 @@ job: Software Engineer
 twitter: perryf1ynn
 github: perryflynn
 email: christian@serverless.industries
+gnupg: https://serverless.industries/gnupg-serverless.txt
 ---
 
 Hi! I am a software engineer with strong DevOp skills.

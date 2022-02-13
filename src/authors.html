@@ -40,5 +40,13 @@ title: Authors
                 </a>
             </li>
         {% endif %}
+        {% if author.gnupg %}
+            <li class="list-inline-item">
+                <a href="{{author.gnupg}}">
+                    <i class="mdi mdi-key"></i>
+                    GnuPG
+                </a>
+            </li>
+        {% endif %}
     </ul>
 {% endfor %}
