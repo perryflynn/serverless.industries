@@ -41,3 +41,5 @@ collections:
   authors:
     title: Authors
     output: true
+
+include: [".well-known"]

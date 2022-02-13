@@ -1,0 +1,2 @@
+Contact: mailto:security@serverless.industries
+Encryption: https://serverless.industries/gnupg-serverless.txt

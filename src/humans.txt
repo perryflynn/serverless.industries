@@ -1,0 +1,16 @@
+---
+---
+/* TEAM */
+{% for author in site.authors %}
+Author: {{ author.name }}
+Job: {{author.job}}
+Site: mailto:{{author.email}}
+Twitter: @{{author.twitter}}
+GitHub: https://github.com/{{author.github}}
+
+{% endfor -%}
+/* SITE */
+
+Standards: HTML5, CSS3, Service Workers
+Components: Jekyll, GitLab CI
+HumansTxt: https://humanstxt.org/
