@@ -20,30 +20,35 @@ einen Debian Buster Container eingebunden und
 gestartet.
 
 ```sh
+docker stop terraria || true
+docker rm terraria || true
+
+chmod a+x /opt/docker-terraria/bin/TerrariaServer*
+
 mkdir -p \
-    /containerdata/terraria/server \
-    /containerdata/terraria/world
+    /opt/docker-terraria/bin \
+    /opt/docker-terraria/world
 
 # - Download Dedicated Server von
 #   http://terraria.org/
 #   (Link ganz unten im Footer)
 # - Entpacken der Linux Binaries nach
-#   /containerdata/terraria/server
+#   /opt/docker-terraria/bin
 
 docker run -it -d \
     --name terraria \
     -p 7777:7777 \
-    -v /containerdata/terraria:/data \
-    --workdir /data/server \
-    --entrypoint ./TerrariaServer \
+    -v /opt/docker-terraria/bin:/root/bin/terraria \
+    -v /opt/docker-terraria/world:/root/.local/share/Terraria \
+    --workdir /root/bin/terraria \
+    --entrypoint ./TerrariaServer.bin.x86_64 \
     debian:buster-slim \
-        -x64 \
-        -players 20 \
-        -worldpath /data/world \
-        -world /data/world/myworld.wld \
+        -players 50 \
+        -motd "LadL 2022" \
         -port 7777 \
         -autocreate 3 \
-        -worldname myworld
+        -worldname myworld \
+        -world /root/.local/share/Terraria/Worlds/myworld.wld
 ```
 
 Die Admin Konsole des Servers kann mit

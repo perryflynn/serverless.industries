@@ -18,30 +18,35 @@ the host system. Both will be mounted into a vanilla Debian Buster
 Image.
 
 ```sh
+docker stop terraria || true
+docker rm terraria || true
+
+chmod a+x /opt/docker-terraria/bin/TerrariaServer*
+
 mkdir -p \
-    /containerdata/terraria/server \
-    /containerdata/terraria/world
+    /opt/docker-terraria/bin \
+    /opt/docker-terraria/world
 
 # - Download Dedicated Server from
 #   http://terraria.org/
 #   (Link at the bottom of the page)
-# - Unzip the binaries to
-#   /containerdata/terraria/server
+# - Extract the linux binaries to
+#   /opt/docker-terraria/bin
 
 docker run -it -d \
     --name terraria \
     -p 7777:7777 \
-    -v /containerdata/terraria:/data \
-    --workdir /data/server \
-    --entrypoint ./TerrariaServer \
+    -v /opt/docker-terraria/bin:/root/bin/terraria \
+    -v /opt/docker-terraria/world:/root/.local/share/Terraria \
+    --workdir /root/bin/terraria \
+    --entrypoint ./TerrariaServer.bin.x86_64 \
     debian:buster-slim \
-        -x64 \
-        -players 20 \
-        -worldpath /data/world \
-        -world /data/world/myworld.wld \
+        -players 50 \
+        -motd "LadL 2022" \
         -port 7777 \
         -autocreate 3 \
-        -worldname myworld
+        -worldname myworld \
+        -world /root/.local/share/Terraria/Worlds/myworld.wld
 ```
 
 The admin console of the server can be opened with
