@@ -31,3 +31,6 @@ RewriteRule ^typo3(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
 RewriteRule ^admin(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
 RewriteRule ^administrator(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
 RewriteRule \.sql$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+
+# rewrites from old posts
+RewriteRule ^post/gnu-linux/amazon-dash-button-hack /2022/03/11/hack-the-dashbutton.html [L,R=301]
