@@ -42,4 +42,4 @@ collections:
     title: Authors
     output: true
 
-include: [".well-known"]
+include: [ ".well-known", ".htaccess" ]
