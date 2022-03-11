@@ -34,3 +34,5 @@ RewriteRule \.sql$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
 
 # rewrites from old posts
 RewriteRule ^post/gnu-linux/amazon-dash-button-hack /2022/03/11/hack-the-dashbutton.html [L,R=301]
+RewriteRule ^post/gnu-linux/netcup-kvm-vserver-lxc-proxmox /2020/05/01/proxmox-lxc-netcup.html [L,R=301]
+RewriteRule ^post/sonstiges/supermicro-ipmi-fan-control-rpm /2022/03/17/supermicro-ipmi-fanspeed.html [L,R=301]
