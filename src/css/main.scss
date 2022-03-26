@@ -181,6 +181,10 @@ $content-opacity: .9;
         }
     }
 
+    p code {
+        word-break: break-all;
+    }
+
     pre {
         background-color: rgba($lay-color-bright, .6);
         border-left: 2px solid darken($lay-color-bright, 50%);

@@ -2,9 +2,9 @@
 
 @font-face {
   font-family: '#{$mdi-font-name}';
-  src: url('#{$mdi-font-path}/#{$mdi-filename}-webfont.woff2#{$commit}') format('woff2'),
-    url('#{$mdi-font-path}/#{$mdi-filename}-webfont.woff#{$commit}') format('woff'),
-    url('#{$mdi-font-path}/#{$mdi-filename}-webfont.ttf#{$commit}') format('truetype');
+  src: url('#{$mdi-font-path}/#{$mdi-filename}-webfont.woff2#{$commit}&v=#{$mdi-version}') format('woff2'),
+    url('#{$mdi-font-path}/#{$mdi-filename}-webfont.woff#{$commit}&v=#{$mdi-version}') format('woff'),
+    url('#{$mdi-font-path}/#{$mdi-filename}-webfont.ttf#{$commit}&v=#{$mdi-version}') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -56,7 +56,7 @@
   name: javascript
 - glyph: <i class="mdi mdi-keyboard"></i>
   name: keyboard
-- glyph: <i class="mdi mdi-linux"></i>
+- glyph: <i class="mdi mdi-penguin"></i>
   name: linux
 - glyph: <i class="mdi mdi-violin"></i>
   name: mimimi
@@ -90,6 +90,10 @@
   name: streaming
 - glyph: <i class="mdi mdi-lock-outline"></i>
   name: tls
+- glyph: <i class="mdi mdi-tunnel"></i>
+  name: tunnel
+- glyph: <i class="mdi mdi-ssh"></i>
+  name: ssh
 - glyph: <i class="mdi mdi-hand-heart"></i>
   name: usability
 - glyph: <i class="mdi mdi-web-box"></i>
