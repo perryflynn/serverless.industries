@@ -1,7 +1,7 @@
 ---
 author: christian
 title: NGINX Reverse Proxy durch Forward Proxy
-lang: de
+locale: de
 ref: nginx-reverse-forward
 tags: [http, nginx]
 ---

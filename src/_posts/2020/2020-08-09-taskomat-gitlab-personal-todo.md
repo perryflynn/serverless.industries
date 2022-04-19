@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "TaskOMat: GitLab als persönliche ToDo"
-lang: de
+locale: de
 ref: taskomat-gitlab
 tags: [projects, gitlab]
 toc: true

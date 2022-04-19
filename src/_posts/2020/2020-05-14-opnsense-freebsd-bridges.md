@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "OPNSense/FreeBSD und Bridges"
-lang: de
+locale: de
 ref: freebsd-bridges
 tags: ['opnsense', 'freebsd', 'network']
 ---

@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Find devices with IPv6
-lang: en
+locale: en
 ref: ipv6-device-lookup
 tags: [ network, ipv6, gpn19 ]
 ---

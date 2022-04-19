@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Android Geräte mit ADB vom Netzwerk steuern
-lang: de
+locale: de
 tags: [ android, 'software development', 'smart home' ]
 toc: true
 ---

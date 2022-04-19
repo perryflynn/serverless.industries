@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "TaskOMat Counters: Dinge zählen"
-lang: de
+locale: de
 ref: taskomat-gitlab-counters
 tags: [projects, gitlab]
 ---

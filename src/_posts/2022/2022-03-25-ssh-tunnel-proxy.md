@@ -1,7 +1,7 @@
 ---
 author: christian
 title: 'SSH Tunnel, ProxyJumps und HTTPS auf dem gleichen Port'
-lang: de
+locale: de
 tags: [ linux, server, ssh, tunnel, network ]
 ---
 

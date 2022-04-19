@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "ClusterHAT: Pi Zeros mit Strom versorgen, wenn Pi 4 neugestartet wird"
-lang: de
+locale: de
 ref: clusterhat-power
 tags: ['raspberry pi', linux]
 toc: true

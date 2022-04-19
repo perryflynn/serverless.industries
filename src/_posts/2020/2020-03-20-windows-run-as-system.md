@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Windows: Befehle mit Systemrechten ausführen"
-lang: de
+locale: de
 ref: windows-run-as-system
 tags: ['windows']
 ---

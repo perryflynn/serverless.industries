@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Upload + Download Speedtest in JavaScript"
-lang: de
+locale: de
 ref: speedtest-project
 tags: ['http', 'html', 'javascript', 'projects']
 ---

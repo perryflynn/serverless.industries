@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Docker Container via Volume finden
-lang: de
+locale: de
 ref: ansible-docker-volume-find
 tags: [docker, ansible]
 ---

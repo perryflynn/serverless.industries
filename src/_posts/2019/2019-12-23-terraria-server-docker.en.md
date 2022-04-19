@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Terraria Server in Docker
-lang: en
+locale: en
 ref: terraria-docker
 tags: ['linux', 'docker', 'games']
 ---

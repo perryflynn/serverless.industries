@@ -1,7 +1,7 @@
 ---
 author: christian
 title: NGINX und Certificate Chains Theorie
-lang: de
+locale: de
 ref: nginx-cert-chain
 tags: [linux, http, nginx, tls]
 ---

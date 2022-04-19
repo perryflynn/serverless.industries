@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Push Nachricht wenn die Waschmaschine fertig ist
-lang: de
+locale: de
 #ref: washingmachine-push-mystrom-hass
 tags: [ smart home, home assistant, grafana ]
 image: /assets/mystrom-finished.jpg

@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Günther says: Eine CSS Übung"
-lang: de
+locale: de
 ref: guenther-says
 tags: ['javascript', 'html', 'projects', 'css']
 image: /assets/guenther-says.png

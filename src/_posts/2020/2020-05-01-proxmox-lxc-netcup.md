@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Netcup KVM Server und Proxmox LXC Container"
-lang: de
+locale: de
 ref: netcup-lxc-proxmox
 tags: ['linux', 'proxmox', 'server']
 toc: true

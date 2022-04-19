@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "$PATH Cache in Bash neu laden"
-lang: de
+locale: de
 ref: bash-path-cache-refresh
 tags: ['linux', 'shell', 'bash']
 ---

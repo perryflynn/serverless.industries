@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Geräte über IPv6 finden
-lang: de
+locale: de
 ref: ipv6-device-lookup
 tags: [ network, ipv6, gpn19 ]
 ---

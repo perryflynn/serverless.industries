@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Smarte Türklingel selbst bauen
-lang: de
+locale: de
 ref: smart-doorbell
 tags: [ electronics, 'smart home', 'home assistant', 'esphome' ]
 image: /assets/smartbell-hass.png

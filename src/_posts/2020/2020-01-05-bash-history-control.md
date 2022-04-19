@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Bash History konfigurieren
-lang: de
+locale: de
 ref: bash-history-conf
 tags: ['linux', 'bash', 'shell']
 ---

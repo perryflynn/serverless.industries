@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Systemauslastung von Webspaces"
-lang: de
+locale: de
 ref: webspace-sysinfo
 tags: ['php', 'webspace', 'linux', 'projects', 'server']
 ---

@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Ursachen für Verbindungsprobleme
-lang: de
+locale: de
 tags: [ 'software development', server, network, linux ]
 toc: true
 ---

@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Anrufhistorie nach Xiaomi MIUI leer
-lang: de
+locale: de
 tags: [ android ]
 ---
 

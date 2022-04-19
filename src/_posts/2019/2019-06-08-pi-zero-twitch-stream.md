@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Raspberry Pi Zero W Kamera via Twitch streamen
-lang: de
+locale: de
 ref: rpicam-stream-twitch
 tags: [ "raspberry pi", streaming ]
 ---

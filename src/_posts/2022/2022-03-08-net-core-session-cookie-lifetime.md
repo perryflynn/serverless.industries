@@ -1,7 +1,7 @@
 ---
 author: christian
 title: '.NET Core Session Cookie Lifetime'
-lang: de
+locale: de
 ref: net-core-session-cookie-lifetime
 tags: [ csharp, dotnet ]
 ---

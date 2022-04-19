@@ -1,7 +1,7 @@
 ---
 author: christian
 title: ZFS Tunables
-lang: de
+locale: de
 ref: zfs-tunables
 tags: [linux, zfs, server, hardware]
 ---

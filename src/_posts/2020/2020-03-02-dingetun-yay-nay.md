@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "dingetun.net Lite: Yay or Nay?"
-lang: de
+locale: de
 ref: dingetun-yay-nay
 tags: ['projects']
 toc: true

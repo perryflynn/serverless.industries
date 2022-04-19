@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "debconf: Install Debian Packages unattended"
-lang: en
+locale: en
 ref: debconf-unattended-install
 tags: ['linux', 'ansible', 'debian']
 toc: true

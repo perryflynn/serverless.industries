@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Progressive Web Apps und Service Workers"
-lang: de
+locale: de
 ref: pwa-service-workers
 tags: ['javascript', 'html', 'projects']
 image: /assets/serverless-pwa.png

@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Wie man HTTP APIs mit NGINX härtet
-lang: de
+locale: de
 ref: hardening-nginx-api
 tags: [ linux, nginx, http, api, mimimi ]
 ---

@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "YouLoop: Endlose YouTube Videos"
-lang: de
+locale: de
 ref: youloop-website
 tags: [projects, html, javascript]
 ---

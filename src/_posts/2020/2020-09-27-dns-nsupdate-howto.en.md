@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "DNS Updates with nsupdate"
-lang: en
+locale: en
 ref: nsupdate-howto
 tags: [linux, dns, projects]
 ---

@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "minimon: Minimalistic Monitoring"
-lang: de
+locale: de
 ref: minimon
 tags: [network, projects, http, bash, monitoring]
 image: /assets/minimon.png

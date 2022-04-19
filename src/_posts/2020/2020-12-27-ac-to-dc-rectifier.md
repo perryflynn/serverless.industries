@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Wechselstrom Gleichrichten
-lang: de
+locale: de
 tags: [ electronics ]
 image: /assets/acdc-3.jpg
 ---

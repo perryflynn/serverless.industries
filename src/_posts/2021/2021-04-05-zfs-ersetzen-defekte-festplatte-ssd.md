@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "ZFS: Defekte Festplatte ersetzen"
-lang: de
+locale: de
 ref: zfs-faulty-disk
 tags: [ server, zfs, linux, hardware ]
 ---

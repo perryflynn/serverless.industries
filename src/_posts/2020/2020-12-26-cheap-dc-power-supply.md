@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Märklin Trafo als regelbare Wechselstromquelle"
-lang: de
+locale: de
 tags: [ electronics ]
 image: /assets/maerklin-trafo-indicators.jpg
 ---

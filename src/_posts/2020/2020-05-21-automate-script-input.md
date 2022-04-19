@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Shell Scripts: Benutzereingaben automatisieren"
-lang: de
+locale: de
 ref: expect-automate-script-input
 tags: ['linux', 'shell', 'bash', 'ansible']
 ---

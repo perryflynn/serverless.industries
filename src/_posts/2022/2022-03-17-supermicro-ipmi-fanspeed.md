@@ -1,7 +1,7 @@
 ---
 author: christian
 title: 'Lüftersteuerung für Supermicro IPMI'
-lang: de
+locale: de
 tags: [ linux, server, hardware ]
 ---
 

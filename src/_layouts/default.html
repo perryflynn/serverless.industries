@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{page.lang}}">
+<html lang="{{page.locale}}">
 
 <head>
     <meta charset="utf-8">
@@ -47,10 +47,10 @@
     <link rel="alternate" type="application/rss+xml" title="{{site.my.rsstitle}}" href="{{site.url}}{{'/feed.xml' | relative_url}}">
     <link href="{{site.url}}{{'/opensearch.xml' | relative_url}}" rel="search" title="{{site.my.domain}}" type="application/opensearchdescription+xml">
 
-    {% assign otherlang = site.posts | where_exp: 'item', "item.lang!=page.lang and item.ref==page.ref" %}
+    {% assign otherlang = site.posts | where_exp: 'item', "item.locale!=page.locale and item.ref==page.ref" %}
     {% if page and otherlang.size > 0 %}
     {% for langpost in otherlang %}
-    <link rel="alternate" hreflang="{{langpost.lang}}" href="{{site.url}}{{langpost.url}}">
+    <link rel="alternate" hreflang="{{langpost.locale}}" href="{{site.url}}{{langpost.url}}">
     {% endfor %}
     {% endif %}
 

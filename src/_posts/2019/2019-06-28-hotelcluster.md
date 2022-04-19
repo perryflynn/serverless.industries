@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Cluster im Hotel
-lang: de
+locale: de
 ref: hotel-cluster
 tags: [linux, network, gpn19, "raspberry pi"]
 ---

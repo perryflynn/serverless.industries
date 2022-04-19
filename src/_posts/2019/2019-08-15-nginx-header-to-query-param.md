@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Query String Parameter in den Header mit NGINX
-lang: de
+locale: de
 ref: nginx-header-querystring
 tags: [http, nginx]
 ---

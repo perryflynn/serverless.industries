@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Pipeline Variablen durchreichen
-lang: de
+locale: de
 tags: [ gitlab, azure pipelines, continuous integration ]
 ---
 

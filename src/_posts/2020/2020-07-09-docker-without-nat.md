@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Docker: Performance-Probleme durch NAT/Conntrack"
-lang: de
+locale: de
 ref: docker-bad-nat
 tags: [linux, docker, network]
 toc: true

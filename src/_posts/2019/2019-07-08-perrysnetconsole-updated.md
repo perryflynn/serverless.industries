@@ -1,7 +1,7 @@
 ---
 author: christian
 title: PerrysNetConsole aktualisiert
-lang: de
+locale: de
 ref: perrysnetconsole-update1
 tags: [projects, dotnet, software development]
 ---

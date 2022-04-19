@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "git-clean-sync.sh"
-lang: de
+locale: de
 ref: git-clean-sync.sh
 tags: ['git', 'projects', 'bash', 'software development']
 ---

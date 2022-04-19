@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Docker Deployments mit Ansible und YAML Anchors"
-lang: de
+locale: de
 tags: [ ansible, yaml, docker ]
 ---
 

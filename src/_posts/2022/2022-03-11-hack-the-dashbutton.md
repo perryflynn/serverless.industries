@@ -1,7 +1,7 @@
 ---
 author: christian
 title: 'Amazon Dashbutton als IoT Button'
-lang: de
+locale: de
 tags: [ linux, network, 'amazon dash button', projects ]
 ---
 

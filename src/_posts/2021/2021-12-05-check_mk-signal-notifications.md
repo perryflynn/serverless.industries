@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Check_MK Notifications via Signal Messenger
-lang: de
+locale: de
 tags: [ monitoring, check_mk, signal messenger ]
 image: /assets/cmksignal.jpg
 toc: yes

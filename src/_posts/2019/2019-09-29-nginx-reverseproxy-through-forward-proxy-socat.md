@@ -1,7 +1,7 @@
 ---
 author: christian
 title: NGINX Reverse Proxy durch Forward Proxy mit socat
-lang: de
+locale: de
 ref: nginx-proxy-socat
 tags: [http, nginx]
 ---

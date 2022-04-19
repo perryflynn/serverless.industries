@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "Webhosting: Nur ein Cronjob erlaubt"
-lang: de
+locale: de
 ref: webhosting-cron-limit
 tags: [linux, php, webspace]
 ---

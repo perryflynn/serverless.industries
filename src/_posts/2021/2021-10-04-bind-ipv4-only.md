@@ -1,7 +1,7 @@
 ---
 author: christian
 title: Bind9 Rekursion über IPv6 verhindern
-lang: de
+locale: de
 tags: [ linux, server, dns ]
 ---
 

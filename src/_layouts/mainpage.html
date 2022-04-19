@@ -93,8 +93,8 @@ layout: default
             </div>
         </div>
 
-        {% if page.lang and page.ref %}
-            {% assign otherlang = site.posts | where_exp: 'item', "item.lang!=page.lang and item.ref==page.ref" %}
+        {% if page.locale and page.ref %}
+            {% assign otherlang = site.posts | where_exp: 'item', "item.locale!=page.locale and item.ref==page.ref" %}
             {% if page and otherlang and otherlang.size > 0 %}
             <div class="row langmenu">
                 <div class="col">
@@ -103,7 +103,7 @@ layout: default
                         This article is also available in the following other languages /
                         Dieser Beitrag ist auch in folgenden anderen Sprachen verfügbar:
                         {%-for langpost in otherlang %}
-                            <a href="{{langpost.url | relative_url}}">{{site.langmap[langpost.lang].name}}</a>{% if forloop.last==false %}, {% endif %}
+                            <a href="{{langpost.url | relative_url}}">{{site.localemap[langpost.locale].name}}</a>{% if forloop.last==false %}, {% endif %}
                         {% endfor %}
                     {% endif %}
 

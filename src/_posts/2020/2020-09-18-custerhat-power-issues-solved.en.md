@@ -1,7 +1,7 @@
 ---
 author: christian
 title: "ClusterHAT: Solving power issues with Pi Zeros when rebooting Pi 4"
-lang: en
+locale: en
 ref: clusterhat-power
 tags: ['raspberry pi', linux]
 toc: true
