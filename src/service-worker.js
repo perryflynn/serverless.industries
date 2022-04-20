@@ -85,6 +85,7 @@ self.addEventListener('fetch', event =>
         event.request.url == basePath)
     {
         event.respondWith(new Response('', {
+            status: 302,
             statusText: 'Found',
             headers: {
                 Location: basePath + 'index/de',
