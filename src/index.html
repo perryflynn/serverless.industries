@@ -1,12 +1,5 @@
 ---
 layout: content
-title: Neuste Beiträge
-locale: de
 ---
 
-<div class="list-lang-switch-info">
-  Switch to the list with all <a href="{{'/index.en.html' | relative_url}}">English articles</a>.
-</div>
-
-{% assign germanposts = site.posts | where: 'locale', 'de' %}
-{% include postlist.html posts=germanposts %}
+<a href="{{'/index/de' | relative_url}}">deutsche Beiträge</a>

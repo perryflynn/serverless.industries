@@ -4,6 +4,7 @@ Encoding.default_external = Encoding::UTF_8
 source 'https://rubygems.org'
 
 gem 'jekyll'
+gem 'jekyll-paginate-v2'
 
 group :jekyll_plugins do
     gem 'jekyll-feed'
@@ -16,5 +17,3 @@ group :jekyll_plugins do
     gem 'jekyll-target-blank'
     gem 'jekyll-toc'
 end
-
-# moep 2

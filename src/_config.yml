@@ -36,10 +36,21 @@ plugins:
   - jekyll-target-blank
   - jekyll-feed
   - jekyll-toc
+  - jekyll-paginate-v2
+
+#gems: [ jekyll-paginate-v2 ]
 
 collections:
   authors:
     title: Authors
     output: true
+
+pagination:
+  enabled: true
+  per_page: 24
+  sort_field: 'date'
+  sort_reverse: true
+  title: ':title - Page :num'
+  permalink: '/:num/'
 
 include: [ ".well-known", ".htaccess" ]

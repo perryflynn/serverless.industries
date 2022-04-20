@@ -3,9 +3,9 @@
 # only Main files contain this front matter, not partials.
 ---
 
-/* variables */
-
 $commit: "?commit={{site.git.commitlong}}";
+
+/* variables */
 
 @import "variables";
 
@@ -17,12 +17,6 @@ $container-max-widths: (
 );
 
 /* bootstrap resources */
-
-@import "mdi/scss/variables";
-@import "mdi/scss/functions";
-@import "mdi/scss/path";
-@import "mdi/scss/core";
-@import "mdi/scss/icons";
 
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
@@ -205,6 +199,29 @@ $content-opacity: .9;
 .postlist .postlistitem.draft,
 .postlist .postlistitem.future {
     opacity: .5;
+}
+
+.paginator {
+    margin-top: 20px;
+
+    .col {
+        text-align: center;
+
+        hr {
+            margin-bottom: 40px;
+        }
+        
+        a {
+            border: 1px solid darken($lay-color-bright, 50%);
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin-right: 20px;
+        }
+
+        a:last-child {
+            margin-right: 0px;
+        }
+    }
 }
 
 /* footer */

@@ -103,7 +103,7 @@ layout: default
                         This article is also available in the following other languages /
                         Dieser Beitrag ist auch in folgenden anderen Sprachen verfügbar:
                         {%-for langpost in otherlang %}
-                            <a href="{{langpost.url | relative_url}}">{{site.localemap[langpost.locale].name}}</a>{% if forloop.last==false %}, {% endif %}
+                            <a href="{{langpost.url | relative_url}}">{{site.langmap[langpost.locale].name}}</a>{% if forloop.last==false %}, {% endif %}
                         {% endfor %}
                     {% endif %}
 

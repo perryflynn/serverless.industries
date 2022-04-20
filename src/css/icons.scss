@@ -1,0 +1,14 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+$commit: "?commit={{site.git.commitlong}}";
+
+@import "variables";
+
+@import "mdi/scss/variables";
+@import "mdi/scss/functions";
+@import "mdi/scss/path";
+@import "mdi/scss/core";
+@import "mdi/scss/icons";

@@ -22,6 +22,9 @@ RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301]
 
+# redirect to start page
+RewriteRule ^$ {{'/index/de' | relative_url}} [L,R=301]
+
 # fun for script kiddies
 RewriteRule ^wp-login\.php$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
 RewriteRule ^wp-admin(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
