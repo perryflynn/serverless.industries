@@ -13,8 +13,8 @@ console.log('Service worker (re)started. Welcome to a service worker powered web
 const forceCacheList = [
     // no cache killer parameter
     ... [
-        'index/de',
-        'index/en',
+        'index/de/',
+        'index/en/',
         'offline.html',
         'authors.html',
         'tags.html',
