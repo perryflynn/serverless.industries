@@ -82,6 +82,16 @@ const cacheOne = async (url, response, event) =>
 self.addEventListener('fetch', event =>
 {
     if (event.request.method === 'GET' &&
+        event.request.url == basePath)
+    {
+        event.respondWith(new Response('', {
+            statusText: 'Found',
+            headers: {
+                Location: basePath + 'index/de',
+            }
+        }));
+    }
+    else if (event.request.method === 'GET' &&
         event.request.url.startsWith(basePath))
     {
         const cacheHandler = caches.match(event.request.url).then(cacheItem =>
