@@ -13,9 +13,8 @@ console.log('Service worker (re)started. Welcome to a service worker powered web
 const forceCacheList = [
     // no cache killer parameter
     ... [
-        '', // index.html
-        'index.html',
-        'index.en.html',
+        'index/de',
+        'index/en',
         'offline.html',
         'authors.html',
         'tags.html',
@@ -81,8 +80,9 @@ const cacheOne = async (url, response, event) =>
 
 self.addEventListener('fetch', event =>
 {
+    // start page redirect
     if (event.request.method === 'GET' &&
-        event.request.url == basePath)
+        (event.request.url == basePath || event.request.url.startsWith(basePath+'index.html')))
     {
         event.respondWith(new Response('', {
             status: 302,
@@ -92,6 +92,7 @@ self.addEventListener('fetch', event =>
             }
         }));
     }
+    // cache handling for blog pages
     else if (event.request.method === 'GET' &&
         event.request.url.startsWith(basePath))
     {
