@@ -16,6 +16,11 @@
             "src": "{{'/favicon/android-chrome-384x384.png' | relative_url}}?commit={{site.git.commitlong}}",
             "sizes": "384x384",
             "type": "image/png"
+        },
+        {
+            "src": "{{'/favicon/android-chrome-512x512.png' | relative_url}}?commit={{site.git.commitlong}}",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ],
     "theme_color": "#ffffff",
