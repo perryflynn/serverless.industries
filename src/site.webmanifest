@@ -5,22 +5,31 @@
 {
     "name": "serverless.industries",
     "short_name": "serverless.industries",
-    "start_url": "{{site.url}}{{'/index.html' | relative_url}}",
+    "start_url": "{{site.url}}{{'/index/de/' | relative_url}}",
     "icons": [
         {
             "src": "{{'/favicon/android-chrome-192x192.png' | relative_url}}?commit={{site.git.commitlong}}",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
         },
         {
             "src": "{{'/favicon/android-chrome-384x384.png' | relative_url}}?commit={{site.git.commitlong}}",
             "sizes": "384x384",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
         },
         {
             "src": "{{'/favicon/android-chrome-512x512.png' | relative_url}}?commit={{site.git.commitlong}}",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "{{'/favicon/android-chrome-512x512-alpha.png' | relative_url}}?commit={{site.git.commitlong}}",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
         }
     ],
     "theme_color": "#ffffff",
