@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 
 gem 'jekyll'
 gem 'jekyll-paginate-v2'
+gem 'classifier-reborn'
+gem 'gsl'
 
 group :jekyll_plugins do
     gem 'jekyll-feed'

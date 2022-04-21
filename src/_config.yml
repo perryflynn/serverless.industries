@@ -38,11 +38,8 @@ plugins:
   - jekyll-toc
   - jekyll-paginate-v2
 
-#gems: [ jekyll-paginate-v2 ]
-
 collections:
   authors:
-    title: Authors
     output: true
 
 pagination:

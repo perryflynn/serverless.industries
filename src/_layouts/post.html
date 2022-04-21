@@ -34,6 +34,18 @@ layout: content
     </article>
 </div>
 
+{% assign locale = page.locale | default: 'de' %}
+{% assign relas = site.related_posts | where: "locale", locale | slice:1, 5 %}
+{% if relas.size > 0 %}
+    <hr>
+    <h4>More</h4>
+    <ul>
+        {% for rela in relas %}
+            <li><a href="{{ rela.url | relative_url }}">{{ rela.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 <hr>
 
 <div class="post-bottom-bar">

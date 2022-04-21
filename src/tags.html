@@ -22,7 +22,7 @@ title: Tags
             {% endif %}
             {{tag[0]}}
         </h2>
-        {% for langitem in site.localemap %}
+        {% for langitem in site.langmap %}
             {% assign sortedposts = tag[1] | where_exp: 'item', "item.locale == langitem[0]" | sort_natural: "title" %}
             {% if sortedposts.size > 0 %}
                 <p>{{langitem[1].postlist}}:</p>
