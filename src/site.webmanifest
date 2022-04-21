@@ -5,7 +5,7 @@
 {
     "name": "serverless.industries",
     "short_name": "serverless.industries",
-    "start_url": "{{site.url}}{{'/index/de/' | relative_url}}",
+    "start_url": "{{site.url}}{{'/' | relative_url}}",
     "icons": [
         {
             "src": "{{'/favicon/android-chrome-192x192.png' | relative_url}}?commit={{site.git.commitlong}}",
