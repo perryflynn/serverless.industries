@@ -287,6 +287,18 @@ div.tagindex {
     }
 }
 
+/* projects */
+
+section.project {
+    clear: both;
+
+    .project-picture {
+        float: left;
+        margin: 0px 10px 10px 0px;
+        max-width: 200px;
+    }
+}
+
 /* post bottom bar */
 
 .post-bottom-bar {

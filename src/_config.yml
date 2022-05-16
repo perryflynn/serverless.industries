@@ -41,6 +41,8 @@ plugins:
 collections:
   authors:
     output: true
+  projects:
+    output: true
 
 pagination:
   enabled: true
