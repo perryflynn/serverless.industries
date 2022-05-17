@@ -15,9 +15,9 @@ const forceCacheList = [
     ... [
         'index/de/',
         'index/en/',
+        'tag/',
         'offline.html',
         'authors.html',
-        'tags.html',
     ]
     .map(url => basePath + url),
 
