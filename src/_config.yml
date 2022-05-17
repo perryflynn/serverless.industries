@@ -43,6 +43,10 @@ plugins:
   - jekyll-toc
   - jekyll-paginate-v2
 
+target-blank:
+  noopener: false
+  noreferrer: false
+
 collections:
   authors:
     output: true
