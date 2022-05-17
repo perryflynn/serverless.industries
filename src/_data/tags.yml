@@ -2,16 +2,16 @@
   name: android
 - glyph: <i class="mdi mdi-ansible"></i>
   name: ansible
-- glyph: <i class="mdi mdi-microsoft-azure-devops"></i>
-  name: azure pipelines
-- glyph: <i class="mdi mdi-pipe"></i>
-  name: continuous integration
 - glyph: <i class="mdi mdi-api"></i>
   name: api
 - glyph: <i class="mdi mdi-apple"></i>
   name: apple
+- glyph: <i class="mdi mdi-microsoft-azure-devops"></i>
+  name: azure pipelines
 - glyph: <i class="mdi mdi-bash"></i>
   name: bash
+- glyph: <i class="mdi mdi-pipe"></i>
+  name: continuous integration
 - glyph: <i class="mdi mdi-language-csharp"></i>
   name: csharp
 - glyph: <i class="mdi mdi-language-css3"></i>
@@ -86,14 +86,14 @@
   name: smart home
 - glyph: <i class="mdi mdi-dev-to"></i>
   name: software development
+- glyph: <i class="mdi mdi-ssh"></i>
+  name: ssh
 - glyph: <i class="mdi mdi-video-input-antenna"></i>
   name: streaming
 - glyph: <i class="mdi mdi-lock-outline"></i>
   name: tls
 - glyph: <i class="mdi mdi-tunnel"></i>
   name: tunnel
-- glyph: <i class="mdi mdi-ssh"></i>
-  name: ssh
 - glyph: <i class="mdi mdi-hand-heart"></i>
   name: usability
 - glyph: <i class="mdi mdi-web-box"></i>
