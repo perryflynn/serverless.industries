@@ -3,11 +3,20 @@ layout: content
 ---
 
 {% if page.tagposts %}
-    <h1>Articles tagged with {{page.taginfo.glyph|default: ''}} {{page.tagname}}</h1>
+    <h1>
+        Articles tagged with
+        <span class="headtag">{{page.taginfo.glyph|default: ''}} {{page.tagname}}</span>
+    </h1>
+
+    <p>This tag is used by {{page.tagpostcount}} posts.</p>
 
     {% for posts in page.tagposts %}
         {%- assign lang = posts[0] -%}
-        <h2>{{site.langmap[lang].postlist}}</h2>
+        <h2>
+            {{site.langmap[lang].postlist}}
+            <small class="text-muted">({{posts[1] | size}})</small>
+        </h2>
+        
         <ul>
             {%- assign sortedposts = posts[1] | sort_natural: "title" -%}
             {% for post in sortedposts %}
@@ -16,9 +25,10 @@ layout: content
         </ul>
     {% endfor %}
 
-    <h2 style="margin-top: 40px;">Other Tags</h2>
+    <h2>Other Tags</h2>
 {% else %}
     <h1>Tags</h1>
+    <p>All tags that are used in articles.</p>
 {% endif %}
 
 <div class="tagindex">

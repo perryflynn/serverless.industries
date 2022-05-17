@@ -13,33 +13,34 @@ module TagPagePlugin
                 bylang = items.group_by { |p| p['locale'] }
                 
                 # create page object
-                site.pages << TagPage.new(site, tagname, taginfo, bylang)
+                site.pages << TagPage.new(site, tagname, taginfo, bylang, items.length)
             
             end
         end
     end
   
     class TagPage < Jekyll::Page
-        def initialize(site, tag, taginfo, posts)
+        def initialize(site, tag, taginfo, posts, pagecount)
             # properties
             @site = site
             @tag = tag
             @taginfo = taginfo
             @tagposts = posts
             @base = site.source
+            @pagecount = pagecount
     
             # All pages have the same filename, so define attributes straight away.
             @basename = 'index'      # filename without the extension.
             @ext      = '.html'      # the extension.
             @name     = 'index.html' # basically @basename + @ext.
     
-            # Initialize data hash with a key pointing to all posts under current category.
-            # This allows accessing the list in a template via `page.linked_docs`.
+            # Initialize data hash the page frontmatter
             @data = {
                 'title' => 'Articles tagged with '+@tag,
                 'tagname' => @tag,
                 'taginfo' => @taginfo,
-                'tagposts' => @tagposts
+                'tagposts' => @tagposts,
+                'tagpostcount' => @pagecount
             }
 
             # Look up front matter defaults scoped to type `tags`, if given key

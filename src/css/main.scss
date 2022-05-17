@@ -241,6 +241,11 @@ $content-opacity: .9;
 
 /* Tags */
 
+h1 span.headtag {
+    white-space: nowrap;
+    color: $lay-color-highlight;
+}
+
 span.tagsummary {
     font-size: 70%;
     color: $lay-color-dark;
@@ -293,9 +298,15 @@ section.project {
     clear: both;
 
     .project-picture {
-        float: left;
-        margin: 0px 10px 10px 0px;
         max-width: 200px;
+        margin: 0px 0px 20px 0px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .project-picture {
+            float: left;
+            margin: 0px 10px 10px 0px;
+        }
     }
 }
 
