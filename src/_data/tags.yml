@@ -78,6 +78,8 @@
   name: proxmox
 - glyph: <i class="mdi mdi-raspberry-pi"></i>
   name: raspberry pi
+- glyph: <i class="mdi mdi-language-ruby"></i>
+  name: ruby
 - glyph: <i class="mdi mdi-server"></i>
   name: server
 - glyph: <i class="mdi mdi-bash"></i>
@@ -94,6 +96,8 @@
   name: tls
 - glyph: <i class="mdi mdi-tunnel"></i>
   name: tunnel
+- glyph: <i class="mdi mdi-test-tube"></i>
+  name: jekyll
 - glyph: <i class="mdi mdi-hand-heart"></i>
   name: usability
 - glyph: <i class="mdi mdi-web-box"></i>
