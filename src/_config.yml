@@ -21,12 +21,17 @@ sass:
   style: compressed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: tags
+    values:
+      layout: tagpage
+      permalink: tag/:tagname:output_ext
 
 langmap:
   en: { name: English, postlist: "Articles in English" }

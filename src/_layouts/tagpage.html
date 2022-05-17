@@ -1,0 +1,44 @@
+---
+layout: content
+---
+
+{% if page.tagposts %}
+    <h1>Articles tagged with {{page.taginfo.glyph|default: ''}} {{page.tagname}}</h1>
+
+    {% for posts in page.tagposts %}
+        {%- assign lang = posts[0] -%}
+        <h2>{{site.langmap[lang].postlist}}</h2>
+        <ul>
+            {%- assign sortedposts = posts[1] | sort_natural: "title" -%}
+            {% for post in sortedposts %}
+                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{post.date|date: '%Y-%m-%d'}})</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2 style="margin-top: 40px;">Other Tags</h2>
+{% else %}
+    <h1>Tags</h1>
+{% endif %}
+
+<div class="tagindex">
+    {% assign taggroups = site.tags | group_by_exp: "item", "item[0] | truncate: 1, '' | downcase" | sort: "name" %}
+    {% for taggroup in taggroups %}
+        <span class="taggroup">
+            <span class="taggroupbegin"><span class="tagletter">{{taggroup.name | upcase}}</span>
+
+            {% assign sortedtaggroup = taggroup.items | sort %}
+            {% for tag in sortedtaggroup %}
+                {%- assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag[0]" -%}
+                {%- assign tagslug = tag[0] | slugify -%}
+                <span class="tagitem">
+                    {% if tagicon[0] %}
+                        <span class="tagicon">{{tagicon[0].glyph}}</span>
+                    {% endif %}
+                    <a href="{{ '/tag/' | append: tagslug | append: '.html' | relative_url }}">{{tag[0]}}</a></span>
+                {%- if forloop.first -%}</span>{%- endif -%}
+                {%- if forloop.last==false %}, {% endif %}
+            {% endfor %}
+        </span>
+    {% endfor %}
+</div>

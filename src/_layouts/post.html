@@ -18,7 +18,8 @@ layout: content
         {% if tagicon[0] %}
             <span class="tagicon">{{tagicon[0].glyph}}</span>
         {% endif %}
-        <a href="{{'/tags.html' | relative_url}}#{{tag|slugify}}">{{tag}}</a></span>{% if forloop.last==false %}, {% endif %}
+        {%- assign tagslug = tag|slugify -%}
+        <a href="{{'/tag/' | append: tagslug | append: '.html' | relative_url}}">{{tag}}</a></span>{% if forloop.last==false %}, {% endif %}
     {% endfor %}
 </p>
 
