@@ -110,3 +110,5 @@
   name: reverse engineering
 - glyph: <i class="mdi mdi-language-java"></i>
   name: java
+- glyph: <i class="mdi mdi-electric-switch"></i>
+  name: shelly
