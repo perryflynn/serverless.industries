@@ -35,7 +35,7 @@ light:
         turn_off:
           service: shell_command.dashdisplay_off
         value_template: >-
-          {{states('binary_sensor.dashdisplay_status')}}
+          {{'{{'}}states('binary_sensor.dashdisplay_status')}}
 ```
 
 ```txt
