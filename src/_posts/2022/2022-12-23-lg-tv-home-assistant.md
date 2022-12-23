@@ -3,6 +3,7 @@ author: christian
 title: LG Smart TV mit Home Assistant automatisieren
 locale: de
 tags: [ smart home, ikea tradfri, home assistant ]
+image: /assets/lgtvhass.jpg
 ---
 
 Mein 10 Jahre alter Samsung TV ist leider vor ein paar Wochen gestorben. Da Reparatur Versuche 
@@ -139,6 +140,21 @@ Steckerleiste mit FireTV, Nintendo Switch und anderen Dingen schaltet.
 
 Die Ausschalt-Automation hat absichtlich eine Verzögerung von 60 Sekunden eingebaut, sodass
 versehendliches Ausschalten nicht dazu führt, dass alle Geräte abgewürgt werden.
+
+## Notifications
+
+WebOS kann auch Benachrichtigungen auf dem LG TV anzeigen. Eine entsprechenden
+Service gibt es dafür in Home Assistant auch.
+
+```yml
+service: notify.lg_smart_tv
+data:
+  message: serverless.industries 🚀
+```
+
+So sieht es dann aus:
+
+![Notifications auf dem TV]({{'assets/lgtvnotify.jpg' | relative_url}}){:.img-fluid}
 
 ## OLED + Standby
 
