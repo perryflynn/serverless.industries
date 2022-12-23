@@ -27,4 +27,5 @@ Die Nutzung eines Web Hooks zum starten der Bot Pipeline reduziert die Wartezeit
 Sekunden. Auch muss nun nicht mehr durch die ganze Ticketliste iteriert werden, da
 der Web Hook die Ticketnummer mitliefert.
 
-Der [Source Code von TaskOMat](https://github.com/perryflynn/taskomat) kann auf GitHub eingesehen werden.
+Der [Source Code von TaskOMat](https://github.com/perryflynn/taskomat) und ein detailiertes Read Me 
+kann auf GitHub eingesehen werden.
