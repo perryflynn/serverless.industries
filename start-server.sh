@@ -13,6 +13,6 @@ if [ ! -z "$JEKYLL_HOSTNAME" ]; then
     host="--host $JEKYLL_HOSTNAME"
 fi
 
-bundle exec jekyll serve $host --lsi --ssl-cert serve-cert.pem --ssl-key serve-key.pem -s ./src -d ./_site --config ./src/_config.yml,./src/_config_staging.yml,./src/_config_ci_demo.yml
+bundle exec jekyll serve $host --lsi --unpublished --ssl-cert serve-cert.pem --ssl-key serve-key.pem -s ./src -d ./_site --config ./src/_config.yml,./src/_config_staging.yml,./src/_config_ci_demo.yml
 
 exit 0

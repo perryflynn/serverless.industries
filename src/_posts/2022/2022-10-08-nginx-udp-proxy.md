@@ -2,7 +2,7 @@
 author: christian
 title: Shelly CoIoT + UDP Proxy mit NGINX
 locale: de
-tags: [ linux, nginx, network, docker, home assistant, shelly ]
+tags: [ linux, nginx, network, docker, home assistant, smart home, shelly ]
 ---
 
 [Mein Smarthome]({% post_url 2022/2022-09-11-my-smarthome-setup %}) besteht Docker Containers mit einem NGINX
