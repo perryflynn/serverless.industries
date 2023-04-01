@@ -1,6 +1,6 @@
 ---
 author: christian
-title: "TaskOMat: Kleine Anpassungen & Webhooks"
+title: ZFS Disks austauschen und Pool vergrößern
 locale: de
 tags: [server, zfs, linux, debian]
 ---
