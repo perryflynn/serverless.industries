@@ -5,6 +5,7 @@ locale: de
 ref: taskomat-gitlab
 tags: [projects, gitlab]
 toc: true
+published: false
 ---
 
 Seit einiger Zeit nutze ich den GitLab Issue Tracker als persönliche

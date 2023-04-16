@@ -3,6 +3,7 @@ author: christian
 title: "TaskOMat: Kleine Anpassungen & Webhooks"
 locale: de
 tags: [projects, gitlab]
+published: false
 ---
 
 Mein GitLab Bot [TaskOMat]({% post_url 2020/2020-08-09-taskomat-gitlab-personal-todo %}) verwaltet nun
