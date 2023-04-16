@@ -2,7 +2,7 @@
 author: christian
 title: Pipeline Variablen durchreichen
 locale: de
-tags: [ gitlab, azure pipelines, continuous integration ]
+tags: [ gitlab, azure pipelines, continuous integration, 'infrastructure code', ansible ]
 ---
 
 Immer dann wenn Pipelines beziehungsweise Builds oder Deployments so kompliziert

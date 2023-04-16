@@ -3,7 +3,7 @@ author: christian
 title: "debconf: Debian Pakete unbeaufsichtigt installieren"
 locale: de
 ref: debconf-unattended-install
-tags: ['linux', 'ansible', 'debian']
+tags: ['linux', 'ansible', 'debian', 'infrastructure code']
 toc: true
 ---
 

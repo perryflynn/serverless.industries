@@ -3,7 +3,7 @@ author: christian
 title: Docker Container via Volume finden
 locale: de
 ref: ansible-docker-volume-find
-tags: [docker, ansible]
+tags: [docker, ansible, 'infrastructure code']
 ---
 
 Hat [acme.sh][acmesh] neue Zertifikate erzeugt welche anschließend mit

@@ -3,7 +3,7 @@ author: christian
 title: "Shell Scripts: Benutzereingaben automatisieren"
 locale: de
 ref: expect-automate-script-input
-tags: ['linux', 'shell', 'bash', 'ansible']
+tags: ['linux', 'shell', 'bash', 'ansible', 'infrastructure code']
 ---
 
 Mit dem Tool `expect` können Tastatur Eingaben in einem Script oder

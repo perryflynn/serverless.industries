@@ -3,7 +3,7 @@ author: christian
 title: "Shell Scripts: Automate User Input"
 locale: en
 ref: expect-automate-script-input
-tags: ['linux', 'shell', 'bash', 'ansible']
+tags: ['linux', 'shell', 'bash', 'ansible', 'infrastructure code']
 ---
 
 The tool `expect` makes it possible to automate keyboard

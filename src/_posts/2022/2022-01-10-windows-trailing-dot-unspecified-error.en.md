@@ -3,7 +3,7 @@ author: christian
 title: 'Error 0x80004005: Unspecified error'
 locale: en
 ref: windows-file-trailing-dot
-tags: [ windows, 'continuous integration', gitlab ]
+tags: [ windows, 'continuous integration', gitlab, 'infrastructure code' ]
 ---
 
 We tried to deploy a [Docusaurus][docu] website to a windows
