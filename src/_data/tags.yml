@@ -52,6 +52,8 @@
   name: ios
 - glyph: <i class="mdi mdi-ip-network"></i>
   name: ipv6
+- glyph: <i class="mdi mdi-code-json"></i>
+  name: infrastructure code
 - glyph: <i class="mdi mdi-language-javascript"></i>
   name: javascript
 - glyph: <i class="mdi mdi-keyboard"></i>
