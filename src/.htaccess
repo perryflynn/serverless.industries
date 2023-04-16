@@ -40,3 +40,8 @@ RewriteRule ^post/gnu-linux/amazon-dash-button-hack /2022/03/11/hack-the-dashbut
 RewriteRule ^post/gnu-linux/netcup-kvm-vserver-lxc-proxmox /2020/05/01/proxmox-lxc-netcup.html [L,R=301]
 RewriteRule ^post/sonstiges/supermicro-ipmi-fan-control-rpm /2022/03/17/supermicro-ipmi-fanspeed.html [L,R=301]
 RewriteRule ^post/gnu-linux/zfs-tunables /2019/03/03/zfs-tunables.html [L,R=301]
+
+# rewrites from superseded posts
+RewriteRule ^2022/12/23/taskomat-update\.html /2023/04/16/tastomat-update-2023-1.html [L,R=301]
+RewriteRule ^2020/08/09/taskomat-gitlab-personal-todo\.html /2023/04/16/tastomat-update-2023-1.html [L,R=301]
+RewriteRule ^2020/09/13/taskomat-counters\.html /2023/04/16/tastomat-update-2023-1.html [L,R=301]

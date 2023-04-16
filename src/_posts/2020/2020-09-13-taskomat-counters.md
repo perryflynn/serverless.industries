@@ -4,6 +4,7 @@ title: "TaskOMat Counters: Dinge zählen"
 locale: de
 ref: taskomat-gitlab-counters
 tags: [projects, gitlab]
+published: false
 ---
 
 [Mein TaskOMat Projekt][about]
