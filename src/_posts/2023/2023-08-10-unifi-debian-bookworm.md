@@ -103,14 +103,14 @@ Entscheidet man sich hier `unifi=versionskennung` und `mongodb-org-server` wiede
 sollte dies ohne Probleme funktionieren. Der Controller begrüßt einen mit der Ersteinrichtung,
 wo das Konfigurationsbackup eingespielt werden kann.
 
-Bullseye wird noch bis Juni 2026 mit Updates versorgt. Man könnte also hier einfach stoppen
-und Unifi so weiter laufen lassen.
-
 **Man muss die zum Backup passende Version installieren!**
 
 Nach dem Einspielen des Backups bietet es sich an, `unifi` auf die aktuellste Version
 hochzuziehen. Möchte man das nicht, sollte man mit `apt-mark hold unifi` das Upgrade
 verhindern, da apt dies sonst bei jedem System Update versuchen wird.
+
+Bullseye wird noch bis Juni 2026 mit Updates versorgt. Man könnte also hier einfach stoppen
+und Unifi so weiter laufen lassen.
 
 ### Upgrade von Bullseye zu Bookworm
 
@@ -128,11 +128,14 @@ apt remove --purge openjdk-8* openjdk-17* openjdk-7*
 Nun sollte unifi wieder starten.
 
 ```
-<launcher> ERROR ContextLoader - Context initialization failed org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'alertPushNotificationSender' defined in com.ubnt.service.alert.notification.AlertNotificationSpringContext: Unsatisfied dependency expressed through method 'alertPushNotificationSender' parameter 0
+<launcher> ERROR ContextLoader - Context initialization failed org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'alertPushNotificationSender' defined in com.ubnt.service.alert.notification.AlertNotificationSpringContext: 
+Unsatisfied dependency expressed through method 'alertPushNotificationSender' parameter 0
 ```
 
 ```
-java.lang.reflect.InaccessibleObjectException: Unable to make private java.time.Instant(long,int) accessible: module java.base does not "opens java.time" to unnamed module @73a8da0f
+java.lang.reflect.InaccessibleObjectException: Unable to make private java.time.Instant(long,int) 
+accessible: module java.base does not "opens java.time" to unnamed module @73a8da0f
 ```
 
 ## Fazit
