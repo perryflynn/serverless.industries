@@ -61,7 +61,7 @@ curl -fsSL https://files.serverless.industries/apt/serverless-packages.asc | \
 Paketquelle hinzufügen:
 
 ```sh
-echo "deb [signed-by=/usr/share/keyrings/serverless-packages.gpg] https://files.serverless.industries/apt/repo hopefullystable mongodb unifi" | \
+echo "deb [signed-by=/usr/share/keyrings/serverless-packages.gpg] https://files.serverless.industries/apt/repo hopefullystable mongodb44 unifi" | \
     sudo tee /etc/apt/sources.list.d/serverless-packages.list
 ```
 
