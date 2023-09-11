@@ -49,7 +49,6 @@ variables:
     - 'sed -i "s/__commit_long__/$CI_COMMIT_SHA/g" ./src/_config_ci.yml'
     - 'sed -i "s/__commit_timestamp__/$COMMIT_TIME/g" ./src/_config_ci.yml'
     # build
-    - 'rm Gemfile.lock'
     - 'bundle install'
     - 'bundle exec jekyll build --lsi -s ./src -d ./dist-${distname} ${buildopts}'
   artifacts:
