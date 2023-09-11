@@ -40,7 +40,7 @@ variables:
     - 'mkdir dist-${distname}'
     - 'mkdir -p vendor/ruby'
     # prepare bundler
-    - 'sudo gem install bundler'
+    - 'sudo gem install bundler ruby-gsl'
     - 'bundle config set path vendor/ruby'
     # prepare config
     - 'sed -i "s/__is_ci__/true/g" ./src/_config_ci.yml'
