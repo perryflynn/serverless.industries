@@ -28,9 +28,11 @@ groß, wohingegen das `dig` aus den Paketquellen nur 200KB groß ist.
 
 Die statischen Programme gibt es hier: [https://files.serverless.industries/bin/][files]
 
-Unterstützte CPU Architekturen: `x86` (`i386`), `x86_64` (`amd64`), `ARM32v7` (`armv7`), `ARM64v8` (`aarch64`)
+Unterstützte CPU Architekturen: `x86` (`i386`), `x86_64` (`amd64`), 
+`ARM32v7` (`armv7`), `ARM64v8` (`aarch64`)
 
-Programme: `busybox`, `curl`, `dig`, `iperf2`, `iperf3`, `tcpdump`, `vim`
+Programme: `busybox`, `curl`, `dig`, `iperf2`, `iperf3`, `jq`, `rsync`, `scp`, `sftp`, 
+`ssh-keygen`, `ssh-keyscan`, `ssh`, `tcpdump`, `vim`
 
 Mehr Details gibt es in der [info.txt][info].
 
