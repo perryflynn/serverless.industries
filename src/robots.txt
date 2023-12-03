@@ -5,6 +5,12 @@
 User-Agent: *
 {% if site.my.env == "live" %}
 Allow: /
+
 {% else %}
 Disallow: /
 {% endif %}
+
+{%- assign hiddenposts = site.posts | where_exp:"p","p.visible == false" -%}
+{%- for post in hiddenposts -%}
+Disallow: {{post.url | relative_url}}
+{% endfor -%}
