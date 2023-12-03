@@ -3,7 +3,7 @@ author: christian
 title: Building a smart door bell
 locale: en
 ref: smart-doorbell
-tags: [ electronics, 'smart home', 'home assistant', 'esphome' ]
+tags: [ electronics, 'smart home', 'home assistant', 'esphome', embedded ]
 image: /assets/smartbell-hass.png
 ---
 

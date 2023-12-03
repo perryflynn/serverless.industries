@@ -2,7 +2,7 @@
 author: christian
 title: 'Amazon Dashbutton als IoT Button'
 locale: de
-tags: [ linux, network, 'amazon dash button', projects ]
+tags: [ linux, network, 'amazon dash button', projects, embedded ]
 ---
 
 Seit kurzem sind Amazons Dash Buttons auch in Deutschland verfügbar.

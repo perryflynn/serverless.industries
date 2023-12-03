@@ -2,7 +2,7 @@
 author: christian
 title: HTTP Requests mit esphome.io
 locale: de
-tags: [ 'smart home', esphome, yaml ]
+tags: [ 'smart home', esphome, yaml, embedded ]
 image: /assets/esphome-influx.jpg
 ref: esphome-http-request-influxdb
 ---
