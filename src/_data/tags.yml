@@ -18,6 +18,8 @@
   name: css
 - glyph: <i class="mdi mdi-debian"></i>
   name: debian
+- glyph: <span class="mdi mdi-bug"></span>
+  name: debugging
 - glyph: <i class="mdi mdi-dns"></i>
   name: dns
 - glyph: <i class="mdi mdi-docker"></i>
@@ -28,6 +30,8 @@
   name: electronics
 - glyph: <i class="mdi mdi-email-outline"></i>
   name: email
+- glyph: <span class="mdi mdi-usb-flash-drive"></span>
+  name: embedded
 - glyph: <i class="mdi mdi-home-assistant"></i>
   name: esphome
 - glyph: <i class="mdi mdi-freebsd"></i>
@@ -48,14 +52,18 @@
   name: html
 - glyph: <i class="mdi mdi-web"></i>
   name: http
+- glyph: <i class="mdi mdi-code-json"></i>
+  name: infrastructure code
 - glyph: <i class="mdi mdi-apple-ios"></i>
   name: ios
 - glyph: <i class="mdi mdi-ip-network"></i>
   name: ipv6
-- glyph: <i class="mdi mdi-code-json"></i>
-  name: infrastructure code
+- glyph: <i class="mdi mdi-language-java"></i>
+  name: java
 - glyph: <i class="mdi mdi-language-javascript"></i>
   name: javascript
+- glyph: <i class="mdi mdi-test-tube"></i>
+  name: jekyll
 - glyph: <i class="mdi mdi-keyboard"></i>
   name: keyboard
 - glyph: <i class="mdi mdi-penguin"></i>
@@ -78,14 +86,20 @@
   name: projects
 - glyph: <i class="mdi mdi-server"></i>
   name: proxmox
+- glyph: <span class="mdi mdi-language-python"></span>
+  name: python
 - glyph: <i class="mdi mdi-raspberry-pi"></i>
   name: raspberry pi
+- glyph: <i class="mdi mdi-backspace-reverse"></i>
+  name: reverse engineering
 - glyph: <i class="mdi mdi-language-ruby"></i>
   name: ruby
 - glyph: <i class="mdi mdi-server"></i>
   name: server
 - glyph: <i class="mdi mdi-bash"></i>
   name: shell
+- glyph: <i class="mdi mdi-electric-switch"></i>
+  name: shelly
 - glyph: <i class="mdi mdi-devices"></i>
   name: smart home
 - glyph: <i class="mdi mdi-dev-to"></i>
@@ -98,8 +112,6 @@
   name: tls
 - glyph: <i class="mdi mdi-tunnel"></i>
   name: tunnel
-- glyph: <i class="mdi mdi-test-tube"></i>
-  name: jekyll
 - glyph: <i class="mdi mdi-hand-heart"></i>
   name: usability
 - glyph: <i class="mdi mdi-web-box"></i>
@@ -108,11 +120,3 @@
   name: windows
 - glyph: <i class="mdi mdi-harddisk"></i>
   name: zfs
-- glyph: <i class="mdi mdi-backspace-reverse"></i>
-  name: reverse engineering
-- glyph: <i class="mdi mdi-language-java"></i>
-  name: java
-- glyph: <i class="mdi mdi-electric-switch"></i>
-  name: shelly
-- glyph: <span class="mdi mdi-bug"></span>
-  name: debugging
