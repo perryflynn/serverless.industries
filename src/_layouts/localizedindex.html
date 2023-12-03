@@ -41,9 +41,9 @@ layout: content
             {{ post.excerpt|strip_html }} [...]
 
             <em>
-                -
-                written by {{post.author}}
-                on {{post.date|date: '%d. %B %Y'}}
+                - written on {{post.date|date: '%d. %B %Y'}}
+                <!-- written by {{post.author}}
+                on {{post.date|date: '%d. %B %Y'}} -->
                 {% if nowts < postts %}(future){% endif %}
                 {% if post.draft %}(draft){% endif %}
                 {% if post.published == false %}(unpublished){% endif %}
