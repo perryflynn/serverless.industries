@@ -3,5 +3,9 @@
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
-    "editor.rulers": [ 100 ]
+    "editor.rulers": [
+        100
+    ],
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
 }
