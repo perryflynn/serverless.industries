@@ -4,6 +4,7 @@ title: "DNS Updates with nsupdate"
 locale: en
 ref: nsupdate-howto
 tags: [linux, dns, projects]
+excerpt_separator: <!-- more -->
 ---
 
 A few DNS zone which I maintain don't have a web interface to edit
@@ -17,6 +18,8 @@ the records. I am required to use [RFC2136][rfc2136] nsupdate.
 The domain owner assigned me a HMAC key in his nameserver (bind9)
 configuration which has the permission to perform updates and
 Zone Transfers (show all records in dig).
+
+<!-- more -->
 
 ```txt
 key "my-awesome-keyname" {

@@ -4,6 +4,7 @@ title: Static Binaries
 locale: en
 ref: static-binaries
 tags: [ linux, server, shell, debugging ]
+excerpt_separator: <!-- more -->
 ---
 
 While debugging issues in container environments or on embedded devices, there is always the
@@ -11,6 +12,8 @@ same problem: All the debugging tools are not installed.
 
 Installing tools is often not an option, especially in environments where there is no internet
 connection for security reasons.
+
+<!-- more -->
 
 An alternative can be static builds of these software tools. When a program is compiled static,
 it contains all depencencies in one single program file and just works after copying the

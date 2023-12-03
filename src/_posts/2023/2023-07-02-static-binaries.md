@@ -4,6 +4,7 @@ title: Static Binaries
 locale: de
 ref: static-binaries
 tags: [ linux, server, shell, debugging ]
+excerpt_separator: <!-- more -->
 ---
 
 Beim debuggen von Problemen in Container Umgebungen oder auf Geräten wie Routern gibt es immer
@@ -11,6 +12,8 @@ das gleiche Problem: Die ganzen Standardwerkzeuge fehlen.
 
 Die Software Pakete zu installieren ist oft keine Option, insbesondere in Umgebungen wo es
 aus Sicherheitsgründen kein Internet gibt.
+
+<!-- more -->
 
 Abhilfe können hier statische Builds der Programme sein. Kompiliert man ein Programm statisch,
 enthält eine einzelne Programmdatei alle sonst benötigen Abhängigkeiten und kann einfach
