@@ -2,7 +2,9 @@
 short_name: christian
 name: Christian
 job: Software Engineer
-twitter: perryf1ynn
+#twitter: perryf1ynn
+mastodon: https://einbeck.social/@christian
+mastodonhandle: '@christian@einbeck.social'
 github: perryflynn
 email: christian@serverless.industries
 gnupg: https://serverless.industries/gnupg-serverless.txt

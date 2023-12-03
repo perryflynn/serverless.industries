@@ -24,6 +24,14 @@ title: Authors
                 </a>
             </li>
         {% endif %}
+        {% if author.mastodon %}
+            <li class="list-inline-item">
+                <a href="{{author.mastodon}}" rel="external nofollow noreferrer noopener" target="_blank">
+                    <i class="mdi mdi-mastodon"></i>
+                    {{author.mastodonhandle}}
+                </a>
+            </li>
+        {% endif %}
         {% if author.twitter %}
             <li class="list-inline-item">
                 <a href="https://twitter.com/{{author.twitter}}" rel="external nofollow noreferrer noopener" target="_blank">
