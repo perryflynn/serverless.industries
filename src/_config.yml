@@ -16,6 +16,8 @@ my:
 title: serverless.industries
 url: "https://serverless.industries"
 
+include: [ ".well-known", ".htaccess" ]
+
 sass:
   sass_dir: _sass
   style: compressed
@@ -61,4 +63,9 @@ pagination:
   title: ':title - Page :num'
   permalink: '/:num/'
 
-include: [ ".well-known", ".htaccess" ]
+feed:
+  post_limit: 20
+  categories:
+    - frontpage
+    - language-de
+    - language-en

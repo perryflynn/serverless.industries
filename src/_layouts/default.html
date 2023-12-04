@@ -45,7 +45,7 @@
     {% endif %}
 
     <link rel="canonical" href="{{site.url}}{{page.url | relative_url}}">
-    <link rel="alternate" type="application/rss+xml" title="{{site.my.rsstitle}}" href="{{site.url}}{{'/feed.xml' | relative_url}}">
+    <link rel="alternate" type="application/rss+xml" title="{{site.my.rsstitle}}" href="{{site.url}}{{'/feed/frontpage.xml' | relative_url}}">
     <link href="{{site.url}}{{'/opensearch.xml' | relative_url}}" rel="search" title="{{site.my.domain}}" type="application/opensearchdescription+xml">
 
     {% assign otherlang = site.posts | where_exp: 'item', "item.locale!=page.locale and item.ref==page.ref" %}

@@ -23,7 +23,10 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301]
 
 # redirect to start page
-RewriteRule ^$ {{'/index' | relative_url}} [L,R=301]
+RewriteRule ^$ {{'/index' | relative_url}} [L,R=302]
+
+# redirect to rss feed
+RewriteRule ^feed\.xml$ {{'/feed/frontpage.xml' | relative_url}} [L,R=302]
 
 # fun for script kiddies
 RewriteRule ^wp-login\.php$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
