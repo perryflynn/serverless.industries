@@ -13,6 +13,7 @@ console.log('Service worker (re)started. Welcome to a service worker powered web
 const forceCacheList = [
     // no cache killer parameter
     ... [
+        'index/',
         'index/de/',
         'index/en/',
         'tag/',
@@ -88,7 +89,7 @@ self.addEventListener('fetch', event =>
             status: 302,
             statusText: 'Found',
             headers: {
-                Location: basePath + 'index/de',
+                Location: basePath + 'index/',
             }
         }));
     }
