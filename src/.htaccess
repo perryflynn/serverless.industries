@@ -65,6 +65,5 @@ RewriteRule ^2022/12/23/taskomat-update\.html /2023/04/16/tastomat-update-2023-1
 RewriteRule ^2020/08/09/taskomat-gitlab-personal-todo\.html /2023/04/16/tastomat-update-2023-1.html [L,R=301,E=REDIRCACHE:true]
 RewriteRule ^2020/09/13/taskomat-counters\.html /2023/04/16/tastomat-update-2023-1.html [L,R=301,E=REDIRCACHE:true]
 
-# Redirect cache time
-Header set Cache-Control "max-age=604800, public" env=REDIRCACHE
-Header set X-Redircache "1" env=REDIRCACHE
+# Cache Control header for permanent redirects
+Header always set Cache-Control "max-age=604800, public" env=REDIRCACHE
