@@ -4,13 +4,13 @@ layout: content
 
 <div class="list-lang-switch-info">
     {% if page.frontpage %}
-    Language/Sprache: <a href="{{'/index/en/' | relative_url}}">English</a>, <a href="{{'/index/de/' | relative_url}}">Deutsch</a>
+    Showing all postings; Filter: <a href="{{'/index/en/' | relative_url}}">English</a>, <a href="{{'/index/de/' | relative_url}}">Deutsch</a>
 
     {% elsif page.locale == "de" %}
-    Language/Sprache: <a href="{{'/index' | relative_url}}">All</a>, <a href="{{'/index/en/' | relative_url}}">English</a>
+    Showing only German postings; Filter: <a href="{{'/index' | relative_url}}">All</a>, <a href="{{'/index/en/' | relative_url}}">English</a>
 
     {% elsif page.locale == "en" %}
-    Language/Sprache: <a href="{{'/index' | relative_url}}">All</a>, <a href="{{'/index/de/' | relative_url}}">Deutsch</a>
+    Showing only English postings; Filter: <a href="{{'/index' | relative_url}}">All</a>, <a href="{{'/index/de/' | relative_url}}">Deutsch</a>
 
     {% endif %}
 </div>
@@ -32,7 +32,7 @@ layout: content
                 {% endif %}
             {% endfor %}
 
-            <span class="tagsummary">{{post.locale}}</span>
+            <span class="tagsummary">{{post.available_locales | join: '</span> <span class="tagsummary">' }}</span>
 
             {% if glyphs.size > 0 %}
                 <span class="tagsummary">{{ glyphs | split: ',' | uniq | where_exp: 'item', 'item != ""' | join: '</span> <span class="tagsummary">' }}</span>

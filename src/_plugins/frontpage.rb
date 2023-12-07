@@ -10,6 +10,8 @@ module FrontPagePlugin
 
             byref.each do |key, posts|
 
+                locales = posts.map { |post| post.data['locale'] }
+
                 # endforce default frontmatter values
                 posts.each do |post|
                     unless post.data['locale']
@@ -18,6 +20,8 @@ module FrontPagePlugin
                     unless post.data.key?('visible')
                         post.data['visible'] = true
                     end
+
+                    post.data['available_locales'] = locales
                 end
 
                 # sort locale in reverse order, so that en wins against de
