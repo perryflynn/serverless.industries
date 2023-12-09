@@ -10,6 +10,14 @@ module FrontPagePlugin
 
             byref.each do |key, posts|
 
+                # detect multiple posts with the same language in one ref group
+                locales = posts.map { |p| p.data['locale'] }
+                duplocales = locales.find_all { |e| locales.count(e) > 1 }
+
+                unless duplocales.nil? || duplocales.length <= 0
+                    raise StandardError.new "The ref '#{key}' contains multiple posts with the same language"
+                end
+
                 # ensure frontmatter fields
                 posts.each do |post|
                     unless post.data['locale']
@@ -19,9 +27,6 @@ module FrontPagePlugin
                         post.data['visible'] = true
                     end
                 end
-
-                # get list of locales
-                locales = posts.map { |post| post.data['locale'] }
 
                 # sort locale in reverse order, so that en wins against de
                 posts.sort_by { |post| post.data['locale'] }.reverse.each_with_index do |post, postindex|

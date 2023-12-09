@@ -2,7 +2,6 @@
 author: christian
 title: "Verbindungstests mit curl"
 locale: de
-ref: minimon
 tags: [network, projects, http, bash, monitoring]
 ---
 
