@@ -211,7 +211,7 @@ $content-opacity: .9;
         hr {
             margin-bottom: 40px;
         }
-        
+
         a {
             border: 1px solid darken($lay-color-bright, 50%);
             border-radius: 10px;
@@ -254,6 +254,7 @@ span.tagsummary {
     vertical-align: middle;
     border-radius: 3px;
     border: 1px solid $lay-color-dark;
+    cursor: default;
 }
 
 span.tagicon {

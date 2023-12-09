@@ -21,34 +21,34 @@ layout: content
         {% assign nowts = 'now' | date: '%s' %}
         {% assign postts = post.date | date: '%s' %}
         <div class="col-xs-12 col-md-6 postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>
-            {% assign sorted_tags = post.tags | sort %}
-            {% assign glyphs = '' %}
-            {%-for tag in sorted_tags %}
-                {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
-                {% if tagicon[0] %}
-                    {% assign glyphs = glyphs | append: ',' | append: tagicon[0].glyph | append: ',' %}
-                {% endif %}
-            {% endfor %}
+            <article>
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p>
 
-            <span class="tagsummary">{{post.available_locales | join: '</span> <span class="tagsummary">' }}</span>
+                    {%-for pl in post.available_locales %}
+                    <span class="tagsummary" title="Available in {{site.langmap[pl].intname}} language">{{pl}}</span>
+                    {% endfor %}
 
-            {% if glyphs.size > 0 %}
-                <span class="tagsummary">{{ glyphs | split: ',' | uniq | where_exp: 'item', 'item != ""' | join: '</span> <span class="tagsummary">' }}</span>
-            {% endif %}
+                    {% assign sorted_tags = post.tags | sort %}
+                    {%-for tag in sorted_tags %}
+                        {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
+                        {% if tagicon[0] %}
+                            <span class="tagsummary" title="Tagged with '{{tagicon[0].name}}'">{{tagicon[0].glyph}}</span>
+                        {% endif %}
+                    {% endfor %}
 
-            {{ post.excerpt|strip_html }} [...]
+                    {{ post.excerpt|strip_html }} [...]
 
-            <em>
-                - written on {{post.date|date: '%d. %B %Y'}}
-                <!-- written by {{post.author}}
-                on {{post.date|date: '%d. %B %Y'}} -->
-                {% if nowts < postts %}(future){% endif %}
-                {% if post.draft %}(draft){% endif %}
-                {% if post.published == false %}(unpublished){% endif %}
-            </em>
-        </p>
+                    <em>
+                        - written on {{post.date|date: '%d. %B %Y'}}
+                        <!-- written by {{post.author}}
+                        on {{post.date|date: '%d. %B %Y'}} -->
+                        {% if nowts < postts %}(future){% endif %}
+                        {% if post.draft %}(draft){% endif %}
+                        {% if post.published == false %}(unpublished){% endif %}
+                    </em>
+                </p>
+            </article>
         </div>
     {% endfor %}
 

@@ -36,8 +36,8 @@ defaults:
       permalink: tag/:tagname:output_ext
 
 langmap:
-  en: { name: English, postlist: "Articles in English" }
-  de: { name: Deutsch, postlist: "Beiträge in Deutsch" }
+  en: { name: English, intname: English, postlist: "Articles in English" }
+  de: { name: Deutsch, intname: German, postlist: "Beiträge in Deutsch" }
 
 plugins:
   - jekyll-target-blank
