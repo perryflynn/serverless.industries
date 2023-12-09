@@ -6,11 +6,11 @@ layout: content
 {% assign postts = page.date | date: '%s' %}
 <h1>{{page.title}}</h1>
 <p>
-    {{page.date|date: '%Y-%m-%d'}} -
-    {{page.author}} -
-    {% if nowts < postts %}future - {% endif %}
-    {% if page.draft %}draft - {% endif %}
-    {% if page.published == false %}unpublished - {% endif %}
+    {{page.date|date: '%Y-%m-%d'}} &middot;
+    {{page.author}} &middot;
+    {% if nowts < postts %}future &middot; {% endif %}
+    {% if page.draft %}draft &middot; {% endif %}
+    {% if page.published == false %}unpublished &middot; {% endif %}
     {% assign sorted_tags = page.tags | sort %}
     {%-for tag in sorted_tags %}
         {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
