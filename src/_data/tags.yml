@@ -120,3 +120,5 @@
   name: windows
 - glyph: <i class="mdi mdi-harddisk"></i>
   name: zfs
+- glyph: <i class="mdi mdi-book-open-variant"></i>
+  name: guides
