@@ -11,16 +11,7 @@ layout: content
     {% if nowts < postts %}future &middot; {% endif %}
     {% if page.draft %}draft &middot; {% endif %}
     {% if page.published == false %}unpublished &middot; {% endif %}
-    {% assign sorted_tags = page.tags | sort %}
-    {%-for tag in sorted_tags %}
-        {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
-        <span class="tagitem">
-        {% if tagicon[0] %}
-            <span class="tagicon">{{tagicon[0].glyph}}</span>
-        {% endif %}
-        {%- assign tagslug = tag|slugify -%}
-        <a href="{{'/tag/' | append: tagslug | append: '.html' | relative_url}}">{{tag}}</a></span>{% if forloop.last==false %}, {% endif %}
-    {% endfor %}
+    {% include tagrow.html current_post=page %}
 </p>
 
 {% if page.toc %}

@@ -24,23 +24,11 @@ layout: content
             <article>
                 <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                 <p>
-
-                    {%-for pl in post.available_locales %}
-                    <span class="tagsummary" title="Available in {{site.langmap[pl].intname}} language">{{pl}}</span>
-                    {% endfor %}
-
-                    {% assign sorted_tags = post.tags | sort %}
-                    {%-for tag in sorted_tags %}
-                        {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
-                        {% if tagicon[0] %}
-                            <span class="tagsummary" title="Tagged with '{{tagicon[0].name}}'">{{tagicon[0].glyph}}</span>
-                        {% endif %}
-                    {% endfor %}
-
+                    {% include tagiconrow.html current_post=post %}
                     {{ post.excerpt|strip_html }} [...]
 
                     <em>
-                        - written on {{post.date|date: '%d. %B %Y'}}
+                        {% if post.posttype == "post" %}- written on {{post.date|date: '%d. %B %Y'}}{% endif %}
                         <!-- written by {{post.author}}
                         on {{post.date|date: '%d. %B %Y'}} -->
                         {% if nowts < postts %}(future){% endif %}

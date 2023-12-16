@@ -1,0 +1,51 @@
+---
+layout: content
+---
+
+<div class="markdown-content">
+    <article>
+        <h1>{{page.title}}</h1>
+
+        {{page.excerpt}}
+
+        {% if page.toc %}
+        <div class="table-of-contents">
+            {% toc %}
+        </div>
+        {% endif %}
+
+        {{ page.content | remove: page.excerpt }}
+    </article>
+</div>
+
+<hr>
+
+<p>This guide is tagged with {% include tagrow.html current_post=page %} and was written on {{page.date|date: '%d. %B %Y'}}.</p>
+
+{% if page.changelog and page.changelog.size > 0 %}
+<p>Changelog:</p>
+
+<ul>
+    {% assign sorted_changelog = page.changelog | sort: 'timestamp' | reverse %}
+    {% for log in sorted_changelog %}
+    <li><strong>{{log.timestamp}}:</strong> {{log.comment}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<hr>
+
+<div class="post-bottom-bar">
+    <div class="bar-left">
+
+        <a href="{{'/guides' | relative_url}}">go back</a>
+
+    </div>
+    <div class="bar-right">
+
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank">
+            <img alt="Creative Commons License" style="border-width: 0px;" src="{{'/css/cc-80x15.png' | relative_url}}?commit={{site.git.commitlong}}">
+        </a>
+
+    </div>
+</div>

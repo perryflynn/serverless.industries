@@ -1,0 +1,10 @@
+{% assign sorted_tags = include.current_post.tags | sort %}
+{%-for tag in sorted_tags %}
+    {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
+    <span class="tagitem">
+    {% if tagicon[0] %}
+        <span class="tagicon">{{tagicon[0].glyph}}</span>
+    {% endif %}
+    {%- assign tagslug = tag|slugify -%}
+    <a href="{{'/tag/' | append: tagslug | append: '.html' | relative_url}}">{{tag}}</a></span>{% if forloop.last==false %}, {% endif %}
+{% endfor %}

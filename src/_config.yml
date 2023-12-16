@@ -4,9 +4,6 @@ future: false
 unpublished: false
 timezone: Europe/Berlin
 
-# permalink: /:categories/:year/:month/:day/:title:output_ext
-permalink: /:year/:month/:day/:title:output_ext
-
 my:
   domain: serverless.industries
   sitetitle: Serverless Industries
@@ -24,10 +21,20 @@ sass:
 
 defaults:
   - scope:
+      path: "_posts/guides"
+      type: "posts"
+    values:
+      layout: "guide"
+      permalink: /guides/:title:output_ext
+      toc: true
+      posttype: guide
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      permalink: /:year/:month/:day/:title:output_ext
+      posttype: post
   - scope:
       path: ""
       type: tags
@@ -38,6 +45,10 @@ defaults:
 langmap:
   en: { name: English, intname: English, postlist: "Articles in English" }
   de: { name: Deutsch, intname: German, postlist: "Beiträge in Deutsch" }
+
+posttypemap:
+  post: { name: Article }
+  guide: { name: Guide }
 
 plugins:
   - jekyll-target-blank

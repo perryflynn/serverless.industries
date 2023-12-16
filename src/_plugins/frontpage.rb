@@ -41,6 +41,14 @@ module FrontPagePlugin
 
             end
 
+            # guides
+            site.posts.docs.each_with_index do |post, postindex|
+                if post.data.key?('posttype') && post.data['posttype'] == 'guide'
+                    post.data['categories'].push('guides')
+                    post.data['tags'].push('guides')
+                end
+            end
+
         end
 
     end

@@ -1,0 +1,15 @@
+{% if include.current_post.posttype == "guide" %}
+<span class="tagsummary" title="This is a guide">guide</span>
+{% endif %}
+
+{%-for pl in include.current_post.available_locales %}
+<span class="tagsummary" title="Available in {{site.langmap[pl].intname}} language">{{pl}}</span>
+{% endfor %}
+
+{% assign sorted_tags = include.current_post.tags | sort %}
+{%-for tag in sorted_tags %}
+    {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
+    {% if tagicon[0] %}
+        <span class="tagsummary" title="Tagged with '{{tagicon[0].name}}'">{{tagicon[0].glyph}}</span>
+    {% endif %}
+{% endfor %}

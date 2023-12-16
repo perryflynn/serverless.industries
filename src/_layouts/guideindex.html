@@ -1,0 +1,38 @@
+---
+layout: content
+---
+
+<div class="row postlist">
+
+    {% for post in paginator.posts %}
+        {% assign nowts = 'now' | date: '%s' %}
+        {% assign postts = post.date | date: '%s' %}
+        <div class="col-xs-12 col-md-12 postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
+            <article>
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p>
+                    {% include tagrow.html current_post=post %}
+                </p>
+                <p>
+                    {{ post.excerpt|strip_html }} [...]
+                </p>
+            </article>
+        </div>
+    {% endfor %}
+
+</div>
+
+{% if paginator.previous_page_path or paginator.next_page_path %}
+    <div class="row paginator">
+        <div class="col">
+            <hr>
+
+            {% if paginator.previous_page_path %}
+                <a href="{{paginator.previous_page_path}}">Previous Page</a>
+            {% endif %}
+            {% if paginator.next_page_path %}
+                <a href="{{paginator.next_page_path}}">Next Page</a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
