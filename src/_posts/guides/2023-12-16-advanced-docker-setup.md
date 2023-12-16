@@ -7,6 +7,7 @@ excerpt_separator: <!--more-->
 changelog:
   - timestamp: 2023-12-16
     comment: Published
+visible: false
 ---
 
 Kubernetes clusters are an awesome piece of technology, if an highly automated and dynamic environment for
