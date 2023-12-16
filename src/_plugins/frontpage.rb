@@ -36,7 +36,10 @@ module FrontPagePlugin
                     end
 
                     post.data['available_locales'] = locales
-                    post.data['categories'].push("language-#{post.data['locale']}")
+
+                    if post.data['visible']
+                        post.data['categories'].push("language-#{post.data['locale']}")
+                    end
                 end
 
             end
@@ -44,7 +47,9 @@ module FrontPagePlugin
             # guides
             site.posts.docs.each_with_index do |post, postindex|
                 if post.data.key?('posttype') && post.data['posttype'] == 'guide'
-                    post.data['categories'].push('guides')
+                    if post.data['visible']
+                        post.data['categories'].push('guides')
+                    end
                     post.data['tags'].push('guides')
                 end
             end
