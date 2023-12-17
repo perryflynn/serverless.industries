@@ -129,6 +129,13 @@ $content-opacity: .9;
 
 /* content */
 
+.linkbutton {
+    border: 2px solid darken($lay-color-bright, 50%);
+    background-color: rgba($lay-color-brighter, $content-opacity);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
 .row.defaultcontent > .col {
     padding: 20px;
 }
@@ -237,6 +244,10 @@ $content-opacity: .9;
     text-align: center;
     color: $lay-color-darker;
     font-size: 80%;
+}
+
+.backtotop-container {
+    padding: 40px 0px 0px 0px;
 }
 
 /* Tags */
