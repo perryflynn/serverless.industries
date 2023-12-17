@@ -506,7 +506,7 @@ docker buildx build \
 
 ### Container Quotas
 
-The following example demonstates all quota options:
+The following example demonstrates all quota options:
 
 ```sh
 docker volume create -o size=1G persistent-volume
