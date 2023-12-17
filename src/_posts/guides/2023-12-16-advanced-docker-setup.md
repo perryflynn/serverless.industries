@@ -212,15 +212,15 @@ journalctl CONTAINER_NAME=webserver
 ```
 
 This also allows it to forward docker logs including all system log messages to applications like Graylog 
-via [journalbeat][journalbeat].
+via [filebeat][filebeat].
 
 Details:
 
 [All Log Drivers](https://docs.docker.com/config/containers/logging/configure/#supported-logging-drivers)  
 [Journald log driver documentation](https://docs.docker.com/config/containers/logging/journald/)  
-[Journalbeat Documentation][journalbeat]
+[Filebeat Documentation][filebeat]
 
-[journalbeat]: https://www.elastic.co/guide/en/beats/journalbeat/current/index.html
+[filebeat]: https://www.elastic.co/de/beats/filebeat
 
 
 ## Container Quotas
@@ -386,7 +386,7 @@ docker network create -d bridge --internal transitnetwork
 ```
 
 The `--internal` option denies outgoing communication with that network. Only containers can communicate with
-each other, but there no LAN or internet access possible.
+each other, but there is no LAN or internet access possible.
 
 ### NAT and high traffic applications
 
