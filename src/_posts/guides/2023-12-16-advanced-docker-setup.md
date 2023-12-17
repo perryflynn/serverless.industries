@@ -9,7 +9,6 @@ changelog:
     comment: Published
   - timestamp: 2023-12-17
     comment: Added build caching chapter
-visible: false
 ---
 
 Kubernetes clusters are an awesome piece of technology, if an highly automated and dynamic environment for
