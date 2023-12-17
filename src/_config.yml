@@ -74,6 +74,9 @@ pagination:
   title: ':title - Page :num'
   permalink: '/:num/'
 
+toc:
+  max_level: 4
+
 feed:
   post_limit: 20
   categories:
