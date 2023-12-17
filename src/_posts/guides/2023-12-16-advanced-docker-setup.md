@@ -124,8 +124,11 @@ docker buildx --help
 
 ### Dedicated Disk for Dockers Data Directory
 
-> ℹ **_NOTE:_**  This chapter assumes that there is already a unformatted partition available and that this partition
-> has the device name `/dev/sda2` or `/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part2`.
+{% capture msg %}
+This chapter assumes that there is already a unformatted partition available and that this partition
+has the device name `/dev/sda2` or `/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part2`.
+{% endcapture %}
+{% include box.html message=msg %}
 
 To have better control of the disk space consumtion, it makes sense to move the Docker CE data directory
 to a dedicated partition. If the partition has a XFS filesystem, it's even possible to use disk quotas
@@ -191,8 +194,11 @@ Restart Docker CE:
 systemctl restart docker
 ```
 
-> ℹ **_NOTE:_** All containers needs to be redeployed, as the log driver settings are set per-container. The setting
-> from `daemon.json` is just used as a default for each container deployment.
+{% capture msg %}
+All containers needs to be redeployed, as the log driver settings are set per-container. The setting
+from `daemon.json` is just used as a default for each container deployment.
+{% endcapture %}
+{% include box.html message=msg type='warning' %}
 
 ### Log Drivers
 
@@ -276,7 +282,7 @@ Add the `default-address-pools` option to `/etc/docker/daemon.json`:
 
 Now Docker CE will create subnets with size size `/24` from `172.19.0.0/16` for new Docker networks.
 
-> ℹ **_NOTE:_** Containers and Docker networks needs to be recreated to activate this change
+{% include box.html type='warning' message='Containers and Docker networks needs to be recreated to activate this change.' %}
 
 ### Local Bridge Networks
 
@@ -312,8 +318,12 @@ docker network create -d macvlan \
   -o parent=ens18 publicservices
 ```
 
-> ℹ **_NOTE:_** For high thoughput applications with huge amounts of connections, this can improve the
-> performance significantly, as there is no NAT necessary. See also [this article][xingnat].
+{% capture msg %}
+For high thoughput applications with huge amounts of connections, this can improve the
+performance significantly, as there is no NAT necessary. See also 
+[this article](https://tech.new-work.se/a-reason-for-unexplained-connection-timeouts-on-kubernetes-docker-abd041cf7e02).
+{% endcapture %}
+{% include box.html message=msg %}
 
 ### Set outgoing IP Address by Docker Network
 
@@ -349,7 +359,7 @@ table ip docker_network_appnetwork {
 `172.19.4.0/24` is the subnet which was assigned to the Docker network, `appnetwork` the interface name and
 `192.168.99.226` the IP address used for the outgoing connection.
 
-> ℹ **_NOTE:_** The outgoing IP address **must** exists on the server interface.
+{% include box.html type='warning' message='The outgoing IP address **must** exists on the server interface.' %}
 
 On `macvlan` networks, it is alot easier, as a NAT rule is not necessary:
 
@@ -516,7 +526,7 @@ docker run -d --name cpu-demo \
 - Assign 1GB of temporary disk space
 - Mount a volume with 1GB of persistent storage at `/mnt/data`
 
-> ℹ **_NOTE:_** Quotas on folder-to-folder bind mounts are not supported.
+{% include box.html type='warning' message='Storage quotas on folder-to-folder bind mounts are not supported.' %}
 
 ### Name + Hostname
 

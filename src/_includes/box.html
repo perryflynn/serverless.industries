@@ -1,0 +1,15 @@
+{% assign type = "primary" %}
+{% assign title = "Note:" %}
+
+{% if include.type == "warning" %}
+    {% assign type = "warning" %}
+    {% assign title = "Warning!" %}
+{% elsif include.type == "error" %}
+    {% assign type = "danger" %}
+    {% assign title = "Danger!" %}
+{% endif %}
+
+<div class="alert alert-{{type}}" role="alert">
+    <h5 class="alert-heading">{{title}}</h5>
+    {{include.message | markdownify | remove: '<p>' | remove: '</p>'}}
+</div>
