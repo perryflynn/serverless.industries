@@ -47,7 +47,7 @@ variables:
     - 'sed -i "s/__serviceworker_enabled__/$enableserviceworker/g" ./src/_config_ci.yml'
     - 'sed -i "s/__commit_short__/$CI_COMMIT_SHORT_SHA/g" ./src/_config_ci.yml'
     - 'sed -i "s/__commit_long__/$CI_COMMIT_SHA/g" ./src/_config_ci.yml'
-    - 'sed -i "s/__commit_timestamp__/$COMMIT_TIME/g" ./src/_config_ci.yml'
+    - 'sed -i "s/__commit_timestamp__/$CI_COMMIT_TIMESTAMP/g" ./src/_config_ci.yml'
     # build
     - 'bundle install'
     - 'bundle exec jekyll build --lsi -s ./src -d ./dist-${distname} ${buildopts}'
