@@ -234,10 +234,8 @@ $content-opacity: .9;
 
 /* footer */
 
-@include media-breakpoint-up(lg) {
-    .row.mainfooter {
-        margin-bottom: 40px;
-    }
+.row.mainfooter {
+    margin-bottom: 40px;
 }
 
 .row.mainfooter .col-12 {
