@@ -280,7 +280,7 @@ span.tagitem {
 }
 
 div.tagindex {
-    line-height: (1.5 * 100 / 150);
+    line-height: calc(1.5 * 100 / 150);
     margin-bottom: 40px;
 
     span.taggroup {
