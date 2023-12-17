@@ -219,7 +219,7 @@ Details:
 [Journald log driver documentation](https://docs.docker.com/config/containers/logging/journald/)  
 [Filebeat Documentation][filebeat]
 
-[filebeat]: https://www.elastic.co/de/beats/filebeat
+[filebeat]: https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-input-journald.html
 
 
 ## Container Quotas
