@@ -7,6 +7,8 @@ excerpt_separator: <!--more-->
 changelog:
   - timestamp: 2023-12-16
     comment: Published
+  - timestamp: 2023-12-17
+    comment: Added build caching chapter
 visible: false
 ---
 
@@ -19,6 +21,7 @@ to the size of Netflix or Google, so an good old Docker CE can also be an option
 This guide is a collection of custom configurations to improve the security, stability and isolation of
 Docker CE servers and it's containers.
 
+
 <!--more-->
 
 
@@ -30,8 +33,9 @@ Docker CE servers and it's containers.
 - Some parts of this document cover IPv6, most don't
 
 
-
 ## Operating System and Docker Daemon
+
+Configuration for the Docker CE Daemon and the underlying operating system.
 
 ### Installing Docker CE Daemon
 
@@ -213,7 +217,6 @@ Details:
 [journalbeat]: https://www.elastic.co/guide/en/beats/journalbeat/current/index.html
 
 
-
 ## Container Quotas
 
 All containers should have quotas set to prevent, that a faulty process is affecting other containers
@@ -251,8 +254,9 @@ Disk quotas are supported, if the [Dedicated Disk for Dockers Data Directory](#d
 See [Run containers](#run-containers) for examples.
 
 
-
 ## Networking
+
+Connecting Docker Containers to each other and to the outside world.
 
 ### Network Address Pools
 
@@ -414,8 +418,34 @@ With this, NAT is completly avoided, but other containers can still accessed by 
 [myipnat]: https://serverless.industries/2020/07/09/docker-without-nat.html
 
 
-
 ## Build Containers
+
+Using the caching mechanics of Docker builds more effective.
+
+### Cache packages
+
+Docker checks for changes on all used files before (re)building an image layer. If there are no
+changes, the layer from the previous build is used instead of building a new one.
+
+This can be used to cache a `npm install` or a `nuget restore` run, even if the code of the app
+itself was changed. Just copy the `package.json` and `package-lock.json` first into the image,
+run the `npm install` and copy the rest of the application afterwards.
+
+As long as this two files have no changes, this build step is cached and will safe multiple
+minutes in future CI Pipeline runs.
+
+```Dockerfile
+FROM node:latest as packages
+WORKDIR /src
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+RUN npm install
+
+FROM packages as app
+WORKDIR /src
+COPY . .
+RUN npm run-script build
+```
 
 ### BuildX and inline caches
 
@@ -432,7 +462,7 @@ docker buildx build \
 Also this enables the use of caching in disposable build environments like GitLab runners with
 Docker-in-Docker.
 
-### Labels
+### Labels in images
 
 Labels can be defined at build time and at runtime. Adding informations like build timestamp, version,
 maintainer or application name helps to keep an overview about the applications which are running 
@@ -463,7 +493,6 @@ docker buildx build \
 ```
 
 
-
 ## Run Containers
 
 ### Container Quotas
@@ -491,7 +520,8 @@ docker run -d --name cpu-demo \
 
 ### Name + Hostname
 
-In addition to the container name, the container hostname should also be set as the hostname will appear in log files.
+In addition to the container name, the container hostname should also be set as the hostname 
+will appear in log files.
 
 ```sh
 docker run -d \
@@ -501,11 +531,12 @@ docker run -d \
     nginx:latest
 ```
 
-### Labels
+### Labels on containers
 
-Labels can also be set when creating containers. For example to group containers by project or adding a responsible
-person to the container. Also projects like [Traefik][traefik], [Watchtower][watchtower] or [Ofelia][ofelia]
-using labels for configuration and container discovery.
+Labels can also be set when creating containers. For example to group containers by project or 
+adding a responsible person to the container. Also projects like [Traefik][traefik], 
+[Watchtower][watchtower] or [Ofelia][ofelia] using labels for configuration and container 
+discovery.
 
 ```sh
 docker run -d \
