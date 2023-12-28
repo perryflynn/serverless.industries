@@ -214,6 +214,22 @@ $content-opacity: .9;
     h6:hover .header-link {
         opacity: 1;
     }
+
+    .alert {
+        border-radius: 0rem;
+        border-top: 0px;
+        border-bottom: 0px;
+        border-left: 2px solid theme-color-level('primary', $alert-color-level);
+        border-right: 2px solid theme-color-level('primary', $alert-color-level);
+    }
+
+    .alert.alert-warning {
+        border-color: theme-color-level('warning', $alert-color-level);
+    }
+
+    .alert.alert-danger {
+        border-color: theme-color-level('danger', $alert-color-level);
+    }
 }
 
 /* startpage */
