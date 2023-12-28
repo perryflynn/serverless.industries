@@ -298,6 +298,33 @@ docker run -d --rm --name frontend --network somenetwork debian:latest \
 The option `-o com.docker.network.bridge.name` allows it to set the name of the Linux network
 interface. Which can be helpful to keep the overview. The name has a **maximum length of 15 characters**.
 
+### IPv6 ULA and Bridge Networks
+
+Docker CE is able to use IPv6 ULA (Unique Local Address) ranges and will create SNAT rules for the
+outgoing communication. This is really helpful, if the server only has a single IPv4 Address.
+IPv4 and IPv6 can be used and configured exactly identical.
+
+```json
+{
+    "ipv6": true,
+    "experimental": true,
+    "ip6tables": true,
+    "fixed-cidr-v6": "fd00::/49",
+    "default-address-pools": [
+        { "base": "fd00:0:0:8000::/49", "size": 64 },
+        { "base": "172.19.0.0/16", "size": 24 }
+    ]
+}
+```
+
+The IPv6 ranges are not routed and can be used as-is on multiple servers.
+
+```sh
+docker network create --ipv6 -o com.docker.network.bridge.name=somenetwork somenetwork
+docker run -d --name backend --network somenetwork debian:latest \
+     /bin/bash -c "apt update && apt install --yes iputils-ping && ping6 google.com"
+```
+
 ### Routed Bridge Networks
 
 It is also possible to assign real LAN IP addresses directly to containers with the `macvlan` network driver.
