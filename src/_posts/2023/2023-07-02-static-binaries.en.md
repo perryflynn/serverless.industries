@@ -33,7 +33,7 @@ The static binaries can be downloaded here: [https://files.serverless.industries
 
 Supported CPU architectures: `x86` (`i386`), `x86_64` (`amd64`), `ARM32v7` (`armv7`), `ARM64v8` (`aarch64`)
 
-Supported Tools: `busybox`, `curl`, `dig`, `iperf2`, `iperf3`, `jq`, `rsync`, `scp`, `sftp`, 
+Supported Tools: `busybox`, `curl`, `dig`, `htop`, `iperf2`, `iperf3`, `jq`, `rsync`, `scp`, `sftp`, 
 `ssh-keygen`, `ssh-keyscan`, `ssh`, `tcpdump`, `vim`
 
 More details can be found in the [info.txt][info] file.
