@@ -301,7 +301,7 @@ interface. Which can be helpful to keep the overview. The name has a **maximum l
 ### IPv6 ULA and Bridge Networks
 
 Docker CE is able to use IPv6 ULA (Unique Local Address) ranges and will create SNAT rules for the
-outgoing communication. This is really helpful, if the server only has a single IPv4 Address.
+outgoing communication. This is really helpful, if the server only has a single IPv4 Address. 
 IPv4 and IPv6 can be used and configured exactly identical.
 
 ```json
@@ -324,6 +324,11 @@ docker network create --ipv6 -o com.docker.network.bridge.name=somenetwork somen
 docker run -d --name backend --network somenetwork debian:latest \
      /bin/bash -c "apt update && apt install --yes iputils-ping && ping6 google.com"
 ```
+
+Incoming traffic should be handled with normal port publishings through a reverse proxy like
+NGINX or Traefik.
+
+{% include box.html type='warning' message='Containers and Docker networks needs to be recreated to activate this change.' %}
 
 ### Routed Bridge Networks
 
