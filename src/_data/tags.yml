@@ -122,3 +122,7 @@
   name: zfs
 - glyph: <i class="mdi mdi-book-open-variant"></i>
   name: guides
+- glyph: <i class="mdi mdi-size-xxs"></i>
+  name: 'kurz und knapp'
+- glyph: <i class="mdi mdi-mastodon"></i>
+  name: fediverse
