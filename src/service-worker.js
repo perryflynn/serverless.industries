@@ -5,9 +5,10 @@
 
 const cacheKey = 'site-cache-v1';
 const basePath = '{{site.url}}{{"/" | relative_url}}';
-const commit = '{{site.git.commitlong}}';
+const commit = "{{site.git.commitlong}}";
+const version = "{{site.git.commitlong}}_{{site.time | date: '%Y-%m-%d_%k-%M-%S'}}";
 
-console.log('Service worker (re)started. Welcome to a service worker powered website (' + commit + ')');
+console.log('Service worker (re)started. Welcome to a service worker powered website (' + version + ')');
 
 // list of ressources to cache
 const forceCacheList = [
