@@ -126,3 +126,5 @@
   name: 'kurz und knapp'
 - glyph: <i class="mdi mdi-mastodon"></i>
   name: fediverse
+- glyph: <i class="mdi mdi-laptop"></i>
+  name: lenovo thinkpad
