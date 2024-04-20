@@ -6,6 +6,8 @@ tags: [ fediverse, kurz und knapp ]
 ---
 
 In dem Format "Kurz und Knapp" möchte ich meine Mastodon Lesezeichen "abarbeiten".
+BASH Parameter Substitution, 100G Fiber Optics, Windows Keys mit Linux auslesen,
+HTML Seiten verschlüsseln, verschlüsselter Datentransfer zwischen zwei Computern.
 
 📌 nixCraft beschreibt in einem Blog Beitrag sehr detailiert, was man 
 [mit Bash Parameter Substituion](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html) 
