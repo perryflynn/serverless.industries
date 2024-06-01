@@ -112,6 +112,7 @@ layout: content
     });
 </script>
 
+{% if page.usemermaid %}
 <script src="{{'js/mermaid-10.9.1/mermaid.min.js' | relative_url}}?commit={{site.git.commitlong}}"></script>
 <script>
     window.addEventListener('appload', event =>
@@ -124,3 +125,4 @@ layout: content
         window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
     });
 </script>
+{% endif %}
