@@ -4,6 +4,7 @@ Encoding.default_external = Encoding::UTF_8
 source 'https://rubygems.org'
 
 gem 'jekyll'
+gem 'json'
 gem 'jekyll-paginate-v2'
 gem 'classifier-reborn'
 
