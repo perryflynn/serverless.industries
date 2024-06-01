@@ -111,3 +111,16 @@ layout: content
         }
     });
 </script>
+
+<script src="{{'js/mermaid-10.9.1/mermaid.min.js' | relative_url}}?commit={{site.git.commitlong}}"></script>
+<script>
+    window.addEventListener('appload', event =>
+    {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "neutral",
+        });
+
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    });
+</script>
