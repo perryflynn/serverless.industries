@@ -3,6 +3,7 @@ author: christian
 title: PerrysNetConsole
 projecttype: framework
 projecturl: https://github.com/perryflynn/PerrysNetConsole
+projecttag: projects:netconsole
 image: assets/perrysnetconsole-graph.png
 ref: perrysnetconsole
 ---

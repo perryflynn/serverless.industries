@@ -3,7 +3,7 @@ author: christian
 title: PerrysNetConsole aktualisiert
 locale: de
 ref: perrysnetconsole-update1
-tags: [projects, dotnet, software development]
+tags: [projects, dotnet, software development, projects:netconsole]
 ---
 
 Meine [Sammlung von Controls für .NET Console Applications][netcon] und

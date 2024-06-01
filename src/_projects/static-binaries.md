@@ -3,6 +3,7 @@ author: christian
 title: Static Binaries
 projecttype: build
 projecturl: https://github.com/perryflynn/static-binaries
+projecttag: projects:static-binaries
 image: assets/static-binaries.png
 ref: static-binaries
 ---

@@ -3,7 +3,7 @@ author: christian
 title: "DNS Updates mit nsupdate"
 locale: de
 ref: nsupdate-howto
-tags: [linux, dns, projects]
+tags: [linux, dns, projects, projects:nsupdate-interactive]
 ---
 
 Seit einiger Zeit betreue ich ein paar DNS Zones, wo der Besitzer

@@ -3,6 +3,7 @@ author: christian
 title: git-utils
 projecttype: script
 projecturl: https://github.com/perryflynn/git-utils
+projecttag: projects:git-utils
 ref: git-utils
 ---
 

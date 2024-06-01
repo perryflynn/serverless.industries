@@ -3,7 +3,7 @@ author: christian
 title: Static Binaries
 locale: en
 ref: static-binaries
-tags: [ linux, server, shell, debugging ]
+tags: [ linux, server, shell, debugging, projects, projects:static-binaries ]
 excerpt_separator: <!-- more -->
 ---
 

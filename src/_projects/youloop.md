@@ -3,6 +3,7 @@ author: christian
 title: YouLoop
 projecttype: webservice
 projecturl: https://youloop.serverless.industries/#start=6.5&v=rl9FFZZnWWo&end=269.09
+projecttag: projects:youloop
 image: assets/youloop.png
 ref: youloop
 ---

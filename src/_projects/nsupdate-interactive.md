@@ -3,6 +3,7 @@ author: christian
 title: nsupdate-interactive
 projecttype: script
 projecturl: https://github.com/perryflynn/nsupdate-interactive
+projecttag: projects:nsupdate-interactive
 image: assets/nsupdate-interactive-diff.jpg
 ref: nsupdate-interactive
 ---

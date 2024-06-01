@@ -3,7 +3,7 @@ author: christian
 title: "Günther says: Eine CSS Übung"
 locale: de
 ref: guenther-says
-tags: ['javascript', 'html', 'projects', 'css']
+tags: ['javascript', 'html', 'projects', 'css', 'projects:guenther']
 image: /assets/guenther-says.png
 ---
 

@@ -85,6 +85,7 @@
 - glyph: <i class="mdi mdi-notebook"></i>
   name: projects
   glob: true
+  excludefromiconlist: true
 - glyph: <i class="mdi mdi-server"></i>
   name: proxmox
 - glyph: <span class="mdi mdi-language-python"></span>

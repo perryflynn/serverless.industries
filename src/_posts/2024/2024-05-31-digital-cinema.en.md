@@ -2,7 +2,7 @@
 author: christian
 title: "How DCI Movie Delivery and Encryption works"
 locale: en
-tags: [ digital cinema, reverse engineering, security, projects:dci talk ]
+tags: [ digital cinema, reverse engineering, security, projects, projects:dci talk ]
 usemermaid: true
 ---
 

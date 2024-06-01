@@ -2,7 +2,7 @@
 author: christian
 title: "Verbindungstests mit curl"
 locale: de
-tags: [network, projects, http, bash, monitoring]
+tags: [network, projects, http, bash, monitoring, projects:minimon]
 ---
 
 Das großartige Programm `curl` beherrscht neben HTTP auch

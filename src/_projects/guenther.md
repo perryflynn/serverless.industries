@@ -3,6 +3,7 @@ author: christian
 title: Guenther
 projecttype: game
 projecturl: https://guenther.serverless.industries/
+projecttag: projects:guenther
 image: assets/guenther-says.png
 ref: guenther
 ---

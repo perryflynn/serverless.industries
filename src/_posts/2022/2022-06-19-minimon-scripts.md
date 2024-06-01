@@ -2,7 +2,7 @@
 author: christian
 title: minimon.sh mit Script Support
 locale: de
-tags: [ monitoring, bash, projects ]
+tags: [ monitoring, bash, projects, projects:minimon ]
 ---
 
 [minimon.sh][minimon] unterstützt nun eigene Shell Script zur Überwachung von

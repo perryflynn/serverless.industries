@@ -3,7 +3,7 @@ author: christian
 title: "Upload + Download Speedtest in JavaScript"
 locale: de
 ref: speedtest-project
-tags: ['http', 'html', 'javascript', 'projects']
+tags: ['http', 'html', 'javascript', 'projects', projects:speedtest]
 ---
 
 Auf github habe ich den [Speedtest von Franklin van de Meent][original]

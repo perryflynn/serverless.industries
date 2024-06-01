@@ -3,7 +3,7 @@ author: christian
 title: "DNS Updates with nsupdate"
 locale: en
 ref: nsupdate-howto
-tags: [linux, dns, projects]
+tags: [linux, dns, projects, projects:nsupdate-interactive]
 excerpt_separator: <!-- more -->
 ---
 

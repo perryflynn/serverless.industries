@@ -3,7 +3,7 @@ author: christian
 title: "git-clean-sync.sh"
 locale: de
 ref: git-clean-sync.sh
-tags: ['git', 'projects', 'bash', 'software development']
+tags: ['git', 'projects', 'bash', 'software development', 'projects:git-utils']
 ---
 
 [git-clean-sync][git] ist ein Script welches eine lokale Arbeitskopie
@@ -102,4 +102,3 @@ git-clean-sync -aaa --force
 [<]   origin/master  5918144 Merge branch 'php-sessions-suck' into 'master'
 [<]   origin/ulticon 3114d86 Merge branch 'master' into ulticon
 ```
-

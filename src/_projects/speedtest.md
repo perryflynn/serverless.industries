@@ -3,6 +3,7 @@ author: christian
 title: speedtest
 projecttype: webservice
 projecturl: https://github.com/perryflynn/speedtest
+projecttag: projects:speedtest
 image: assets/speedtest-demo.gif
 ref: speedtest
 ---

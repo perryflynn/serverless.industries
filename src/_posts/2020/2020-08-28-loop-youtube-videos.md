@@ -3,7 +3,7 @@ author: christian
 title: "YouLoop: Endlose YouTube Videos"
 locale: de
 ref: youloop-website
-tags: [projects, html, javascript]
+tags: [projects, html, javascript, projects:youloop]
 ---
 
 Als kleines Urlaubs&shy;schlechtwetter&shy;projekt ist [YouLoop][main] entstanden.

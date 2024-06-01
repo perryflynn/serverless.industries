@@ -2,7 +2,7 @@
 author: christian
 title: Disable Storage on a Raspberry Pi Pico
 locale: en
-tags: [ python, embedded ]
+tags: [ python, embedded, projects, projects:mouse-jiggler ]
 ---
 
 When using a Raspberry Pi Pico as a USB Mouse or Keyboard, you may want to disable
