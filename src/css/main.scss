@@ -38,6 +38,7 @@ $container-max-widths: (
 @import "bootstrap/scss/dropdown";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/alert";
+@import "bootstrap/scss/tables";
 
 @import "tango";
 
@@ -288,7 +289,6 @@ $content-opacity: .9;
 
 h1 span.headtag {
     white-space: nowrap;
-    color: $lay-color-highlight;
 }
 
 span.tagsummary {
