@@ -3,6 +3,7 @@ author: christian
 title: dyndns-cgi
 projecttype: webservice
 projecturl: https://github.com/perryflynn/dyndns-cgi
+ref: dyndns-cgi
 ---
 
 Implements web-based DynDNS endpoints for routers like Fritz!Box 

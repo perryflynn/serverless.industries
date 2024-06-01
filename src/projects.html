@@ -7,19 +7,31 @@ title: Projects
 
 {% for project in site.projects %}
     <section class="project">
-        <h2>
+        <h2 id="{{project.ref}}">
             {{ project.title }}
             <small class="text-muted">{{project.projecttype}}</small>
         </h2>
-        
+
         {% if project.image %}
             <img src="{{project.image | relative_url}}" alt="{{ project.title }}" class="project-picture img-fluid">
         {% endif %}
-        
+
         {{ project.content | markdownify }}
-        
-        <p>
-            <a href="{{project.projecturl}}" target="_blank">More info</a>
-        </p>
+
+        {% if project.projecturl %}
+            <p>Project URL: <a href="{{project.projecturl}}" target="_blank">{{project.projecturl}}</a></p>
+        {% endif %}
+
+        {% if project.projecttag %}
+            {% assign posts = site.posts | where_exp: "item", "item.tags contains project.projecttag" %}
+            {% if posts.size > 0 %}
+                <p>Related Blog Posts:</p>
+                <ul>
+                {% for post in posts %}
+                    <li><a href="{{ post.url | relative_url }}">{{post.title}}</a></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
     </section>
 {% endfor %}

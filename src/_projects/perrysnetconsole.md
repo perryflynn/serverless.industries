@@ -4,6 +4,7 @@ title: PerrysNetConsole
 projecttype: framework
 projecturl: https://github.com/perryflynn/PerrysNetConsole
 image: assets/perrysnetconsole-graph.png
+ref: perrysnetconsole
 ---
 
 A C# framework with very basic UI controls for command line applications like 

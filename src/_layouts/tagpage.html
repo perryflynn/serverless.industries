@@ -5,10 +5,17 @@ layout: content
 {% if page.tagposts %}
     <h1>
         Articles tagged with
-        <span class="headtag">{{page.taginfo.glyph|default: ''}} {{page.tagname}}</span>
+        <span class="headtag">&quot;{{page.tagname}}&quot;</span>
     </h1>
 
-    <p>This tag is used by {{page.tagpostcount}} posts.</p>
+    {% assign project = site.projects | where_exp: 'item', "item.projecttag == page.tagname" %}
+    <p>
+        This tag is
+        {% if project.size > 0 %}
+            related to the project <a href="{{'projects.html' | relative_url}}#{{project[0].ref}}">{{project[0].title}}</a> and
+        {% endif %}
+        used by {{page.tagpostcount}} posts.
+    </p>
 
     {% for posts in page.tagposts %}
         {%- assign lang = posts[0] -%}
@@ -16,7 +23,7 @@ layout: content
             {{site.langmap[lang].postlist}}
             <small class="text-muted">({{posts[1] | size}})</small>
         </h2>
-        
+
         <ul>
             {%- assign sortedposts = posts[1] | sort_natural: "title" -%}
             {% for post in sortedposts %}
@@ -39,7 +46,7 @@ layout: content
 
             {% assign sortedtaggroup = taggroup.items | sort %}
             {% for tag in sortedtaggroup %}
-                {%- assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag[0]" -%}
+                {%- assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag[0] or item.glob and tag[0] contains item.name" -%}
                 {%- assign tagslug = tag[0] | slugify -%}
                 <span class="tagitem">
                     {% if tagicon[0] %}

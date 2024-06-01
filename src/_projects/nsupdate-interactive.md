@@ -4,6 +4,7 @@ title: nsupdate-interactive
 projecttype: script
 projecturl: https://github.com/perryflynn/nsupdate-interactive
 image: assets/nsupdate-interactive-diff.jpg
+ref: nsupdate-interactive
 ---
 
 This python script gets all DNS records from a zone by a AXFR query and

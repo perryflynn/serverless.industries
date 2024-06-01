@@ -84,6 +84,7 @@
   name: powershell
 - glyph: <i class="mdi mdi-notebook"></i>
   name: projects
+  glob: true
 - glyph: <i class="mdi mdi-server"></i>
   name: proxmox
 - glyph: <span class="mdi mdi-language-python"></span>
@@ -128,3 +129,7 @@
   name: fediverse
 - glyph: <i class="mdi mdi-laptop"></i>
   name: lenovo thinkpad
+- glyph: <i class="mdi mdi-theater"></i>
+  name: digital cinema
+- glyph: <i class="mdi mdi-shield-lock"></i>
+  name: security

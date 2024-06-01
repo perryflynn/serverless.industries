@@ -4,6 +4,7 @@ title: speedtest
 projecttype: webservice
 projecturl: https://github.com/perryflynn/speedtest
 image: assets/speedtest-demo.gif
+ref: speedtest
 ---
 
 Java Script based webservice to test upload and download speed

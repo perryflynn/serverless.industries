@@ -1,6 +1,6 @@
 {% assign sorted_tags = include.current_post.tags | sort %}
 {%-for tag in sorted_tags %}
-    {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag" %}
+    {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag or item.glob and tag contains item.name" %}
     <span class="tagitem">
     {% if tagicon[0] %}
         <span class="tagicon">{{tagicon[0].glyph}}</span>

@@ -4,6 +4,7 @@ title: Mouse Jiggler Pico
 projecttype: hardware
 projecturl: https://github.com/perryflynn/mouse-jiggler-pico
 image: assets/jiggler-pico.png
+ref: mouse-joggler-pico
 ---
 
 A hardware mouse jiggler based on Raspberry Pi Pico which connects via USB

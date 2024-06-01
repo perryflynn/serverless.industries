@@ -3,6 +3,7 @@ author: christian
 title: minimon
 projecttype: script
 projecturl: https://github.com/perryflynn/minimon
+ref: minimon
 ---
 
 A small bash script compatible with Linux and Git Bash on windows

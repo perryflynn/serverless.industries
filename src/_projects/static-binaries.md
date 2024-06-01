@@ -4,6 +4,7 @@ title: Static Binaries
 projecttype: build
 projecturl: https://github.com/perryflynn/static-binaries
 image: assets/static-binaries.png
+ref: static-binaries
 ---
 
 A CI Pipeline project which builds portable versions of popular tools

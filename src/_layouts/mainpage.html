@@ -112,6 +112,18 @@ layout: default
             {% endif %}
         {% endif %}
 
+        {% assign projecttag = page.tags | where_exp: 'item', "item contains 'projects:'" %}
+        {% if projecttag.size > 0 %}
+            {% assign project = site.projects | where_exp: 'item', "item.projecttag == projecttag[0]" %}
+            {% if project.size > 0 %}
+                <div class="row langmenu">
+                    <div class="col">
+                        This post is related to the project <a href="{{'projects.html' | relative_url}}#{{project[0].ref}}">{{project[0].title}}</a>.
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+
         {{content}}
 
     </div>

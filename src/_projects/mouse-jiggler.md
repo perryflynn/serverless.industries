@@ -4,6 +4,7 @@ title: Mouse Jiggler ESP32
 projecttype: hardware
 projecturl: https://github.com/perryflynn/mouse-jiggler
 image: assets/jiggler-esp.png
+ref: mouse-jiggler
 ---
 
 A hardware mouse jiggler based on ESP32 which connects via bluetooth

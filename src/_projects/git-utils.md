@@ -3,6 +3,7 @@ author: christian
 title: git-utils
 projecttype: script
 projecturl: https://github.com/perryflynn/git-utils
+ref: git-utils
 ---
 
 `git-clean-sync` automates fetch all branches, link remote and local branches together,

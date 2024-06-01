@@ -3,6 +3,7 @@ author: christian
 title: huepf
 projecttype: webservice
 projecturl: https://github.com/perryflynn/huepf
+ref: huepf
 ---
 
 A file-based (no database) shortlink service with a very basic admin panel.
