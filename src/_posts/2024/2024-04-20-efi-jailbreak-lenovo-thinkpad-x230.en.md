@@ -2,7 +2,7 @@
 author: christian
 title: Jailbreaking the Thinkpad X230 UEFI to replace the Wifi Chip
 locale: en
-tags: [ hardware, lenovo thinkpad, uefi ]
+tags: [ hardware, lenovo thinkpad, uefi, security ]
 image: /assets/x230_wifi_cmos.jpg
 ---
 
