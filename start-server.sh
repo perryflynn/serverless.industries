@@ -15,7 +15,7 @@ fi
 
 mkdir -p vendor/ruby
 bundle config set --local path vendor/ruby
-bundle install
+#bundle install
 bundle exec jekyll serve --lsi --unpublished "${args[@]}" -s ./src -d ./_site --config ./src/_config.yml,./src/_config_staging.yml,./src/_config_ci_demo.yml
 
 exit 0
