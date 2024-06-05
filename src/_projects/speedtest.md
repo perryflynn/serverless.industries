@@ -1,6 +1,6 @@
 ---
 author: christian
-title: speedtest
+title: Speedtest
 projecttype: webservice
 projecturl: https://github.com/perryflynn/speedtest
 projecttag: projects:speedtest

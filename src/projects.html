@@ -5,6 +5,18 @@ title: Projects
 
 <h1>Projects</h1>
 
+<p>
+    A list of my active and past projects.
+</p>
+
+<div class="table-of-contents">
+    <ul id="toc" class="section-nav">
+        {% for project in site.projects %}
+            <li class="toc-entry toc-h2"><a href="#{{project.ref}}">{{project.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
 {% for project in site.projects %}
     <section class="project">
         <h2 id="{{project.ref}}">
@@ -33,5 +45,7 @@ title: Projects
                 </ul>
             {% endif %}
         {% endif %}
+
+        <p style="text-align: right;"><a href="#content-top">Back to top</a></p>
     </section>
 {% endfor %}
