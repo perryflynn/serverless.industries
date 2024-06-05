@@ -2,7 +2,7 @@
 author: christian
 title: "TaskOMat: Kleine Anpassungen & Webhooks"
 locale: de
-tags: [projects, gitlab]
+tags: [projects, gitlab, projects:taskomat]
 published: false
 ---
 

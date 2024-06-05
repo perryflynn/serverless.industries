@@ -3,6 +3,7 @@ author: christian
 title: Digital Cinema Talk
 projecttype: talk
 projecttag: projects:dci talk
+image: assets/digital-cinema-project.jpg
 ref: dci-talk
 ---
 

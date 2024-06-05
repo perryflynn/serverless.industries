@@ -3,7 +3,7 @@ author: christian
 title: "TaskOMat Counters: Dinge zählen"
 locale: de
 ref: taskomat-gitlab-counters
-tags: [projects, gitlab]
+tags: [projects, gitlab, projects:taskomat]
 published: false
 ---
 

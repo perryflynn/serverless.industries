@@ -3,6 +3,7 @@ author: christian
 title: dyndns-cgi
 projecttype: webservice
 projecturl: https://github.com/perryflynn/dyndns-cgi
+image: assets/dyndns-project.jpg
 ref: dyndns-cgi
 ---
 

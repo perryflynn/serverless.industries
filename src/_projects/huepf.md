@@ -3,6 +3,7 @@ author: christian
 title: huepf
 projecttype: webservice
 projecturl: https://github.com/perryflynn/huepf
+image: assets/huepf-project.jpg
 ref: huepf
 ---
 

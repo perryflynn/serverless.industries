@@ -2,7 +2,7 @@
 author: christian
 title: "TaskOMat: Update 2023.1"
 locale: de
-tags: [projects, gitlab]
+tags: [projects, gitlab, projects:taskomat]
 toc: true
 ---
 

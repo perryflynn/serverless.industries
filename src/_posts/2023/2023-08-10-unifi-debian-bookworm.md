@@ -3,7 +3,7 @@ author: christian
 title: Unifi Controller auf Debian 12 Bookworm
 locale: de
 ref: unifi-apt-repo
-tags: [ debian, apt, unifi, network ]
+tags: [ debian, apt, unifi, network, projects, projects:packagerepos ]
 ---
 
 Schon seit einigen Jahren ist der Betrieb von Unifi WLAN Produkten kein Spaß mehr.
