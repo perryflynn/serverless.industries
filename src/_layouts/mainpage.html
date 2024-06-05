@@ -43,7 +43,7 @@ layout: default
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown d-none d-lg-inline">
+                            <!--li class="nav-item dropdown d-none d-lg-inline">
                                 <a class="nav-link dropdown-toggle" href="#" id="searchMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-magnify"></i>
                                 </a>
@@ -60,6 +60,12 @@ layout: default
                                         </div>
                                     </form>
                                 </div>
+                            </li-->
+                            <li class="navbar-item">
+                                <a class="nav-link" href="{{'/search.html' | relative_url}}">
+                                    <i class="mdi mdi-magnify d-none d-lg-inline"></i>
+                                    <span class="d-xs-inline d-lg-none">Search</span>
+                                </a>
                             </li>
                             <li class="navbar-item">
                                 <a class="nav-link" href="{{'/feed/frontpage.xml' | relative_url}}" target="_blank">
@@ -75,7 +81,7 @@ layout: default
                             </li>
                         </ul>
 
-                        <form class="form-inline my-2 my-lg-0 d-xs-inline d-lg-none" method="GET" action="https://www.google.com/search" target="_blank">
+                        <!--form class="form-inline my-2 my-lg-0 d-xs-inline d-lg-none" method="GET" action="https://www.google.com/search" target="_blank">
                             <input type="hidden" name="sitesearch" value="{{site.my.domain}}">
                             <div class="input-group">
                                 <input type="text" name="q" class="form-control" placeholder="Google Search">
@@ -85,7 +91,7 @@ layout: default
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        </form-->
 
                     </div>
                 </nav>

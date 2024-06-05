@@ -1,0 +1,35 @@
+---
+layout: content
+title: Search
+---
+
+<h1>Search</h1>
+
+<p>
+    Search for posts on this page.
+</p>
+
+<div style="margin-bottom: 40px;">
+    <input class="form-control form-control-lg" id="searchbox" type="text" placeholder="Search Pattern">
+</div>
+
+<div id="searchresultlist"></div>
+
+<script type="text/javascript" src="{{'js/search.js' | relative_url }}?commit={{site.git.commitlong}}" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+    document.getElementById('searchbox').focus();
+
+    // New search using example options
+    const search = new jekyllSearch(
+      '{{"/search.json" | relative_url}}?commit={{site.git.commitlong}}',
+      '#searchbox',
+      '#searchresultlist',
+      '{{"" | relative_url}}'
+    );
+
+    // Initialise
+    search.init();
+
+</script>

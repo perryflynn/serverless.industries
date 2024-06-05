@@ -1,0 +1,20 @@
+---
+layout: null
+sitemap: false
+---
+
+{% capture json %}
+[
+  {% assign pages = site.posts | where_exp:'doc','doc.sitemap != false and doc.title != null and doc.excerpt != "\n"' %}
+  {% for page in pages %}
+  {
+    "title": {{ page.title | jsonify }},
+    "excerpt": {{ page.excerpt | markdownify | strip_html | jsonify }},
+    "content": {{ page.content | markdownify | strip_html | jsonify }},
+    "url": {{ site.baseurl | append: page.url | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
+{{ json | lstrip }}

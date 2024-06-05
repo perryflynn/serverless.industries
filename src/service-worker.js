@@ -18,24 +18,31 @@ const forceCacheList = [
         'index/de/',
         'index/en/',
         'tag/',
+        'guides/',
         'offline.html',
         'authors.html',
+        'projects.html',
+        'search.html'
     ]
     .map(url => basePath + url),
 
     // with cache killer parameter
     ... [
         'site.webmanifest',
+        'search.json',
 
         // assets
         'css/Datacenter_Empty_Floor-snip.jpg',
         'css/cc-80x15.png',
-        'js/jquery-3.5.1.slim.min.js',
+        'js/jquery-3.7.1.slim.min.js',
         'js/bootstrap.bundle.min.js',
         'css/main.css',
+        'css/icons.css',
         'css/webfonts/materialdesignicons-webfont.woff',
         'css/webfonts/materialdesignicons-webfont.woff2',
         'css/webfonts/materialdesignicons-webfont.ttf',
+        'js/mermaid-10.9.1/mermaid.min.js',
+        'js/search.js',
 
         // favicons
         'favicon/apple-touch-icon.png',
