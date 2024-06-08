@@ -6,11 +6,11 @@ tags: [ debian, apt, unifi, network, projects, projects:packagerepos ]
 ---
 
 I've updated my [Unifi packages for Debian 12 "Bookworm"]({% post_url 2023/2023-08-10-unifi-debian-bookworm %})
-to version 8.0.28. [Aparently][apa1] it supports now finally MongoDB 4.4 out of the box, without hack and repack
+to version 8.0.28. [Apparently][apa1] it supports finally MongoDB 4.4 out of the box, without hack and repack
 the Debian package.
 
-Version 8.2 even [supports MongoDB 7.0][apa2] as it looks like, but there are too many Bug Report
-comments on the release page, so I'll wait a little bit more.
+Version 8.2 even [supports MongoDB 7.0][apa2] as it looks like, but there are too many bug report
+comments on the release page, so I'll wait a little bit longer.
 
 So maybe next time I post an update my repo becomes finally obsolete. 🚀
 
@@ -25,4 +25,4 @@ My current setup:
 - Installed openjdk-17-jre-headless
 - Upgraded unifi from `7.4.162-21057-1+unlocked` to `8.0.28-24416-1+unlocked`
 
-There is also now [a guide with detailed infos about the repo]({% post_url guides/2024-06-08-package-repositories %}).
+There is also now [a guide with detailed infos about my APT repository]({% post_url guides/2024-06-08-package-repositories %}).
