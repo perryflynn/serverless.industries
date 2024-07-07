@@ -1,6 +1,7 @@
 ---
 author: christian
 title: The only Docker CE setup guide you will ever need
+shortlink: dockerguide
 locale: en
 tags: [ docker, network, debian ]
 excerpt_separator: <!--more-->

@@ -2,6 +2,7 @@
 author: christian
 title: "APT Repositories: Components and Package Versions"
 locale: en
+shortlink: packages
 tags: [ debian, apt, projects, projects:packagerepos ]
 excerpt_separator: <!--more-->
 changelog:

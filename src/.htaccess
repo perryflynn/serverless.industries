@@ -29,6 +29,13 @@ Header always set X-Serverless "1"
 # rewrite rules
 RewriteEngine On
 
+# redirect post shortnames
+{%- assign shortposts = site.posts | where_exp:"p","p.shortlink" -%}
+{%- for shortpost in shortposts %}
+RewriteCond %{HTTP_HOST} ^{{site.my.shortdomain | replace: ".", "\\."}}$ [NC]
+RewriteRule ^{{shortpost.shortlink}}$ {{shortpost.url | relative_url}} [L,R=302]
+{% endfor %}
+
 # redirect shortlinks
 {%- for shortlink in site.data.shortlinks %}
 RewriteCond %{HTTP_HOST} ^{{site.my.shortdomain | replace: ".", "\\."}}$ [NC]
