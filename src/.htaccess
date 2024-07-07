@@ -29,6 +29,12 @@ Header always set X-Serverless "1"
 # rewrite rules
 RewriteEngine On
 
+# redirect shortlinks
+{%- for shortlink in site.data.shortlinks %}
+RewriteCond %{HTTP_HOST} ^{{site.my.shortdomain | replace: ".", "\\."}}$ [NC]
+RewriteRule ^{{shortlink.name}}$ {{shortlink.target}} [L,R=302]
+{% endfor %}
+
 # redirect to real domain
 RewriteCond %{HTTP_HOST} !^{{site.my.domain | replace: ".", "\\."}}$ [NC]
 RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301,E=REDIRCACHE:true]
@@ -42,16 +48,6 @@ RewriteRule ^$ {{'/index' | relative_url}} [L,R=301,E=REDIRCACHE:true]
 
 # redirect to rss feed
 RewriteRule ^feed\.xml$ {{'/feed/frontpage.xml' | relative_url}} [L,R=302]
-
-# fun for script kiddies
-RewriteRule ^wp-login\.php$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
-RewriteRule ^wp-admin(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
-RewriteRule ^\.env$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
-RewriteRule ^\.git(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
-RewriteRule ^typo3(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
-RewriteRule ^admin(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
-RewriteRule ^administrator(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
-RewriteRule \.sql$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
 
 # rewrites from old anysrc.net posts
 RewriteRule ^post/gnu-linux/amazon-dash-button-hack /2022/03/11/hack-the-dashbutton.html [L,R=301,E=REDIRCACHE:true]
@@ -67,3 +63,13 @@ RewriteRule ^2020/09/13/taskomat-counters\.html /2023/04/16/tastomat-update-2023
 
 # Cache Control header for permanent redirects
 Header always set Cache-Control "max-age=604800, public" env=REDIRCACHE
+
+# fun for script kiddies
+RewriteRule ^wp-login\.php$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+RewriteRule ^wp-admin(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+RewriteRule ^\.env$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+RewriteRule ^\.git(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+RewriteRule ^typo3(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+RewriteRule ^admin(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+RewriteRule ^administrator(/.*)?$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]
+RewriteRule \.sql$ https://www.youtube.com/watch?v=dQw4w9WgXcQ [L,R=302]

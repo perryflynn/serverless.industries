@@ -1,0 +1,4 @@
+- name: einbeck
+  target: https://cloud.anyserver.net/d/db21bbc37a/
+- name: media
+  target: https://files.serverless.industries/.mediainfo/

@@ -6,6 +6,7 @@ timezone: Europe/Berlin
 
 my:
   domain: serverless.industries
+  shortdomain: svr.ls
   sitetitle: Serverless Industries
   rsstitle: Serverless Industries Posts RSS
   env: live
