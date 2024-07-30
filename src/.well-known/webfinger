@@ -1,0 +1,28 @@
+{
+    "subject": "acct:christian@einbeck.social",
+    "aliases": [
+        "https://einbeck.social/@christian",
+        "https://einbeck.social/users/christian"
+    ],
+    "links": [
+        {
+            "rel": "http://webfinger.net/rel/profile-page",
+            "type": "text/html",
+            "href": "https://einbeck.social/@christian"
+        },
+        {
+            "rel": "self",
+            "type": "application/activity+json",
+            "href": "https://einbeck.social/users/christian"
+        },
+        {
+            "rel": "http://ostatus.org/schema/1.0/subscribe",
+            "template": "https://einbeck.social/authorize_interaction?uri={uri}"
+        },
+        {
+            "rel": "http://webfinger.net/rel/avatar",
+            "type": "image/jpeg",
+            "href": "https://einbeck.social/system/accounts/avatars/109/363/755/165/462/346/original/b894ba6b2a89a991.jpg"
+        }
+    ]
+}
