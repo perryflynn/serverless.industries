@@ -2,7 +2,7 @@
 author: christian
 title: Disable Bloatware, Tracking and other nasty stuff with PowerShell
 locale: en
-tags: [ windows, powershell ]
+tags: [ windows, powershell, projects:wincfg ]
 ---
 
 Windows 10 comes with alot of annoying tracking features, bloatware and other
