@@ -22,8 +22,13 @@ Header always append Permissions-Policy "microphone=()"
 Header always set X-Serverless "1"
 
 # cache assets
-<FilesMatch "\.(ico|webmanifest|pdf|flv|jpg|jpeg|png|gif|js|css|svg|eot|ttf|woff|woff2)$">
+<FilesMatch "\.(?i:ico|webmanifest|pdf|flv|jpg|jpeg|png|gif|js|css|svg|eot|ttf|woff|woff2)$">
     Header set Cache-Control "max-age=43200, public"
+</FilesMatch>
+
+# deny access to unexpected files
+<FilesMatch "\.(?i:php([0-9]+?)?)$">
+    deny from all
 </FilesMatch>
 
 # rewrite rules
