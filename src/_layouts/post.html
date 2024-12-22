@@ -4,27 +4,28 @@ layout: content
 
 {% assign nowts = 'now' | date: '%s' %}
 {% assign postts = page.date | date: '%s' %}
-<h1>{{page.title}}</h1>
-<p>
-    {{page.date|date: '%Y-%m-%d'}} &middot;
-    {{page.author}} &middot;
-    {% if nowts < postts %}future &middot; {% endif %}
-    {% if page.draft %}draft &middot; {% endif %}
-    {% if page.published == false %}unpublished &middot; {% endif %}
-    {% include tagrow.html current_post=page %}
-</p>
+<article>
+    <h1>{{page.title}}</h1>
 
-{% if page.toc %}
-<div class="table-of-contents">
-    {% toc %}
-</div>
-{% endif %}
+    <p>
+        <time datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time> &middot;
+        {{page.author}} &middot;
+        {% if nowts < postts %}future &middot; {% endif %}
+        {% if page.draft %}draft &middot; {% endif %}
+        {% if page.published == false %}unpublished &middot; {% endif %}
+        {% include tagrow.html current_post=page %}
+    </p>
 
-<div class="markdown-content">
-    <article>
+    {% if page.toc %}
+    <div class="table-of-contents">
+        {% toc %}
+    </div>
+    {% endif %}
+
+    <div class="markdown-content">
         {{content}}
-    </article>
-</div>
+    </div>
+</article>
 
 {% assign locale = page.locale | default: 'de' %}
 {% assign relas = site.related_posts | where: "locale", locale | slice:1, 5 %}

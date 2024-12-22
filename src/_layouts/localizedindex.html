@@ -28,7 +28,7 @@ layout: content
                     {{ post.excerpt|strip_html }} [...]
 
                     <em>
-                        {% if post.posttype == "post" %}- written on {{post.date|date: '%d. %B %Y'}}{% endif %}
+                        {% if post.posttype == "post" %}- written on <time datetime="{{post.date|date: '%Y-%m-%d'}}">{{post.date|date: '%d. %B %Y'}}</time>{% endif %}
                         <!-- written by {{post.author}}
                         on {{post.date|date: '%d. %B %Y'}} -->
                         {% if nowts < postts %}(future){% endif %}
