@@ -39,7 +39,7 @@ layout: content
 {% endif %}
 
 <div class="tagindex">
-    {% assign taggroups = site.tags | group_by_exp: "item", "item[0] | truncate: 1, '' | downcase" | sort: "name" %}
+    {% assign taggroups = site.tags | hide_systags | group_by_exp: "item", "item[0] | truncate: 1, '' | downcase" | sort: "name" %}
     {% for taggroup in taggroups %}
         <span class="taggroup">
             <span class="taggroupbegin"><span class="tagletter">{{taggroup.name | upcase}}</span>

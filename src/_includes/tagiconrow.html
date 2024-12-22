@@ -6,7 +6,7 @@
 <span class="tagsummary" title="Available in {{site.langmap[pl].intname}} language">{{pl}}</span>
 {% endfor %}
 
-{% assign sorted_tags = include.current_post.tags | sort %}
+{% assign sorted_tags = include.current_post.tags | sort | hide_systags %}
 {%-for tag in sorted_tags %}
     {% assign tagicon = site.data.tags | where_exp: 'item', "item.name == tag and item.excludefromiconlist != true" %}
     {% if tagicon[0] %}
