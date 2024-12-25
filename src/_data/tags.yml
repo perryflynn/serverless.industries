@@ -116,8 +116,12 @@
   name: tunnel
 - glyph: <i class="mdi mdi-hand-heart"></i>
   name: usability
+- glyph: <i class="mdi mdi-folder-network-outline"></i>
+  name: webdav
 - glyph: <i class="mdi mdi-web-box"></i>
   name: webspace
+- glyph: <i class="mdi mdi-web-box"></i>
+  name: web service
 - glyph: <i class="mdi mdi-microsoft-windows"></i>
   name: windows
 - glyph: <i class="mdi mdi-harddisk"></i>
