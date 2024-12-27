@@ -138,6 +138,16 @@ $content-opacity: .9;
     padding: 10px 20px;
 }
 
+ul {
+    list-style-type: circle;
+    &.active-list {
+        li.active {
+            font-weight: bold;
+            list-style-type: disc;
+        }
+    }
+}
+
 .row.defaultcontent > .col {
     padding: 20px;
 }

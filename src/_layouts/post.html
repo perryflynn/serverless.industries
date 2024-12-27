@@ -27,6 +27,23 @@ layout: content
     </div>
 </article>
 
+{% if page.series %}
+    {% assign series = site.posts | where_exp:"item","item.series.tag==page.series.tag" | sort: "series.index" %}
+    {% if series.size > 1 %}
+        <hr>
+        <h4>Current article series</h4>
+        <ul class="active-list">
+            {% for seritem in series %}
+                {% if seritem.id == page.id %}
+                    <li class="active">Part {{forloop.index}}: {{seritem.title}}</li>
+                {% else %}
+                    <li>Part {{forloop.index}}: <a href="{{ seritem.url | relative_url }}">{{seritem.title}}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endif %}
+
 {% assign locale = page.locale | default: 'de' %}
 {% assign relas = site.related_posts | where: "locale", locale | slice:1, 5 %}
 {% if relas.size > 0 %}
