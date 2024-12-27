@@ -39,10 +39,10 @@ layout: content
 {% endif %}
 
 <div class="tagindex">
-    {% assign taggroups = site.tags | hide_systags | group_by_exp: "item", "item[0] | truncate: 1, '' | downcase" | sort: "name" %}
+    {% assign taggroups = site.tags | tokeyvalues | where_exp: "item","item[1].size > 1" | hide_systags_a | group_by_exp: "item", "item[0] | truncate: 1, '' | upcase" | sort: "name" %}
     {% for taggroup in taggroups %}
         <span class="taggroup">
-            <span class="taggroupbegin"><span class="tagletter">{{taggroup.name | upcase}}</span>
+            <span class="taggroupbegin"><span class="tagletter">{{taggroup.name}}</span>
 
             {% assign sortedtaggroup = taggroup.items | sort %}
             {% for tag in sortedtaggroup %}
@@ -53,6 +53,7 @@ layout: content
                         <span class="tagicon">{{tagicon[0].glyph}}</span>
                     {% endif %}
                     <a href="{% if tag[0] == 'projects' %}{{'/projects.html' | relative_url}}{% else %}{{ '/tag/' | append: tagslug | append: '.html' | relative_url }}{% endif %}">{{tag[0]}}</a>
+                    <span class="text-muted">({{tag[1].size}})</span></span>
                 {%- if forloop.first -%}</span>{%- endif -%}
                 {%- if forloop.last==false %}, {% endif %}
             {% endfor %}

@@ -5,6 +5,10 @@ module Jekyll
             tags.reject { |t| t.start_with?('projects:') }
         end
 
+        def hide_systags_a(tags)
+            tags.reject { |t| t[0].start_with?('projects:') }
+        end
+
     end
 end
 
