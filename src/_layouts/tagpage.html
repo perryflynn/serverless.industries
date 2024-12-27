@@ -52,7 +52,7 @@ layout: content
                     {% if tagicon[0] %}
                         <span class="tagicon">{{tagicon[0].glyph}}</span>
                     {% endif %}
-                    <a href="{{ '/tag/' | append: tagslug | append: '.html' | relative_url }}">{{tag[0]}}</a></span>
+                    <a href="{% if tag[0] == 'projects' %}{{'/projects.html' | relative_url}}{% else %}{{ '/tag/' | append: tagslug | append: '.html' | relative_url }}{% endif %}">{{tag[0]}}</a>
                 {%- if forloop.first -%}</span>{%- endif -%}
                 {%- if forloop.last==false %}, {% endif %}
             {% endfor %}

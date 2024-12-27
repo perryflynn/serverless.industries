@@ -6,5 +6,5 @@
         <span class="tagicon">{{tagicon[0].glyph}}</span>
     {% endif %}
     {%- assign tagslug = tag|slugify -%}
-    <a href="{{'/tag/' | append: tagslug | append: '.html' | relative_url}}">{{tag}}</a></span>{% if forloop.last==false %}, {% endif %}
+    <a href="{% if tag == 'projects' %}{{'/projects.html' | relative_url}}{% else %}{{'/tag/' | append: tagslug | append: '.html' | relative_url}}{% endif %}">{{tag}}</a></span>{% if forloop.last==false %}, {% endif %}
 {% endfor %}

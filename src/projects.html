@@ -37,7 +37,7 @@ title: Projects
         {% if project.projecttag %}
             {% assign posts = site.posts | where_exp: "item", "item.tags contains project.projecttag" | sort: "date" %}
             {% if posts.size > 0 %}
-                <p>Related Blog Posts:</p>
+                <p style="clear: both;">Related Blog Posts:</p>
                 <ul>
                 {% for post in posts %}
                     <li><a href="{{ post.url | relative_url }}">{{post.title}}</a> ({{post.locale}}, {{post.date|date: '%Y-%m-%d'}})</li>
@@ -46,6 +46,6 @@ title: Projects
             {% endif %}
         {% endif %}
 
-        <p style="text-align: right;"><a href="#content-top">Back to top</a></p>
+        <p style="text-align: right; clear:both;"><a href="#content-top">Back to top</a></p>
     </section>
 {% endfor %}
