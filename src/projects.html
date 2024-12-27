@@ -35,12 +35,12 @@ title: Projects
         {% endif %}
 
         {% if project.projecttag %}
-            {% assign posts = site.posts | where_exp: "item", "item.tags contains project.projecttag" %}
+            {% assign posts = site.posts | where_exp: "item", "item.tags contains project.projecttag" | sort: "date" %}
             {% if posts.size > 0 %}
                 <p>Related Blog Posts:</p>
                 <ul>
                 {% for post in posts %}
-                    <li><a href="{{ post.url | relative_url }}">{{post.title}}</a></li>
+                    <li><a href="{{ post.url | relative_url }}">{{post.title}}</a> ({{post.locale}}, {{post.date|date: '%Y-%m-%d'}})</li>
                 {% endfor %}
                 </ul>
             {% endif %}
