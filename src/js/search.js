@@ -37,6 +37,7 @@ class jekyllSearch
                 <article class="result__article article">
                     <h4>
                     <a href="${this.siteURL + item.url}">${item.title}</a>
+                    <small class="text-muted">${item.locale}</small>
                     </h4>
                     <p>${item.excerpt}</p>
                 </article>
