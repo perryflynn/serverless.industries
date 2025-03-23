@@ -4,6 +4,7 @@ title: Terraria Server in Docker
 locale: en
 ref: terraria-docker
 tags: ['linux', 'docker', 'games']
+supersededby: /2025/03/23/terraria-docker-v2.en
 ---
 
 Yesterday I wanted to play Terraria again. To have the
