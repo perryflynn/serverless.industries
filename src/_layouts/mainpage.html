@@ -130,6 +130,17 @@ layout: default
             {% endif %}
         {% endif %}
 
+        {% if page.supersededby %}
+            {% assign newpost = site.posts | where_exp: 'item', "item.id == page.supersededby" %}
+            {% if newpost.size > 0 %}
+                <div class="row langmenu">
+                    <div class="col">
+                        This post was superseded by <a href="{{newpost[0].url}}">{{newpost[0].title}}</a>.
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+
         {{content}}
 
     </div>
