@@ -5,6 +5,13 @@ module FrontPagePlugin
 
         def generate(site)
 
+            # generate custom properties
+            site.posts.docs.each_with_index do |post, postindex|
+                post.data['year'] = post.data['date'].strftime('%Y')
+                post.data['month'] = post.data['date'].strftime('%m')
+                post.data['yearmonth'] = "#{post.data['date'].strftime('%Y')}-#{post.data['date'].strftime('%m')}"
+            end
+
             # group by ref or id
             byref = site.posts.docs.group_by { |p| p.data['ref'] || p.id }
 

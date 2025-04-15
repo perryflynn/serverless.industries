@@ -1,0 +1,68 @@
+---
+layout: content
+permalink: /archive/
+---
+
+<h1>Archive</h1>
+<p>All posts sorted by year and month.</p>
+
+{% assign archiveposts = site.categories.frontpage | sort: "date" | reverse | group_by: "year" %}
+
+{% for year in archiveposts %}
+    {% unless forloop.first %}
+    <hr>
+    {% endunless %}
+
+    {% assign postyear = year.items[0].date | date: '%Y' %}
+    <h2>{{postyear}} <small class="text-muted">({{year.items.size}})</small></h2>
+
+    {% if site.data.yearslogans[postyear] %}
+        <p>{{site.data.yearslogans[postyear]}}</p>
+    {% endif %}
+
+    <div class="row">
+
+    {% assign months = year.items | sort: "date" | reverse | group_by: "yearmonth" %}
+    {% for month in months %}
+        <div class="col-12 col-md-6">
+            <h3>{{month.items[0].date | date: '%B'}} <small class="text-muted">({{month.items.size}})</small></h3>
+            <ul>
+                {% assign posts = month.items | sort: "date" %}
+                {% for post in posts %}
+                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+
+    </div>
+{% endfor %}
+
+{% comment %}
+<div class="row postlist">
+
+    {% for post in paginator.posts %}
+        {% assign nowts = 'now' | date: '%s' %}
+        {% assign postts = post.date | date: '%s' %}
+        <div class="col-xs-12 col-md-6 postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
+            <article>
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p>
+                    {% include tagiconrow.html current_post=post %}
+                    {{ post.excerpt|strip_html }} [...]
+
+                    <em>
+                        {% if post.posttype == "post" %}- written on <time datetime="{{post.date|date: '%Y-%m-%d'}}">{{post.date|date: '%d. %B %Y'}}</time>{% endif %}
+                        <!-- written by {{post.author}}
+                        on {{post.date|date: '%d. %B %Y'}} -->
+                        {% if nowts < postts %}(future){% endif %}
+                        {% if post.draft %}(draft){% endif %}
+                        {% if post.published == false %}(unpublished){% endif %}
+                    </em>
+                </p>
+            </article>
+        </div>
+    {% endfor %}
+
+</div>
+{% endcomment %}
