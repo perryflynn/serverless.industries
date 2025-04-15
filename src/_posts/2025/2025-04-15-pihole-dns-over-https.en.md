@@ -29,7 +29,7 @@ This requires to have a "proper" router like OPNSense or pfSense which allows it
 - Redirect Target IP: Your Pi-hole IP
 - Redirect Target Port: 53
 
-OPNSense 🡒 Firewall 🡒 NAT 🡒 Port Forward:
+OPNSense → Firewall → NAT → Port Forward:
 
 ![OPNSense SNAT Configuration]({{'assets/pihole-snat.jpg' | relative_url}}){:.img-fluid}
 
@@ -72,7 +72,7 @@ Used Lists:
 - TIF (Threat Intelligence Feeds)
 - DoH/VPN/Proxy Bypass
 
-Pi-hole 🡒 Adlists:
+Pi-hole → Adlists:
 
 ![Pi-hole Adlist Configuration]({{'assets/pihole-adlist.jpg' | relative_url}}){:.img-fluid}
 
@@ -90,7 +90,7 @@ We can just run our own recursive DNS resolver with software like
 [Unbound](https://nlnetlabs.nl/projects/unbound/about/). It's also shipped 
 with OPNSense, Debian or RasperryOS for example.
 
-Add the Unbound IP in Pi-hole 🡒 Settings 🡒 DNS as custom upstream DNS Server.
+Add the Unbound IP in Pi-hole → Settings → DNS as custom upstream DNS Server.
 
 [Alot more details on that in the Pi-hole docs](https://docs.pi-hole.net/guides/dns/unbound/)
 
