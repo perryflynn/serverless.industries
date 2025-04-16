@@ -100,6 +100,8 @@ The projector includes a so called "Media Block" which handles DRM and decryptio
 
 On DCP playback the Projector will send the decrypted PCM audio to the Audio Processor which will then send each processed Audio Channel to the respective Speakers.
 
+![DCP Disks]({{'assets/digital-cinema-disks.jpg' | relative_url}}){:.img-fluid}
+
 ## DCP Format
 
 A DCP is a folder which contains XML metadata files and multiple MXF files for the actual movie.
@@ -146,7 +148,7 @@ The video stream is encoded as one single JPEG2000 picture per frame. Each frame
 
 The audio stream is (most likely) chunked into one BWF (Broadcast Wave Format) stream per frame and also encrypted separately. (The author haven't found any information about this yet.)
 
-A DCP can have a size of 200 GB or more. Some newer releases can hit the Terabyte, if multiple versions (Languages, Subtitles, 2D/2D) are shipped on the same harddrive.
+A DCP can have a size of 200 GB or more. Some newer releases can hit the Terabyte, if multiple versions (Languages, Subtitles, 2D/3D) are shipped on the same harddrive.
 
 The subtitles are provided in an XML file or are burned directly into the picture frames. If it is provided as an XML file, the projector will render the subtitles using a TTF font file.
 
@@ -178,6 +180,8 @@ graph TD
 ```
 
 Example: One version file for German with German subtitles and one for French with German subtitles.
+
+It is even possible to provide differnt cuts of a movie for different regions.
 
 ### Software
 
@@ -223,9 +227,7 @@ cat leaf.pem | openssl x509 -pubkey -noout | \
     openssl sha1 -binary | openssl base64
 ```
 
-Script for creating a certificate chain: `create-smpte-chain.sh`
-
-> [color=#e862ea] TODO: Make scripts available on GitHub
+Script for creating a certificate chain: [create-smpte-chain.sh](https://github.com/NEU-Deli/dcitools/blob/master/create-smpte-chain.sh)
 
 ## Key Delivery Messages
 
