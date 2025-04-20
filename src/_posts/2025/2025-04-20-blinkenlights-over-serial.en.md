@@ -1,6 +1,6 @@
 ---
 author: christian
-title: Force Devices to use Pi-hole
+title: Blinkenlights over Serial
 locale: en
 tags: [ eh22, electronics, arduino, hardware, python ]
 image: /assets/serial-blinkenlights.gif
