@@ -3,7 +3,7 @@ author: christian
 title: Blinkenlights over Serial
 locale: en
 tags: [ eh22, electronics, arduino, hardware, python ]
-image: /assets/serial-blinkenlights.gif
+image: /assets/serial-blinkenlights.png
 ---
 
 After attending the workshop [LED Strips Everywhere for Everyone](https://cfp.eh22.easterhegg.eu/eh22/talk/LBAYEL/)
