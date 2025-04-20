@@ -77,7 +77,8 @@ body::after {
 
 /* main page */
 
-$content-opacity: .9;
+//$content-opacity: .9;
+$content-opacity: 1;
 
 .row.mainpage {
     background-color: rgba($lay-color-brighter, $content-opacity);
