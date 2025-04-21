@@ -1,6 +1,6 @@
 ---
 layout: content
-permalink: /archive/
+permalink: /archive.html
 title: Archive
 locale: en
 ---
@@ -34,7 +34,7 @@ locale: en
                     <li>
                         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                         {% if post.featured %}<span class="mdi mdi-star" style="color: orange;" title="Featured Article"></span>{% endif %}
-                        ({{post.locale|default('de')}})
+                        ({{post.locale|default: 'de'}})
                     </li>
                 {% endfor %}
             </ul>
