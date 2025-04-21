@@ -515,6 +515,14 @@ Everything relies on "never reusing AES Keys" and "protected private keys".
 - A DCI certified projector is required
 - Distributors can verify if a certificate belongs to a certified DCI projector
 
+## Just record it
+
+Encrypted DCPs use [Forensic Watermarks][watermarks] which contain the serial number of the
+projection system. So if a recorded copy of a movie appears online, the theatre will have to answer
+serious questions and may never get movies again.
+
+Pirated copies of movies have it's origin most likely from other sources.
+
 ## How it's going
 
 DCI has released version 1.4.4 of the [specification](https://www.dcimovies.com/specification/), which now allows playback of DCPs with expired signer certificate. 
@@ -534,6 +542,9 @@ The manufacturers already started to work on a software update.
 - [MXF Triplet Encryption](https://interop-docs.cinepedia.com/Document_Release_2.0/mpeg_ii_track_file_encryption.pdf)
 - [Showing jpeg2000 in Gimp / parsing jpeg2000 data from mxf](https://github.com/cth103/libdcp/issues/11)
 - [List of magic signatures](https://en.wikipedia.org/wiki/List_of_file_signatures)
+- [Forensic Watermarks in DCPs][watermarks]
+
+[watermarks]: https://dcpomatic.com/forum/viewtopic.php?t=2372
 
 ## Credits
 
