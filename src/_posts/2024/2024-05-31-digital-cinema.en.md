@@ -412,7 +412,7 @@ Output of `hexdump -C iv.bin`:
 00000010
 ```
 
-*See also "ECB Penguin" on $searchengine for more details why the IV is so importtant.*
+*See also "ECB Penguin" on $searchengine for more details why the IV is so important.*
 
 #### Validate CV
 
