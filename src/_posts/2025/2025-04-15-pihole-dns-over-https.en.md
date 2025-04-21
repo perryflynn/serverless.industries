@@ -3,6 +3,7 @@ author: christian
 title: Force Devices to use Pi-hole
 locale: en
 tags: [ dns, opnsense, network ]
+featured: true
 ---
 
 Setting up [Pi-hole](https://pi-hole.net) on a Raspberry Pi or as Docker Container is not hard. 

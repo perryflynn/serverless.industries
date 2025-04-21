@@ -5,6 +5,7 @@ shortlink: dockerguide
 locale: en
 tags: [ docker, network, debian ]
 excerpt_separator: <!--more-->
+featured: true
 changelog:
   - timestamp: 2023-12-16
     comment: Published

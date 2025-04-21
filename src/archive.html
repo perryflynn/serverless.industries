@@ -31,7 +31,11 @@ locale: en
             <ul>
                 {% assign posts = month.items | sort: "date" %}
                 {% for post in posts %}
-                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                    <li>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        {% if post.featured %}<span class="mdi mdi-star" style="color: orange;" title="Featured Article"></span>{% endif %}
+                        ({{post.locale|default('de')}})
+                    </li>
                 {% endfor %}
             </ul>
         </div>

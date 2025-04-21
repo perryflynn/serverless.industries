@@ -3,6 +3,7 @@ author: christian
 title: "minimon Update 2023.1: Job Parallelisierung und JSON Config Files"
 locale: de
 tags: [ monitoring, bash, projects, projects:minimon ]
+featured: true
 ---
 
 [minimon.sh](https://github.com/perryflynn/minimon) unterstützt in der neusten Version

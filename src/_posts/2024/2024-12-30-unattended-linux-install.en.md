@@ -6,6 +6,7 @@ tags: [ linux, shell, ansible, projects, projects:iac, infrastructure code ]
 series:
   tag: series:iacbootstrap
   index: 2
+featured: true
 ---
 
 After [reviving my old Thinkpad X230][thinkpad] I looked for a way to automate the installation 

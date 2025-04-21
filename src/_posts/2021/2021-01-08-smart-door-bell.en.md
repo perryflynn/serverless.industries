@@ -5,6 +5,7 @@ locale: en
 ref: smart-doorbell
 tags: [ electronics, 'smart home', 'home assistant', 'esphome', embedded ]
 image: /assets/smartbell-hass.png
+featured: true
 ---
 
 The idea to include my door bell into [Home Assistant][hass] has existed

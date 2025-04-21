@@ -3,6 +3,7 @@ author: christian
 title: Reverse Engineer Java Native Interfaces (JNI)
 locale: de
 tags: [ reverse engineering, software development, java, linux, security ]
+featured: true
 ---
 
 Der Hersteller einer Appliance stellt für Aufgaben wie den RAID Rebuild Tools in Form von Update Paketen bereit,

@@ -4,6 +4,7 @@ title: "How DCI Movie Delivery and Encryption works"
 locale: en
 tags: [ digital cinema, reverse engineering, security, projects, projects:dci talk ]
 usemermaid: true
+featured: true
 ---
 
 The Cinema Industry is using its own standards for creating and distributing movies in a secure way. The DCI (Digital Cinema Initiatives) specification defines everything from file formats and encryption to the projection systems itself.

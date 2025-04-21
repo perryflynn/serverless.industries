@@ -5,6 +5,7 @@ locale: en
 ref: nsupdate-howto
 tags: [linux, dns, projects, projects:nsupdate-interactive]
 excerpt_separator: <!-- more -->
+featured: true
 ---
 
 A few DNS zone which I maintain don't have a web interface to edit
