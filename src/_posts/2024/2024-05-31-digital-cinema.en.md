@@ -549,3 +549,5 @@ The manufacturers already started to work on a software update.
 ## Credits
 
 Thanks for reading and feedback goes to: Pliskin, babel
+
+There are alot of comments on [Hacker News](https://news.ycombinator.com/item?id=43745281).
