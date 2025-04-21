@@ -10,6 +10,7 @@ locale: en
 
 {% assign archiveposts = site.categories.frontpage | sort: "date" | reverse | group_by: "year" %}
 
+<div class="archivelist">
 {% for year in archiveposts %}
     {% unless forloop.first %}
     <hr>
@@ -43,32 +44,4 @@ locale: en
 
     </div>
 {% endfor %}
-
-{% comment %}
-<div class="row postlist">
-
-    {% for post in paginator.posts %}
-        {% assign nowts = 'now' | date: '%s' %}
-        {% assign postts = post.date | date: '%s' %}
-        <div class="col-xs-12 col-md-6 postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
-            <article>
-                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                <p>
-                    {% include tagiconrow.html current_post=post %}
-                    {{ post.excerpt|strip_html }} [...]
-
-                    <em>
-                        {% if post.posttype == "post" %}- written on <time datetime="{{post.date|date: '%Y-%m-%d'}}">{{post.date|date: '%d. %B %Y'}}</time>{% endif %}
-                        <!-- written by {{post.author}}
-                        on {{post.date|date: '%d. %B %Y'}} -->
-                        {% if nowts < postts %}(future){% endif %}
-                        {% if post.draft %}(draft){% endif %}
-                        {% if post.published == false %}(unpublished){% endif %}
-                    </em>
-                </p>
-            </article>
-        </div>
-    {% endfor %}
-
 </div>
-{% endcomment %}

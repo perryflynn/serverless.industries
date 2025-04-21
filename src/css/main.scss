@@ -257,6 +257,15 @@ ul {
     opacity: .5;
 }
 
+h3 {
+    text-wrap: balance;
+}
+
+.archivelist li {
+    margin: 10px auto;
+    text-wrap: balance;
+}
+
 .paginator {
     margin-top: 20px;
 
