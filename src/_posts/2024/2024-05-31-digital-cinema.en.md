@@ -412,6 +412,8 @@ Output of `hexdump -C iv.bin`:
 00000010
 ```
 
+*See also "ECB Penguin" on $searchengine for more details why the IV is so importtant.*
+
 #### Validate CV
 
 Since there is no way to know if a decryption was successful when the content of the data is unknown, a CV (Check Value) is used. The Check Value is encrypted with the same AES Key + IV, but the plain text value is known.
@@ -514,6 +516,10 @@ Everything relies on "never reusing AES Keys" and "protected private keys".
 - Every projector uses unique certificates/keys
 - A DCI certified projector is required
 - Distributors can verify if a certificate belongs to a certified DCI projector
+
+![Encryption Security]({{'assets/xkcd-encryption-security.png' | relative_url}}){:.img-fluid}
+
+Source: [xkcd.com/538/](https://xkcd.com/538/)
 
 ## Just record it
 
