@@ -79,7 +79,9 @@ variables:
   script:
     - 'ssh ${sshopts} ${sshremote} "mkdir -p ${remotedir}"'
     - '/bin/bash ci/secure-stage.sh'
-    - 'rsync -rltzv --delete -e "ssh ${sshopts}" dist-${distname}/ ${sshremote}:${remotedir}'
+    # rsync opts: r=recursive, l=create links, t=sync times
+    # rsymc opts: whole-file=no deltas, delete=delete dest if not in src, e=alternate connect command
+    - 'rsync -rlt --whole-file --delete -e "ssh ${sshopts}" dist-${distname}/ ${sshremote}:${remotedir}'
     - 'rm -f dist-${distname}/newhtpasswd'
 
 .tpl:cleanup:
