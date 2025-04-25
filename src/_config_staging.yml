@@ -7,5 +7,6 @@ my:
   sitetitle: "[Stage] Serverless Industries"
   rsstitle: "[Stage] Serverless Industries Posts RSS"
   env: stage
+  webmention_endpoint: null
 
 url: "https://stage.serverless.industries"

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{'/css/icons.css' | relative_url}}?commit={{site.git.commitlong}}" async crossorigin="anonymous">
     <title>{{page.title}} - {{site.my.sitetitle}}</title>
 
+    <link rel="webmention" href="{{site.my.webmention_endpoint}}">
+
     {% assign authorinfo = site.authors | where: 'short_name', page.author | first %}
 
     {% if authorinfo.short_name %}
