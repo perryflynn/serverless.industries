@@ -2,11 +2,11 @@
 layout: content
 ---
 
-<div class="markdown-content">
-    <article>
-        <h1>{{page.title}}</h1>
+<article class="h-entry">
+    <div class="markdown-content">
+        <h1 class="p-name">{{page.title}}</h1>
 
-        {{page.excerpt}}
+        <div class="p-summary">{{page.excerpt}}</div>
 
         {% if page.toc %}
         <div class="table-of-contents">
@@ -14,24 +14,28 @@ layout: content
         </div>
         {% endif %}
 
-        {{ page.content | remove: page.excerpt }}
-    </article>
-</div>
+        <div class="e-content">{{ page.content | remove: page.excerpt }}</div>
+    </div>
 
-<hr>
+    <hr>
 
-<p>This guide is tagged with {% include tagrow.html current_post=page %} and was written on {{page.date|date: '%d. %B %Y'}}.</p>
+    <p>
+        This guide is tagged with {% include tagrow.html current_post=page %}
+        and was written on <time class="dt-published" datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time>
+        by <a class="p-author h-card" href="{{'/contact.html' | relative_url}}#author-{{page.author}}">{{page.author}}</a>.
+    </p>
 
-{% if page.changelog and page.changelog.size > 0 %}
-<p>Changelog:</p>
+    {% if page.changelog and page.changelog.size > 0 %}
+    <p>Changelog:</p>
 
-<ul>
-    {% assign sorted_changelog = page.changelog | sort: 'timestamp' | reverse %}
-    {% for log in sorted_changelog %}
-    <li><strong>{{log.timestamp}}:</strong> {{log.comment}}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+    <ul>
+        {% assign sorted_changelog = page.changelog | sort: 'timestamp' | reverse %}
+        {% for log in sorted_changelog %}
+        <li><strong><time{% if forloop.last %} class="dt-updated"{% endif %} datetime="{{log.timestamp|date: '%Y-%m-%d'}}">{{log.timestamp|date: '%d.%m.%Y'}}</time>:</strong> {{log.comment}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</article>
 
 <hr>
 
