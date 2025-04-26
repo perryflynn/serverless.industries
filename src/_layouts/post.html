@@ -4,17 +4,19 @@ layout: content
 
 {% assign nowts = 'now' | date: '%s' %}
 {% assign postts = page.date | date: '%s' %}
-<article>
-    <h1>{{page.title}}</h1>
+<article class="h-entry">
+    <h1 class="p-name">{{page.title}}</h1>
 
     <p>
-        <time datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time> &middot;
-        {{page.author}} &middot;
+        <time class="dt-published" datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time> &middot;
+        <a class="p-author h-card" href="{{'/contact.html' | relative_url}}#author-{{page.author}}">{{page.author}}</a> &middot;
         {% if nowts < postts %}future &middot; {% endif %}
         {% if page.draft %}draft &middot; {% endif %}
         {% if page.published == false %}unpublished &middot; {% endif %}
         {% include tagrow.html current_post=page %}
     </p>
+
+    <p class="p-summary" style="display: none;">{{page.excerpt|strip_html}}</p>
 
     {% if page.toc %}
     <div class="table-of-contents">
@@ -22,7 +24,7 @@ layout: content
     </div>
     {% endif %}
 
-    <div class="markdown-content">
+    <div class="markdown-content e-content">
         {{content}}
     </div>
 </article>

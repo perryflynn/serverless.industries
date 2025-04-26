@@ -5,14 +5,15 @@ title: Contact
 ---
 
 <h1>Contact</h1>
+<p>Some infos about the author(s) of this page.</p>
 
 {% for author in site.authors %}
-    <h3>
+    <h2 id="author-{{author.short_name}}">
         {{ author.name }}
         {% if author.job %}
             <small class="text-muted">{{author.job}}</small>
         {% endif %}
-    </h3>
+    </h2>
 
     {{ author.content | markdownify }}
 
