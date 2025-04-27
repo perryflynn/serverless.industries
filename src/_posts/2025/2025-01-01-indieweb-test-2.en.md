@@ -1,6 +1,6 @@
 ---
 author: christian
-title: The Indieweb Test Posting
+title: The Indieweb Test Posting 2
 locale: en
 tags: [test]
 visible: false
@@ -37,4 +37,3 @@ discovery:
 update:
 
 - [https://webmention.rocks/update/1](https://webmention.rocks/update/1)
-- [https://webmention.rocks/update/1/part/2](https://webmention.rocks/update/1/part/2)
