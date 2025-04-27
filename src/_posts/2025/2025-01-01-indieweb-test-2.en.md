@@ -37,3 +37,4 @@ discovery:
 update:
 
 - [https://webmention.rocks/update/1](https://webmention.rocks/update/1)
+- [https://webmention.rocks/update/1/part/2](https://webmention.rocks/update/1/part/2)
