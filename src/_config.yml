@@ -11,6 +11,7 @@ my:
   rsstitle: Serverless Industries Posts RSS
   env: live
   webmention_endpoint: https://intercom.serverless.industries/webmentions/endpoint
+  pingback_endpoint: https://intercom.serverless.industries/pingback/endpoint
 
 title: serverless.industries
 url: "https://serverless.industries"

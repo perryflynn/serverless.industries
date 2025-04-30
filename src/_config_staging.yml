@@ -8,5 +8,6 @@ my:
   rsstitle: "[Stage] Serverless Industries Posts RSS"
   env: stage
   webmention_endpoint: null
+  pingback_endpoint: null
 
 url: "https://stage.serverless.industries"

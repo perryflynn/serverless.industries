@@ -9,6 +9,7 @@
     <title>{{page.title}} - {{site.my.sitetitle}}</title>
 
     <link rel="webmention" href="{{site.my.webmention_endpoint}}">
+    <link rel="pingback" href="{{site.my.pingback_endpoint}}">
 
     {% assign authorinfo = site.authors | where: 'short_name', page.author | first %}
 
