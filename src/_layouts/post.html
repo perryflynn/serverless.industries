@@ -2,32 +2,43 @@
 layout: content
 ---
 
-{% assign nowts = 'now' | date: '%s' %}
-{% assign postts = page.date | date: '%s' %}
-<article class="h-entry">
-    <h1 class="p-name">{{page.title}}</h1>
+{% if page.gone %}
 
-    <p>
-        <time class="dt-published" datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time> &middot;
-        <a class="p-author h-card" href="{{'/contact.html' | relative_url}}#author-{{page.author}}">{{page.author}}</a> &middot;
-        {% if nowts < postts %}future &middot; {% endif %}
-        {% if page.draft %}draft &middot; {% endif %}
-        {% if page.published == false %}unpublished &middot; {% endif %}
-        {% include tagrow.html current_post=page %}
-    </p>
+    <article>
+        <h1>Gone</h1>
+        <p>This page was deleted and is not available anymore.</p>
+    </article>
 
-    <p class="p-summary" style="display: none;">{{page.excerpt|strip_html}}</p>
+{% else %}
 
-    {% if page.toc %}
-    <div class="table-of-contents">
-        {% toc %}
-    </div>
-    {% endif %}
+    {% assign nowts = 'now' | date: '%s' %}
+    {% assign postts = page.date | date: '%s' %}
+    <article class="h-entry">
+        <h1 class="p-name">{{page.title}}</h1>
 
-    <div class="markdown-content e-content">
-        {{content}}
-    </div>
-</article>
+        <p>
+            <time class="dt-published" datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time> &middot;
+            <a class="p-author h-card" href="{{'/contact.html' | relative_url}}#author-{{page.author}}">{{page.author}}</a> &middot;
+            {% if nowts < postts %}future &middot; {% endif %}
+            {% if page.draft %}draft &middot; {% endif %}
+            {% if page.published == false %}unpublished &middot; {% endif %}
+            {% include tagrow.html current_post=page %}
+        </p>
+
+        <p class="p-summary" style="display: none;">{{page.excerpt|strip_html}}</p>
+
+        {% if page.toc %}
+        <div class="table-of-contents">
+            {% toc %}
+        </div>
+        {% endif %}
+
+        <div class="markdown-content e-content">
+            {{content}}
+        </div>
+    </article>
+
+{% endif %}
 
 {% if page.series %}
     {% assign series = site.posts | where_exp:"item","item.series.tag==page.series.tag" | sort: "series.index" %}

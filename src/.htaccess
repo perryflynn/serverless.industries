@@ -36,6 +36,12 @@ Header always set X-Serverless "1"
 # rewrite rules
 RewriteEngine On
 
+# posts with gone status
+{%- assign goneposts = site.posts | where_exp:"p","p.gone" -%}
+{%- for gonepost in goneposts %}
+RewriteRule ^{{gonepost.url | relative_url | remove_first: "/"}} - [L,R=410]
+{% endfor %}
+
 # redirect post shortnames
 {%- assign shortposts = site.posts | where_exp:"p","p.shortlink" -%}
 {%- for shortpost in shortposts %}
