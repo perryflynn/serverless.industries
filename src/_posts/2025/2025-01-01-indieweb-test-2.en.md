@@ -8,6 +8,6 @@ visible: false
 
 This is a hidden test posting for testing indieweb features.
 
-update:
+delete:
 
-- [https://webmention.rocks/update/2](https://webmention.rocks/update/2)
+- [https://webmention.rocks/delete/1](https://webmention.rocks/delete/1)
