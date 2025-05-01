@@ -11,4 +11,3 @@ This is a hidden test posting for testing indieweb features.
 update:
 
 - [https://webmention.rocks/update/2](https://webmention.rocks/update/2)
-- [https://webmention.rocks/update/2/part/2](https://webmention.rocks/update/2/part/2)
