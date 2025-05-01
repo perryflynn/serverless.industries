@@ -1,6 +1,6 @@
 ---
 author: christian
-title: The Indieweb Test Posting 2.6
+title: The Indieweb Test Posting 2.7
 locale: en
 tags: [test]
 visible: false
