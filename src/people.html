@@ -1,0 +1,23 @@
+---
+layout: content
+permalink: /people
+title: People
+---
+
+<h1>Contact</h1>
+<p>Some infos about the author(s) of this page.</p>
+
+{% for author in site.authors %}
+<div class="h-card">
+    <h2 id="author-{{author.short_name}}">
+        <span class="p-name">{{ author.name }}</span>
+        {% if author.job %}
+            <small class="text-muted p-job-title">{{author.job}}</small>
+        {% endif %}
+    </h2>
+
+    <p class="p-note">{{ author.short_text }}</p>
+
+    <p><a class="u-url u-uid" href="{{author.url}}">go to {{author.name}}'s page</a></p>
+</div>
+{% endfor %}

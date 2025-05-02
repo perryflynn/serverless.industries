@@ -1,0 +1,53 @@
+---
+layout: content
+---
+
+<div class="h-card">
+    <h1 id="author-{{page.short_name}}">
+        <span class="p-name">{{ page.name }}</span>
+        {% if page.job %}
+            <small class="text-muted p-job-title">{{page.job}}</small>
+        {% endif %}
+    </h1>
+
+    <a class="u-uid" style="display:none;" href="{{page.url}}">{{page.url}}</a>
+
+    <div class="p-note">
+        {{ content }}
+    </div>
+
+    <ul class="list-inline">
+        {% if page.github %}
+            <li class="list-inline-item">
+                <a class="u-url" href="https://github.com/{{page.github}}" rel="me external nofollow noreferrer noopener" target="_blank">
+                    <i class="mdi mdi-github"></i>
+                    {{page.github}}
+                </a>
+            </li>
+        {% endif %}
+        {% if page.mastodon %}
+            <li class="list-inline-item">
+                <a class="u-url" href="{{page.mastodon}}" rel="me external nofollow noreferrer noopener" target="_blank">
+                    <i class="mdi mdi-mastodon"></i>
+                    {{page.mastodonhandle}}
+                </a>
+            </li>
+        {% endif %}
+        {% if page.email %}
+            <li class="list-inline-item">
+                <a class="u-email" href="mailto:{{page.email}}">
+                    <i class="mdi mdi-email"></i>
+                    {{page.email}}
+                </a>
+            </li>
+        {% endif %}
+        {% if page.gnupg %}
+            <li class="list-inline-item">
+                <a class="u-key" href="{{page.gnupg}}">
+                    <i class="mdi mdi-key"></i>
+                    GnuPG
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</div>

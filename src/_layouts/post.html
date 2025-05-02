@@ -2,6 +2,8 @@
 layout: content
 ---
 
+{% assign author = site.authors | where_exp:"item","item.short_name==page.author" | first %}
+
 {% if page.gone %}
 
     <article>
@@ -18,7 +20,7 @@ layout: content
 
         <p>
             <time class="dt-published" datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time> &middot;
-            <a class="p-author h-card" href="{{'/contact.html' | relative_url}}#author-{{page.author}}">{{page.author}}</a> &middot;
+            <a class="p-author h-card" href="{{author.url}}">{{page.author}}</a> &middot;
             {% if nowts < postts %}future &middot; {% endif %}
             {% if page.draft %}draft &middot; {% endif %}
             {% if page.published == false %}unpublished &middot; {% endif %}
@@ -58,31 +60,36 @@ layout: content
 {% endif %}
 
 <hr>
-{% assign author = site.authors | where_exp:"item","item.short_name==page.author" | first %}
-<h4>About me</h4>
+<div class="h-card">
+    <h4>About me</h4>
 
-<p>{{author.short_text}}</p>
+    <p class="p-note">{{author.short_text}}</p>
 
-{% if author.mastodon or author.email %}
-<ul class="list-inline">
-    {% if author.mastodon %}
-    <li class="list-inline-item">
-        <a href="{{author.mastodon}}" rel="external nofollow noreferrer noopener" target="_blank">
-            <i class="mdi mdi-mastodon"></i>
-            {{author.mastodonhandle}}
-        </a>
-    </li>
-    {% endif %}
-    {% if author.email %}
-    <li class="list-inline-item">
-        <a href="mailto:{{author.email}}">
-            <i class="mdi mdi-email"></i>
-            {{author.email}}
-        </a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+    <ul class="list-inline">
+        {% if author.mastodon %}
+        <li class="list-inline-item">
+            <a href="{{author.mastodon}}" rel="me external nofollow noreferrer noopener" target="_blank">
+                <i class="mdi mdi-mastodon"></i>
+                {{author.mastodonhandle}}
+            </a>
+        </li>
+        {% endif %}
+        {% if author.github %}
+            <li class="list-inline-item">
+                <a href="https://github.com/{{author.github}}" rel="me external nofollow noreferrer noopener" target="_blank">
+                    <i class="mdi mdi-github"></i>
+                    {{author.github}}
+                </a>
+            </li>
+        {% endif %}
+        <li class="list-inline-item">
+            <a class="u-url u-uid" href="{{author.url}}">
+                <i class="mdi mdi-home-account"></i>
+                my page
+            </a>
+        </li>
+    </ul>
+</div>
 
 {% assign locale = page.locale | default: 'de' %}
 {% assign relas = site.related_posts | where: "locale", locale | slice:1, 5 %}

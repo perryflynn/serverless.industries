@@ -44,6 +44,12 @@ defaults:
     values:
       layout: tagpage
       permalink: tag/:tagname:output_ext
+  - scope:
+      path: ''
+      type: 'authors'
+    values:
+      layout: peoplepage
+      permalink: people/:title:output_ext
 
 langmap:
   en: { name: English, intname: English, postlist: "Articles in English" }
