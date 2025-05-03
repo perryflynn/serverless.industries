@@ -70,6 +70,8 @@ layout: content
         {% for comment in comments %}
             {% if comment.type == 'mention' %}
                 <li><span class="mdi mdi-link-variant"></span> {{comment.author | default: 'Someone' | strip_html}} mentioned this post at <a href="{{comment.url}}" target="_blank">{{comment.title | strip_html}}</a> on <time datetime="{{comment.mentioned_at}}">{{comment.mentioned_at|date: '%d. %B %Y'}}</time></li>
+            {% elsif comment.type == 'like' %}
+                <li><span class="mdi mdi-thumb-up-outline"></span> {{comment.author | default: 'Someone' | strip_html}} <a href="{{comment.url}}" target="_blank">liked</a> this post on <time datetime="{{comment.mentioned_at}}">{{comment.mentioned_at|date: '%d. %B %Y'}}</time></li>
             {% endif %}
         {% endfor %}
     </ul>
