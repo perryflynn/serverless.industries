@@ -10,7 +10,7 @@ layout: content
         {% endif %}
     </h1>
 
-    <a class="u-uid" style="display:none;" href="{{page.url}}">{{page.url}}</a>
+    <a class="u-uid" style="display:none;" href="{{page.url | absolute_url}}">permalink</a>
 
     <div class="p-note">
         {{ content }}

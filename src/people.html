@@ -18,6 +18,6 @@ title: People
 
     <p class="p-note">{{ author.short_text }}</p>
 
-    <p><a class="u-url u-uid" href="{{author.url}}">go to {{author.name}}'s page</a></p>
+    <p><a class="u-url u-uid" href="{{author.url | absolute_url}}">go to {{author.name}}'s page</a></p>
 </div>
 {% endfor %}

@@ -20,7 +20,7 @@ layout: content
 
         <p>
             <time class="dt-published" datetime="{{page.date|date: '%Y-%m-%d'}}">{{page.date|date: '%d. %B %Y'}}</time> &middot;
-            <a class="p-author h-card" href="{{author.url}}">{{page.author}}</a> &middot;
+            <a class="p-author h-card" href="{{author.url | absolute_url}}">{{page.author}}</a> &middot;
             {% if nowts < postts %}future &middot; {% endif %}
             {% if page.draft %}draft &middot; {% endif %}
             {% if page.published == false %}unpublished &middot; {% endif %}
@@ -39,7 +39,7 @@ layout: content
             {{content}}
         </div>
 
-        <a class="u-url" style="display:none;" href="{{page.url}}">permalink</a>
+        <a class="u-url" style="display:none;" href="{{page.url | absolute_url}}">permalink</a>
     </article>
 
 {% endif %}
