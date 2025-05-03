@@ -9,6 +9,7 @@ variables:
   servername: 'serverless.industries'
   stagedir: '/www/htdocs/w019308c/vhosts/stage.serverless.industries'
   livedir: '/www/htdocs/w019308c/vhosts/serverless.industries'
+  intercomurl: https://intercom.serverless.industries
 
 
 #
@@ -39,6 +40,8 @@ variables:
     # folders
     - 'mkdir dist-${distname}'
     - 'mkdir -p vendor/ruby'
+    # download comments
+    - 'curl "${intercomurl}/export/mentions" | jq -c -M .result > ./src/_data/comments.json'
     # prepare bundler
     - 'sudo gem install bundler'
     - 'bundle config set path vendor/ruby'

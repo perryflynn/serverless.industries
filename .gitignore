@@ -1,6 +1,7 @@
 dist-*/
 dist/
 *.pem
+/src/_data/comments.json
 
 _site/
 .sass-cache/
