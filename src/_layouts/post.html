@@ -70,12 +70,30 @@ layout: content
 {% assign comments = site.data.comments[postkey] %}
 <h4>Reactions</h4>
 {% if comments.size > 0 %}
-    <ul>
+    <ul class="reactions">
         {% for comment in comments %}
             {% if comment.type == 'mention' %}
-                <li><span class="mdi mdi-link-variant"></span> {{comment.author | default: 'Someone' | strip_html}} mentioned this post at <a href="{{comment.url}}" target="_blank">{{comment.title | strip_html}}</a> on <time datetime="{{comment.mentioned_at}}">{{comment.mentioned_at|date: '%d. %B %Y'}}</time></li>
+                <li>
+                    <span class="mdi mdi-link-variant"></span>
+                    {{comment.author | strip_html | default: 'Someone'}}
+                    <a href="{{comment.url}}" target="_blank">mentioned</a> this post
+                    on <time datetime="{{comment.mentioned_at}}">{{comment.mentioned_at|date: '%d. %B %Y'}}</time>.
+                </li>
             {% elsif comment.type == 'like' or comment.type == 'bookmark' %}
-                <li><span class="mdi {% if comment.type=='like' %}mdi-thumb-up-outline{% else %}mdi-bookmark-outline{% endif %}"></span> {{comment.author | default: 'Someone' | strip_html}} <a href="{{comment.url}}" target="_blank">{{comment.type}}ed</a> this post on <time datetime="{{comment.mentioned_at}}">{{comment.mentioned_at|date: '%d. %B %Y'}}</time></li>
+                <li>
+                    <span class="mdi {% if comment.type=='like' %}mdi-thumb-up-outline{% else %}mdi-bookmark-outline{% endif %}"></span>
+                    {{comment.author | strip_html | default: 'Someone'}}
+                    <a href="{{comment.url}}" target="_blank">{% if comment.type=='like' %}liked{% else %}bookmarked{% endif %}</a> this post
+                    on <time datetime="{{comment.mentioned_at}}">{{comment.mentioned_at|date: '%d. %B %Y'}}</time>.
+                </li>
+            {% elsif comment.type == 'comment' %}
+                <li>
+                    <span class="mdi mdi-comment-outline"></span>
+                    {{comment.author | default: 'Someone' | strip_html}}
+                    <a href="{{comment.url}}" target="_blank">commented</a>
+                    on <time datetime="{{comment.mentioned_at}}">{{comment.mentioned_at|date: '%d. %B %Y'}}</time>:
+                    <blockquote>{{comment.content | strip_html | truncate: 240}}</blockquote>
+                </li>
             {% endif %}
         {% endfor %}
     </ul>

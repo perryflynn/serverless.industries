@@ -244,6 +244,14 @@ ul {
     }
 }
 
+div.defaultcontent ul.reactions {
+    blockquote {
+        margin: 0rem 0rem 1rem 0rem;
+        padding: 10px 0px 10px 20px;
+        border-left: 1px solid darken($lay-color-bright, 50%);
+    }
+}
+
 /* startpage */
 
 .list-lang-switch-info {
