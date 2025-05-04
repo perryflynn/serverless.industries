@@ -5,6 +5,7 @@ layout: content
 {% assign author = site.authors | where_exp:"item","item.short_name==page.author" | first %}
 
 {% if page.gone %}
+    <!-- Page gone -->
 
     <article>
         <h1>Gone</h1>
@@ -12,6 +13,7 @@ layout: content
     </article>
 
 {% else %}
+    <!-- Page content -->
 
     {% assign nowts = 'now' | date: '%s' %}
     {% assign postts = page.date | date: '%s' %}
@@ -45,6 +47,7 @@ layout: content
 {% endif %}
 
 {% if page.series %}
+    <!-- Post series link list -->
     {% assign series = site.posts | where_exp:"item","item.series.tag==page.series.tag" | sort: "series.index" %}
     {% if series.size > 1 %}
         <hr>
@@ -61,6 +64,7 @@ layout: content
     {% endif %}
 {% endif %}
 
+<!-- Webmention reactions -->
 <hr>
 {% assign postkey = page.url | relative_url %}
 {% assign comments = site.data.comments[postkey] %}
@@ -75,10 +79,12 @@ layout: content
             {% endif %}
         {% endfor %}
     </ul>
+    <p><em>Reactions and comments can be submitted via <a href="https://indieweb.org/like" target="_blank">Webmention</a>.</em></p>
 {% else %}
-<p>There are no reactions so far. Send one via Webmentions!</p>
+    <p>There are no reactions so far. Send one via <a href="https://indieweb.org/like" target="_blank">Webmention</a>!</p>
 {% endif %}
 
+<!-- About me card -->
 <hr>
 <div class="h-card">
     <h4>About me</h4>
@@ -111,6 +117,7 @@ layout: content
     </ul>
 </div>
 
+<!-- More posts selected by jekyll algorithm -->
 {% assign locale = page.locale | default: 'de' %}
 {% assign relas = site.related_posts | where: "locale", locale | slice:1, 5 %}
 {% if relas.size > 0 %}
@@ -123,6 +130,7 @@ layout: content
     </ul>
 {% endif %}
 
+<!-- Page footer -->
 <hr>
 
 <div class="post-bottom-bar">
