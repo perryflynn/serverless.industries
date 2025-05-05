@@ -64,7 +64,7 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301,E=REDIRCACHE:true]
 
 # redirect to start page
-RewriteRule ^index/?$ {{'/' | relative_url}} [L,R=301,E=REDIRCACHE:true]
+#RewriteRule ^index/?$ {{'/' | relative_url}} [L,R=301,E=REDIRCACHE:true]
 
 # redirect to rss feed
 RewriteRule ^feed\.xml$ {{'/feed/frontpage.xml' | relative_url}} [L,R=302]
