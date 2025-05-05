@@ -7,10 +7,10 @@ layout: content
     Showing all postings; Filter: <a href="{{'/index/en/' | relative_url}}">English</a>, <a href="{{'/index/de/' | relative_url}}">Deutsch</a>
 
     {% elsif page.locale == "de" %}
-    Showing only German postings; Filter: <a href="{{'/index/' | relative_url}}">All</a>, <a href="{{'/index/en/' | relative_url}}">English</a>
+    Showing only German postings; Filter: <a href="{{'/' | relative_url}}">All</a>, <a href="{{'/index/en/' | relative_url}}">English</a>
 
     {% elsif page.locale == "en" %}
-    Showing only English postings; Filter: <a href="{{'/index/' | relative_url}}">All</a>, <a href="{{'/index/de/' | relative_url}}">Deutsch</a>
+    Showing only English postings; Filter: <a href="{{'/' | relative_url}}">All</a>, <a href="{{'/index/de/' | relative_url}}">Deutsch</a>
 
     {% endif %}
 </div>
