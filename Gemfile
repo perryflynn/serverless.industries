@@ -21,6 +21,5 @@ group :jekyll_plugins do
     gem 'jemoji'
     gem 'jekyll-autoprefixer'
     gem 'mini_racer'
-    gem 'jekyll-target-blank'
     gem 'jekyll-toc'
 end

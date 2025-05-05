@@ -60,7 +60,6 @@ posttypemap:
   guide: { name: Guide }
 
 plugins:
-  - jekyll-target-blank
   - jekyll-feed
   - jekyll-toc
   - jekyll-paginate-v2
@@ -68,6 +67,7 @@ plugins:
 target-blank:
   noopener: false
   noreferrer: false
+  selector: '.defaultcontent'
 
 collections:
   authors:
