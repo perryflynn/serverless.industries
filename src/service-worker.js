@@ -91,6 +91,7 @@ const cacheOne = async (url, response, event) =>
 
 self.addEventListener('fetch', event =>
 {
+    /*
     // start page redirect
     if (event.request.method === 'GET' &&
         (event.request.url == basePath || event.request.url.startsWith(basePath+'index.html')))
@@ -104,7 +105,10 @@ self.addEventListener('fetch', event =>
         }));
     }
     // cache handling for blog pages
-    else if (event.request.method === 'GET' &&
+    else
+    */
+
+    if (event.request.method === 'GET' &&
         event.request.url.startsWith(basePath))
     {
         const cacheHandler = caches.match(event.request.url).then(cacheItem =>
