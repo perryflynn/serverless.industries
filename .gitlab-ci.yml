@@ -54,6 +54,7 @@ variables:
     # build
     - 'bundle install'
     - 'bundle exec jekyll build --lsi -s ./src -d ./dist-${distname} ${buildopts}'
+    - 'cp ./dist-${distname}/index.html ./dist-${distname}/index/index.html'
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_SLUG'
     paths:
