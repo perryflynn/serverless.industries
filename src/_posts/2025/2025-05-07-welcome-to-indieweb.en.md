@@ -3,7 +3,6 @@ author: christian
 title: Welcome to the IndieWeb
 locale: en
 tags: [ indieweb, http ]
-image: /assets/serial-blinkenlights.png
 ---
 
 After setting up an RSS feed reader and reading Hacker News for some time, I realized 
