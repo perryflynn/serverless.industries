@@ -5,7 +5,7 @@ sitemap: false
 
 {% capture json %}
 [
-  {% assign pages = site.posts | where_exp:'doc','doc.sitemap != false and doc.title != null and doc.excerpt != "\n"' %}
+  {% assign pages = site.posts | where_exp:'doc','doc.sitemap != false and doc.title != null and doc.excerpt != "\n" and doc.gone != true' %}
   {% for page in pages %}
   {
     "title": {{ page.title | jsonify }},

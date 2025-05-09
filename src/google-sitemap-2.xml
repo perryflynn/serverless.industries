@@ -5,7 +5,7 @@ layout: null
 <!-- http://www.independent-software.com/generating-a-sitemap-xml-with-jekyll-without-a-plugin.html -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in site.posts %}
-    {% unless post.published == false or post.visible == false %}
+    {% unless post.published == false or post.visible == false or post.gone == true %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
       {% if post.sitemap.lastmod %}
