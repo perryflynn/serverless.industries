@@ -12,6 +12,9 @@ my:
   env: live
   webmention_endpoint: https://intercom.serverless.industries/webmentions/endpoint
   pingback_endpoint: https://intercom.serverless.industries/pingback/endpoint
+  micropub_endpoint: https://intercom.serverless.industries/micropub
+  authorization_endpoint: 'https://intercom.serverless.industries/auth/auth'
+  token_endpoint: 'https://intercom.serverless.industries/auth/token'
 
 title: serverless.industries
 url: "https://serverless.industries"
