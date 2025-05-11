@@ -15,6 +15,7 @@ my:
   micropub_endpoint: https://intercom.serverless.industries/micropub
   authorization_endpoint: 'https://intercom.serverless.industries/auth/auth'
   token_endpoint: 'https://intercom.serverless.industries/auth/token'
+  metadata_endpoint: 'https://intercom.serverless.industries/auth/relme/metadata'
 
 title: serverless.industries
 url: "https://serverless.industries"

@@ -10,9 +10,10 @@
 
     <link rel="webmention" href="{{site.my.webmention_endpoint}}">
     <link rel="pingback" href="{{site.my.pingback_endpoint}}">
-    <link rel="micropub" href="{{site.my.micropub_endpoint}}">
     <link rel="authorization_endpoint" href="{{site.my.authorization_endpoint}}">
     <link rel="token_endpoint" href="{{site.my.token_endpoint}}">
+    <link rel="indieauth-metadata" href="{{site.my.metadata_endpoint}}">
+    <link rel="micropub" href="{{site.my.micropub_endpoint}}">
 
     {% assign authorinfo = site.authors | where: 'short_name', page.author | first %}
 

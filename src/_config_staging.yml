@@ -12,5 +12,6 @@ my:
   micropub_endpoint: null
   authorization_endpoint: null
   token_endpoint: null
+  metadata_endpoint: null
 
 url: "https://stage.serverless.industries"
