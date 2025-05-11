@@ -13,8 +13,8 @@ my:
   webmention_endpoint: https://intercom.serverless.industries/webmentions/endpoint
   pingback_endpoint: https://intercom.serverless.industries/pingback/endpoint
   micropub_endpoint: https://intercom.serverless.industries/micropub
-  authorization_endpoint: 'https://intercom.serverless.industries/auth/auth'
-  token_endpoint: 'https://intercom.serverless.industries/auth/token'
+  authorization_endpoint: 'https://intercom.serverless.industries/auth/relme/auth'
+  token_endpoint: 'https://intercom.serverless.industries/auth/relme/token'
   metadata_endpoint: 'https://intercom.serverless.industries/auth/relme/metadata'
 
 title: serverless.industries
