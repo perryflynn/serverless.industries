@@ -29,9 +29,9 @@ Frage!)
 **Ich hätte gerne 500 Euro von euch**, um den Weiterbetrieb von dingetun.net sicherzustellen.
 Sollte dieses Ziel nicht erreicht werden, stelle ich den Service zum 31.12.2025 ein. 
 
-Von den Spenden werde ich in dem Fall dann eine Häfte behalten und die andere an die Tafel in 
+Von den Spenden werde ich in dem Fall eine Häfte behalten und die andere an die Tafel in 
 Einbeck spenden. Falls mehr als 500 Euro zusammen kommen, wird der Überschuss 
-an die Tafel Einbeck gespendet.
+ebenfalls an die Tafel Einbeck gespendet.
 
 Ich werde diese Seite regelmäig um den aktuellen Stand erweitern.
 
