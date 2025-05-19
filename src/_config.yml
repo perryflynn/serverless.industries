@@ -49,6 +49,12 @@ defaults:
       layout: tagpage
       permalink: tag/:tagname:output_ext
   - scope:
+      path: ""
+      type: streams
+    values:
+      layout: streampage
+      permalink: stream/:year/:month/:streamitemid:output_ext
+  - scope:
       path: ''
       type: 'authors'
     values:

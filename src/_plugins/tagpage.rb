@@ -2,23 +2,23 @@ module TagPagePlugin
 
     class TagPageGenerator < Jekyll::Generator
         safe true
-    
+
         def generate(site)
             site.tags.each do |tagname,items|
-                
+
                 # get taginfo from data file
                 taginfo = site.data['tags'].select { |e| e['name']==tagname }.first
-                
+
                 # split post list by language code
                 bylang = items.group_by { |p| p['locale'] }
-                
+
                 # create page object
                 site.pages << TagPage.new(site, tagname, taginfo, bylang, items.length)
-            
+
             end
         end
     end
-  
+
     class TagPage < Jekyll::Page
         def initialize(site, tag, taginfo, posts, pagecount)
             # properties
@@ -28,18 +28,19 @@ module TagPagePlugin
             @tagposts = posts
             @base = site.source
             @pagecount = pagecount
-    
+
             # All pages have the same filename, so define attributes straight away.
             @basename = 'index'      # filename without the extension.
             @ext      = '.html'      # the extension.
             @name     = 'index.html' # basically @basename + @ext.
-    
+
             # Initialize data hash the page frontmatter
             @data = {
                 'title' => 'Articles tagged with '+@tag,
                 'tagname' => @tag,
                 'taginfo' => @taginfo,
                 'tagposts' => @tagposts,
+                'locale' => 'en',
                 'tagpostcount' => @pagecount
             }
 

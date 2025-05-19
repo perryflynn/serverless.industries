@@ -41,7 +41,8 @@ variables:
     - 'mkdir dist-${distname}'
     - 'mkdir -p vendor/ruby'
     # download comments
-    - 'curl "${intercomurl}/export/mentions" | jq -c -M .result > ./src/_data/comments.json'
+    - 'curl -H "Authorization: Bearer $INTERCOM_TOKEN" "${intercomurl}/export/mentions" | jq -c -M .result > ./src/_data/comments.json'
+    - 'curl -H "Authorization: Bearer $INTERCOM_TOKEN" "${intercomurl}/export/stream" | jq -c -M .result > ./src/_data/stream.json'
     # prepare bundler
     - 'sudo gem install bundler'
     - 'bundle config set path vendor/ruby'

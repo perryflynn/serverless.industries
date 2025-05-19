@@ -1,0 +1,17 @@
+---
+layout: content
+---
+
+{% assign author = site.authors | where_exp:"item","item.short_name==page.streamitem.user.name" | first %}
+
+<div class="h-entry">
+    <a class="p-author h-card" href="{{author.url | absolute_url}}">{{page.streamitem.user.displayname}}</a>
+    {% if page.streamitem.content.properties['like-of'] %}
+        liked <a class="u-like-of" href="{{page.streamitem.content.properties['like-of']}}">{{page.streamitem.content.properties['like-of']}}</a>
+    {% endif %}
+    published at <time class="dt-published" datetime="{{page.streamitem.created_at|date: '%Y-%m-%d'}}">{{page.streamitem.created_at|date: '%d. %B %Y'}}</time>
+    {% if page.streamitem.updated_at %}
+    updated at <time class="dt-updated" datetime="{{page.streamitem.updated_at|date: '%Y-%m-%d'}}">{{page.streamitem.updated_at|date: '%d. %B %Y'}}</time>
+    {% endif %}
+    [<a class="p-url p-uid" href="{{page.url | absolute_url}}">permalink</a>]
+</div>
