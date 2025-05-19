@@ -55,6 +55,12 @@ defaults:
       layout: streampage
       permalink: stream/:year/:month/:streamitemid:output_ext
   - scope:
+      path: ""
+      type: streamlists
+    values:
+      layout: streamlist
+      permalink: stream/:year/:month/
+  - scope:
       path: ''
       type: 'authors'
     values:

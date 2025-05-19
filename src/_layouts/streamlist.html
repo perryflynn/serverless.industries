@@ -1,0 +1,13 @@
+---
+layout: content
+---
+
+<h1>Stream Items for {{ page.streamitems[0]['itemyearmonth'] | append: "-01" | date: "%B %Y" }}</h1>
+
+{% for item in page.streamitems %}
+    {% include hentry.html item=item %}
+
+    {% unless forloop.last %}
+    <hr>
+    {% endunless %}
+{% endfor %}

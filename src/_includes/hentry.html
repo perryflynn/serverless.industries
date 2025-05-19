@@ -1,0 +1,24 @@
+
+{% assign i = include.item %}
+{% assign cp = include.item.content.properties %}
+{% assign author = site.authors | where_exp:"item","item.short_name==i.user.name" | first %}
+
+<div class="h-entry">
+    <a class="p-author h-card" href="{{author.url | absolute_url}}">{{i.user.displayname}}</a>
+    {% if cp['like-of'] %}
+        liked <a class="u-like-of" href="{{cp['like-of']}}">{{cp['like-of']}}</a>
+    {% elsif cp['content'] %}
+        wrote a note:
+        {% for content in cp['content'] %}
+            <p class="p-content">{{content}}</p>
+        {% endfor %}
+    {% endif %}
+    <p>
+        <em>
+            published at <a class="p-url p-uid" href="{{'stream/' | append: i.itemyear | append: '/' | append: i.itemmonth | append: '/' | append: i.id | append: '.html' | absolute_url}}"><time class="dt-published" datetime="{{i.created_at|date: '%Y-%m-%dT%H:%M:%S'}}">{{i.created_at|date: '%d. %B %Y %H:%M'}}</time></a>
+            {% if i.updated_at %}
+            and updated at <time class="dt-updated" datetime="{{i.updated_at|date: '%Y-%m-%dT%H:%M:%S'}}">{{i.updated_at|date: '%d. %B %Y %H:%M'}}</time>
+            {% endif %}
+        </em>
+    </p>
+</div>
