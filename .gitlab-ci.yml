@@ -36,6 +36,7 @@ variables:
     - 'export LANG=en_US.UTF-8'
     - 'export LANGUAGE=en_US.UTF-8'
     - 'export LC_ALL=en_US.UTF-8'
+    - 'export TZ=Europe/Berlin'
     - 'export COMMIT_TIME=$(git show -s --format=%ci $CI_COMMIT_SHA)'
     # folders
     - 'mkdir dist-${distname}'

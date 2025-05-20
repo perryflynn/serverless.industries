@@ -6,8 +6,7 @@ layout: content
 
 {% for item in page.streamitems %}
     {% include hentry.html item=item %}
-
-    {% unless forloop.last %}
     <hr>
-    {% endunless %}
 {% endfor %}
+
+<p><a href="{{'stream/' | relative_url}}">back to main view</a></p>

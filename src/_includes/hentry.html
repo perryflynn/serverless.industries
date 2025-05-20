@@ -8,6 +8,11 @@
     <a class="p-author h-card" href="{{author.url | absolute_url}}">{{i.user.displayname}}</a>
     {% if cp['like-of'] %}
         liked <a class="u-like-of" href="{{cp['like-of']}}">{{cp['like-of']}}</a>
+    {% elsif cp['in-reply-to'] %}
+        replied to <a class="u-in-reply-to" href="{{cp['in-reply-to'][0]}}" target="_blank">this post</a>:
+        {% for content in cp['content'] %}
+            <p class="p-content">{{content}}</p>
+        {% endfor %}
     {% elsif cp['content'] %}
         wrote a note:
         {% for content in cp['content'] %}

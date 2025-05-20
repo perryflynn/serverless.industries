@@ -1,0 +1,31 @@
+---
+layout: content
+title: Stream
+permalink: /stream/
+locale: en
+---
+
+<h1>Stream</h1>
+
+{% for item in site.data.streamrecent %}
+    {% include hentry.html item=item %}
+    {% unless forloop.last %}<hr>{% endunless %}
+{% endfor %}
+
+<h2 style="margin-top: 40px;">Archive</h2>
+<ul>
+    {% for month in site.data.streammonths %}
+        <li><a href="{{'stream/' | append: month[0] | append: '/' | append: month[1] | append: '/' | relative_url}}">{{ month[0] | append: "-" | append: month[1] | append: "-01" | date: "%B %Y" }}</a></li>
+    {% endfor %}
+</ul>
+
+<hr style="margin-top: 40px;">
+
+<p>
+    <em>
+        This page contains quick notes and reactions published by
+        <a href="https://indieweb.org/Micropub" target="_blank">Micropub</a> to participate
+        in <a href="https://indieweb.org/" target="_blank">Indieweb</a>. The notes are sometimes
+        also syndicated to Fediverse/Mastodon.
+    </em>
+</p>
