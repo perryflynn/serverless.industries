@@ -48,10 +48,11 @@ const forceCacheList = [
 
         // favicons
         'favicon/apple-touch-icon.png',
-        'favicon/favicon-32x32.png',
-        'favicon/favicon-16x16.png',
-        'favicon/safari-pinned-tab.svg',
-        'favicon/android-chrome-192x192.png',
+        'favicon/favicon-96x96.png',
+        'favicon/favicon.svg',
+        'favicon.ico',
+        'favicon/web-app-manifest-192x192.png',
+        'favicon/web-app-manifest-512x512.png',
     ]
     .map(url => basePath + url + '?commit=' + commit),
 ];
