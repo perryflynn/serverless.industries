@@ -2,7 +2,10 @@
 author: christian
 title: Welcome to the IndieWeb
 locale: en
-tags: [ indieweb, http ]
+tags: [ indieweb, world wide web ]
+series:
+  tag: series:indiewebintro
+  index: 1
 ---
 
 After setting up an RSS feed reader and reading Hacker News for some time, I realized 
