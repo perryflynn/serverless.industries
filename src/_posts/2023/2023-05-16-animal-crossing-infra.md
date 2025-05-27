@@ -2,7 +2,7 @@
 author: christian
 title: Animal Crossing Fan Projekte
 locale: de
-tags: [ games, animal crossing, api, web service ]
+tags: [ games, animal crossing, api, web service, world wide web ]
 ---
 
 Um die Zeit zum Release von "Legend of Zelda: Tears of the Kingdom" zu überbrücken, habe ich vor
