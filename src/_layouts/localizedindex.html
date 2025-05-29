@@ -21,7 +21,7 @@ layout: content
         {% assign nowts = 'now' | date: '%s' %}
         {% assign postts = post.date | date: '%s' %}
         <div class="col-xs-12 col-md-6 postlistitem{% if nowts < postts %} future{% endif %}{% if post.draft %} draft{% endif %}{% if post.published == false %} unpublished{% endif %}">
-            <article>
+            <article lang="{{post.locale|default: 'de'}}">
                 <h3>
                     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                     {% if post.featured %}<span class="mdi mdi-star" style="color: orange;" title="Featured Article"></span>{% endif %}

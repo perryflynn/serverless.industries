@@ -20,6 +20,8 @@
   name: debian
 - glyph: <span class="mdi mdi-bug"></span>
   name: debugging
+- glyph: <i class="mdi mdi-theater"></i>
+  name: digital cinema
 - glyph: <i class="mdi mdi-dns"></i>
   name: dns
 - glyph: <i class="mdi mdi-docker"></i>
@@ -34,6 +36,8 @@
   name: embedded
 - glyph: <i class="mdi mdi-home-assistant"></i>
   name: esphome
+- glyph: <i class="mdi mdi-mastodon"></i>
+  name: fediverse
 - glyph: <i class="mdi mdi-freebsd"></i>
   name: freebsd
 - glyph: <i class="mdi mdi-gamepad-variant-outline"></i>
@@ -44,6 +48,8 @@
   name: gitlab
 - glyph: <i class="mdi mdi-chart-bell-curve"></i>
   name: grafana
+- glyph: <i class="mdi mdi-book-open-variant"></i>
+  name: guides
 - glyph: <i class="mdi mdi-desktop-classic"></i>
   name: hardware
 - glyph: <i class="mdi mdi-home-assistant"></i>
@@ -52,8 +58,8 @@
   name: html
 - glyph: <i class="mdi mdi-web"></i>
   name: http
-- glyph: <i class="mdi mdi-web"></i>
-  name: world wide web
+- glyph: "\u270A"
+  name: indieweb
 - glyph: <i class="mdi mdi-code-json"></i>
   name: infrastructure code
 - glyph: <i class="mdi mdi-apple-ios"></i>
@@ -68,6 +74,10 @@
   name: jekyll
 - glyph: <i class="mdi mdi-keyboard"></i>
   name: keyboard
+- glyph: <i class="mdi mdi-size-xxs"></i>
+  name: kurz und knapp
+- glyph: <i class="mdi mdi-laptop"></i>
+  name: lenovo thinkpad
 - glyph: <i class="mdi mdi-penguin"></i>
   name: linux
 - glyph: <i class="mdi mdi-violin"></i>
@@ -84,10 +94,10 @@
   name: php
 - glyph: <i class="mdi mdi-powershell"></i>
   name: powershell
-- glyph: <i class="mdi mdi-notebook"></i>
-  name: projects
+- excludefromiconlist: true
   glob: true
-  excludefromiconlist: true
+  glyph: <i class="mdi mdi-notebook"></i>
+  name: projects
 - glyph: <i class="mdi mdi-server"></i>
   name: proxmox
 - glyph: <span class="mdi mdi-language-python"></span>
@@ -98,6 +108,8 @@
   name: reverse engineering
 - glyph: <i class="mdi mdi-language-ruby"></i>
   name: ruby
+- glyph: <i class="mdi mdi-shield-lock"></i>
+  name: security
 - glyph: <i class="mdi mdi-server"></i>
   name: server
 - glyph: <i class="mdi mdi-bash"></i>
@@ -118,25 +130,15 @@
   name: tunnel
 - glyph: <i class="mdi mdi-hand-heart"></i>
   name: usability
+- glyph: <i class="mdi mdi-web-box"></i>
+  name: web service
 - glyph: <i class="mdi mdi-folder-network-outline"></i>
   name: webdav
 - glyph: <i class="mdi mdi-web-box"></i>
   name: webspace
-- glyph: <i class="mdi mdi-web-box"></i>
-  name: web service
 - glyph: <i class="mdi mdi-microsoft-windows"></i>
   name: windows
+- glyph: <i class="mdi mdi-web"></i>
+  name: world wide web
 - glyph: <i class="mdi mdi-harddisk"></i>
   name: zfs
-- glyph: <i class="mdi mdi-book-open-variant"></i>
-  name: guides
-- glyph: <i class="mdi mdi-size-xxs"></i>
-  name: 'kurz und knapp'
-- glyph: <i class="mdi mdi-mastodon"></i>
-  name: fediverse
-- glyph: <i class="mdi mdi-laptop"></i>
-  name: lenovo thinkpad
-- glyph: <i class="mdi mdi-theater"></i>
-  name: digital cinema
-- glyph: <i class="mdi mdi-shield-lock"></i>
-  name: security

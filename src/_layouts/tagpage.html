@@ -19,17 +19,19 @@ layout: content
 
     {% for posts in page.tagposts %}
         {%- assign lang = posts[0] -%}
-        <h2>
-            {{site.langmap[lang].postlist}}
-            <small class="text-muted">({{posts[1] | size}})</small>
-        </h2>
+        <div lang="{{lang}}">
+            <h2>
+                {{site.langmap[lang].postlist}}
+                <small class="text-muted">({{posts[1] | size}})</small>
+            </h2>
 
-        <ul>
-            {%- assign sortedposts = posts[1] | sort_natural: "title" -%}
-            {% for post in sortedposts %}
-                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{post.date|date: '%Y-%m-%d'}})</li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {%- assign sortedposts = posts[1] | sort_natural: "title" -%}
+                {% for post in sortedposts %}
+                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{post.date|date: '%Y-%m-%d'}})</li>
+                {% endfor %}
+            </ul>
+        </div>
     {% endfor %}
 
     <h2>Other Tags</h2>
