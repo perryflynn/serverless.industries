@@ -19,6 +19,15 @@
             <p class="p-content">{{content}}</p>
         {% endfor %}
     {% endif %}
+    {% if cp['photo'] %}
+        <p>
+        {% for photo in cp['photo'] %}
+            <a href="{{photo}}" target="_blank">
+                <img class="u-photo" src="{{photo}}" alt="Content Photo" style="max-width: 200px;">
+            </a>
+        {% endfor %}
+        </p>
+    {% endif %}
     <p>
         <em>
             published at <a class="u-url u-uid" href="{{permalink}}"><time class="dt-published" datetime="{{i.created_at|date: '%Y-%m-%dT%H:%M:%S'}}">{{i.created_at|date: '%d. %B %Y %H:%M'}}</time></a>
