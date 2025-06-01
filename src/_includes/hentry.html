@@ -36,4 +36,8 @@
             {% endif %}
         </em>
     </p>
+
+    {% for syn in cp['mp-syndicate-to'] %}
+    <a class="u-syndication" style="display: none;" href="{{syn}}">{{syn}}</a>
+    {% endfor %}
 </div>
