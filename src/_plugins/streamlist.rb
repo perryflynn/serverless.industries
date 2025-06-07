@@ -6,7 +6,10 @@ module StreamListPagePlugin
         safe true
 
         def generate(site)
+            supportedmf = [ 'like-of', 'bookmark-of', 'in-reply-to', 'content', 'photo' ]
+
             streamdata = site.data['stream'] || []
+            streamdata = streamdata.select { |item| supportedmf.any? { |mf| item['content']['properties'].key?(mf) } }
             streamdata = streamdata.sort_by { |item| item['created_at'] }.reverse
 
             streamdata.each do |item|

@@ -8,6 +8,8 @@
     <a class="p-author h-card" href="{{author.url | absolute_url}}">{{i.user.displayname}}</a>
     {% if cp['like-of'] %}
         liked <a class="u-like-of" href="{{cp['like-of']}}">{{cp['like-of']}}</a>
+    {% elsif cp['bookmark-of'] %}
+        bookmarked <a class="u-bookmark-of" href="{{cp['bookmark-of'][0]}}">{{cp['name'][0] | default: cp['like-of'][0]}}</a>
     {% elsif cp['in-reply-to'] %}
         replied to <a class="u-in-reply-to" href="{{cp['in-reply-to'][0]}}" target="_blank">this post</a>:
         {% for content in cp['content'] %}
