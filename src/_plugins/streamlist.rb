@@ -9,7 +9,7 @@ module StreamListPagePlugin
             supportedmf = [ 'like-of', 'bookmark-of', 'in-reply-to', 'content', 'photo' ]
 
             streamdata = site.data['stream'] || []
-            streamdata = streamdata.select { |item| supportedmf.any? { |mf| item['content']['properties'].key?(mf) } }
+            streamdata = streamdata.select { |item| supportedmf.any? { |mf| item['content']['properties'].key?(mf) && item['status'] == 'published' && item['visibility'] != 'private' } }
             streamdata = streamdata.sort_by { |item| item['created_at'] }.reverse
 
             streamdata.each do |item|
@@ -23,7 +23,7 @@ module StreamListPagePlugin
             end
 
             monthlist = []
-            mymonth = streamdata.group_by { |item| item['itemyearmonth'] }
+            mymonth = streamdata.select { |item| item['visibility'] == 'public' }.group_by { |item| item['itemyearmonth'] }
 
             mymonth.each do |key, items|
                 site.pages << StreamListPage.new(site, 'monthview', key, items, nil)
@@ -33,7 +33,7 @@ module StreamListPagePlugin
             site.data['stream'] = streamdata
 
             maxage = DateTime.now - (6 * 30)
-            site.data['streamrecent'] = streamdata.select { |item| item['itemcreation'] >= maxage }
+            site.data['streamrecent'] = streamdata.select { |item| item['visibility'] == 'public' }.select { |item| item['itemcreation'] >= maxage }
             site.data['streammonths'] = monthlist
         end
     end
