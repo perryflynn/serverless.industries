@@ -1,8 +1,32 @@
 ---
 layout: mainpage
 ---
+
 <div class="row defaultcontent">
     <div class="col">
+
         {{content}}
+
+        <!-- Page footer -->
+        <hr>
+
+        <div class="post-bottom-bar">
+            <div class="bar-left">
+
+                <a href="{{'/' | relative_url}}">go back</a>
+
+            </div>
+            <div class="bar-right">
+
+                <a href="javascript:void(0)" class="make-offline hidden">make offline copy</a>
+                <a href="javascript:void(0)" class="unmake-offline hidden">delete offline copy</a>
+
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank">
+                    <img alt="Creative Commons License" style="border-width: 0px;" src="{{'/css/cc-80x15.png' | relative_url}}?commit={{site.git.commitlong}}">
+                </a>
+
+            </div>
+        </div>
+
     </div>
 </div>

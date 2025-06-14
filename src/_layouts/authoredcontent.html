@@ -1,0 +1,45 @@
+---
+layout: content
+---
+
+{% assign authorkey = page.author | default: 'christian' %}
+{% assign author = site.authors | where_exp:"item","item.short_name==authorkey" | first %}
+
+{{content}}
+
+<!-- About me card -->
+<hr style="margin-top: 40px;">
+<div class="h-card">
+    <h4>About me</h4>
+
+    {% if author.picture %}
+    <img src="{{author.picture|relative_url}}" alt="Picture of {{author.name}}" class="u-photo" style="padding-left: 20px; max-height: 100px; float: right;">
+    {% endif %}
+
+    <p class="p-note">{{author.short_text}}</p>
+
+    <ul class="list-inline">
+        {% if author.mastodon %}
+        <li class="list-inline-item">
+            <a href="{{author.mastodon}}" rel="me external nofollow noreferrer noopener" target="_blank">
+                <i class="mdi mdi-mastodon"></i>
+                {{author.mastodonhandle}}
+            </a>
+        </li>
+        {% endif %}
+        {% if author.github %}
+            <li class="list-inline-item">
+                <a href="https://github.com/{{author.github}}" rel="me external nofollow noreferrer noopener" target="_blank">
+                    <i class="mdi mdi-github"></i>
+                    {{author.github}}
+                </a>
+            </li>
+        {% endif %}
+        <li class="list-inline-item">
+            <a class="u-url u-uid" href="{{author.url}}">
+                <i class="mdi mdi-home-account"></i>
+                my page
+            </a>
+        </li>
+    </ul>
+</div>

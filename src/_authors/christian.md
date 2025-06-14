@@ -8,6 +8,7 @@ mastodonhandle: '@christian@einbeck.social'
 github: perryflynn
 email: christian@serverless.industries
 gnupg: https://serverless.industries/gnupg-serverless.txt
+picture: /christian.jpg
 ---
 
 Hi! 👋 I am a software engineer with strong IT infrastructure skills.

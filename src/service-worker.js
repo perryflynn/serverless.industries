@@ -20,11 +20,13 @@ const forceCacheList = [
         'tag/',
         'guides/',
         'people/',
+        'people/christian.html',
         'offline.html',
         'authors.html',
         'projects.html',
         'archive.html',
-        'search.html'
+        'search.html',
+        'christian.jpg'
     ]
     .map(url => basePath + url),
 

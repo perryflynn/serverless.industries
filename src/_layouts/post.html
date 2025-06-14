@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: authoredcontent
 ---
 
 {% assign author = site.authors | where_exp:"item","item.short_name==page.author" | first %}
@@ -102,39 +102,6 @@ layout: content
     <p>There are no reactions so far. Send one via <a href="https://indieweb.org/like" target="_blank">Webmention</a>!</p>
 {% endif %}
 
-<!-- About me card -->
-<hr>
-<div class="h-card">
-    <h4>About me</h4>
-
-    <p class="p-note">{{author.short_text}}</p>
-
-    <ul class="list-inline">
-        {% if author.mastodon %}
-        <li class="list-inline-item">
-            <a href="{{author.mastodon}}" rel="me external nofollow noreferrer noopener" target="_blank">
-                <i class="mdi mdi-mastodon"></i>
-                {{author.mastodonhandle}}
-            </a>
-        </li>
-        {% endif %}
-        {% if author.github %}
-            <li class="list-inline-item">
-                <a href="https://github.com/{{author.github}}" rel="me external nofollow noreferrer noopener" target="_blank">
-                    <i class="mdi mdi-github"></i>
-                    {{author.github}}
-                </a>
-            </li>
-        {% endif %}
-        <li class="list-inline-item">
-            <a class="u-url u-uid" href="{{author.url}}">
-                <i class="mdi mdi-home-account"></i>
-                my page
-            </a>
-        </li>
-    </ul>
-</div>
-
 <!-- More posts selected by jekyll algorithm -->
 {% assign locale = page.locale | default: 'de' %}
 {% assign relas = site.related_posts | where: "locale", locale | slice:1, 5 %}
@@ -147,27 +114,6 @@ layout: content
         {% endfor %}
     </ul>
 {% endif %}
-
-<!-- Page footer -->
-<hr>
-
-<div class="post-bottom-bar">
-    <div class="bar-left">
-
-        <a href="{{'/' | relative_url}}">go back</a>
-
-    </div>
-    <div class="bar-right">
-
-        <a href="javascript:void(0)" class="make-offline hidden">make offline copy</a>
-        <a href="javascript:void(0)" class="unmake-offline hidden">delete offline copy</a>
-
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" rel="external license nofollow noreferrer noopener" target="_blank">
-            <img alt="Creative Commons License" style="border-width: 0px;" src="{{'/css/cc-80x15.png' | relative_url}}?commit={{site.git.commitlong}}">
-        </a>
-
-    </div>
-</div>
 
 {% include anchorlinks.html %}
 

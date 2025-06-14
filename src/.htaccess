@@ -65,11 +65,9 @@ RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301,E=REDIRCACHE:true]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://{{site.my.domain}}/$1 [L,R=301,E=REDIRCACHE:true]
 
-# redirect to start page
-#RewriteRule ^index/?$ {{'/' | relative_url}} [L,R=301,E=REDIRCACHE:true]
-
-# redirect to rss feed
+# redirect from old/unused pages
 RewriteRule ^feed\.xml$ {{'/feed/frontpage.xml' | relative_url}} [L,R=302]
+RewriteRule ^people/?$ {{'/people/christian.html' | relative_url}} [L,R=302]
 
 # rewrites from old anysrc.net posts
 RewriteRule ^post/gnu-linux/amazon-dash-button-hack /2022/03/11/hack-the-dashbutton.html [L,R=301,E=REDIRCACHE:true]
