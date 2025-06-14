@@ -1,6 +1,6 @@
 ---
 short_name: christian
-short_text: 'Hi! 👋 My name is <span class="p-name">Christian</span>. I am a software engineer with strong IT infrastructure skills.'
+short_text: 'Hi! 👋 My name is <span class="p-name">Christian</span>. I am a software engineer with strong IT infra&shy;structure skills. I help running the Cinema and Arthouse NEU-Deli in Einbeck in my freetime.'
 name: Christian
 job: Software Infrastructure Engineer
 mastodon: https://einbeck.social/@christian
@@ -20,3 +20,5 @@ switched in the meantime to Angular and .NET, then beginning of
 Now I'm working with Ansible, Chef Infra, Terraform, AWS, Kubernetes, Python, Linux and Proxmox.
 
 Still, from time to time, I have fun at writing code in .NET, PHP, Python and Bash.
+
+In my freetime, I help running the Cinema and Arthouse [NEU-Deli](https://neu-deli.de).
