@@ -21,3 +21,6 @@ sich weiter auszutauschen.
 Ich freue mich auf euch! 🚀
 
 *Nach dem Vortrag werde ich hier auch die Folien, die Aufnahme des Vortrags und weitere Informationen teilen.*
+
+Also posted on [events.indieweb.org](https://events.indieweb.org/2025/06/meetup-at-gulaschprogrammiernacht-in-karlsruhe-germany-oTBMLIAsmwpJ).
+and [news.indieweb.org](https://news.indieweb.org/de){:.u-syndication}.
