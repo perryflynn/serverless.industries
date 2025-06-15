@@ -26,7 +26,7 @@ code of your site to make informations parsable by machines. The main elements u
 [h-entry][hentry] and [h-card][hcard].
 
 A `h-entry` is similar to a `<article>` tag and contains a blog post or an article.
-A `h-card` contains information about a person or a company. If a site is scaped, a parser
+A `h-card` contains information about a person or a company. If a site is scraped, a parser
 like [php-mf2][parser] is used to extract information out of the HTML.
 
 There is also [h-feed][hfeed] which can be used as an alternative to dedicated RSS feed files,
@@ -103,7 +103,7 @@ As always, content from other website cannot be trusted!
 - Received mentions should be processed asynchronous and rate limited 
   to prevent abuse for DoS/DDoS attacks
 - To reduce SPAM the Webmention Endpoint should always check if a backlink 
-  to the receiving site exsts
+  to the receiving site exists
 - Before embedding comments or other received content to the own site, it
   should be checked for malicious HTML
 
@@ -113,7 +113,7 @@ As always, content from other website cannot be trusted!
 "just use it" on own website without writing much code. There is also 
 [a plugin](https://de.wordpress.org/plugins/webmention/) for Wordpress.
 
-If you want to build it youself, there are mf2 parsers for 
+If you want to build it yourself, there are mf2 parsers for 
 [many coding languages](https://microformats.org/wiki/microformats2#Parsers) available, which
 makes it trivial to write a fetch mechanism.
 
