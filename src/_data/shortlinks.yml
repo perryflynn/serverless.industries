@@ -2,3 +2,9 @@
   target: https://cloud.anyserver.net/d/db21bbc37a/
 - name: media
   target: https://files.serverless.industries/.mediainfo/
+- name: talk
+  target: https://cfp.gulas.ch/gpn23/talk/RYNLPG/
+- name: meetup
+  target: https://cfp.gulas.ch/gpn23/talk/VNSQZJ/
+- name: slides
+  target: https://files.serverless.industries/slides/

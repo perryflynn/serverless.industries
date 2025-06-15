@@ -3,6 +3,7 @@ author: christian
 title: Welcome to the IndieWeb
 locale: en
 tags: [ indieweb, world wide web ]
+shortlink: indieweb
 series:
   tag: series:indiewebintro
   index: 1
