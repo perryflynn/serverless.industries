@@ -8,3 +8,6 @@
   target: https://cfp.gulas.ch/gpn23/talk/VNSQZJ/
 - name: slides
   target: https://files.serverless.industries/slides/
+- name: likeme
+  target: https://files.serverless.industries/tests/like-me.html
+
