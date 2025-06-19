@@ -7,6 +7,7 @@ series:
   tag: series:indiewebintro
   index: 3
 usemermaid: true
+shortlink: indieauth
 ---
 
 A lot of services of the IndieWeb are using Web Sign-in to authenticate a user. Web Sign-in uses the 
