@@ -10,4 +10,5 @@
   target: https://files.serverless.industries/slides/
 - name: likeme
   target: https://files.serverless.industries/tests/like-me.html
-
+- name: indiepad
+  target: https://md.nerdbridge.de/xZbJdvmaS9qrzspCeIhaLQ#
