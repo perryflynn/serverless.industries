@@ -35,5 +35,12 @@ Während des Meetups gab es einige interessante Themen.
 
 Meetup Notes: [md.nerdbridge.de](https://md.nerdbridge.de/s/ykqzykqaL)
 
+## Mehr
+
+Es gibt [eine Blog Post Serie][indiewebme] über all das, was ich bisher mit dem IndieWeb
+gemacht habe. Schaut gerne mal rein.
+
+[indiewebme]: {% post_url 2025/2025-05-07-welcome-to-indieweb.en %}
+
 Außerdem auf [events.indieweb.org](https://events.indieweb.org/2025/06/meetup-at-gulaschprogrammiernacht-in-karlsruhe-germany-oTBMLIAsmwpJ).
 und [news.indieweb.org](https://news.indieweb.org/de){:.u-syndication} geteilt.
