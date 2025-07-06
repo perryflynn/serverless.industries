@@ -2,7 +2,7 @@
 author: christian
 title: "Use your Website as Identity"
 locale: en
-tags: [ indieweb, world wide web, security ]
+tags: [ indieweb, world wide web, security, projects:indieweb ]
 series:
   tag: series:indiewebintro
   index: 3

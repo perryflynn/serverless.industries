@@ -2,7 +2,7 @@
 author: christian
 title: "Webmentions: Exchange data between websites"
 locale: en
-tags: [ indieweb, world wide web ]
+tags: [ indieweb, world wide web, projects:indieweb ]
 series:
   tag: series:indiewebintro
   index: 4

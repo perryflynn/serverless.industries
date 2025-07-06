@@ -2,7 +2,7 @@
 author: christian
 title: "IndieWeb auf der GPN23"
 locale: de
-tags: [ talk, indieweb ]
+tags: [ talk, indieweb, projects:indieweb ]
 shortlink: gpn
 ---
 
@@ -20,7 +20,20 @@ sich weiter auszutauschen.
 
 Ich freue mich auf euch! 🚀
 
-*Nach dem Vortrag werde ich hier auch die Folien, die Aufnahme des Vortrags und weitere Informationen teilen.*
+## Der Vortrag
 
-Also posted on [events.indieweb.org](https://events.indieweb.org/2025/06/meetup-at-gulaschprogrammiernacht-in-karlsruhe-germany-oTBMLIAsmwpJ).
-and [news.indieweb.org](https://news.indieweb.org/de){:.u-syndication}.
+<div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px">
+    <iframe class="embed-responsive-item" src="https://media.ccc.de/v/gpn23-134-indieweb-publish-on-your-own-site-syndicate-elsewhere/oembed" frameborder="0" allowfullscreen></iframe>
+</div>
+
+Quelle: [media.ccc.de](https://media.ccc.de/v/gpn23-134-indieweb-publish-on-your-own-site-syndicate-elsewhere)  
+Slides: [files.serverless.industries](https://files.serverless.industries/slides/2025-06-16-indieweb/)
+
+## Meetup
+
+Während des Meetups gab es einige interessante Themen.
+
+Meetup Notes: [md.nerdbridge.de](https://md.nerdbridge.de/s/ykqzykqaL)
+
+Außerdem auf [events.indieweb.org](https://events.indieweb.org/2025/06/meetup-at-gulaschprogrammiernacht-in-karlsruhe-germany-oTBMLIAsmwpJ).
+und [news.indieweb.org](https://news.indieweb.org/de){:.u-syndication} geteilt.
