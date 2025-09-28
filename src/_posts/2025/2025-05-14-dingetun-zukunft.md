@@ -3,6 +3,7 @@ author: christian
 title: "Die Zukunft von dingetun.net"
 locale: de
 tags: [ projects, php, web service ]
+shortlink: dingetun-eol
 ---
 
 [dingetun.net](https://dingetun.net) wurde von mir ursprünglich 2015 als Freizeit Projekt gebaut,
@@ -29,28 +30,13 @@ Frage!)
 **Ich hätte gerne 500 Euro von euch**, um den Weiterbetrieb von dingetun.net sicherzustellen.
 Sollte dieses Ziel nicht erreicht werden, stelle ich den Service zum 31.12.2025 ein. 
 
-Von den Spenden werde ich in dem Fall eine Häfte behalten und die andere an die Tafel in 
-Einbeck spenden. Falls mehr als 500 Euro zusammen kommen, wird der Überschuss 
-ebenfalls an die Tafel Einbeck gespendet.
+## Erstes und letztes Update 2025-09-28
 
-Ich werde diese Seite regelmäig um den aktuellen Stand erweitern.
+Seit der Ankündigung im Mai habe ich keinerlei Rückmeldung und auch keinerlei Spenden bekommen,
+obwohl dingetun.net weiter fleißig benutzt wurde. 
 
-Ich verspreche volle Transparenz.
+Nun musste leider aus technischen Gründen der Server, auf dem dingetun.net lief, weg.
+Daher geht die Website ab sofort offline, statt diese noch einmal aufwändig auf einen neuen Server 
+umzuziehen.
 
-Vielen Dank das Ihr meinen Service nutzt. ❤
-
-Feedback könnt Ihr gerne via Email an 
-[christian@serverless.industries](mailto:christian@serverless.industries).
-
-## Spenden
-
-**Per Überweisung:**
-
-Bank: Commerzbank  
-IBAN: DE28 2624 0039 0261 3602 00
-
-**Per Brief:**
-
-Christian Blechert  
-Postfach 1202  
-37553 Einbeck
+Danke an alle treuen Nutzer.
