@@ -19,7 +19,6 @@ const forceCacheList = [
         'index/en/',
         'tag/',
         'guides/',
-        'people/',
         'people/christian.html',
         'offline.html',
         'authors.html',
