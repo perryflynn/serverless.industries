@@ -14,3 +14,5 @@
   target: https://md.nerdbridge.de/xZbJdvmaS9qrzspCeIhaLQ#
 - name: term
   target: https://files.serverless.industries/lab/svrlsterm/
+- name: tanke
+  target: https://codeberg.org/pery/tanke
