@@ -3,6 +3,7 @@ author: christian
 title: "Year of the Linux Desktop"
 locale: en
 tags: [ linux, debian, desktop, laptop ]
+image: /assets/yotld.jpg
 ---
 
 Since 2005-ish every single of my PCs always had Linux installed. 
@@ -83,3 +84,5 @@ It's only three days, so I am still in the onboarding phase, but so far it looks
 want to use Windows 11, just try it. In the last five years the whole Linux experience improved alot!
 
 *Disclaimer: I don't play games on my Laptop, you may want to check Cachy OS, Pop! OS or one of the other gaming-focused distributions.*
+
+![Serial Blinkenlights]({{'assets/yotld.jpg' | relative_url}}){:.img-fluid}
