@@ -4,6 +4,9 @@ title: "Year of the Linux Desktop"
 locale: en
 tags: [ linux, debian, desktop, laptop ]
 image: /assets/yotld.jpg
+series:
+  tag: series:yearofthelinuxdesktop
+  index: 1
 ---
 
 Since 2005-ish every single of my PCs always had Linux installed. 
@@ -16,6 +19,8 @@ This later is now, four years later. **And everything works!** 🎉
 
 Well, almost. For personal preference, I chose to use Debian 13 (Trixie) with KDE Plasma.
 I am certain, that the out-of-the-box experience would be better in Linux Mint for example.
+
+**tl;dr:** Ansible code can be found [on my codeberg](https://codeberg.org/pery/laptop).
 
 Anyway, the installer missed some non-free driver packages, 
 so I had to install the following packages:
