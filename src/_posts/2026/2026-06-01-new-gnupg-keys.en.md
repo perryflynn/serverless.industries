@@ -2,6 +2,7 @@
 author: christian
 title: "New GnuPG Keys"
 locale: en
+tags: [ security ]
 ---
 
 After thirteen years it was time for a new GnuPG key.
