@@ -17,7 +17,7 @@ variables:
 #
 
 .tpl:default:
-  image: reg.git.brickburg.de/bbcontainers/hyde:current
+  image: reg.git.brickburg.de/bbcontainers/hyde:latest
   tags:
     - docker
 
